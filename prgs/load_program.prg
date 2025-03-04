@@ -1,0 +1,86 @@
+<?php
+//2.9
+//o2def::module("");
+//o2def::folder("import");
+/*
+o2def::prgnotes("");
+*/
+
+o2def::prg("load_program", "start", "", __FILE__);
+
+o2def::view('prg§_§var');
+o2def::view("datatypes", false, "", "", 1, 0);
+o2def::view("prgvars", false, "", "", 1, 0);
+o2def::view("prgdetail", false, "", "", 1, 0);
+o2def::view("prgviews", false, "", "", 1, 0);
+o2def::view("tablesinview", false, "", "", 1, 0);
+o2def::view("link_fields", false, "", "", 1, 0);
+o2def::view("select", false, "", "", 1, 0);
+o2def::view("parameters", false, "", "", 1, 0);
+o2def::view("actions", false, "", "", 1, 0);
+o2def::view("forms", false, "", "", 1, 0);
+o2def::view("controls", false, "", "", 1, 0);
+o2def::view("operations", false, "", "", 1, 0);
+o2def::view("controls_parinfo", false, "", "", 1, 0);
+o2def::view("iofiles", false, "", "", 1, 0);
+o2def::view("protocols", false, "", "", 1, 0);
+o2def::view("expressions", false, "", "", 1, 0);
+o2def::view("oper_detail", false, "", "", 1, 0);
+o2def::act("act_callprg");
+o2def::act("act_closeprg");
+o2def::act("act_exe");
+o2def::act("act_goto");
+o2def::act("act_io");
+o2def::act("act_locate");
+o2def::act("act_msg");
+o2def::act("act_print");
+o2def::act("act_recset");
+o2def::act("act_rem");
+o2def::act("act_retpar");
+o2def::act("act_script");
+o2def::act("act_setmenu");
+o2def::act("act_upd");
+o2def::act("create_action");
+o2def::act("create_control");
+o2def::act("create_datatype");
+o2def::act("create_exp");
+o2def::act("create_form");
+o2def::act("create_formula");
+o2def::act("create_io");
+o2def::act("create_link_field");
+o2def::act("create_linktable");
+o2def::act("create_operation");
+o2def::act("create_parameter");
+o2def::act("create_prg");
+o2def::act("create_prgvar");
+o2def::act("create_protocol");
+o2def::act("create_select");
+o2def::act("create_sql_concat");
+o2def::act("create_sql_formula");
+o2def::act("create_view");
+o2def::act("ctrl_parinfo");
+o2def::act("default");
+o2def::act("delete_actions");
+o2def::act("delete_all");
+o2def::act("delete_control");
+o2def::act("delete_ctrlparinfo");
+o2def::act("delete_exp");
+o2def::act("delete_form");
+o2def::act("delete_iofile");
+o2def::act("delete_linkfields");
+o2def::act("delete_oper_details");
+o2def::act("delete_operations");
+o2def::act("delete_parameters");
+o2def::act("delete_prg");
+o2def::act("delete_protocol");
+o2def::act("delete_select");
+o2def::act("delete_tablesinview");
+o2def::act("delete_vars");
+o2def::act("delete_view");
+o2def::act("single_action");
+o2def::act("single_view");
+o2def::act("singleform");
+o2def::act("start");
+o2def::par(1, "userid", "_o2alpha");
+o2def::par(2, "program_name", "name");
+?>

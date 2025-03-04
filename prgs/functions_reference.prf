@@ -1,0 +1,45 @@
+<?php
+
+function functions_reference§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("file_exists", "_o2logical");
+		}
+function functions_reference§§functions_reference_form_def(&$form_functions_reference) {
+	$form_functions_reference->x(20);
+	$form_functions_reference->y(30);
+	$form_functions_reference->larghezza(500);
+	$form_functions_reference->altezza(650);
+	$form_functions_reference->titolo("Janox help - Scriptable functions");
+	$form_functions_reference->align_o("Center");
+		}
+
+function functions_reference§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "file_exists", functions_reference_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && (functions_reference_exp_3() || $o2exe->e()) && o2act::alert(functions_reference_exp_5(), 0) && $o2exe->e();
+	} //|o2_fine_act|
+
+function functions_reference_exp_1() {
+
+return ("file://".str_replace("\\", "/", o2rnt_root())."htdocs/doc/index.html");
+	} //|o2_fine_exp|
+
+function functions_reference_exp_2() {
+
+return (file_exists(o2rnt_root()."htdocs".DIRECTORY_SEPARATOR."doc".DIRECTORY_SEPARATOR."index.html"));
+	} //|o2_fine_exp|
+
+function functions_reference_exp_3() {
+
+return (!o2val('prg§_§var','file_exists'));
+	} //|o2_fine_exp|
+
+function functions_reference_exp_4() {
+
+return (o2val('prg§_§var','file_exists'));
+	} //|o2_fine_exp|
+
+function functions_reference_exp_5() {
+	$txt = "Can't find Janox functions manual.\nCheck your Janox installation.";
+return ($txt);
+	} //|o2_fine_exp|
+?>

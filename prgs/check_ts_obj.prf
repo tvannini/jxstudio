@@ -1,0 +1,349 @@
+<?php
+
+function check_ts_obj§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("obj_type", "objecttype");
+	$task_prg§_§var->definisci("reload_standard", "_o2logical");
+	$task_prg§_§var->definisci("reload_user", "_o2logical");
+	$task_prg§_§var->definisci("user_id", "_o2alpha");
+		}
+
+function check_ts_obj§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+	$task_ts_obj->righe_vis = 10;
+
+	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_ts_obj->usa("objname","tstamp_obj","objname","check_ts_obj_exp_1()","check_ts_obj_exp_1()",null,null);
+	$task_ts_obj->usa("userid","tstamp_obj","userid","check_ts_obj_exp_2()","check_ts_obj_exp_2()",null,null);
+	$task_ts_obj->usa("fdate","tstamp_obj","fdate",null,null,null,null);
+	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
+	$task_ts_obj->usa("type","tstamp_obj","type",null,null,null,null);
+}
+function check_ts_obj§§check_ts_obj_form_def(&$form_check_ts_obj) {
+	$form_check_ts_obj->x(200);
+	$form_check_ts_obj->y(200);
+	$form_check_ts_obj->larghezza(460);
+	$form_check_ts_obj->altezza(140);
+	$form_check_ts_obj->align_o("Center");
+	$form_check_ts_obj->titolo("Object loading");
+	$form_check_ts_obj->frm_title(check_ts_obj_exp_30());
+	$form_check_ts_obj->frm_status(check_ts_obj_exp_30());
+	$form_check_ts_obj->refresh_action("execute");
+	$form_check_ts_obj->refresh_exp("check_ts_obj_exp_31()");
+	$ctrl_o2label2 = &$form_check_ts_obj->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(80);
+		$ctrl_o2label2->y(30);
+		$ctrl_o2label2->larghezza(360);
+		$ctrl_o2label2->altezza(22);
+		$ctrl_o2label2->label(check_ts_obj_exp_32());
+	$ctrl_o2label3 = &$form_check_ts_obj->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(80);
+		$ctrl_o2label3->y(55);
+		$ctrl_o2label3->larghezza(300);
+		$ctrl_o2label3->altezza(22);
+		$ctrl_o2label3->label("Please stand while...");
+	$ctrl_o2image2 = &$form_check_ts_obj->ctrldef("o2image2", "img", "", "", "");
+		$ctrl_o2image2->x(20);
+		$ctrl_o2image2->y(30);
+		$ctrl_o2image2->larghezza(48);
+		$ctrl_o2image2->altezza(48);
+		$ctrl_o2image2->imgexp(check_ts_obj_exp_38());
+		}
+
+function check_ts_obj§§delete_ts_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("ts_obj", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function check_ts_obj§§execute_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Reload standard object") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "user_id", check_ts_obj_exp_34()) && $o2exe->e();
+	$o2exe->s(3) && (check_ts_obj_exp_33() || $o2exe->e()) && o2act::exe("reload_object", True, "") && $o2exe->e();
+//	$o2exe->s(4) && True && o2act::remark("Reload user object") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "user_id", check_ts_obj_exp_3()) && $o2exe->e();
+	$o2exe->s(6) && (check_ts_obj_exp_35() || $o2exe->e()) && o2act::exe("reload_object", True, "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function check_ts_obj§§reload_object_act(&$o2exe) {
+	$o2exe->s(1) && (check_ts_obj_exp_10() || $o2exe->e()) && o2act::view("ts_obj", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("ts_obj", "objname", check_ts_obj_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("ts_obj", "userid", check_ts_obj_exp_2()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("ts_obj", "fdate", check_ts_obj_exp_7()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("ts_obj", "ftime", check_ts_obj_exp_8()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("ts_obj", "type", check_ts_obj_exp_29()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
+	$o2exe->s(8) && (check_ts_obj_exp_28() || $o2exe->e()) && o2act::call("load_app_vars", False, check_ts_obj_exp_12()) && $o2exe->e();
+	$o2exe->s(9) && (check_ts_obj_exp_14() || $o2exe->e()) && o2act::call("load_datatypes", False, check_ts_obj_exp_12()) && $o2exe->e();
+	$o2exe->s(10) && (check_ts_obj_exp_16() || $o2exe->e()) && o2act::call("load_servers", False, check_ts_obj_exp_12()) && $o2exe->e();
+	$o2exe->s(11) && (check_ts_obj_exp_15() || $o2exe->e()) && o2act::call("load_tables", False, check_ts_obj_exp_12()) && $o2exe->e();
+	$o2exe->s(12) && (check_ts_obj_exp_17() || $o2exe->e()) && o2act::call("load_menu", False, check_ts_obj_exp_12()) && $o2exe->e();
+	$o2exe->s(13) && (check_ts_obj_exp_25() || $o2exe->e()) && o2act::call("load_program", False, check_ts_obj_exp_12(), check_ts_obj_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function check_ts_obj§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "obj_type", check_ts_obj_exp_27()) && $o2exe->e();
+//	$o2exe->s(2) && True && o2act::remark("Check standard object") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "user_id", check_ts_obj_exp_34()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "reload_standard", check_ts_obj_exp_4()) && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Check user object") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "user_id", check_ts_obj_exp_3()) && $o2exe->e();
+	$o2exe->s(7) && (check_ts_obj_exp_13() || $o2exe->e()) && o2act::exe("delete_ts", False, "ts_obj") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("prg§_§var", "reload_user", check_ts_obj_exp_11()) && $o2exe->e();
+	$o2exe->s(9) && (check_ts_obj_exp_37() || $o2exe->e()) && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function check_ts_obj_exp_1() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_2() {
+	
+return (o2val('prg§_§var','user_id'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_3() {
+	
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_4() {
+	$file_obj = new o2_fsitem(o2val('_o2SESSION','prgdir').o2par(1).
+                          (o2val('prg§_§var','obj_type') == "P" ? ".prf" : ""));
+$ldate    = $file_obj->data_modifica;
+$ltime    = $file_obj->ora_modifica;
+$ret      = ($ldate > o2val('ts_obj','fdate')) ||
+            (o2val('ts_obj','fdate') == $ldate &&
+             $ltime > o2val('ts_obj','ftime'));
+return ($ret);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_5() {
+	
+return (o2file_date('d:/o2app/emart/prgs/var_repository.inc'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_6() {
+	
+return (o2val('ts_obj','userid'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_7() {
+	$ext  = (o2val('prg§_§var','obj_type') == "P" ? ".prf" : "");
+$date = o2zero('prg§_§var','user_id') ?
+        o2file_date(o2val('_o2SESSION','prgdir').o2par(1).$ext) :
+        o2file_date(o2val('_o2SESSION','usrdir').o2par(1).$ext);
+return ($date);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_8() {
+	$ext  = (o2val('prg§_§var','obj_type') == "P" ? ".prf" : "");
+$time = o2zero('prg§_§var','user_id') ?
+        o2file_time(o2val('_o2SESSION','prgdir').o2par(1).$ext) :
+        o2file_time(o2val('_o2SESSION','usrdir').o2par(1).$ext);
+return ($time);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_9() {
+	
+return (o2par(1) == o2val('_o2SESSION','rep_appvars'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_10() {
+	
+return (!o2view_rec("ts_obj"));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_11() {
+	$ret     = false;
+$ext     = (o2val('prg§_§var','obj_type') == "P" ? ".prf" : "");
+$dir_obj = new o2_dir(o2val('_o2SESSION','usrdir'));
+if ($dir_obj->exists(o2par(1).$ext)) {
+   $file_obj = new o2_fsitem(o2val('_o2SESSION','usrdir').o2par(1).$ext);
+   $ldate    = $file_obj->data_modifica;
+   $ltime    = $file_obj->ora_modifica;
+   $ret      = ($ldate > o2val('ts_obj','fdate') ||
+               (o2val('ts_obj','fdate') == $ldate &&
+                $ltime > o2val('ts_obj','ftime')));
+   }
+return ($ret);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_12() {
+	
+return (o2val('prg§_§var','user_id'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_13() {
+	$ext = (o2val('prg§_§var','obj_type') == "P" ? ".prf" : "");
+$res = !o2file_exists(o2val('_o2SESSION','usrdir').o2par(1).$ext);
+return ($res);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_14() {
+	
+return (o2val('prg§_§var','obj_type') == "D");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_15() {
+	
+return (o2val('prg§_§var','obj_type') == "T");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_16() {
+	
+return (o2val('prg§_§var','obj_type') == "C");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_17() {
+	
+return (o2val('prg§_§var','obj_type') == "M");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_18() {
+	
+return ('C');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_19() {
+	
+return ('T');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_20() {
+	
+return ('A');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_21() {
+	
+return ('D');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_22() {
+	
+return ('M');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_23() {
+	
+return ('P');
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_24() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_25() {
+	
+return (o2val('prg§_§var','obj_type') == "P");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_26() {
+	
+return (o2file_basename(o2par(1)));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_27() {
+	switch (o2par(1)) {
+   case o2val('_o2SESSION','rep_servers'):
+      $res = "C";
+      break;
+   case o2val('_o2SESSION','rep_tables'):
+      $res = "T";
+      break;
+   case o2val('_o2SESSION','rep_appvars'):
+      $res = "A";
+      break;
+   case o2val('_o2SESSION','rep_datatypes'):
+      $res = "D";
+      break;
+   case o2val('_o2SESSION','rep_menus'):
+      $res = "M";
+      break;
+   default:
+      $res = "P";
+      break;
+   }
+return ($res);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_28() {
+	
+return (o2val('prg§_§var','obj_type') == "A");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_29() {
+	
+return (o2val('prg§_§var','obj_type'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_30() {
+	
+return (false);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_31() {
+	
+return (0.3);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_32() {
+	switch (o2val('prg§_§var','obj_type')) {
+   case "A":
+      $txt = "Global variables repository";
+      break;
+   case "D":
+      $txt = "Datatypes repository";
+      break;
+   case "M":
+      $txt = "Menu repository";
+      break;
+   case "C":
+      $txt = "Connectivity repository";
+      break;
+   case "T":
+      $txt = "Tables repository";
+      break;
+   case "V":
+      $txt = "View-models repository";
+      break;
+   default:
+      $txt = "Program \"".o2par(1)."\"";
+      break;
+   }
+$txt.= " is being parsed.";
+return ($txt);
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_33() {
+	
+return (o2val('prg§_§var','reload_standard'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_34() {
+	
+return ("");
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_35() {
+	
+return (o2val('prg§_§var','reload_user'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_36() {
+	
+return (o2val('prg§_§var','reload_standard') || o2val('prg§_§var','reload_user'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_37() {
+	
+return (!o2val('prg§_§var','reload_standard') && !o2val('prg§_§var','reload_user'));
+	} //|o2_fine_exp|
+
+function check_ts_obj_exp_38() {
+	
+return ("loading.png");
+	} //|o2_fine_exp|
+?>

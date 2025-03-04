@@ -1,0 +1,59 @@
+<?php
+
+function splash§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("menu_selected_item", "_o2alpha");
+		}
+function splash§§splash_form_def(&$form_splash) {
+	$form_splash->x(0);
+	$form_splash->y(0);
+	$form_splash->larghezza(1000);
+	$form_splash->altezza(500);
+	$form_splash->titolo("");
+	$form_splash->frm_status(splash_exp_9999());
+	$form_splash->refresh_action("tree_select");
+	$form_splash->refresh_exp("splash_exp_4()");
+	$ctrl_tree = &$form_splash->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+		$ctrl_tree->x(0);
+		$ctrl_tree->y(0);
+		$ctrl_tree->larghezza(300);
+		$ctrl_tree->altezza(470);
+		$ctrl_tree->expand("V");
+		$ctrl_tree->azione("tree_select");
+		$ctrl_tree->activation(1);
+		$ctrl_tree->nodes(splash_exp_1());
+		}
+
+function splash§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::script(splash_exp_3()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function splash§§tree_select_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("project", False, splash_exp_2()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function splash_exp_1() {
+	
+return (o2val('_o2SESSION','menu_items'));
+	} //|o2_fine_exp|
+
+function splash_exp_2() {
+	
+return ('jxa|prop');
+	} //|o2_fine_exp|
+
+function splash_exp_3() {
+	o2form_maximize('splash');
+return (true);
+	} //|o2_fine_exp|
+
+function splash_exp_4() {
+	
+return (0.3);
+	} //|o2_fine_exp|
+
+function splash_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>

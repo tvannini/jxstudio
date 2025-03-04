@@ -1,0 +1,346 @@
+<?php
+
+function load_servers§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("array_db", "_o2structure");
+	$task_prg§_§var->definisci("array_servers_dbs", "_o2structure");
+	$task_prg§_§var->definisci("contents", "_o2text");
+	$task_prg§_§var->definisci("counter", "id");
+	$task_prg§_§var->definisci("default_content", "_o2text");
+	$task_prg§_§var->definisci("pathfile", "path");
+	$task_prg§_§var->definisci("tot_dbs", "_o2number");
+	$task_prg§_§var->definisci("tot_servers", "_o2number");
+		}
+
+function load_servers§§servers_def(&$task_servers, $_o2viewalias = "") {
+	$task_servers->righe_vis = 10;
+
+	$task_servers->usa_file("servers","servers","name",null,null);
+
+	$task_servers->usa("userid","servers","userid","load_servers_exp_30()","load_servers_exp_30()",null,null);
+	$task_servers->usa("servername","servers","servername","load_servers_exp_11()","load_servers_exp_11()",null,null);
+	$task_servers->usa("engine","servers","engine",null,null,null,null);
+	$task_servers->usa("hostname","servers","hostname",null,null,null,null);
+	$task_servers->usa("user","servers","user",null,null,null,null);
+	$task_servers->usa("password","servers","password",null,null,null,null);
+	$task_servers->usa("chunksize","servers","chunksize",null,null,null,null);
+}
+
+function load_servers§§databases_def(&$task_databases, $_o2viewalias = "") {
+	$task_databases->righe_vis = 10;
+
+	$task_databases->usa_file("databases","databases","name",null,null);
+
+	$task_databases->usa("userid","databases","userid","load_servers_exp_30()","load_servers_exp_30()",null,null);
+	$task_databases->usa("jxname","databases","jxname","load_servers_exp_19()","load_servers_exp_19()",null,null);
+	$task_databases->usa("servername","databases","servername",null,null,null,null);
+	$task_databases->usa("dbname","databases","dbname",null,null,null,null);
+	$task_databases->usa("dbowner","databases","dbowner",null,null,null,null);
+	$task_databases->usa("asp","databases","asp",null,null,null,null);
+	$task_databases->usa("create_tables","databases","create_tables",null,null,null,null);
+}
+
+function load_servers§§del_server_def(&$task_del_server, $_o2viewalias = "") {
+	$task_del_server->righe_vis = 10;
+
+	$task_del_server->usa_file("servers","servers","name",null,null);
+
+	$task_del_server->usa("userid","servers","userid","load_servers_exp_30()","load_servers_exp_30()",null,null);
+	$task_del_server->usa("servername","servers","servername",null,null,null,null);
+}
+
+function load_servers§§del_database_def(&$task_del_database, $_o2viewalias = "") {
+	$task_del_database->righe_vis = 10;
+
+	$task_del_database->usa_file("databases","databases","name",null,null);
+
+	$task_del_database->usa("userid","databases","userid","load_servers_exp_30()","load_servers_exp_30()",null,null);
+	$task_del_database->usa("jxname","databases","jxname",null,null,null,null);
+}
+
+function load_servers§§create_db_act(&$o2exe) {
+	$o2exe->s(1) && (load_servers_exp_29() || $o2exe->e()) && o2act::view("databases", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("databases", "userid", load_servers_exp_30()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("databases", "jxname", load_servers_exp_19()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("databases", "servername", load_servers_exp_20()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("databases", "dbname", load_servers_exp_21()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("databases", "dbowner", load_servers_exp_22()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("databases", "asp", load_servers_exp_24()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("databases", "create_tables", load_servers_exp_38()) && $o2exe->e();
+	$o2exe->s(9) && (load_servers_exp_34() || $o2exe->e()) && o2act::view("databases", "S", "") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("prg§_§var", "counter", load_servers_exp_9()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§create_server_act(&$o2exe) {
+	$o2exe->s(1) && (load_servers_exp_28() || $o2exe->e()) && o2act::view("servers", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("servers", "userid", load_servers_exp_30()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("servers", "servername", load_servers_exp_11()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("servers", "engine", load_servers_exp_12()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("servers", "hostname", load_servers_exp_13()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("servers", "user", load_servers_exp_14()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("servers", "password", load_servers_exp_15()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("servers", "chunksize", load_servers_exp_16()) && $o2exe->e();
+	$o2exe->s(9) && (load_servers_exp_33() || $o2exe->e()) && o2act::view("servers", "S", "") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("prg§_§var", "counter", load_servers_exp_9()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§default_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("servers", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("servers", "servername", load_servers_exp_25()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("servers", "engine", load_servers_exp_26()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::view("servers", "S", "") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("databases", "I", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("databases", "jxname", load_servers_exp_25()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("databases", "servername", load_servers_exp_25()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::view("databases", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§delete_db_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::script(load_servers_exp_31()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("del_database", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§delete_server_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::script(load_servers_exp_4()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§load_servers_dbs_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_servers_dbs", load_servers_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "tot_servers", load_servers_exp_35()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "counter", load_servers_exp_10()) && $o2exe->e();
+	$o2exe->s(4) && (load_servers_exp_39() || $o2exe->e()) && o2act::exe("create_server", "load_servers_exp_8()", "") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "tot_dbs", load_servers_exp_37()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "counter", load_servers_exp_10()) && $o2exe->e();
+	$o2exe->s(7) && (load_servers_exp_40() || $o2exe->e()) && o2act::exe("create_db", "load_servers_exp_17()", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Clear table") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("delete_server", True, "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("delete_db", True, "") && $o2exe->e();
+//	$o2exe->s(4) && True && o2act::remark("Set repository file path") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "pathfile", load_servers_exp_2()) && $o2exe->e();
+//	$o2exe->s(6) && True && o2act::remark("Create default") && $o2exe->e();
+	$o2exe->s(7) && (load_servers_exp_30() || $o2exe->e()) && o2act::set("prg§_§var", "default_content", load_servers_exp_36()) && $o2exe->e();
+	$o2exe->s(8) && (load_servers_exp_27() || $o2exe->e()) && o2act::exe("load_servers_dbs", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function load_servers_exp_1() {
+	$filename = o2val('prg§_§var','pathfile');
+$buffer = implode('',file($filename));
+return ($buffer);
+	} //|o2_fine_exp|
+
+function load_servers_exp_2() {
+	$ret = (o2par(1) ?
+        o2val('_o2SESSION','usrdir') :
+        o2val('_o2SESSION','prgdir')).
+       o2val('_o2SESSION','rep_servers');
+return ($ret);
+	} //|o2_fine_exp|
+
+function load_servers_exp_3() {
+
+return (o2file_exists(o2val('_o2SESSION','usrdir') . 'db_repository.inc'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_4() {
+	o2view_delete('del_server');
+return (true);
+	} //|o2_fine_exp|
+
+function load_servers_exp_5() {
+	$content     = file_get_contents(o2val('prg§_§var','pathfile')).
+               o2val('prg§_§var','default_content');
+$res_servers = array();
+$res_dbs     = array();
+$exp_servers = '/o2def::server\("(\w*)",\s*"(\w*)",\s*"([^"]*)",\s*"(\w*)",\s*"(\w*)",?\s*(\d*)\);/';
+$exp_dbs     = '/o2def::db\("(\w*)",\s*"(\w*)",\s*"(\w*)",\s*"(\w*)",\s*(true|false)?,?\s*(true|false*)?\);/';
+preg_match_all($exp_servers, $content, $res_servers);
+unset($res_servers[0]);
+preg_match_all($exp_dbs, $content, $res_dbs);
+unset($res_dbs[0]);
+$res = array('servers' => $res_servers, 'dbs' => $res_dbs);
+return ($res);
+	} //|o2_fine_exp|
+
+function load_servers_exp_6() {
+
+return (o2val('prg§_§var','pathfile'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_7() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function load_servers_exp_8() {
+
+return (o2val('prg§_§var','counter')==o2val('prg§_§var','tot_servers'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_9() {
+
+return (o2val('prg§_§var','counter')+1);
+	} //|o2_fine_exp|
+
+function load_servers_exp_10() {
+
+return (0);
+	} //|o2_fine_exp|
+
+function load_servers_exp_11() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 1, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_12() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 2, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_13() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 3, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_14() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 4, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_15() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 5, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_16() {
+
+return (o2val('prg§_§var','array_servers_dbs', 'servers', 6, o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_17() {
+
+return (o2val('prg§_§var','counter')== o2val('prg§_§var','tot_dbs'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_18() {
+	$search = '/o2def::db\((.*?)\);/';
+preg_match_all($search, o2val('prg§_§var','contents'), $res_local);
+//print_r($res_local);
+
+for ($i = 0; $i <= count($res_local[1]); $i++) {
+        $res[$i] = explode(",", $res_local[1][$i], 5);
+
+    } ;
+return ($res);
+	} //|o2_fine_exp|
+
+function load_servers_exp_19() {
+
+return (o2val('prg§_§var','array_servers_dbs','dbs',1,o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_20() {
+
+return (o2val('prg§_§var','array_servers_dbs','dbs',2,o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_21() {
+
+return (o2val('prg§_§var','array_servers_dbs','dbs',3,o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_22() {
+
+return (o2val('prg§_§var','array_servers_dbs','dbs',4,o2val('prg§_§var','counter')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_23() {
+
+return (trim(strtolower(o2val('prg§_§var','array_db',o2val('prg§_§var','counter'),4)))=='true');
+	} //|o2_fine_exp|
+
+function load_servers_exp_24() {
+
+return (strtolower(o2val('prg§_§var','array_servers_dbs','dbs',5,o2val('prg§_§var','counter'))) == 'true');
+	} //|o2_fine_exp|
+
+function load_servers_exp_25() {
+
+return ('default');
+	} //|o2_fine_exp|
+
+function load_servers_exp_26() {
+
+return ('sqlite');
+	} //|o2_fine_exp|
+
+function load_servers_exp_27() {
+
+return (o2file_exists(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+
+function load_servers_exp_28() {
+
+return (o2zero('servers','servername'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_29() {
+
+return (o2zero('databases','jxname'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_30() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function load_servers_exp_31() {
+	o2view_delete('del_database');
+return (true);
+	} //|o2_fine_exp|
+
+function load_servers_exp_33() {
+
+return (!o2zero('servers','servername'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_34() {
+
+return (!o2zero('databases','jxname'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_35() {
+
+return (count(o2val('prg§_§var','array_servers_dbs','servers',1)));
+	} //|o2_fine_exp|
+
+function load_servers_exp_36() {
+	$ret = '
+o2def::server("default", "sqlite", "", "", "", 0);
+o2def::db("default", "default", "", "", false, true);
+';
+return ($ret);
+	} //|o2_fine_exp|
+
+function load_servers_exp_37() {
+
+return (count(o2val('prg§_§var','array_servers_dbs','dbs',1)));
+	} //|o2_fine_exp|
+
+function load_servers_exp_38() {
+
+return (strtolower(o2val('prg§_§var','array_servers_dbs','dbs',6,o2val('prg§_§var','counter'))) == 'true');
+	} //|o2_fine_exp|
+
+function load_servers_exp_39() {
+
+return (o2val('prg§_§var','tot_servers'));
+	} //|o2_fine_exp|
+
+function load_servers_exp_40() {
+
+return (o2val('prg§_§var','tot_dbs'));
+	} //|o2_fine_exp|
+?>

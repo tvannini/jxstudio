@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Janox Studio :: full cross-tech development suite">
+<meta name="GENERATOR" content="Janox - www.janox.it">
+<title>Janox :: full cross-tech development suite</title>
+<link rel="icon" href="/janox/img/jxapp.ico" type="image/ico">
+<link rel="stylesheet" type="text/css" href="/janox/css/janox.css">
+<link rel="stylesheet" type="text/css" href="css/studio.css">
+<script src='/janox/js/md5.js'></script>
+<script> function jx_init() { with(document.jxForm){ if(password.value.length<32){password.value=hex_md5(password.value);} jxcsw.value=(window.innerWidth!=null ? window.innerWidth : document.documentElement.clientWidth); jxcsh.value=(window.innerHeight!=null ? window.innerHeight : document.documentElement.clientHeight);}} </script>
+</head>
+<body class="o2_sfondo" >
+<div class="o2_ctrl_multi_in" style="width:600px;height:300px;margin-left:auto;margin-right:auto;margin-top:10%;overflow:hidden;">
+ <div style="float:left;"><img src="/jxstudio/img/cover.png"></div
+ <div>
+  <div class="o2_ctrl_multi_in" style="border:none">
+   <br>
+   <center><h1 style="font-size:150%">Janox Studio</h1></center>
+   <p style="margin-left:20px;margin-right:10px;">Welcome to Janox Studio, the Integrated Development Environment for Janox.</p>
+   <p style="margin-left:20px;margin-right:10px;">Login with a registered user or access as "root" to add users.</p>
+   <hr class="o2_ctrl_line" style="margin-left:20px;margin-right:20px;">
+   <div style="clear:both;"> &nbsp </div>
+   <form name="jxForm" method="POST" action="/jxstudio/jxstudio.php" onsubmit="jx_init();">
+    <div class="o2_ctrl_label" style="margin:0 0 0 20px;width:80px;height:20px;float:left;">User:</div>
+    <input type="text" name="user" class="o2_ctrl_edit" style="width:140px;height:20px;">
+    <br>
+    <div class="o2_ctrl_label" style="margin:0 0 0 20px;width:80px;height:20px;float:left;">Password:</div>
+    <input type="password" name="password" class="o2_ctrl_edit" style="width:140px;height:20px;">
+    <div style="clear:both;"> &nbsp </div>
+    <input type="hidden" name="jxcsw" value="">
+    <input type="hidden" name="jxcsh" value="">
+    <center><input type="submit" value="Login" class="o2_ctrl_button" style="width:90px;height:30px;margin-top:10px;"></center>
+   </form>
+  </div>
+ </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Janox Studio GUI Editor</title>
+  <link rel="stylesheet" href="jxdesign.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div id="palette">
+        <div class="palette-icon" data-ctrl-type="select" title="Select">
+          <img src="img/palette/selector.png" alt="Select">
+        </div>
+        <div class="palette-icon" data-ctrl-type="label" title="Label">
+          <img src="img/palette/label.png" alt="Label">
+        </div>
+        <div class="palette-icon" data-ctrl-type="edit" title="Edit">
+          <img src="img/palette/edit.png" alt="Edit">
+        </div>
+        <div class="palette-icon" data-ctrl-type="button" title="Button">
+          <img src="img/palette/button.png" alt="Button">
+        </div>
+        <div class="palette-icon" data-ctrl-type="check" title="Checkbox">
+          <img src="img/palette/check.png" alt="Checkbox">
+        </div>
+        <div class="palette-icon" data-ctrl-type="text" title="Textarea">
+          <img src="img/palette/text.png" alt="Textarea">
+        </div>
+        <div class="palette-icon" data-ctrl-type="img" title="Image">
+          <img src="img/palette/img.png" alt="Image">
+        </div>
+        <div class="palette-icon" data-ctrl-type="line" title="Line">
+          <img src="img/palette/line.png" alt="Line">
+        </div>
+        <div class="palette-icon" data-ctrl-type="listcombo" title="Combobox">
+          <img src="img/palette/listcombo.png" alt="Combobox">
+        </div>
+        <div class="palette-icon" data-ctrl-type="multipage" title="Multipage">
+          <img src="img/palette/multipage.png" alt="Multipage">
+        </div>
+        <div class="palette-icon" data-ctrl-type="file" title="File upload">
+          <img src="img/palette/file.png" alt="File upload">
+        </div>
+        <div class="palette-icon" data-ctrl-type="htmlarea" title="HTMLarea">
+          <img src="img/palette/htmlarea.png" alt="HTMLarea">
+        </div>
+        <div class="palette-icon" data-ctrl-type="document" title="Embedded document">
+          <img src="img/palette/document.png" alt="Embedded document">
+        </div>
+        <div class="palette-icon" data-ctrl-type="navigator" title="DB navigator">
+          <img src="img/palette/navigator.png" alt="DB navigator">
+        </div>
+        <div class="palette-icon" data-ctrl-type="tab" title="Grid">
+          <img src="img/palette/tab.png" alt="Grid">
+        </div>
+        <div class="palette-icon" data-ctrl-type="tree" title="Treeview">
+          <img src="img/palette/tree.png" alt="Treeview">
+        </div>
+        <div class="palette-icon" data-ctrl-type="imglist" title="Images lister">
+          <img src="img/palette/imglist.png" alt="Images lister">
+        </div>
+        <div class="palette-icon" data-ctrl-type="progress" title="Progress bar">
+          <img src="img/palette/progress.png" alt="Progress bar">
+        </div>
+        <div class="palette-icon" data-ctrl-type="flowbox" title="Flowbox">
+          <img src="img/palette/flowbox.png" alt="Flowbox">
+        </div>
+      </div>
+      <!-- Resto del form delle proprietà -->
+      <form id="control-properties">
+        <!-- Specific properties -->
+        <!-- ctrl_name -->
+        <label for="ctrl_name">Name:</label>
+        <input type="text" id="ctrl_name" name="ctrl_name" required>
+        <!-- ctrl_type -->
+        <label for="ctrl_type">Type:</label>
+        <select id="ctrl_type" name="ctrl_type" disabled="">
+            <option value="label" selected>Label</option>
+            <option value="edit">Edit</option>
+            <option value="button">Button</option>
+            <option value="check">Checkbox</option>
+            <option value="text">Textarea</option>
+            <option value="img">Image</option>
+            <option value="line">Line</option>
+            <option value="listcombo">Combobox</option>
+            <option value="multipage">Multipage</option>
+            <option value="file">File upload</option>
+            <option value="htmlarea">HTMLarea</htmlarea>
+            <option value="document">Embedded document</option>
+            <option value="navigator">DB navigator</option>
+            <option value="tab">Grid</option>
+            <option value="tree">Treeview</option>
+            <option value="imglist">Images lister</option>
+            <option value="progress">Progress bar</option>
+            <option value="flowbox">Flowbox</option>
+            <option value="frame">Flowbox frame</option>
+            <option value="window">Window</option>
+        </select>
+
+        <!-- ctrl_parent -->
+        <label for="ctrl_parent">Parent:</label>
+        <input type="text" id="ctrl_parent" name="ctrl_parent" disabled>
+
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order" value="0">
+
+        <!-- X, Y, width, height -->
+        <label for="x">X:</label>
+        <input type="text" id="x" name="x" min="0" required>
+
+        <label for="y">Y:</label>
+        <input type="text" id="y" name="y" min="0" required>
+
+        <label for="width">Width:</label>
+        <input type="text" id="width" name="width" min="1" required>
+
+        <label for="height">Height:</label>
+        <input type="text" id="height" name="height" min="1" required>
+
+        <!-- expand -->
+        <label for="expand">Expand:</label>
+        <select id="expand" name="expand">
+            <option value="">No</option>
+            <option value="Horizontal">Horizontal</option>
+            <option value="Vertical">Vertical</option>
+            <option value="Both">Both</option>
+        </select>
+
+        <!-- parent_options -->
+        <label for="parent_options">Parent options:</label>
+        <input type="text" id="parent_options" name="parent_options">
+
+        <!-- visible -->
+        <label for="visible">Visible:</label>
+        <input type="text" id="visible" name="visible" value="">
+
+        <!-- Cotrol type depending properties -->
+        <label for="enable" class="control-property" style="display: none;">Enable:</label>
+        <input type="text" id="enable" name="enable" class="control-property" style="display: none;">
+
+        <label for="view" class="control-property" style="display: none;">View:</label>
+        <input type="text" id="view" name="view" class="control-property" style="display: none;">
+
+        <label for="field" class="control-property" style="display: none;">Field:</label>
+        <input type="text" id="field" name="field" class="control-property" style="display: none;">
+
+        <label for="combo_items" class="control-property" style="display: none;">Items:</label>
+        <input type="text" id="combo_items" name="combo_items" class="control-property" style="display: none;">
+
+        <label for="combo_rows" class="control-property" style="display: none;">Rows:</label>
+        <input type="text" id="combo_rows" name="combo_rows" class="control-property" style="display: none;">
+
+        <label for="caption" class="control-property" style="display: none;">Caption:</label>
+        <input type="text" id="caption" name="caption" class="control-property" style="display: none;">
+
+        <label for="action" class="control-property" style="display: none;">Action:</label>
+        <input type="text" id="action" name="action" class="control-property" style="display: none;">
+
+        <label for="imglist_del_act" class="control-property" style="display: none;">Delete action:</label>
+        <input type="text" id="imglist_del_act" name="imglist_del_act" class="control-property" style="display: none;">
+
+        <label for="submit" class="control-property" style="display: none;">Submit-o-c:</label>
+        <input type="text" id="submit" name="submit" class="control-property" style="display: none;">
+
+        <label for="model" class="control-property" style="display: none;">Data model:</label>
+        <input type="text" id="model" name="model" class="control-property" style="display: none;">
+
+        <label for="zoom" class="control-property" style="display: none;">Zoom:</label>
+        <input type="text" id="zoom" name="zoom" class="control-property" style="display: none;">
+
+        <label for="password" class="control-property" style="display: none;">Password:</label>
+        <select id="password" name="password" class="control-property" style="display: none;">
+            <option value="false">Off</option>
+            <option value="true">On</option>
+        </select>
+
+        <label for="confirm_msg" class="control-property" style="display: none;">Confirm msg:</label>
+        <input type="text" id="confirm_msg" name="confirm_msg" class="control-property" style="display: none;">
+
+        <label for="tooltip" class="control-property" style="display: none;">Tooltip:</label>
+        <input type="text" id="tooltip" name="tooltip" class="control-property" style="display: none;">
+
+        <label for="btn_style" class="control-property" style="display: none;">Button style:</label>
+        <select id="btn_style" name="btn_style" class="control-property" style="display: none;">
+            <option value="Standard">Standard</option>
+            <option value="HRef">HRef</option>
+        </select>
+
+        <label for="upload_multi" class="control-property" style="display: none;">Multiple:</label>
+        <select id="upload_multi" name="upload_multi" class="control-property" style="display: none;">
+            <option value="">Off</option>
+            <option value="true">On</option>
+        </select>
+
+        <label for="upload_save_as" class="control-property" style="display: none;">Save as:</label>
+        <input type="text" id="upload_save_as" name="upload_save_as" class="control-property" style="display: none;">
+
+        <label for="html_code" class="control-property" style="display: none;">HTML code:</label>
+        <input type="text" id="html_code" name="html_code" class="control-property" style="display: none;">
+
+        <label for="doc_url" class="control-property" style="display: none;">URL:</label>
+        <input type="text" id="doc_url" name="doc_url" class="control-property" style="display: none;">
+
+        <label for="tree_items" class="control-property" style="display: none;">Items:</label>
+        <input type="text" id="tree_items" name="tree_items" class="control-property" style="display: none;">
+
+        <label for="tree_sel" class="control-property" style="display: none;">Selection:</label>
+        <select id="tree_sel" name="tree_sel" class="control-property" style="display: none;">
+            <option value="">No</option>
+            <option value="A">All</option>
+            <option value="L">Leaves</option>
+            <option value="F">Folders</option>
+        </select>
+
+        <label for="imglist_items" class="control-property" style="display: none;">Items:</label>
+        <input type="text" id="imglist_items" name="imglist_items" class="control-property" style="display: none;">
+
+        <label for="imglist_item_w" class="control-property" style="display: none;">Item width:</label>
+        <input type="text" id="imglist_item_w" name="imglist_item_w" class="control-property" style="display: none;">
+
+        <label for="imglist_item_h" class="control-property" style="display: none;">Item height:</label>
+        <input type="text" id="imglist_item_h" name="imglist_item_h" class="control-property" style="display: none;">
+
+        <label for="progress_val" class="control-property" style="display: none;">Progress value:</label>
+        <input type="text" id="progress_val" name="progress_val" class="control-property" style="display: none;">
+
+        <label for="progress_start" class="control-property" style="display: none;">Start action:</label>
+        <input type="text" id="progress_start" name="progress_start" class="control-property" style="display: none;">
+
+        <label for="progress_end" class="control-property" style="display: none;">End action:</label>
+        <input type="text" id="progress_end" name="progress_end" class="control-property" style="display: none;">
+
+        <label for="pages" class="control-property" style="display: none;">Pages:</label>
+        <input type="text" id="pages" name="pages" class="control-property" style="display: none;">
+
+        <label for="active_page" class="control-property" style="display: none;">Active page:</label>
+        <input type="text" id="active_page" name="active_page" class="control-property" style="display: none;">
+
+        <label for="css" class="control-property" style="display: none;">CSS:</label>
+        <input type="text" id="css" name="css" class="control-property" style="display: none;">
+
+        <label for="nav_style" class="control-property" style="display: none;">Direction:</label>
+        <select id="nav_style" name="nav_style" class="control-property" style="display: none;">
+            <option value="">Horizontal</option>
+            <option value="V">Vertical</option>
+        </select>
+
+        <label for="mp_css_body" class="control-property" style="display: none;">CSS body:</label>
+        <input type="text" id="mp_css_body" name="mp_css_body" class="control-property" style="display: none;">
+
+        <label for="mp_css_border" class="control-property" style="display: none;">CSS border:</label>
+        <input type="text" id="mp_css_border" name="mp_css_border" class="control-property" style="display: none;">
+
+        <label for="mp_css_label_on" class="control-property" style="display: none;">CSS label ON:</label>
+        <input type="text" id="mp_css_label_on" name="mp_css_label_on" class="control-property" style="display: none;">
+
+        <label for="mp_css_label_off" class="control-property" style="display: none;">CSS label OFF:</label>
+        <input type="text" id="mp_css_label_off" name="mp_css_label_off" class="control-property" style="display: none;">
+
+        <label for="rtf" class="control-property" style="display: none;">Rich text:</label>
+        <select id="rtf" name="rtf" class="control-property" style="display: none;">
+            <option value="">Off</option>
+            <option value="true">On</option>
+        </select>
+
+        <label for="img_file" class="control-property" style="display: none;">Image file:</label>
+        <input type="text" id="img_file" name="img_file" class="control-property" style="display: none;">
+
+        <label for="img_file_exp" class="control-property" style="display: none;">File exp:</label>
+        <input type="text" id="img_file_exp" name="img_file_exp" class="control-property" style="display: none;">
+
+        <label for="img_hover_exp" class="control-property" style="display: none;">File hover exp:</label>
+        <input type="text" id="img_hover_exp" name="img_hover_exp" class="control-property" style="display: none;">
+
+        <label for="nav_show_nav" class="control-property" style="display: none;">Navigation:</label>
+        <input type="text" id="nav_show_nav" name="nav_show_nav" class="control-property" style="display: none;">
+
+        <label for="nav_new_vis" class="control-property" style="display: none;">New visible:</label>
+        <input type="text" id="nav_new_vis" name="nav_new_vis" class="control-property" style="display: none;">
+
+        <label for="nav_new_en" class="control-property" style="display: none;">New enabled:</label>
+        <input type="text" id="nav_new_en" name="nav_new_en" class="control-property" style="display: none;">
+
+        <label for="nav_new_act" class="control-property" style="display: none;">New action:</label>
+        <input type="text" id="nav_new_act" name="nav_new_act" class="control-property" style="display: none;">
+
+        <label for="nav_new_msg" class="control-property" style="display: none;">New message:</label>
+        <input type="text" id="nav_new_msg" name="nav_new_msg" class="control-property" style="display: none;">
+
+        <label for="nav_save_vis" class="control-property" style="display: none;">Save visible:</label>
+        <input type="text" id="nav_save_vis" name="nav_save_vis" class="control-property" style="display: none;">
+
+        <label for="nav_save_en" class="control-property" style="display: none;">Save enabled:</label>
+        <input type="text" id="nav_save_en" name="nav_save_en" class="control-property" style="display: none;">
+
+        <label for="nav_save_act" class="control-property" style="display: none;">Save action:</label>
+        <input type="text" id="nav_save_act" name="nav_save_act" class="control-property" style="display: none;">
+
+        <label for="nav_save_msg" class="control-property" style="display: none;">Save message:</label>
+        <input type="text" id="nav_save_msg" name="nav_save_msg" class="control-property" style="display: none;">
+
+        <label for="nav_del_vis" class="control-property" style="display: none;">Delete visible:</label>
+        <input type="text" id="nav_del_vis" name="nav_del_vis" class="control-property" style="display: none;">
+
+        <label for="nav_del_en" class="control-property" style="display: none;">Delete enabled:</label>
+        <input type="text" id="nav_del_en" name="nav_del_en" class="control-property" style="display: none;">
+
+        <label for="nav_del_act" class="control-property" style="display: none;">Delete action:</label>
+        <input type="text" id="nav_del_act" name="nav_del_act" class="control-property" style="display: none;">
+
+        <label for="nav_del_msg" class="control-property" style="display: none;">Delete message:</label>
+        <input type="text" id="nav_del_msg" name="nav_del_msg" class="control-property" style="display: none;">
+
+        <label for="nav_undo_vis" class="control-property" style="display: none;">Undo visible:</label>
+        <input type="text" id="nav_undo_vis" name="nav_undo_vis" class="control-property" style="display: none;">
+
+        <label for="nav_undo_en" class="control-property" style="display: none;">Undo enabled:</label>
+        <input type="text" id="nav_undo_en" name="nav_undo_en" class="control-property" style="display: none;">
+
+        <label for="nav_undo_act" class="control-property" style="display: none;">Undo action:</label>
+        <input type="text" id="nav_undo_act" name="nav_undo_act" class="control-property" style="display: none;">
+
+        <label for="nav_undo_msg" class="control-property" style="display: none;">Undo message:</label>
+        <input type="text" id="nav_undo_msg" name="nav_undo_msg" class="control-property" style="display: none;">
+
+        <label for="nav_det_vis" class="control-property" style="display: none;">Detail visible:</label>
+        <input type="text" id="nav_det_vis" name="nav_det_vis" class="control-property" style="display: none;">
+
+        <label for="nav_det_en" class="control-property" style="display: none;">Detail enabled:</label>
+        <input type="text" id="nav_det_en" name="nav_det_en" class="control-property" style="display: none;">
+
+        <label for="nav_det_act" class="control-property" style="display: none;">Detail action:</label>
+        <input type="text" id="nav_det_act" name="nav_det_act" class="control-property" style="display: none;">
+
+        <label for="nav_det_msg" class="control-property" style="display: none;">Detail message:</label>
+        <input type="text" id="nav_det_msg" name="nav_det_msg" class="control-property" style="display: none;">
+
+        <label for="nav_sel_vis" class="control-property" style="display: none;">Select visible:</label>
+        <input type="text" id="nav_sel_vis" name="nav_sel_vis" class="control-property" style="display: none;">
+
+        <label for="nav_sel_en" class="control-property" style="display: none;">Select enabled:</label>
+        <input type="text" id="nav_sel_en" name="nav_sel_en" class="control-property" style="display: none;">
+
+        <label for="nav_sel_act" class="control-property" style="display: none;">Select action:</label>
+        <input type="text" id="nav_sel_act" name="nav_sel_act" class="control-property" style="display: none;">
+
+        <label for="nav_sel_msg" class="control-property" style="display: none;">Select message:</label>
+        <input type="text" id="nav_sel_msg" name="nav_sel_msg" class="control-property" style="display: none;">
+
+        <label for="nav_css_space" class="control-property" style="display: none;">CSS space:</label>
+        <input type="text" id="nav_css_space" name="nav_css_space" class="control-property" style="display: none;">
+
+        <label for="nav_css_slide" class="control-property" style="display: none;">CSS slide:</label>
+        <input type="text" id="nav_css_slide" name="nav_css_slide" class="control-property" style="display: none;">
+
+        <label for="nav_css_navbar" class="control-property" style="display: none;">CSS nav-bar:</label>
+        <input type="text" id="nav_css_navbar" name="nav_css_navbar" class="control-property" style="display: none;">
+
+        <label for="nav_css_first" class="control-property" style="display: none;">CSS first:</label>
+        <input type="text" id="nav_css_first" name="nav_css_first" class="control-property" style="display: none;">
+
+        <label for="nav_css_ppage" class="control-property" style="display: none;">CSS prev-page:</label>
+        <input type="text" id="nav_css_ppage" name="nav_css_ppage" class="control-property" style="display: none;">
+
+        <label for="nav_css_prev" class="control-property" style="display: none;">CSS prev-row:</label>
+        <input type="text" id="nav_css_prev" name="nav_css_prev" class="control-property" style="display: none;">
+
+        <label for="nav_css_next" class="control-property" style="display: none;">CSS next-row:</label>
+        <input type="text" id="nav_css_next" name="nav_css_next" class="control-property" style="display: none;">
+
+        <label for="nav_css_npage" class="control-property" style="display: none;">CSS next-page:</label>
+        <input type="text" id="nav_css_npage" name="nav_css_npage" class="control-property" style="display: none;">
+
+        <label for="nav_css_last" class="control-property" style="display: none;">CSS last:</label>
+        <input type="text" id="nav_css_last" name="nav_css_last" class="control-property" style="display: none;">
+
+        <label for="nav_css_new" class="control-property" style="display: none;">CSS new:</label>
+        <input type="text" id="nav_css_new" name="nav_css_new" class="control-property" style="display: none;">
+
+        <label for="nav_css_save" class="control-property" style="display: none;">CSS save:</label>
+        <input type="text" id="nav_css_save" name="nav_css_save" class="control-property" style="display: none;">
+
+        <label for="nav_css_del" class="control-property" style="display: none;">CSS delete:</label>
+        <input type="text" id="nav_css_del" name="nav_css_del" class="control-property" style="display: none;">
+
+        <label for="nav_css_undo" class="control-property" style="display: none;">CSS undo:</label>
+        <input type="text" id="nav_css_undo" name="nav_css_undo" class="control-property" style="display: none;">
+
+        <label for="nav_css_det" class="control-property" style="display: none;">CSS detail:</label>
+        <input type="text" id="nav_css_det" name="nav_css_det" class="control-property" style="display: none;">
+
+        <label for="nav_css_sel" class="control-property" style="display: none;">CSS select:</label>
+        <input type="text" id="nav_css_sel" name="nav_css_sel" class="control-property" style="display: none;">
+
+        <label for="tab_hide_mark" class="control-property" style="display: none;">Hide row marker:</label>
+        <input type="text" id="tab_hide_mark" name="tab_hide_mark" class="control-property" style="display: none;">
+
+        <label for="tab_options" class="control-property" style="display: none;">Options:</label>
+        <input type="text" id="tab_options" name="tab_options" class="control-property" style="display: none;">
+
+        <label for="tab_pin_cols" class="control-property" style="display: none;">Pin columns:</label>
+        <input type="text" id="tab_pin_cols" name="tab_pin_cols" class="control-property" style="display: none;">
+
+        <label for="tab_norec_msg" class="control-property" style="display: none;">No records msg:</label>
+        <input type="text" id="tab_norec_msg" name="tab_norec_msg" class="control-property" style="display: none;">
+
+        <label for="tab_css_out" class="control-property" style="display: none;">CSS container:</label>
+        <input type="text" id="tab_css_out" name="tab_css_out" class="control-property" style="display: none;">
+
+        <label for="tab_css_grid" class="control-property" style="display: none;">CSS grid:</label>
+        <input type="text" id="tab_css_grid" name="tab_css_grid" class="control-property" style="display: none;">
+
+        <label for="tab_css_head" class="control-property" style="display: none;">CSS header:</label>
+        <input type="text" id="tab_css_head" name="tab_css_head" class="control-property" style="display: none;">
+
+        <label for="tab_css_foot" class="control-property" style="display: none;">CSS footer:</label>
+        <input type="text" id="tab_css_foot" name="tab_css_foot" class="control-property" style="display: none;">
+
+        <label for="tab_css_body" class="control-property" style="display: none;">CSS body:</label>
+        <input type="text" id="tab_css_body" name="tab_css_body" class="control-property" style="display: none;">
+
+        <label for="tab_css_row" class="control-property" style="display: none;">CSS row:</label>
+        <input type="text" id="tab_css_row" name="tab_css_row" class="control-property" style="display: none;">
+
+        <label for="tab_css_alt" class="control-property" style="display: none;">CSS alternate row:</label>
+        <input type="text" id="tab_css_alt" name="tab_css_alt" class="control-property" style="display: none;">
+
+        <label for="tab_css_over" class="control-property" style="display: none;">CSS row over:</label>
+        <input type="text" id="tab_css_over" name="tab_css_over" class="control-property" style="display: none;">
+
+        <label for="tab_css_sel" class="control-property" style="display: none;">CSS selected row:</label>
+        <input type="text" id="tab_css_sel" name="tab_css_sel" class="control-property" style="display: none;">
+
+      </form>
+    </div>
+    <!-- Area di disegno -->
+    <div id="drawing-area"></div>
+  </div>
+
+  <script src="jxdesign.js"></script>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<?php
+
+function save_tables§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("contents", "_o2text");
+	$task_prg§_§var->definisci("pathfile", "path");
+		}
+
+function save_tables§§tables_def(&$task_tables, $_o2viewalias = "") {
+	$task_tables->righe_vis = 10;
+
+	$task_tables->usa_file("tables","tables","pos");
+
+	$task_tables->usa("userid","tables","userid","save_tables_exp_10()","save_tables_exp_10()",null,null);
+	$task_tables->usa("tabname","tables","tabname",null,null,null,null);
+	$task_tables->usa("position","tables","position",null,null,null,null);
+	$task_tables->usa("dbname","tables","dbname",null,null,null,null);
+	$task_tables->usa("databasename","tables","databasename",null,null,null,null);
+	$task_tables->usa("pkey","tables","pkey",null,null,null,null);
+	$task_tables->usa("module","tables","module",null,null,null,null);
+	$task_tables->usa("folder","tables","folder",null,null,null,null);
+}
+
+function save_tables§§fields_def(&$task_fields, $_o2viewalias = "") {
+	$task_fields->righe_vis = 10;
+
+	$task_fields->usa_file("fields","fields","pos");
+
+	$task_fields->usa("userid","fields","userid","save_tables_exp_10()","save_tables_exp_10()",null,null);
+	$task_fields->usa("tablename","fields","tablename","save_tables_exp_12()","save_tables_exp_12()",null,null);
+	$task_fields->usa("fieldname","fields","fieldname",null,null,null,null);
+	$task_fields->usa("position","fields","position",null,null,null,null);
+	$task_fields->usa("dbname","fields","dbname",null,null,null,null);
+	$task_fields->usa("datatype","fields","datatype",null,null,null,null);
+}
+
+function save_tables§§indexes_def(&$task_indexes, $_o2viewalias = "") {
+	$task_indexes->righe_vis = 10;
+
+	$task_indexes->usa_file("indexes","indexes","pos");
+
+	$task_indexes->usa("userid","indexes","userid","save_tables_exp_10()","save_tables_exp_10()",null,null);
+	$task_indexes->usa("tablename","indexes","tablename","save_tables_exp_12()","save_tables_exp_12()",null,null);
+	$task_indexes->usa("idxname","indexes","idxname",null,null,null,null);
+	$task_indexes->usa("position","indexes","position",null,null,null,null);
+	$task_indexes->usa("dbname","indexes","dbname",null,null,null,null);
+}
+
+function save_tables§§segments_def(&$task_segments, $_o2viewalias = "") {
+	$task_segments->righe_vis = 10;
+
+	$task_segments->usa_file("idxsegments","idxsegments","pos");
+
+	$task_segments->usa("userid","idxsegments","userid","save_tables_exp_10()","save_tables_exp_10()",null,null);
+	$task_segments->usa("tablename","idxsegments","tablename","save_tables_exp_12()","save_tables_exp_12()",null,null);
+	$task_segments->usa("idxname","idxsegments","idxname","save_tables_exp_13()","save_tables_exp_13()",null,null);
+	$task_segments->usa("position","idxsegments","position",null,null,null,null);
+	$task_segments->usa("fieldname","idxsegments","fieldname",null,null,null,null);
+	$task_segments->usa("direction","idxsegments","direction",null,null,null,null);
+}
+
+function save_tables§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+	$task_ts_obj->righe_vis = 1;
+
+	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
+
+	$task_ts_obj->usa("objname","tstamp_obj","objname","save_tables_exp_3()","save_tables_exp_3()",null,null);
+	$task_ts_obj->usa("userid","tstamp_obj","userid","save_tables_exp_10()","save_tables_exp_10()",null,null);
+	$task_ts_obj->usa("fdate","tstamp_obj","fdate",null,null,null,null);
+	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
+}
+
+function save_tables§§field_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§index_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_14()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("segment", False, "segments") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "contents", save_tables_exp_16()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§segment_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_15()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§set_ts_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_tables_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_tables_exp_19()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set path to file") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_tables_exp_2()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "contents", save_tables_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::exe("table", False, "tables") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "contents", save_tables_exp_8()) && $o2exe->e();
+//	$o2exe->s(7) && True && o2act::remark("Write file") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::script(save_tables_exp_9()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§table_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_1()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("field", False, "fields") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "contents", save_tables_exp_17()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::exe("index", False, "indexes") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "contents", save_tables_exp_18()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§write_db_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables§§write_server_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_tables_exp_1() {
+	$ret =  o2val('prg§_§var','contents').'
+  o2def::tab("'.o2val('tables','tabname').'", "'.
+                o2val('tables','databasename').'", "'.
+                o2val('tables','dbname').'", "'.
+                o2val('tables','pkey').'");
+';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_tables_exp_2() {
+
+return (o2val('_o2SESSION','usrdir').o2val('_o2SESSION','rep_tables'));
+	} //|o2_fine_exp|
+
+function save_tables_exp_3() {
+
+return (o2val('_o2SESSION','rep_tables'));
+	} //|o2_fine_exp|
+
+function save_tables_exp_4() {
+
+return (o2file_date(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+
+function save_tables_exp_5() {
+
+return ('<?php');
+	} //|o2_fine_exp|
+
+function save_tables_exp_6() {
+
+return (o2val('prg§_§var','pathfile'));
+	} //|o2_fine_exp|
+
+function save_tables_exp_7() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function save_tables_exp_8() {
+
+return (trim(o2val('prg§_§var','contents'))."\n?>");
+	} //|o2_fine_exp|
+
+function save_tables_exp_9() {
+	file_put_contents(o2val('prg§_§var','pathfile'), o2val('prg§_§var','contents'));
+return (true);
+	} //|o2_fine_exp|
+
+function save_tables_exp_10() {
+
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function save_tables_exp_11() {
+	$ret =  o2val('prg§_§var','contents').'
+o2def::field("'.o2val('fields','fieldname').'", "'.
+                o2val('fields','dbname').'", "'.
+                o2val('fields','datatype').'");';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_tables_exp_12() {
+
+return (o2val('tables','tabname'));
+	} //|o2_fine_exp|
+
+function save_tables_exp_13() {
+
+return (o2val('indexes','idxname'));
+	} //|o2_fine_exp|
+
+function save_tables_exp_14() {
+	$ret =  o2val('prg§_§var','contents').'
+o2def::index("'.o2val('indexes','idxname').'"';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_tables_exp_15() {
+
+return (o2val('prg§_§var','contents').', "'.o2val('segments','fieldname').'","'.o2val('segments','direction').'"');
+	} //|o2_fine_exp|
+
+function save_tables_exp_16() {
+
+return (o2val('prg§_§var','contents').");");
+	} //|o2_fine_exp|
+
+function save_tables_exp_17() {
+
+return (o2val('prg§_§var','contents')."\n");
+	} //|o2_fine_exp|
+
+function save_tables_exp_18() {
+
+return (o2val('prg§_§var','contents')."\n\n");
+	} //|o2_fine_exp|
+
+function save_tables_exp_19() {
+
+return (o2file_time(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+?>

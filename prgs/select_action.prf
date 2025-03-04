@@ -1,0 +1,126 @@
+<?php
+
+function select_action§§actions_def(&$task_actions, $_o2viewalias = "") {
+	$task_actions->righe_vis = 10000;
+
+	$task_actions->usa_file("actions","actions","name");
+
+	$task_actions->usa("userid","actions","userid","select_action_exp_1()","select_action_exp_1()",null,null);
+	$task_actions->usa("prgname","actions","prgname","select_action_exp_2()","select_action_exp_2()",null,null);
+	$task_actions->usa("actname","actions","name",null,null,null,null);
+}
+
+function select_action§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+	$task_tmp_edit_vars->righe_vis = 1;
+
+	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id");
+
+	$task_tmp_edit_vars->usa("actname","tmp_edit_vars","actname",null,null,null,null);
+}
+function select_action§§expressions_form_def(&$form_expressions) {
+	$form_expressions->x(330);
+	$form_expressions->y(15);
+	$form_expressions->larghezza(660);
+	$form_expressions->altezza(670);
+	$form_expressions->titolo("Actions");
+	$form_expressions->align_o("Center");
+	$ctrl_o2ListBox2 = &$form_expressions->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "actname");
+		$ctrl_o2ListBox2->x(20);
+		$ctrl_o2ListBox2->y(30);
+		$ctrl_o2ListBox2->larghezza(600);
+		$ctrl_o2ListBox2->altezza(600);
+		$ctrl_o2ListBox2->valori(select_action_exp_3());
+		$ctrl_o2ListBox2->righe(10000);
+	$ctrl_o2dbnavigator2 = &$form_expressions->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator2->x(620);
+		$ctrl_o2dbnavigator2->y(30);
+		$ctrl_o2dbnavigator2->larghezza(18);
+		$ctrl_o2dbnavigator2->altezza(600);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(select_action_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(select_action_exp_4());
+		$ctrl_o2dbnavigator2->visible_save(select_action_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(select_action_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(select_action_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(select_action_exp_9999());
+		$ctrl_o2dbnavigator2->act_new("create");
+		$ctrl_o2dbnavigator2->act_select("save");
+		}
+
+function select_action§§create_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("tmp_edit_vars", "actname", select_action_exp_9()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("new_action", False, "tmp_edit_vars§§actname") && $o2exe->e();
+	$o2exe->s(3) && (select_action_exp_5() || $o2exe->e()) && o2act::exe("save_new_action", True, "") && $o2exe->e();
+	$o2exe->s(4) && (select_action_exp_5() || $o2exe->e()) && o2act::exe("save", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function select_action§§save_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::ret(3, select_action_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function select_action§§save_new_action_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("actions", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("actions", "userid", select_action_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("actions", "prgname", select_action_exp_2()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("actions", "actname", select_action_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("actions", "S", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::view("actions", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function select_action§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "actname", select_action_exp_8()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function select_action_exp_1() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function select_action_exp_2() {
+
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function select_action_exp_3() {
+	$list = o2_view2list("actions", "actname", "actname");
+unset($list[""]);
+return ($list);
+	} //|o2_fine_exp|
+
+function select_action_exp_4() {
+
+return (!o2par(4));
+	} //|o2_fine_exp|
+
+function select_action_exp_5() {
+
+return (o2val('tmp_edit_vars','actname'));
+	} //|o2_fine_exp|
+
+function select_action_exp_6() {
+
+return (true);
+	} //|o2_fine_exp|
+
+function select_action_exp_7() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function select_action_exp_8() {
+
+return (o2par(3));
+	} //|o2_fine_exp|
+
+function select_action_exp_9() {
+
+return ("");
+	} //|o2_fine_exp|
+
+function select_action_exp_9999() {
+
+return (false);
+	} //|o2_fine_exp|
+?>

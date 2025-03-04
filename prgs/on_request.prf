@@ -1,0 +1,27 @@
+<?php
+
+function on_request§§start_act(&$o2exe) {
+	$o2exe->s(1) && (on_request_exp_2() || $o2exe->e()) && o2act::script(on_request_exp_1()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::alert(on_request_exp_3(), 1) && $o2exe->e();
+	} //|o2_fine_act|
+
+function on_request_exp_1() {
+	$_SESSION['o2_app']->runtime->load_gateway(o2val('_o2SESSION','archive_gateway'));
+return (true);
+	} //|o2_fine_exp|
+
+function on_request_exp_2() {
+	
+return (o2val('_o2SESSION','archive_gateway'));
+	} //|o2_fine_exp|
+
+function on_request_exp_3() {
+	$b1 = o2val('_o2SESSION','status_bar1');
+$b2 = o2val('_o2SESSION','status_bar2');
+$b3 = o2val('_o2SESSION','status_bar3');
+$l2 = strlen($b2) / 10;
+$s  = str_repeat(' &nbsp;', intval(o2client_width() * $l2 / 1000));
+$t  = $s.($b2 ? 'Project: '.$b2.$s : '').($b3 ? 'Data: '.$b3.$s : '').$b1;
+return ($t);
+	} //|o2_fine_exp|
+?>

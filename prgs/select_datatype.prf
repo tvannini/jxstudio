@@ -1,0 +1,109 @@
+<?php
+
+function select_datatype§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
+	$task_datatypes->righe_vis = 10000;
+
+	$task_datatypes->usa_file("datatypes","datatypes","name",null,null);
+
+	$task_datatypes->usa("userid","datatypes","userid","select_datatype_exp_3()","select_datatype_exp_3()",null,null);
+	$task_datatypes->usa("typename","datatypes","name",null,null,null,null);
+	$task_datatypes->usa("type","datatypes","type",null,null,null,null);
+	$task_datatypes->usa("mask","datatypes","mask",null,null,null,null);
+}
+
+function select_datatype§§tables_check_def(&$task_tables_check, $_o2viewalias = "") {
+	$task_tables_check->righe_vis = 10;
+
+	$task_tables_check->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_tables_check->usa("objname","tstamp_obj","objname","select_datatype_exp_1()","select_datatype_exp_1()",null,null);
+	$task_tables_check->usa("userid","tstamp_obj","userid",null,null,"select_datatype_exp_2()",null);
+}
+function select_datatype§§select_table_form_def(&$form_select_table) {
+	$form_select_table->x(300);
+	$form_select_table->y(10);
+	$form_select_table->larghezza(640);
+	$form_select_table->altezza(710);
+	$form_select_table->titolo("Select datatypes");
+	$form_select_table->align_o("Center");
+	$form_select_table->frm_status(select_datatype_exp_9999());
+	$ctrl_o2table2 = &$form_select_table->ctrldef("o2table2", "tab", "", "datatypes", "");
+		$ctrl_o2table2->x(20);
+		$ctrl_o2table2->y(20);
+		$ctrl_o2table2->larghezza(600);
+		$ctrl_o2table2->altezza(650);
+		$ctrl_o2table2->modificabile(select_datatype_exp_9999());
+	$ctrl_o2dbnavigator2 = &$form_select_table->ctrldef("o2dbnavigator2", "navigator", "o2table2", "datatypes", "");
+		$ctrl_o2dbnavigator2->x(510);
+		$ctrl_o2dbnavigator2->y(60);
+		$ctrl_o2dbnavigator2->larghezza(18);
+		$ctrl_o2dbnavigator2->altezza(200);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(select_datatype_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("datatypes_select");
+	$ctrl_o2edit2 = &$form_select_table->ctrldef("o2edit2", "edit", "o2table2", "datatypes", "typename");
+		$ctrl_o2edit2->x(10);
+		$ctrl_o2edit2->y(20);
+		$ctrl_o2edit2->larghezza(200);
+		$ctrl_o2edit2->altezza(20);
+		$ctrl_o2edit2->info_padre(array("01" ,"01" ,"01" ,"Datatype" ,False ,"" ,False ,"" ,"" ,""));
+	$ctrl_o2ListBox2 = &$form_select_table->ctrldef("o2ListBox2", "listcombo", "o2table2", "datatypes", "type");
+		$ctrl_o2ListBox2->x(210);
+		$ctrl_o2ListBox2->y(20);
+		$ctrl_o2ListBox2->larghezza(70);
+		$ctrl_o2ListBox2->altezza(20);
+		$ctrl_o2ListBox2->info_padre(array("01" ,"02" ,"02" ,"Type" ,False ,"" ,False ,"" ,"" ,""));
+		$ctrl_o2ListBox2->valori(array());
+		$ctrl_o2ListBox2->righe(1);
+	$ctrl_o2edit3 = &$form_select_table->ctrldef("o2edit3", "edit", "o2table2", "datatypes", "mask");
+		$ctrl_o2edit3->x(280);
+		$ctrl_o2edit3->y(20);
+		$ctrl_o2edit3->larghezza(300);
+		$ctrl_o2edit3->altezza(20);
+		$ctrl_o2edit3->info_padre(array("01" ,"03" ,"03" ,"Mask" ,False ,"" ,False ,"" ,"" ,""));
+		}
+
+function select_datatype§§datatypes_select_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::ret(1, select_datatype_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function select_datatype§§start_act(&$o2exe) {
+	$o2exe->s(1) && (select_datatype_exp_1() || $o2exe->e()) && o2act::view("datatypes", "L", array("typename"=>select_datatype_exp_4())) && $o2exe->e();
+	} //|o2_fine_act|
+
+function select_datatype_exp_1() {
+
+return (o2val('_o2SESSION','rep_datatypes'));
+	} //|o2_fine_exp|
+
+function select_datatype_exp_2() {
+
+return ("");
+	} //|o2_fine_exp|
+
+function select_datatype_exp_3() {
+
+return ((o2val('tables_check','userid') == o2app_user() ? o2val('tables_check','userid') : ''));
+	} //|o2_fine_exp|
+
+function select_datatype_exp_4() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function select_datatype_exp_5() {
+
+return (o2val('datatypes','typename'));
+	} //|o2_fine_exp|
+
+function select_datatype_exp_9999() {
+
+return (false);
+	} //|o2_fine_exp|
+?>

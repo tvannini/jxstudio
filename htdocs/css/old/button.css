@@ -1,0 +1,61 @@
+/* ========================== BUTTON/REF =========================== */
+
+.o2_ctrl_button {
+    text-align: center;
+    background: #e0ddd9;
+    border: 1px solid #BDB5AE;
+    border-radius: 3px;
+    }
+
+.o2_ctrl_button:hover, .o2_ctrl_button:focus {
+    text-align: center;
+    background: #D1C8C0;
+    border: 1px solid #BDB5AE;
+    border-radius: 3px;
+    cursor: pointer;
+    }
+
+.o2_ctrl_button:hover *, .o2_ctrl_button:focus * {
+    color: #442204;
+    }
+
+.o2_ctrl_button_dis {
+    color: #a19a93;
+	text-align: center;
+    background: #E1DAD4;
+    border: 1px solid #BDB5AE;
+    border-radius: 3px;
+    }
+
+.o2_ctrl_button_dis * {
+    color: #a19a93;
+    }
+
+.o2_ctrl_ref {
+    color: #442204;
+    background-color: transparent;
+    text-decoration: underline;
+    text-align: left;
+    padding: 0 3px 0 3px;
+    border: none;
+    }
+
+.o2_ctrl_ref:hover, .o2_ctrl_ref:focus {
+    color: #E18331;
+    background-color: transparent;
+    text-decoration: underline;
+    text-align: left;
+    padding: 0 3px 0 3px;
+    border: none;
+    cursor: pointer;
+    }
+
+.o2_ctrl_ref_dis {
+    color: #BBBBBB;
+    background-color: transparent;
+    text-decoration: underline;
+    text-align: left;
+    padding: 0 3px 0 3px;
+    border: none;
+    }
+

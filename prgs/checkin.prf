@@ -1,0 +1,42 @@
+<?php
+
+function checkin§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Copy file from user dir to prgs dir") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(checkin_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, checkin_exp_2()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function checkin_exp_1() {
+	$obj = o2par(1);
+/*              Program             */
+if ($obj != o2val('_o2SESSION','rep_appvars')   &&
+    $obj != o2val('_o2SESSION','rep_datatypes') &&
+    $obj != o2val('_o2SESSION','rep_menus')     &&
+    $obj != o2val('_o2SESSION','rep_servers')   &&
+    $obj != o2val('_o2SESSION','rep_tables')    &&
+    $obj != o2val('_o2SESSION','rep_viewmodels')) {
+   if (copy(o2val('_o2SESSION','usrdir').$obj.".prg",
+       o2val('_o2SESSION','prgdir').$obj.".prg")) {
+       o2file_delete(o2val('_o2SESSION','usrdir').$obj.".prg");
+       }
+   if (copy(o2val('_o2SESSION','usrdir').$obj.".prf",
+       o2val('_o2SESSION','prgdir').$obj.".prf")) {
+       o2file_delete(o2val('_o2SESSION','usrdir').$obj.".prf");
+       }
+   }
+/*        Other repositories        */
+else {
+   if (copy(o2val('_o2SESSION','usrdir').$obj,
+       o2val('_o2SESSION','prgdir').$obj)) {
+       o2file_delete(o2val('_o2SESSION','usrdir').$obj);
+       }
+   }
+
+return (true);
+	} //|o2_fine_exp|
+
+function checkin_exp_2() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+?>

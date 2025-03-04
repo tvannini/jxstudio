@@ -1,0 +1,81 @@
+<?php
+
+function checkout§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Copy file to user directory") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(checkout_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, checkout_exp_2()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function checkout_exp_1() {
+	if (!o2file_exists(o2val('_o2SESSION','usrdir'))) {
+   o2dir_create(o2val('_o2SESSION','usrdir'));
+   }
+$obj = o2par(1);
+/*              Program             */
+if ($obj != o2val('_o2SESSION','rep_appvars')   &&
+    $obj != o2val('_o2SESSION','rep_datatypes') &&
+    $obj != o2val('_o2SESSION','rep_menus')     &&
+    $obj != o2val('_o2SESSION','rep_servers')   &&
+    $obj != o2val('_o2SESSION','rep_tables')    &&
+    $obj != o2val('_o2SESSION','rep_viewmodels')) {
+   o2file_copy(o2val('_o2SESSION','prgdir').$obj.".prg",
+               o2val('_o2SESSION','usrdir').$obj.".prg");
+   o2file_copy(o2val('_o2SESSION','prgdir').$obj.".prf",
+               o2val('_o2SESSION','usrdir').$obj.".prf");
+   }
+/*        Other repositories        */
+else {
+   o2file_copy(o2val('_o2SESSION','prgdir').$obj,
+               o2val('_o2SESSION','usrdir').$obj);
+   }
+
+
+return (true);
+	} //|o2_fine_exp|
+
+function checkout_exp_2() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function checkout_exp_3() {
+	$obj = o2par(1);
+switch ($obj) {
+   case o2val('_o2SESSION','rep_appvars'):
+      $txt = "Global variables repository";
+      break;
+   case o2val('_o2SESSION','rep_datatypes'):
+      $txt = "Datatypes repository";
+      break;
+   case o2val('_o2SESSION','rep_menus'):
+      $txt = "Menu repository";
+      break;
+   case o2val('_o2SESSION','rep_servers'):
+      $txt = "Connectivity repository";
+      break;
+   case o2val('_o2SESSION','rep_tables'):
+      $txt = "Tables repository";
+      break;
+   case o2val('_o2SESSION','rep_viewmodels'):
+      $txt = "View-models repository";
+      break;
+   default:
+      $txt = "Program ".$obj;
+      break;
+   }
+$txt.= " is being checked out.";
+
+return ($txt);
+	} //|o2_fine_exp|
+
+function checkout_exp_4() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function checkout_exp_5() {
+
+return (0.2);
+	} //|o2_fine_exp|
+?>

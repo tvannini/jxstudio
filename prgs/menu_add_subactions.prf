@@ -1,0 +1,106 @@
+<?php
+
+function menu_add_subactions§§subactions_def(&$task_subactions, $_o2viewalias = "") {
+	$task_subactions->righe_vis = 10;
+
+	$task_subactions->usa_file("operations","operations","pos",null,null);
+
+	$task_subactions->usa("userid","operations","userid","menu_add_subactions_exp_1()","menu_add_subactions_exp_1()",null,null);
+	$task_subactions->usa("prgname","operations","prgname","menu_add_subactions_exp_2()","menu_add_subactions_exp_2()",null,null);
+	$task_subactions->usa("actname","operations","actname","menu_add_subactions_exp_3()","menu_add_subactions_exp_3()",null,null);
+	$task_subactions->usa("operation","operations","operation","menu_add_subactions_exp_4()","menu_add_subactions_exp_4()",null,null);
+	$task_subactions->usa("exeact_actname","operations","exeact_actname",null,null,null,null);
+}
+
+function menu_add_subactions§§action_def(&$task_action, $_o2viewalias = "") {
+	$task_action->righe_vis = 10;
+
+	$task_action->usa_file("actions","actions","name",null,null);
+
+	$task_action->usa("userid","actions","userid","menu_add_subactions_exp_1()","menu_add_subactions_exp_1()",null,null);
+	$task_action->usa("prgname","actions","prgname","menu_add_subactions_exp_2()","menu_add_subactions_exp_2()",null,null);
+	$task_action->usa("name","actions","name","menu_add_subactions_exp_3()","menu_add_subactions_exp_3()",null,null);
+	$task_action->usa("catch_action","actions","catch_action",null,null,null,null);
+}
+
+function menu_add_subactions§§add_catch_action_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", menu_add_subactions_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu_add_subactions§§add_subaction_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", menu_add_subactions_exp_6()) && $o2exe->e();
+	$o2exe->s(2) && (menu_add_subactions_exp_9() || $o2exe->e()) && o2act::call("menu_add_subactions", False, menu_add_subactions_exp_1(), menu_add_subactions_exp_2(), menu_add_subactions_exp_10(), menu_add_subactions_exp_8()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu_add_subactions§§start_act(&$o2exe) {
+	$o2exe->s(1) && (menu_add_subactions_exp_5() || $o2exe->e()) && o2act::exe("add_catch_action", True, "") && $o2exe->e();
+	$o2exe->s(2) && (menu_add_subactions_exp_7() || $o2exe->e()) && o2act::exe("add_subaction", False, "subactions") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu_add_subactions_exp_1() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_2() {
+	
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_3() {
+	
+return (o2par(3));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_4() {
+	
+return ('exe');
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_5() {
+	
+return (!o2zero('action','catch_action'));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_6() {
+	$l = o2val('_o2SESSION','menu_items');
+$l[o2par(4).'|'.o2val('subactions','exeact_actname')] = array(o2par(4), 
+                                                              o2val('subactions','exeact_actname'), 
+                                                              'prgbar/act.png');
+return ($l);
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_7() {
+	
+return (o2view_rec("subactions"));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_8() {
+	
+return (o2par(4).'|'.o2val('subactions','exeact_actname'));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_9() {
+	if (in_array(o2val('subactions','exeact_actname'), explode('|', o2par(4)))) {
+   $cnd = false;
+o2log(o2par(4).': '.o2val('subactions','exeact_actname'));   
+   }
+else {
+   $cnd = true;
+   }
+return ($cnd);
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_10() {
+	
+return (o2val('subactions','exeact_actname'));
+	} //|o2_fine_exp|
+
+function menu_add_subactions_exp_11() {
+	$l = o2val('_o2SESSION','menu_items');
+$l[o2par(4).'|'.o2val('action','catch_action')] = array(o2par(4), 
+                                                        o2val('action','catch_action'), 
+                                                              'prgbar/act.png');
+return ($l);
+	} //|o2_fine_exp|
+?>

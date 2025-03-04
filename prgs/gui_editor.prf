@@ -1,0 +1,33 @@
+<?php
+function gui_editor§§gui_editor_form_def(&$form_gui_editor) {
+	$form_gui_editor->x(400);
+	$form_gui_editor->y(50);
+	$form_gui_editor->larghezza(800);
+	$form_gui_editor->altezza(600);
+	$form_gui_editor->align_o("Center");
+	$form_gui_editor->titolo("Design GUI");
+		}
+
+function gui_editor§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::script(gui_editor_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function gui_editor§§zoom_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::alert(gui_editor_exp_3(), 0) && $o2exe->e();
+	} //|o2_fine_act|
+
+function gui_editor_exp_1() {
+	o2form_maximize('gui_editor');
+return (true);
+	} //|o2_fine_exp|
+
+function gui_editor_exp_2() {
+	
+return (o2app_alias().'design/jxdesign.html');
+	} //|o2_fine_exp|
+
+function gui_editor_exp_3() {
+	
+return ('Zoom from '.o2_reqpar(1).' : '.o2_reqpar(2));
+	} //|o2_fine_exp|
+?>

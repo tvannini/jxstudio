@@ -1,0 +1,111 @@
+/* ====================================== NEW MENU ==================================== */
+
+.o2menuBar {
+    background-color: #e0ddd9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 32px;
+    padding-left: 20px;
+    padding-top: 4px;
+    border-bottom: 1px solid #bdb5ae;
+    }
+
+.o2menu {
+    background-color: #eeeeee;
+    border-bottom: 1px solid #bdb5ae;
+    border-left: 1px solid #bdb5ae;
+    border-right: 1px solid #bdb5ae;
+    }
+
+.o2menuItem {
+    border: 1px solid #eeeeee;
+    border-bottom: none;
+    line-height: 24px;
+    cursor: pointer;
+    }
+
+.o2menuBar .o2menuItem {
+    border: 1px solid #e0ddd9;
+    border-bottom: none;
+    margin-right: 20px;
+    display: inline;
+    cursor: pointer;
+    }
+
+.o2menuItemOn {
+    background-color: #e0ddd9;
+    border-bottom: none;
+    line-height: 24px;
+    cursor: pointer;
+    }
+
+.o2menuBar .o2menuItemOn {
+    background-color: #eeeeee;
+    border: 1px solid #bdb5ae;
+    border-bottom: none;
+    padding: 8px 0 9px 0;
+    margin-right: 20px;
+    display: inline;
+    cursor: pointer;
+    }
+
+.o2menuImg {
+    padding-left: 5px;
+    }
+
+.o2menuImg IMG {
+    vertical-align: text-bottom;
+    }
+
+.o2menuBar .o2menuImg {
+    display: inline;
+    }
+
+.o2menuLabel {
+    white-space: nowrap;
+    padding: 0 5px 0 3px;
+    }
+
+.o2menuBar .o2menuLabel {
+    display: inline;
+    }
+
+.o2menuBar .o2menuItem .o2menuLabel {
+    color: #444444;
+    display: inline;
+    }
+
+.o2menuItem .o2menuArrow {
+    background-image: url(menu/arrow.gif);
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 12px;
+    }
+
+.o2menuItemOn .o2menuArrow {
+    background-image: url(menu/arrowon.gif);
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 12px;
+    }
+
+.o2menuSep {
+    border-bottom: 1px solid #a19a93;
+    height: 5px;
+    }
+
+.o2menuSepV {
+    border-left: 1px solid #a19a93;
+    width: 1px;
+    display: inline;
+    }
+
+.o2devInfo {
+    }
+
+.o2devInfo TH {
+    }
+
+.o2devInfo i {
+    }

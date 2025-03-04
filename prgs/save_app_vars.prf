@@ -1,0 +1,109 @@
+<?php
+
+function save_app_vars§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("contents", "_o2text");
+	$task_prg§_§var->definisci("pathfile", "path");
+		}
+
+function save_app_vars§§appvars_def(&$task_appvars, $_o2viewalias = "") {
+	$task_appvars->righe_vis = 10;
+
+	$task_appvars->usa_file("appvars","appvars","name");
+
+	$task_appvars->usa("name","appvars","name",null,null,null,null);
+	$task_appvars->usa("datatype","appvars","datatype",null,null,null,null);
+	$task_appvars->usa("userid","appvars","userid","save_app_vars_exp_4()","save_app_vars_exp_4()",null,null);
+}
+
+function save_app_vars§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+	$task_ts_obj->righe_vis = 10;
+
+	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
+
+	$task_ts_obj->usa("objname","tstamp_obj","objname","save_app_vars_exp_3()","save_app_vars_exp_3()",null,null);
+	$task_ts_obj->usa("userid","tstamp_obj","userid","save_app_vars_exp_4()","save_app_vars_exp_4()",null,null);
+	$task_ts_obj->usa("fdate","tstamp_obj","fdate",null,null,null,null);
+	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
+}
+
+function save_app_vars§§set_ts_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_app_vars_exp_11()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_app_vars_exp_12()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_app_vars§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set repository file path") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_app_vars_exp_2()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "contents", save_app_vars_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::exe("write_var", False, "appvars") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "contents", save_app_vars_exp_8()) && $o2exe->e();
+//	$o2exe->s(7) && True && o2act::remark("Write file") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::script(save_app_vars_exp_9()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_app_vars§§write_var_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_app_vars_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_app_vars_exp_1() {
+	$ret = o2val('prg§_§var','contents').'
+o2def::appvar("'.o2val('appvars','name').'", "'.o2val('appvars','datatype').'");';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_2() {
+	$path = (o2val('_o2SESSION','usrdir').o2val('_o2SESSION','rep_appvars') ?
+         o2val('_o2SESSION','usrdir') :
+         o2val('_o2SESSION','prgdir')).o2val('_o2SESSION','rep_appvars');
+return ($path);
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_3() {
+
+return (o2val('_o2SESSION','rep_appvars'));
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_4() {
+
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_5() {
+
+return ('<?php');
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_6() {
+
+return (o2val('prg§_§var','pathfile'));
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_7() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_8() {
+
+return (trim(o2val('prg§_§var','contents'))."\n?>");
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_9() {
+	file_put_contents(o2val('prg§_§var','pathfile'), o2val('prg§_§var','contents'));
+return (true);
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_11() {
+
+return (o2file_date(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+
+function save_app_vars_exp_12() {
+
+return (o2file_time(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+?>

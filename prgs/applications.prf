@@ -1,0 +1,752 @@
+<?php
+
+function applications§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("default_db", "_o2logical");
+	$task_prg§_§var->definisci("window_add", "_o2logical");
+		}
+
+function applications§§recents_def(&$task_recents, $_o2viewalias = "") {
+	$task_recents->righe_vis = 100;
+
+	$task_recents->usa_file("recents","recents","pos",null,null);
+
+	$task_recents->usa("username","recents","username","applications_exp_1()","applications_exp_1()",null,null);
+	$task_recents->usa("path","recents","path",null,null,null,null);
+	$task_recents->usa("lastdate","recents","lastdate",null,null,null,null);
+	$task_recents->usa("lasttime","recents","lasttime",null,null,null,null);
+	$task_recents->usa("conn_type","recents","conn_type",null,null,null,null);
+	$task_recents->usa("conn_host","recents","conn_host",null,null,null,null);
+	$task_recents->usa("conn_user","recents","conn_user",null,null,null,null);
+	$task_recents->usa("conn_password","recents","conn_password",null,null,null,null);
+	$task_recents->usa("conn_db","recents","conn_db",null,null,null,null);
+	$task_recents->usa("conn_schema","recents","conn_schema",null,null,null,null);
+	$task_recents->calcola("name","name","applications_exp_2()",null,null,null,null);
+	$task_recents->calcola("reachable","_o2logical","applications_exp_49()",null,null,null,null);
+	$task_recents->calcola("main_folder","path","applications_exp_17()",null,null,null,null);
+	$task_recents->calcola("db_desc","description","applications_exp_35()",null,null,null,null);
+	$task_recents->calcola("last_access","description","applications_exp_9()",null,null,null,null);
+}
+function applications§§prjlist_form_def(&$form_prjlist) {
+	$form_prjlist->x(400);
+	$form_prjlist->y(100);
+	$form_prjlist->x_exp(applications_exp_24());
+	$form_prjlist->larghezza(800);
+	$form_prjlist->altezza(560);
+	$form_prjlist->larghezza_exp(applications_exp_15());
+	$form_prjlist->align_o("Center");
+	$form_prjlist->titolo("Recent projects");
+	$form_prjlist->frm_status(applications_exp_9999());
+	$form_prjlist->css_doc("hidden");
+	$form_prjlist->css_close("hidden");
+	$form_prjlist->css_open("hidden");
+	$form_prjlist->css_exit("hidden");
+	$form_prjlist->refresh_action("start");
+	$form_prjlist->refresh_exp("applications_exp_40()");
+	$ctrl_o2separator2 = &$form_prjlist->ctrldef("o2separator2", "line", "", "", "");
+		$ctrl_o2separator2->x(10);
+		$ctrl_o2separator2->y(332);
+		$ctrl_o2separator2->larghezza(140);
+		$ctrl_o2separator2->altezza(2);
+	$ctrl_o2table2 = &$form_prjlist->ctrldef("o2table2", "tab", "", "recents", "");
+		$ctrl_o2table2->x(160);
+		$ctrl_o2table2->y(20);
+		$ctrl_o2table2->larghezza(630);
+		$ctrl_o2table2->altezza(490);
+		$ctrl_o2table2->expand("H");
+		$ctrl_o2table2->modificabile(applications_exp_9999());
+	$ctrl_o2button2 = &$form_prjlist->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(10);
+		$ctrl_o2button2->y(358);
+		$ctrl_o2button2->larghezza(140);
+		$ctrl_o2button2->altezza(32);
+		$ctrl_o2button2->modificabile(applications_exp_59());
+		$ctrl_o2button2->azione("recents_select");
+		$ctrl_o2button2->label("&Select");
+		$ctrl_o2button2->css(applications_exp_58());
+	$ctrl_o2button3 = &$form_prjlist->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(10);
+		$ctrl_o2button3->y(398);
+		$ctrl_o2button3->larghezza(140);
+		$ctrl_o2button3->altezza(32);
+		$ctrl_o2button3->azione("recents_add");
+		$ctrl_o2button3->label("&Add project");
+		$ctrl_o2button3->css(applications_exp_47());
+	$ctrl_o2button7 = &$form_prjlist->ctrldef("o2button7", "button", "", "", "");
+		$ctrl_o2button7->x(10);
+		$ctrl_o2button7->y(438);
+		$ctrl_o2button7->larghezza(140);
+		$ctrl_o2button7->altezza(32);
+		$ctrl_o2button7->azione("newproject");
+		$ctrl_o2button7->label("Create &project");
+		$ctrl_o2button7->css(applications_exp_55());
+	$ctrl_o2button8 = &$form_prjlist->ctrldef("o2button8", "button", "", "", "");
+		$ctrl_o2button8->x(10);
+		$ctrl_o2button8->y(478);
+		$ctrl_o2button8->larghezza(140);
+		$ctrl_o2button8->altezza(32);
+		$ctrl_o2button8->modificabile(applications_exp_57());
+		$ctrl_o2button8->azione("recents_delete");
+		$ctrl_o2button8->label("&Delete project");
+		$ctrl_o2button8->css(applications_exp_56());
+	$ctrl_o2image4 = &$form_prjlist->ctrldef("o2image4", "img", "", "", "");
+		$ctrl_o2image4->x(10);
+		$ctrl_o2image4->y(20);
+		$ctrl_o2image4->larghezza(140);
+		$ctrl_o2image4->altezza(300);
+		$ctrl_o2image4->imgexp(applications_exp_21());
+	$ctrl_o2dbnavigator2 = &$form_prjlist->ctrldef("o2dbnavigator2", "navigator", "", "recents", "");
+		$ctrl_o2dbnavigator2->x(2);
+		$ctrl_o2dbnavigator2->y(0);
+		$ctrl_o2dbnavigator2->larghezza(790);
+		$ctrl_o2dbnavigator2->altezza(18);
+		$ctrl_o2dbnavigator2->css_space(applications_exp_36());
+		$ctrl_o2dbnavigator2->visible_new(applications_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(applications_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(applications_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(applications_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(applications_exp_9999());
+		$ctrl_o2dbnavigator2->enable_select(applications_exp_51());
+		$ctrl_o2dbnavigator2->act_select("recents_select");
+	$ctrl_o2image8 = &$form_prjlist->ctrldef("o2image8", "img", "o2table2", "", "");
+		$ctrl_o2image8->x(0);
+		$ctrl_o2image8->y(10);
+		$ctrl_o2image8->larghezza(24);
+		$ctrl_o2image8->altezza(24);
+		$ctrl_o2image8->info_padre(array("01", "01", "01"));
+		$ctrl_o2image8->imgexp(applications_exp_50());
+	$ctrl_o2edit4 = &$form_prjlist->ctrldef("o2edit4", "edit", "o2table2", "recents", "name");
+		$ctrl_o2edit4->x(24);
+		$ctrl_o2edit4->y(10);
+		$ctrl_o2edit4->larghezza(120);
+		$ctrl_o2edit4->altezza(24);
+		$ctrl_o2edit4->info_padre(array("01", "02", "02", "Project", False, "", False, ""));
+	$ctrl_o2edit2 = &$form_prjlist->ctrldef("o2edit2", "edit", "o2table2", "recents", "main_folder");
+		$ctrl_o2edit2->x(144);
+		$ctrl_o2edit2->y(10);
+		$ctrl_o2edit2->larghezza(300);
+		$ctrl_o2edit2->altezza(24);
+		$ctrl_o2edit2->expand("H");
+		$ctrl_o2edit2->info_padre(array("01", "03", "03", "Root folder", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit12 = &$form_prjlist->ctrldef("o2edit12", "edit", "o2table2", "recents", "last_access");
+		$ctrl_o2edit12->x(444);
+		$ctrl_o2edit12->y(10);
+		$ctrl_o2edit12->larghezza(120);
+		$ctrl_o2edit12->altezza(24);
+		$ctrl_o2edit12->info_padre(array("01", "04", "04", "Last access", False, "", False, ""));
+		}
+function applications§§select_prj_form_def(&$form_select_prj) {
+	$form_select_prj->x(260);
+	$form_select_prj->y(100);
+	$form_select_prj->larghezza(520);
+	$form_select_prj->altezza(400);
+	$form_select_prj->align_o("Center");
+	$form_select_prj->titolo("Select project");
+	$form_select_prj->frm_status(applications_exp_9999());
+	$form_select_prj->close_action("close_add");
+	$ctrl_o2label7 = &$form_select_prj->ctrldef("o2label7", "label", "", "", "");
+		$ctrl_o2label7->x(20);
+		$ctrl_o2label7->y(235);
+		$ctrl_o2label7->larghezza(140);
+		$ctrl_o2label7->altezza(24);
+		$ctrl_o2label7->visibile(applications_exp_31());
+		$ctrl_o2label7->label("Host:");
+	$ctrl_o2label5 = &$form_select_prj->ctrldef("o2label5", "label", "", "", "");
+		$ctrl_o2label5->x(20);
+		$ctrl_o2label5->y(180);
+		$ctrl_o2label5->larghezza(140);
+		$ctrl_o2label5->altezza(24);
+		$ctrl_o2label5->visibile(applications_exp_37());
+		$ctrl_o2label5->label("Use default archive:");
+	$ctrl_o2label8 = &$form_select_prj->ctrldef("o2label8", "label", "", "", "");
+		$ctrl_o2label8->x(20);
+		$ctrl_o2label8->y(260);
+		$ctrl_o2label8->larghezza(140);
+		$ctrl_o2label8->altezza(24);
+		$ctrl_o2label8->visibile(applications_exp_31());
+		$ctrl_o2label8->label("Database:");
+	$ctrl_o2label9 = &$form_select_prj->ctrldef("o2label9", "label", "", "", "");
+		$ctrl_o2label9->x(20);
+		$ctrl_o2label9->y(210);
+		$ctrl_o2label9->larghezza(480);
+		$ctrl_o2label9->altezza(24);
+		$ctrl_o2label9->visibile(applications_exp_20());
+		$ctrl_o2label9->label(applications_exp_19());
+	$ctrl_o2label4 = &$form_select_prj->ctrldef("o2label4", "label", "", "", "");
+		$ctrl_o2label4->x(20);
+		$ctrl_o2label4->y(120);
+		$ctrl_o2label4->larghezza(140);
+		$ctrl_o2label4->altezza(24);
+		$ctrl_o2label4->visibile(applications_exp_37());
+		$ctrl_o2label4->label("Main folder:");
+	$ctrl_o2label6 = &$form_select_prj->ctrldef("o2label6", "label", "", "", "");
+		$ctrl_o2label6->x(20);
+		$ctrl_o2label6->y(210);
+		$ctrl_o2label6->larghezza(140);
+		$ctrl_o2label6->altezza(24);
+		$ctrl_o2label6->visibile(applications_exp_31());
+		$ctrl_o2label6->label("Engine:");
+	$ctrl_o2label2 = &$form_select_prj->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(20);
+		$ctrl_o2label2->y(20);
+		$ctrl_o2label2->larghezza(140);
+		$ctrl_o2label2->altezza(24);
+		$ctrl_o2label2->label("Select project:");
+	$ctrl_o2label3 = &$form_select_prj->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(20);
+		$ctrl_o2label3->y(90);
+		$ctrl_o2label3->larghezza(140);
+		$ctrl_o2label3->altezza(24);
+		$ctrl_o2label3->visibile(applications_exp_37());
+		$ctrl_o2label3->label("Application name:");
+	$ctrl_o2separator3 = &$form_select_prj->ctrldef("o2separator3", "line", "", "", "");
+		$ctrl_o2separator3->x(20);
+		$ctrl_o2separator3->y(290);
+		$ctrl_o2separator3->larghezza(480);
+		$ctrl_o2separator3->altezza(10);
+	$ctrl_o2edit6 = &$form_select_prj->ctrldef("o2edit6", "edit", "", "recents", "path");
+		$ctrl_o2edit6->x(160);
+		$ctrl_o2edit6->y(20);
+		$ctrl_o2edit6->larghezza(314);
+		$ctrl_o2edit6->altezza(24);
+	$ctrl_o2edit7 = &$form_select_prj->ctrldef("o2edit7", "edit", "", "recents", "name");
+		$ctrl_o2edit7->x(160);
+		$ctrl_o2edit7->y(90);
+		$ctrl_o2edit7->larghezza(200);
+		$ctrl_o2edit7->altezza(24);
+		$ctrl_o2edit7->modificabile(applications_exp_9999());
+		$ctrl_o2edit7->visibile(applications_exp_37());
+	$ctrl_o2edit8 = &$form_select_prj->ctrldef("o2edit8", "edit", "", "recents", "main_folder");
+		$ctrl_o2edit8->x(160);
+		$ctrl_o2edit8->y(120);
+		$ctrl_o2edit8->larghezza(340);
+		$ctrl_o2edit8->altezza(24);
+		$ctrl_o2edit8->modificabile(applications_exp_9999());
+		$ctrl_o2edit8->visibile(applications_exp_37());
+	$ctrl_o2button4 = &$form_select_prj->ctrldef("o2button4", "button", "", "", "");
+		$ctrl_o2button4->x(410);
+		$ctrl_o2button4->y(320);
+		$ctrl_o2button4->larghezza(90);
+		$ctrl_o2button4->altezza(30);
+		$ctrl_o2button4->azione("add");
+		$ctrl_o2button4->label("&Add");
+		$ctrl_o2button4->css(applications_exp_58());
+	$ctrl_o2button5 = &$form_select_prj->ctrldef("o2button5", "button", "", "", "");
+		$ctrl_o2button5->x(476);
+		$ctrl_o2button5->y(20);
+		$ctrl_o2button5->larghezza(24);
+		$ctrl_o2button5->altezza(24);
+		$ctrl_o2button5->azione("select_project");
+		$ctrl_o2button5->label("...");
+	$ctrl_o2checkbox2 = &$form_select_prj->ctrldef("o2checkbox2", "check", "", "prg§_§var", "default_db");
+		$ctrl_o2checkbox2->x(160);
+		$ctrl_o2checkbox2->y(180);
+		$ctrl_o2checkbox2->larghezza(24);
+		$ctrl_o2checkbox2->altezza(24);
+		$ctrl_o2checkbox2->visibile(applications_exp_37());
+		$ctrl_o2checkbox2->azione("on_archive_change");
+		$ctrl_o2checkbox2->on_change(applications_exp_18());
+	$ctrl_o2edit9 = &$form_select_prj->ctrldef("o2edit9", "edit", "", "recents", "conn_host");
+		$ctrl_o2edit9->x(160);
+		$ctrl_o2edit9->y(235);
+		$ctrl_o2edit9->larghezza(340);
+		$ctrl_o2edit9->altezza(24);
+		$ctrl_o2edit9->modificabile(applications_exp_9999());
+		$ctrl_o2edit9->visibile(applications_exp_31());
+	$ctrl_o2edit10 = &$form_select_prj->ctrldef("o2edit10", "edit", "", "recents", "db_desc");
+		$ctrl_o2edit10->x(160);
+		$ctrl_o2edit10->y(260);
+		$ctrl_o2edit10->larghezza(340);
+		$ctrl_o2edit10->altezza(24);
+		$ctrl_o2edit10->modificabile(applications_exp_9999());
+		$ctrl_o2edit10->visibile(applications_exp_31());
+	$ctrl_o2button6 = &$form_select_prj->ctrldef("o2button6", "button", "", "", "");
+		$ctrl_o2button6->x(410);
+		$ctrl_o2button6->y(202);
+		$ctrl_o2button6->larghezza(90);
+		$ctrl_o2button6->altezza(30);
+		$ctrl_o2button6->visibile(applications_exp_31());
+		$ctrl_o2button6->azione("select_archive");
+		$ctrl_o2button6->label("&Change");
+	$ctrl_o2edit11 = &$form_select_prj->ctrldef("o2edit11", "edit", "", "recents", "conn_type");
+		$ctrl_o2edit11->x(160);
+		$ctrl_o2edit11->y(210);
+		$ctrl_o2edit11->larghezza(200);
+		$ctrl_o2edit11->altezza(24);
+		$ctrl_o2edit11->modificabile(applications_exp_9999());
+		$ctrl_o2edit11->visibile(applications_exp_31());
+	$ctrl_o2button9 = &$form_select_prj->ctrldef("o2button9", "button", "", "", "");
+		$ctrl_o2button9->x(310);
+		$ctrl_o2button9->y(320);
+		$ctrl_o2button9->larghezza(90);
+		$ctrl_o2button9->altezza(30);
+		$ctrl_o2button9->azione("close_add");
+		$ctrl_o2button9->label("&Cancel");
+		$ctrl_o2button9->css(applications_exp_29());
+		}
+
+function applications§§add_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("recents", "S", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("close_add", True, "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("recents", "4", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§close_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§close_add_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "window_add", applications_exp_9999()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§default_archive_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("recents", "conn_type", applications_exp_33()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("recents", "conn_host", applications_exp_30()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("recents", "conn_user", applications_exp_30()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("recents", "conn_password", applications_exp_30()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("recents", "conn_db", applications_exp_30()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("recents", "conn_schema", applications_exp_30()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§newproject_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("new_project", False, "recents§§path") && $o2exe->e();
+	$o2exe->s(2) && (applications_exp_37() || $o2exe->e()) && o2act::set("prg§_§var", "default_db", applications_exp_9998()) && $o2exe->e();
+	$o2exe->s(3) && (applications_exp_37() || $o2exe->e()) && o2act::set("prg§_§var", "window_add", applications_exp_9998()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§on_archive_change_act(&$o2exe) {
+	$o2exe->s(1) && (applications_exp_31() || $o2exe->e()) && o2act::exe("select_archive", True, "") && $o2exe->e();
+	$o2exe->s(2) && (applications_exp_32() || $o2exe->e()) && o2act::exe("default_archive", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§on_prj_shortcut_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("applications_exp_48() is called by key-press events") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(applications_exp_48()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§recents_add_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "window_add", applications_exp_18()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("recents", "I", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("recents", "username", applications_exp_1()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("recents", "conn_type", applications_exp_33()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "default_db", applications_exp_18()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§recents_delete_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("recents", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§recents_post_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("recents", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§recents_select_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("recents", "lastdate", applications_exp_3()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("recents", "lasttime", applications_exp_4()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("recents_post", True, "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("_o2SESSION", "appname", applications_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("_o2SESSION", "appdir", applications_exp_6()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("_o2SESSION", "prgdir", applications_exp_7()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("_o2SESSION", "usrdir", applications_exp_8()) && $o2exe->e();
+//	$o2exe->s(8) && True && o2act::remark("-- Set application database") && $o2exe->e();
+	$o2exe->s(9) && True && o2act::set("_o2SESSION", "archive_gateway", applications_exp_34()) && $o2exe->e();
+	$o2exe->s(10) && True && o2act::call("on_request", False) && $o2exe->e();
+//	$o2exe->s(11) && True && o2act::remark("Set DB") && $o2exe->e();
+	$o2exe->s(12) && True && o2act::script(applications_exp_16()) && $o2exe->e();
+//	$o2exe->s(13) && True && o2act::remark("Set status-bar") && $o2exe->e();
+	$o2exe->s(14) && True && o2act::exe("set_statusbar", True, "") && $o2exe->e();
+	$o2exe->s(15) && True && o2act::call("load_app_prop", False) && $o2exe->e();
+//	$o2exe->s(16) && True && o2act::remark("--DATATYPES--") && $o2exe->e();
+	$o2exe->s(17) && True && o2act::call("check_ts_obj", False, applications_exp_11()) && $o2exe->e();
+//	$o2exe->s(18) && True && o2act::remark("--APPVARS--") && $o2exe->e();
+	$o2exe->s(19) && True && o2act::call("check_ts_obj", False, applications_exp_10()) && $o2exe->e();
+//	$o2exe->s(20) && True && o2act::remark("--SERVERS&DATABASES--") && $o2exe->e();
+	$o2exe->s(21) && True && o2act::call("check_ts_obj", False, applications_exp_13()) && $o2exe->e();
+//	$o2exe->s(22) && True && o2act::remark("--TABLES--") && $o2exe->e();
+	$o2exe->s(23) && True && o2act::call("check_ts_obj", False, applications_exp_12()) && $o2exe->e();
+//	$o2exe->s(24) && True && o2act::remark("--MENU--") && $o2exe->e();
+	$o2exe->s(25) && True && o2act::call("check_ts_obj", False, applications_exp_14()) && $o2exe->e();
+//	$o2exe->s(26) && True && o2act::remark("--PROGRAMS LIST--") && $o2exe->e();
+	$o2exe->s(27) && True && o2act::menu("base") && $o2exe->e();
+	$o2exe->s(28) && True && o2act::call("load_programs", False) && $o2exe->e();
+	$o2exe->s(29) && True && o2act::gotoprg("project", false) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§recents_undo_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("recents", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§select_archive_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_app_archive", False, "recents§§conn_type", "recents§§conn_host", "recents§§conn_user", "recents§§conn_password", "recents§§conn_db", "recents§§conn_schema") && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§select_project_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call(applications_exp_23(), False, "recents§§path", applications_exp_25(), applications_exp_26(), applications_exp_27(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_28()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§set_statusbar_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("PANEL Dialog") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("_o2SESSION", "status_bar1", applications_exp_52()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("PANEL Project") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("_o2SESSION", "status_bar2", applications_exp_53()) && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("PANEL Archive") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("_o2SESSION", "status_bar3", applications_exp_54()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::gotoprg("applications", false, applications_exp_9998()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function applications_exp_1() {
+	
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function applications_exp_2() {
+	
+return (o2file_basename(o2val('recents','path')));
+	} //|o2_fine_exp|
+
+function applications_exp_3() {
+	
+return (date('Ymd'));
+	} //|o2_fine_exp|
+
+function applications_exp_4() {
+	
+return (date('His'));
+	} //|o2_fine_exp|
+
+function applications_exp_5() {
+	
+return (o2val('recents','name'));
+	} //|o2_fine_exp|
+
+function applications_exp_6() {
+	
+return (o2file_dir(dirname(o2val('recents','path'))));
+	} //|o2_fine_exp|
+
+function applications_exp_7() {
+	
+return (o2val('_o2SESSION','appdir').'prgs'.DIRECTORY_SEPARATOR);
+	} //|o2_fine_exp|
+
+function applications_exp_8() {
+	
+return (o2val('_o2SESSION','prgdir').o2app_user().DIRECTORY_SEPARATOR);
+	} //|o2_fine_exp|
+
+function applications_exp_9() {
+	
+return (o2format(o2val('recents','lastdate'), "short_date")." ".o2format(o2val('recents','lasttime'), "short_time"));
+	} //|o2_fine_exp|
+
+function applications_exp_10() {
+	
+return (o2val('_o2SESSION','rep_appvars'));
+	} //|o2_fine_exp|
+
+function applications_exp_11() {
+	
+return (o2val('_o2SESSION','rep_datatypes'));
+	} //|o2_fine_exp|
+
+function applications_exp_12() {
+	
+return (o2val('_o2SESSION','rep_tables'));
+	} //|o2_fine_exp|
+
+function applications_exp_13() {
+	
+return (o2val('_o2SESSION','rep_servers'));
+	} //|o2_fine_exp|
+
+function applications_exp_14() {
+	
+return (o2val('_o2SESSION','rep_menus'));
+	} //|o2_fine_exp|
+
+function applications_exp_15() {
+	
+return ((o2client_width() * 60 / 100));
+	} //|o2_fine_exp|
+
+function applications_exp_16() {
+	$app = $_SESSION['o2_app'];
+/* ___ Set default database ___ */
+if (o2zero('recents','conn_type') ||
+   (o2val('recents','conn_type') == "sqlite3" && o2zero('recents','conn_host'))) {
+   $app_server = $app->server['app'];
+   $app_server->type     = "sqlite3";
+   $app_server->server   = o2val('_o2SESSION','appdir').
+                           o2val('_o2SESSION','appname').".jxp";
+   $app_server->user     = "";
+   $app_server->password = "";
+   $app_db = $app->db['app'];
+   $app_db->server       = $app_server;
+   $app_db->nome         = "";
+   $app_db->proprietario = "";
+   $app_db->create_tabs  = true;
+
+   }
+/* ___ Set selected database ___ */
+else {
+   $app_server = $app->server['app'];
+   $app_server->type     = o2val('recents','conn_type');
+   $app_server->server   = o2val('recents','conn_host');
+   $app_server->user     = o2val('recents','conn_user');
+   $app_server->password = o2val('recents','conn_password');
+   $app_db = $app->db['app'];
+   $app_db->server       = $app_server;
+   $app_db->nome         = o2val('recents','conn_db');
+   $app_db->proprietario = o2val('recents','conn_schema');
+   $app_db->create_tabs  = true;
+   }
+$app->create_tables();
+return (true);
+	} //|o2_fine_exp|
+
+function applications_exp_17() {
+	if (o2val('recents','reachable')) {
+   $mf = o2file_fullname(o2file_dir(o2val('recents','path')).
+         '..'.DIRECTORY_SEPARATOR).DIRECTORY_SEPARATOR;
+   }
+else {
+   $mf = o2file_dir(o2file_dir(o2val('recents','path')));
+   }
+return ($mf);
+	} //|o2_fine_exp|
+
+function applications_exp_18() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function applications_exp_19() {
+	
+return (o2val('recents','main_folder').o2val('recents','name').".jxp");
+	} //|o2_fine_exp|
+
+function applications_exp_20() {
+	
+return (o2val('recents','path') && o2val('prg§_§var','default_db'));
+	} //|o2_fine_exp|
+
+function applications_exp_21() {
+	
+return ("cover.png");
+	} //|o2_fine_exp|
+
+function applications_exp_22() {
+	
+return (o2val('prg§_§var','window_add'));
+	} //|o2_fine_exp|
+
+function applications_exp_23() {
+	
+return ("tools/o2sys_fs_browser");
+	} //|o2_fine_exp|
+
+function applications_exp_24() {
+	
+return ((o2client_width() * 60 / 200));
+	} //|o2_fine_exp|
+
+function applications_exp_25() {
+	
+return ("*");
+	} //|o2_fine_exp|
+
+function applications_exp_26() {
+	
+return (constant("DIRECTORY_SEPARATOR"));
+	} //|o2_fine_exp|
+
+function applications_exp_27() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function applications_exp_28() {
+	
+return ("Select existing Janox project");
+	} //|o2_fine_exp|
+
+function applications_exp_29() {
+	
+return (' jxbtn_cancel');
+	} //|o2_fine_exp|
+
+function applications_exp_30() {
+	
+return ("");
+	} //|o2_fine_exp|
+
+function applications_exp_31() {
+	
+return (!o2val('prg§_§var','default_db'));
+	} //|o2_fine_exp|
+
+function applications_exp_32() {
+	
+return (o2val('prg§_§var','default_db'));
+	} //|o2_fine_exp|
+
+function applications_exp_33() {
+	
+return ("sqlite3");
+	} //|o2_fine_exp|
+
+function applications_exp_34() {
+	
+return (o2val('recents','conn_type'));
+	} //|o2_fine_exp|
+
+function applications_exp_35() {
+	$desc = (o2zero('recents','conn_schema') ? "" : o2val('recents','conn_schema').".").
+        o2val('recents','conn_db').
+        (o2zero('recents','conn_user') ? "" : " (".o2val('recents','conn_user').")");
+return ($desc);
+	} //|o2_fine_exp|
+
+function applications_exp_36() {
+	
+return ('hidden');
+	} //|o2_fine_exp|
+
+function applications_exp_37() {
+	
+return (o2val('recents','path'));
+	} //|o2_fine_exp|
+
+function applications_exp_38() {
+	
+return (!o2val('prg§_§var','window_add'));
+	} //|o2_fine_exp|
+
+function applications_exp_39() {
+	
+return (o2zero('recents','path'));
+	} //|o2_fine_exp|
+
+function applications_exp_40() {
+	
+return ((o2par(1) ? 0 : 0.3));
+	} //|o2_fine_exp|
+
+function applications_exp_47() {
+	
+return (' jxbtn_add');
+	} //|o2_fine_exp|
+
+function applications_exp_48() {
+	/*     This function is called directly from key-press events     */
+list($gtkctrl, $gtkevent) = func_get_args();
+$action_name              = false;
+$app                      = $_SESSION['o2_app'];
+if ($gtkevent->state & Gdk::MOD1_MASK) {
+    switch ($gtkevent->keyval) {
+        // ________________________________________ ALT+A for "Add" shortcut ___
+        case Gdk::KEY_a:
+        case Gdk::KEY_A:
+            $action_name = "recents_add";
+            break;
+        // _________________________________ ALT+N for "Create new" shortcut ___
+        case Gdk::KEY_n:
+        case Gdk::KEY_N:
+            $action_name = "newproject";
+            break;
+        // _____________________________________ ALT+D for "Remove" shortcut ___
+        case Gdk::KEY_d:
+        case Gdk::KEY_D:
+            $action_name = "recents_delete";
+            break;
+        }
+    if ($action_name) {
+        $app->istanze_prg[$app->progressivo_istanze]->esegui_azione($action_name);
+        $app->gtk_exe();
+        }
+    }
+return (false);
+	} //|o2_fine_exp|
+
+function applications_exp_49() {
+	
+return (file_exists(o2val('recents','path')));
+	} //|o2_fine_exp|
+
+function applications_exp_50() {
+	
+return ((o2val('recents','reachable') ? 'app.png' : 'app_dis.png'));
+	} //|o2_fine_exp|
+
+function applications_exp_51() {
+	
+return (o2val('recents','reachable'));
+	} //|o2_fine_exp|
+
+function applications_exp_52() {
+	
+return ("Ready");
+	} //|o2_fine_exp|
+
+function applications_exp_53() {
+	$prj = '<b>'.o2val('recents','name').
+       '</b> &nbsp; ['.o2val('recents','main_folder').']';
+return ($prj);
+	} //|o2_fine_exp|
+
+function applications_exp_54() {
+	/*   Default database   */
+if (o2zero('recents','conn_type') ||
+    (o2val('recents','conn_type') == 'sqlite3' &&
+     o2zero('recents','conn_host'))) {
+   $db = o2val('recents','name').'.jxp';
+   }
+/*   Custom database   */
+else {
+   $db = o2val('recents','conn_type').' '.
+         (o2zero('recents','conn_user') ? '' : o2val('recents','conn_user').'@').
+         (o2zero('recents','conn_schema') ? '' : o2val('recents','conn_schema').'.').
+         o2val('recents','conn_db').
+         ' on '.o2val('recents','conn_host');
+   }
+return ($db);
+	} //|o2_fine_exp|
+
+function applications_exp_55() {
+	
+return (' jxbtn_create');
+	} //|o2_fine_exp|
+
+function applications_exp_56() {
+	
+return (' jxbtn_delete');
+	} //|o2_fine_exp|
+
+function applications_exp_57() {
+	
+return (o2view_rec("recents"));
+	} //|o2_fine_exp|
+
+function applications_exp_58() {
+	
+return (' jxbtn_save');
+	} //|o2_fine_exp|
+
+function applications_exp_59() {
+	
+return (o2view_rec("recents") && o2val('recents','reachable'));
+	} //|o2_fine_exp|
+
+function applications_exp_9998() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function applications_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>

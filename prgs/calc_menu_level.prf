@@ -1,0 +1,79 @@
+<?php
+
+function calc_menu_level§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("level_local", "_o2number");
+	$task_prg§_§var->definisci("name_local", "name");
+		}
+
+function calc_menu_level§§menu_def(&$task_menu, $_o2viewalias = "") {
+	$task_menu->righe_vis = 10;
+
+	$task_menu->usa_file("menu","menu","name");
+
+	$task_menu->usa("userid","menu","userid","calc_menu_level_exp_1()","calc_menu_level_exp_1()",null,null);
+	$task_menu->usa("name","menu","name","calc_menu_level_exp_7()","calc_menu_level_exp_7()",null,null);
+	$task_menu->usa("parentname","menu","parentname",null,null,null,null);
+}
+
+function calc_menu_level§§check_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "level_local", calc_menu_level_exp_3()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "name_local", calc_menu_level_exp_5()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function calc_menu_level§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "name_local", calc_menu_level_exp_6()) && $o2exe->e();
+	$o2exe->s(2) && (calc_menu_level_exp_9() || $o2exe->e()) && o2act::exe("check", "calc_menu_level_exp_2()", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::ret(3, calc_menu_level_exp_4()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function calc_menu_level_exp_1() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_2() {
+
+return (o2val('menu','parentname')=='');
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_3() {
+
+return (o2val('prg§_§var','level_local')+1);
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_4() {
+
+return (o2val('prg§_§var','level_local'));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_5() {
+
+return (o2val('menu','parentname'));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_6() {
+
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_7() {
+
+return (o2val('prg§_§var','name_local'));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_8() {
+
+return (o2par(2) .'/'.o2val('menu','parentname'));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_9() {
+
+return (!o2zero('menu','parentname'));
+	} //|o2_fine_exp|
+
+function calc_menu_level_exp_10() {
+
+return (5);
+	} //|o2_fine_exp|
+?>

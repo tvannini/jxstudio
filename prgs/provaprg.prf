@@ -1,0 +1,380 @@
+<?php
+
+function provaprg§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("var1", "appvarname");
+	$task_prg§_§var->definisci("var2", "datatypename");
+		}
+
+function provaprg§§view1_def(&$task_view1, $_o2viewalias = "") {
+	$task_view1->righe_vis = 10;
+
+	$task_view1->usa_file("actions","actions","name");
+
+	$task_view1->usa("userid","actions","userid",null,null,null,null);
+	$task_view1->usa("prgname","actions","prgname",null,null,null,null);
+	$task_view1->usa("name","actions","name",null,null,null,null);
+	$task_view1->usa("service","actions","service",null,null,null,null);
+}
+
+function provaprg§§view2_def(&$task_view2, $_o2viewalias = "") {
+	$task_view2->righe_vis = 10;
+
+	$task_view2->usa_file("operations","operations","position");
+	$task_view2->usa_file_link("actions","actions","name");
+
+	$task_view2->unisci("actions_userid_join_","actions","userid","provaprg_exp_1()","provaprg_exp_1()",null,null);
+	$task_view2->unisci("actions_prgname_join_","actions","prgname","provaprg_exp_2()","provaprg_exp_2()",null,null);
+	$task_view2->unisci("actions_name_join_","actions","name","provaprg_exp_3()","provaprg_exp_3()",null,null);
+
+	$task_view2->usa("userid","operations","userid","provaprg_exp_4()","provaprg_exp_8()",null,null);
+	$task_view2->usa("prgname","operations","prgname",null,null,null,null);
+	$task_view2->usa("actname","operations","actname",null,null,null,"provaprg_exp_7()");
+	$task_view2->usa("name","actions","name",null,null,"provaprg_exp_6()",null);
+	$task_view2->usa("service","actions","service",null,null,null,null);
+	$task_view2->calcola("prova_calc","o2sys_long_str","provaprg_exp_5()",null,null,null,null);
+}
+function provaprg§§prova_protocol_protocollo_def(&$protocollo_prova_protocol) {
+	$protocollo_prova_protocol->usa("userid", "view1", "userid", "");
+	$protocollo_prova_protocol->usa("prgname", "view1", "prgname", "");
+	$protocollo_prova_protocol->usa("prgname", "view1", "prgname", "");
+	$protocollo_prova_protocol->usa("prova_calc", "view2", "prova_calc", "description");
+		}
+function provaprg§§provaprg_1_form_def(&$form_provaprg_1) {
+	$form_provaprg_1->x(374);
+	$form_provaprg_1->y(45);
+	$form_provaprg_1->larghezza(739);
+	$form_provaprg_1->altezza(665);
+	$form_provaprg_1->titolo(provaprg_exp_9());
+	$form_provaprg_1->css_finestra("btn_uncheck");
+	$form_provaprg_1->css_title(provaprg_exp_9());
+	$form_provaprg_1->close_action("closeform");
+	$form_provaprg_1->align_o("Center");
+	$form_provaprg_1->x_exp(provaprg_exp_10());
+	$form_provaprg_1->altezza_exp(provaprg_exp_11());
+	$form_provaprg_1->frm_title(provaprg_exp_14());
+	$form_provaprg_1->frm_status(provaprg_exp_15());
+	$form_provaprg_1->refresh_action("refreshform");
+	$form_provaprg_1->refresh_exp("provaprg_exp_16()");
+	$ctrl_o2htmlarea2 = &$form_provaprg_1->ctrldef("o2htmlarea2", "htmlarea", "", "", "");
+		$ctrl_o2htmlarea2->x(30);
+		$ctrl_o2htmlarea2->y(420);
+		$ctrl_o2htmlarea2->larghezza(290);
+		$ctrl_o2htmlarea2->altezza(180);
+		$ctrl_o2htmlarea2->html(provaprg_exp_15());
+		$ctrl_o2htmlarea2->expand("B");
+		$ctrl_o2htmlarea2->css(provaprg_exp_9());
+	$ctrl_o2document2 = &$form_provaprg_1->ctrldef("o2document2", "document", "", "", "");
+		$ctrl_o2document2->x(360);
+		$ctrl_o2document2->y(430);
+		$ctrl_o2document2->larghezza(280);
+		$ctrl_o2document2->altezza(160);
+		$ctrl_o2document2->path(provaprg_exp_16());
+		$ctrl_o2document2->css("lbl_checkedby");
+	$ctrl_o2separator2 = &$form_provaprg_1->ctrldef("o2separator2", "line", "", "", "");
+		$ctrl_o2separator2->x(80);
+		$ctrl_o2separator2->y(380);
+		$ctrl_o2separator2->larghezza(330);
+		$ctrl_o2separator2->altezza(10);
+	$ctrl_o2label2 = &$form_provaprg_1->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(120);
+		$ctrl_o2label2->y(260);
+		$ctrl_o2label2->larghezza(100);
+		$ctrl_o2label2->altezza(20);
+		$ctrl_o2label2->label("label1");
+	$ctrl_o2table2 = &$form_provaprg_1->ctrldef("o2table2", "tab", "", "view1", "");
+		$ctrl_o2table2->x(0);
+		$ctrl_o2table2->y(0);
+		$ctrl_o2table2->larghezza(250);
+		$ctrl_o2table2->altezza(200);
+		$ctrl_o2table2->norec_msg("PROVA");
+		$ctrl_o2table2->hide_indicator(provaprg_exp_1());
+	$ctrl_o2image2 = &$form_provaprg_1->ctrldef("o2image2", "img", "", "", "");
+		$ctrl_o2image2->x(480);
+		$ctrl_o2image2->y(270);
+		$ctrl_o2image2->larghezza(150);
+		$ctrl_o2image2->altezza(120);
+		$ctrl_o2image2->azione("view1_undo");
+		$ctrl_o2image2->imgexp(provaprg_exp_14());
+		$ctrl_o2image2->imgoverexp(provaprg_exp_15());
+		$ctrl_o2image2->immagine("prova");
+	$ctrl_o2button2 = &$form_provaprg_1->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(80);
+		$ctrl_o2button2->y(310);
+		$ctrl_o2button2->larghezza(90);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->azione("refreshform");
+		$ctrl_o2button2->label("Pulsante");
+		$ctrl_o2button2->confirm_message("pppp");
+		$ctrl_o2button2->style(1);
+	$ctrl_o2multipage2 = &$form_provaprg_1->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "var2");
+		$ctrl_o2multipage2->x(260);
+		$ctrl_o2multipage2->y(10);
+		$ctrl_o2multipage2->larghezza(410);
+		$ctrl_o2multipage2->altezza(200);
+		$ctrl_o2multipage2->label(array("Page1","Page2"));
+		$ctrl_o2multipage2->buttons("T");
+	$ctrl_o2checkbox2 = &$form_provaprg_1->ctrldef("o2checkbox2", "check", "", "prg§_§var", "var1");
+		$ctrl_o2checkbox2->x(270);
+		$ctrl_o2checkbox2->y(250);
+		$ctrl_o2checkbox2->larghezza(20);
+		$ctrl_o2checkbox2->altezza(20);
+		$ctrl_o2checkbox2->azione("sbm_change");
+	$ctrl_o2file2 = &$form_provaprg_1->ctrldef("o2file2", "file", "", "view1", "name");
+		$ctrl_o2file2->x(480);
+		$ctrl_o2file2->y(220);
+		$ctrl_o2file2->larghezza(240);
+		$ctrl_o2file2->altezza(20);
+		$ctrl_o2file2->save_as(provaprg_exp_9());
+	$ctrl_o2ListBox3 = &$form_provaprg_1->ctrldef("o2ListBox3", "listcombo", "", "view1", "service");
+		$ctrl_o2ListBox3->x(230);
+		$ctrl_o2ListBox3->y(310);
+		$ctrl_o2ListBox3->larghezza(160);
+		$ctrl_o2ListBox3->altezza(20);
+		$ctrl_o2ListBox3->valori(provaprg_exp_5());
+		$ctrl_o2ListBox3->righe(10);
+	$ctrl_o2button3 = &$form_provaprg_1->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(370);
+		$ctrl_o2button3->y(240);
+		$ctrl_o2button3->larghezza(90);
+		$ctrl_o2button3->altezza(30);
+		$ctrl_o2button3->label("");
+	$ctrl_o2dbnavigator3 = &$form_provaprg_1->ctrldef("o2dbnavigator3", "navigator", "", "view1", "");
+		$ctrl_o2dbnavigator3->x(420);
+		$ctrl_o2dbnavigator3->y(400);
+		$ctrl_o2dbnavigator3->larghezza(20);
+		$ctrl_o2dbnavigator3->altezza(200);
+		$ctrl_o2dbnavigator3->vertical();
+		$ctrl_o2dbnavigator3->visible_nav(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_new(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_save(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_del(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_undo(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_detail(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->visible_select(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_new(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_save(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_del(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_undo(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_detail(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->enable_select(provaprg_exp_1());
+		$ctrl_o2dbnavigator3->act_new("view1_insert");
+		$ctrl_o2dbnavigator3->act_save("view1_post");
+		$ctrl_o2dbnavigator3->act_del("view1_delete");
+		$ctrl_o2dbnavigator3->act_undo("view1_undo");
+		$ctrl_o2dbnavigator3->act_detail("view1_detail");
+		$ctrl_o2dbnavigator3->act_select("view1_select");
+		$ctrl_o2dbnavigator3->confirm_new("ppp");
+		$ctrl_o2dbnavigator3->confirm_save("ggg");
+		$ctrl_o2dbnavigator3->confirm_del("yyy");
+		$ctrl_o2dbnavigator3->confirm_undo("ttt");
+		$ctrl_o2dbnavigator3->confirm_detail("tttt");
+		$ctrl_o2dbnavigator3->confirm_select("tttt");
+	$ctrl_o2textarea2 = &$form_provaprg_1->ctrldef("o2textarea2", "text", "o2multipage2", "view2", "prova_calc");
+		$ctrl_o2textarea2->x(10);
+		$ctrl_o2textarea2->y(70);
+		$ctrl_o2textarea2->larghezza(370);
+		$ctrl_o2textarea2->altezza(100);
+		$ctrl_o2textarea2->info_padre(array(0));
+	$ctrl_o2ListBox2 = &$form_provaprg_1->ctrldef("o2ListBox2", "listcombo", "o2multipage2", "view2", "service");
+		$ctrl_o2ListBox2->x(10);
+		$ctrl_o2ListBox2->y(30);
+		$ctrl_o2ListBox2->larghezza(230);
+		$ctrl_o2ListBox2->altezza(20);
+		$ctrl_o2ListBox2->info_padre(array(0));
+		$ctrl_o2ListBox2->valori(o2_view2list("view1", "userid", "prgname"));
+		$ctrl_o2ListBox2->righe(1);
+	$ctrl_o2edit4 = &$form_provaprg_1->ctrldef("o2edit4", "edit", "o2multipage2", "view2", "name");
+		$ctrl_o2edit4->x(50);
+		$ctrl_o2edit4->y(70);
+		$ctrl_o2edit4->larghezza(100);
+		$ctrl_o2edit4->altezza(20);
+		$ctrl_o2edit4->info_padre(array(1));
+	$ctrl_o2edit2 = &$form_provaprg_1->ctrldef("o2edit2", "edit", "o2table2", "view1", "userid");
+		$ctrl_o2edit2->x(10);
+		$ctrl_o2edit2->y(30);
+		$ctrl_o2edit2->larghezza(100);
+		$ctrl_o2edit2->altezza(20);
+		$ctrl_o2edit2->visibile(provaprg_exp_16());
+		$ctrl_o2edit2->on_change(provaprg_exp_11());
+		$ctrl_o2edit2->info_padre(array("01" ,"01" ,"01" ,provaprg_exp_3() ,True ,provaprg_exp_1() ,False ,""));
+		$ctrl_o2edit2->maschera(provaprg_exp_14());
+	$ctrl_o2edit3 = &$form_provaprg_1->ctrldef("o2edit3", "edit", "o2table2", "view1", "prgname");
+		$ctrl_o2edit3->x(120);
+		$ctrl_o2edit3->y(30);
+		$ctrl_o2edit3->larghezza(100);
+		$ctrl_o2edit3->altezza(20);
+		$ctrl_o2edit3->modificabile(provaprg_exp_15());
+		$ctrl_o2edit3->info_padre(array("01" ,"01" ,"03" ,"titolo" ,True ,"cssline" ,True ,"cssheader"));
+		$ctrl_o2edit3->maschera("on_off");
+		$ctrl_o2edit3->pswd(true);
+	$ctrl_o2dbnavigator2 = &$form_provaprg_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "view1", "");
+		$ctrl_o2dbnavigator2->x(10);
+		$ctrl_o2dbnavigator2->y(160);
+		$ctrl_o2dbnavigator2->larghezza(200);
+		$ctrl_o2dbnavigator2->altezza(20);
+		$ctrl_o2dbnavigator2->info_padre(array("02" ,"01" ,"02"));
+		$ctrl_o2dbnavigator2->act_new("view1_insert");
+		$ctrl_o2dbnavigator2->act_save("view1_post");
+		$ctrl_o2dbnavigator2->act_del("view1_delete");
+		$ctrl_o2dbnavigator2->act_undo("view1_undo");
+		$ctrl_o2dbnavigator2->act_detail("view1_detail");
+		$ctrl_o2dbnavigator2->act_select("view1_select");
+		}
+function provaprg§§provaprg_2_form_def(&$form_provaprg_2) {
+	$form_provaprg_2->x(300);
+	$form_provaprg_2->y(100);
+	$form_provaprg_2->larghezza(400);
+	$form_provaprg_2->altezza(400);
+	$form_provaprg_2->titolo("Menu");
+	$form_provaprg_2->align_o("Center");
+		}
+
+function provaprg§§closeform_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("view2", "1", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("view2", "5", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("view2", "2", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::view("view2", "3", "") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("view2", "6", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::view("view2", "4", "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::view("view2", "I", "") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::view("view2", "S", "") && $o2exe->e();
+	$o2exe->s(9) && True && o2act::view("view2", "C", "") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::view("view2", "A", "") && $o2exe->e();
+	$o2exe->s(11) && True && o2act::view("view2", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg§§refreshform_act(&$o2exe) {
+	} //|o2_fine_act|
+
+function provaprg§§sbm_change_act(&$o2exe) {
+	$o2exe->s(1) && (provaprg_exp_13() || $o2exe->e()) && o2act::call("app_vars", False, provaprg_exp_1(), provaprg_exp_2(), "view1§§userid") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call(provaprg_exp_8(), True) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("view1_delete", "provaprg_exp_5()", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::close()&& $o2exe->e();
+	$o2exe->s(5) && True && o2act::debug() && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("view1_detail", True, "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::exe("view1_insert", False, "view1") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::script(provaprg_exp_17()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::gotoprg("menu", false) && $o2exe->e();
+	$o2exe->s(10) && True && o2act::gotourl(provaprg_exp_13()) && $o2exe->e();
+	$o2exe->s(11) && True && o2act::alert(provaprg_exp_9(), 0) && $o2exe->e();
+	$o2exe->s(12) && True && o2act::alert(provaprg_exp_9(), 1) && $o2exe->e();
+	$o2exe->s(13) && True && o2act::view("view2", "1", "") && $o2exe->e();
+	$o2exe->s(14) && True && o2act::view("view2", "L", array("actname"=>provaprg_exp_9(),"userid"=>provaprg_exp_8())) && $o2exe->e();
+//	$o2exe->s(15) && True && o2act::remark("----rem---") && $o2exe->e();
+	$o2exe->s(16) && True && o2act::ret(1, provaprg_exp_8()) && $o2exe->e();
+	$o2exe->s(17) && True && o2act::menu("base") && $o2exe->e();
+	$o2exe->s(18) && True && o2act::set("view1", "service", provaprg_exp_16()) && $o2exe->e();
+	$o2exe->s(19) && True && o2act::io("prova_protocol", "prova_io", true) && $o2exe->e();
+	$o2exe->s(20) && True && o2act::io("prova_protocol", "prova_io", false) && $o2exe->e();
+	$o2exe->s(21) && True && o2act::report(provaprg_exp_1(), provaprg_exp_3(), array("prova_io" => array("id" => "prova_io","padre" => "", "prg" => "provaprg", "risorsa" => "prova_io", "index_padre" => "", "index_figlio" => "")), provaprg_exp_5()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg§§view1_delete_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("view1", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg§§view1_detail_act(&$o2exe) {
+	} //|o2_fine_act|
+
+function provaprg§§view1_insert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("view1", "I", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg§§view1_post_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("view1", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg§§view1_select_act(&$o2exe) {
+	} //|o2_fine_act|
+
+function provaprg§§view1_undo_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("view1", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function provaprg_exp_1() {
+
+return (o2val('view1','userid'));
+	} //|o2_fine_exp|
+
+function provaprg_exp_2() {
+
+return (o2val('view1','prgname'));
+	} //|o2_fine_exp|
+
+function provaprg_exp_3() {
+
+return (o2val('view2','actname'));
+	} //|o2_fine_exp|
+
+function provaprg_exp_4() {
+
+return ('oo');
+	} //|o2_fine_exp|
+
+function provaprg_exp_5() {
+
+return (o2val('view2','actname').'ll');
+	} //|o2_fine_exp|
+
+function provaprg_exp_6() {
+
+return ('not');
+	} //|o2_fine_exp|
+
+function provaprg_exp_7() {
+
+return ('like');
+	} //|o2_fine_exp|
+
+function provaprg_exp_8() {
+
+return ('max');
+	} //|o2_fine_exp|
+
+function provaprg_exp_9() {
+
+return ('Expform');
+	} //|o2_fine_exp|
+
+function provaprg_exp_10() {
+
+return (300);
+	} //|o2_fine_exp|
+
+function provaprg_exp_11() {
+
+return (400);
+	} //|o2_fine_exp|
+
+function provaprg_exp_12() {
+
+return ('visible');
+	} //|o2_fine_exp|
+
+function provaprg_exp_13() {
+
+return ('url');
+	} //|o2_fine_exp|
+
+function provaprg_exp_14() {
+
+return ('vtbar');
+	} //|o2_fine_exp|
+
+function provaprg_exp_15() {
+
+return ('cstatbar');
+	} //|o2_fine_exp|
+
+function provaprg_exp_16() {
+
+return ('55');
+	} //|o2_fine_exp|
+
+function provaprg_exp_17() {
+
+return (true);
+	} //|o2_fine_exp|
+?>

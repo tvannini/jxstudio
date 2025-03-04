@@ -1,0 +1,445 @@
+<?php
+
+function sql_formula§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("concat_elements", "_o2structure");
+	$task_prg§_§var->definisci("element_id", "_o2number");
+	$task_prg§_§var->definisci("formula_exp", "idexpr");
+	$task_prg§_§var->definisci("id_max", "_o2number");
+	$task_prg§_§var->definisci("modified", "_o2logical");
+	$task_prg§_§var->definisci("page", "_o2number");
+		}
+
+function sql_formula§§tmp_concat_def(&$task_tmp_concat, $_o2viewalias = "") {
+	$task_tmp_concat->righe_vis = 10;
+
+	$task_tmp_concat->usa_file("tmp_concat","tmp_concat","pos",null,null);
+
+	$task_tmp_concat->usa("pos","tmp_concat","pos",null,null,null,null);
+	$task_tmp_concat->usa("expression","tmp_concat","expression",null,null,null,null);
+	$task_tmp_concat->usa("field","tmp_concat","field",null,null,null,null);
+	$task_tmp_concat->aggregate("MAX", "pos", "prg§_§var", "id_max");
+}
+
+function sql_formula§§prg_status_def(&$task_prg_status, $_o2viewalias = "") {
+	$task_prg_status->righe_vis = 10;
+
+	$task_prg_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_prg_status->usa("objname","tstamp_obj","objname","sql_formula_exp_1()","sql_formula_exp_1()",null,null);
+	$task_prg_status->usa("userid","tstamp_obj","userid",null,null,"sql_formula_exp_2()",null);
+}
+
+function sql_formula§§prg_exp_decode_def(&$task_prg_exp_decode, $_o2viewalias = "") {
+	$task_prg_exp_decode->righe_vis = 10;
+
+	$task_prg_exp_decode->usa_file("prgexpressions","prgexpressions","id",null,null);
+
+	$task_prg_exp_decode->usa("userid","prgexpressions","userid","sql_formula_exp_3()","sql_formula_exp_3()",null,null);
+	$task_prg_exp_decode->usa("prgname","prgexpressions","prgname","sql_formula_exp_1()","sql_formula_exp_1()",null,null);
+	$task_prg_exp_decode->usa("idexp","prgexpressions","idexp","sql_formula_exp_4()","sql_formula_exp_4()",null,null);
+	$task_prg_exp_decode->usa("script","prgexpressions","script",null,null,null,null);
+	$task_prg_exp_decode->usa("result","prgexpressions","result",null,null,null,null);
+}
+
+function sql_formula§§combo_view_fields_def(&$task_combo_view_fields, $_o2viewalias = "") {
+	$task_combo_view_fields->righe_vis = 10;
+
+	$task_combo_view_fields->usa_file("fieldsinview","fieldsinview","name",null,null);
+
+	$task_combo_view_fields->usa("userid","fieldsinview","userid","sql_formula_exp_3()","sql_formula_exp_3()",null,null);
+	$task_combo_view_fields->usa("prgname","fieldsinview","prgname","sql_formula_exp_1()","sql_formula_exp_1()",null,null);
+	$task_combo_view_fields->usa("viewname","fieldsinview","viewname","sql_formula_exp_5()","sql_formula_exp_5()",null,null);
+	$task_combo_view_fields->usa("type","fieldsinview","type","sql_formula_exp_6()","sql_formula_exp_6()",null,null);
+	$task_combo_view_fields->usa("name","fieldsinview","name",null,null,null,null);
+}
+function sql_formula§§sql_formula_form_def(&$form_sql_formula) {
+	$form_sql_formula->x(100);
+	$form_sql_formula->y(100);
+	$form_sql_formula->larghezza(500);
+	$form_sql_formula->altezza(500);
+	$form_sql_formula->align_o("Center");
+	$form_sql_formula->titolo("SQL Formula");
+	$ctrl_o2multipage2 = &$form_sql_formula->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "page");
+		$ctrl_o2multipage2->x(0);
+		$ctrl_o2multipage2->y(0);
+		$ctrl_o2multipage2->larghezza(500);
+		$ctrl_o2multipage2->altezza(400);
+		$ctrl_o2multipage2->label(array("CONCAT","Custom SQL"));
+		$ctrl_o2multipage2->buttons("T");
+	$ctrl_o2button2 = &$form_sql_formula->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(390);
+		$ctrl_o2button2->y(420);
+		$ctrl_o2button2->larghezza(90);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->azione("save");
+		$ctrl_o2button2->label("Ok");
+	$ctrl_o2button3 = &$form_sql_formula->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(290);
+		$ctrl_o2button3->y(420);
+		$ctrl_o2button3->larghezza(90);
+		$ctrl_o2button3->altezza(30);
+		$ctrl_o2button3->azione("cancel");
+		$ctrl_o2button3->label("Cancel");
+	$ctrl_o2table2 = &$form_sql_formula->ctrldef("o2table2", "tab", "o2multipage2", "tmp_concat", "");
+		$ctrl_o2table2->x(0);
+		$ctrl_o2table2->y(70);
+		$ctrl_o2table2->larghezza(500);
+		$ctrl_o2table2->altezza(200);
+		$ctrl_o2table2->info_padre(array(0));
+	$ctrl_o2dbnavigator2 = &$form_sql_formula->ctrldef("o2dbnavigator2", "navigator", "o2multipage2", "tmp_concat", "");
+		$ctrl_o2dbnavigator2->x(0);
+		$ctrl_o2dbnavigator2->y(30);
+		$ctrl_o2dbnavigator2->larghezza(500);
+		$ctrl_o2dbnavigator2->altezza(40);
+		$ctrl_o2dbnavigator2->info_padre(array(0));
+		$ctrl_o2dbnavigator2->css_space(sql_formula_exp_15());
+		$ctrl_o2dbnavigator2->visible_detail(sql_formula_exp_9999());
+		$ctrl_o2dbnavigator2->visible_select(sql_formula_exp_9999());
+		$ctrl_o2dbnavigator2->act_new("tmp_concat_insert");
+		$ctrl_o2dbnavigator2->act_save("tmp_concat_post");
+		$ctrl_o2dbnavigator2->act_del("tmp_concat_delete");
+		$ctrl_o2dbnavigator2->act_undo("tmp_concat_undo");
+	$ctrl_o2multipage3 = &$form_sql_formula->ctrldef("o2multipage3", "multipage", "o2multipage2", "", "");
+		$ctrl_o2multipage3->x(0);
+		$ctrl_o2multipage3->y(270);
+		$ctrl_o2multipage3->larghezza(500);
+		$ctrl_o2multipage3->altezza(130);
+		$ctrl_o2multipage3->info_padre(array(0));
+		$ctrl_o2multipage3->label(array("Expression"));
+		$ctrl_o2multipage3->buttons("T");
+	$ctrl_o2label2 = &$form_sql_formula->ctrldef("o2label2", "label", "o2multipage2", "", "");
+		$ctrl_o2label2->x(20);
+		$ctrl_o2label2->y(50);
+		$ctrl_o2label2->larghezza(200);
+		$ctrl_o2label2->altezza(24);
+		$ctrl_o2label2->info_padre(array(1));
+		$ctrl_o2label2->label("SQL code definition:");
+	$ctrl_o2multipage4 = &$form_sql_formula->ctrldef("o2multipage4", "multipage", "o2multipage2", "", "");
+		$ctrl_o2multipage4->x(0);
+		$ctrl_o2multipage4->y(100);
+		$ctrl_o2multipage4->larghezza(500);
+		$ctrl_o2multipage4->altezza(300);
+		$ctrl_o2multipage4->info_padre(array(1));
+		$ctrl_o2multipage4->label(array("Expression"));
+		$ctrl_o2multipage4->buttons("T");
+	$ctrl_o2edit4 = &$form_sql_formula->ctrldef("o2edit4", "edit", "o2multipage2", "prg§_§var", "formula_exp");
+		$ctrl_o2edit4->x(220);
+		$ctrl_o2edit4->y(50);
+		$ctrl_o2edit4->larghezza(60);
+		$ctrl_o2edit4->altezza(24);
+		$ctrl_o2edit4->on_change(sql_formula_exp_9998());
+		$ctrl_o2edit4->info_padre(array(1));
+		$ctrl_o2edit4->act_zoom("zoom_formula_expr");
+	$ctrl_o2htmlarea2 = &$form_sql_formula->ctrldef("o2htmlarea2", "htmlarea", "o2multipage3", "", "");
+		$ctrl_o2htmlarea2->x(10);
+		$ctrl_o2htmlarea2->y(30);
+		$ctrl_o2htmlarea2->larghezza(480);
+		$ctrl_o2htmlarea2->altezza(90);
+		$ctrl_o2htmlarea2->info_padre(array(0));
+		$ctrl_o2htmlarea2->html(sql_formula_exp_19());
+		$ctrl_o2htmlarea2->css(sql_formula_exp_22());
+	$ctrl_o2htmlarea3 = &$form_sql_formula->ctrldef("o2htmlarea3", "htmlarea", "o2multipage4", "", "");
+		$ctrl_o2htmlarea3->x(10);
+		$ctrl_o2htmlarea3->y(30);
+		$ctrl_o2htmlarea3->larghezza(480);
+		$ctrl_o2htmlarea3->altezza(260);
+		$ctrl_o2htmlarea3->info_padre(array(0));
+		$ctrl_o2htmlarea3->html(sql_formula_exp_19());
+		$ctrl_o2htmlarea3->css(sql_formula_exp_22());
+	$ctrl_o2edit2 = &$form_sql_formula->ctrldef("o2edit2", "edit", "o2table2", "tmp_concat", "pos");
+		$ctrl_o2edit2->x(0);
+		$ctrl_o2edit2->y(10);
+		$ctrl_o2edit2->larghezza(60);
+		$ctrl_o2edit2->altezza(24);
+		$ctrl_o2edit2->info_padre(array("01", "01", "01", "#", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit3 = &$form_sql_formula->ctrldef("o2edit3", "edit", "o2table2", "tmp_concat", "expression");
+		$ctrl_o2edit3->x(60);
+		$ctrl_o2edit3->y(10);
+		$ctrl_o2edit3->larghezza(60);
+		$ctrl_o2edit3->altezza(24);
+		$ctrl_o2edit3->on_change(sql_formula_exp_9998());
+		$ctrl_o2edit3->info_padre(array("01", "02", "02", "Expression", False, "", 0, "", "", "", "", ""));
+		$ctrl_o2edit3->act_zoom("zoom_concat_expr");
+	$ctrl_o2ListBox2 = &$form_sql_formula->ctrldef("o2ListBox2", "listcombo", "o2table2", "tmp_concat", "field");
+		$ctrl_o2ListBox2->x(120);
+		$ctrl_o2ListBox2->y(10);
+		$ctrl_o2ListBox2->larghezza(300);
+		$ctrl_o2ListBox2->altezza(24);
+		$ctrl_o2ListBox2->info_padre(array("01", "03", "03", "View field", False, "", 0, "", "", "", "", ""));
+		$ctrl_o2ListBox2->act_zoom("zoom_concat_field");
+		$ctrl_o2ListBox2->valori(o2_view2list("combo_view_fields", "name", "name"));
+		$ctrl_o2ListBox2->righe(1);
+		}
+
+function sql_formula§§add_concat_element_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_concat", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_concat", "pos", sql_formula_exp_10()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_concat", "expression", sql_formula_exp_11()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_concat", "field", sql_formula_exp_16()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("tmp_concat", "S", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "element_id", sql_formula_exp_10()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§cancel_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§concat_elements_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Insert elements in TMP") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "element_id", sql_formula_exp_9()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("add_concat_element", "sql_formula_exp_8()", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::view("tmp_concat", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§read_element_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "concat_elements", sql_formula_exp_24()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "element_id", sql_formula_exp_10()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§save_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("serialize_concat", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::ret(3, sql_formula_exp_26()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::ret(4, sql_formula_exp_25()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::ret(5, sql_formula_exp_27()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§serialize_concat_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "concat_elements", sql_formula_exp_23()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "element_id", sql_formula_exp_20()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("read_element", False, "tmp_concat") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§sql_expression_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "page", sql_formula_exp_20()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "formula_exp", sql_formula_exp_14()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "modified", sql_formula_exp_21()) && $o2exe->e();
+//	$o2exe->s(2) && True && o2act::remark("Empty TMP dataset") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("tmp_concat", "D", "") && $o2exe->e();
+//	$o2exe->s(4) && True && o2act::remark("Unserialize CONCAT elements") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "concat_elements", sql_formula_exp_7()) && $o2exe->e();
+//	$o2exe->s(6) && True && o2act::remark("Show CONCAT elements") && $o2exe->e();
+	$o2exe->s(7) && (sql_formula_exp_12() || $o2exe->e()) && o2act::exe("concat_elements", True, "") && $o2exe->e();
+//	$o2exe->s(8) && True && o2act::remark("SQL expression") && $o2exe->e();
+	$o2exe->s(9) && (sql_formula_exp_13() || $o2exe->e()) && o2act::exe("sql_expression", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§tmp_concat_delete_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_concat", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§tmp_concat_insert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_concat", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("tmp_concat", "G", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_concat", "pos", sql_formula_exp_17()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§tmp_concat_post_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_concat", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§tmp_concat_undo_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_concat", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§zoom_concat_expr_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, sql_formula_exp_3(), sql_formula_exp_1(), "tmp_concat§§expression", null, "prg§_§var§§modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§zoom_concat_field_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_field", False, sql_formula_exp_18(), sql_formula_exp_1(), sql_formula_exp_5(), "tmp_concat§§field") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula§§zoom_formula_expr_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, sql_formula_exp_3(), sql_formula_exp_1(), "prg§_§var§§formula_exp", null, "prg§_§var§§modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function sql_formula_exp_1() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_2() {
+	
+return ('');
+	} //|o2_fine_exp|
+
+function sql_formula_exp_3() {
+	
+return ((o2val('prg_status','userid') == o2app_user() ? o2val('prg_status','userid') : ''));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_4() {
+	
+return ((o2val('prg§_§var','page') ? o2val('prg§_§var','formula_exp') : o2val('tmp_concat','expression')));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_5() {
+	
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_6() {
+	
+return ('Sel');
+	} //|o2_fine_exp|
+
+function sql_formula_exp_7() {
+	$els = unserialize(o2par(4));
+if (!(is_array($els) && count($els))) {
+   $els = array();
+   }
+return ($els);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_8() {
+	
+return (o2val('prg§_§var','element_id') >= count(o2val('prg§_§var','concat_elements')));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_9() {
+	
+return (0);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_10() {
+	
+return (o2val('prg§_§var','element_id') + 1);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_11() {
+	$el = o2val('prg§_§var','concat_elements', o2val('prg§_§var','element_id') + 1);
+/* ________________________________________________________________ Field ___ */
+if (substr($el, 0, 2) == '["') {
+   $exp = 0;
+   }
+/* ___________________________________________________________ Expression ___ */
+else {
+   $exp = substr($el, strlen(o2par(1).'_exp_'), -2);
+   }
+return ($exp);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_12() {
+	
+return (count(o2val('prg§_§var','concat_elements')));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_13() {
+	
+return (count(o2val('prg§_§var','concat_elements')) < 1);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_14() {
+	
+return (o2par(3));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_15() {
+	
+return ('jxnav');
+	} //|o2_fine_exp|
+
+function sql_formula_exp_16() {
+	$el = o2val('prg§_§var','concat_elements', o2val('prg§_§var','element_id') + 1);
+/* ________________________________________________________________ Field ___ */
+if (substr($el, 0, 2) == '["') {
+   $fld = trim($el, '"[]');
+   }
+/* ___________________________________________________________ Expression ___ */
+else {
+   $fld = '';
+   }
+return ($fld);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_17() {
+	
+return (o2val('prg§_§var','id_max') + 1);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_18() {
+	
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function sql_formula_exp_19() {
+	if (o2zero('prg_exp_decode','result')) {
+   $code = '';
+   }
+else {
+   if (o2zero('prg_exp_decode','script')) {
+      $code = '<pre><code>'.o2val('prg_exp_decode','result').'</code></pre>';
+      }
+   else {
+      $code = '<pre><code>'.o2val('prg_exp_decode','result').
+              '<hr clss="o2_ctrl_line">'.
+              o2val('prg_exp_decode','script').'</code></pre>';
+      }
+   }
+return ($code);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_20() {
+	
+return (1);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_21() {
+	
+return (o2par(5));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_22() {
+	
+return ('disp_area');
+	} //|o2_fine_exp|
+
+function sql_formula_exp_23() {
+	
+return (array());
+	} //|o2_fine_exp|
+
+function sql_formula_exp_24() {
+	$l = o2val('prg§_§var','concat_elements');
+$e = o2val('tmp_concat','expression');
+$f = o2val('tmp_concat','field');
+if ($f) {
+   $l[o2val('prg§_§var','element_id')] = '["'.$f.'"]';
+   }
+elseif ($e) {
+   $l[o2val('prg§_§var','element_id')] = o2par(1).'_exp_'.$e.'()';  
+   }
+o2log($l);
+return ($l);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_25() {
+	
+return ((o2zero('prg§_§var','formula_exp') ? serialize(o2val('prg§_§var','concat_elements')) : ''));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_26() {
+	
+return ((o2zero('prg§_§var','formula_exp') ? count(o2val('prg§_§var','concat_elements')) : o2val('prg§_§var','formula_exp')));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_27() {
+	
+return (o2val('prg§_§var','modified'));
+	} //|o2_fine_exp|
+
+function sql_formula_exp_9998() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function sql_formula_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>

@@ -1,0 +1,308 @@
+/* =============================== TABLE =================================== */
+.o2_tab_space {
+    background-color: #ffffff;
+    border: none;
+    border-right: 1px solid #BDB5AE;
+    border-bottom: 1px solid #BDB5AE;
+    box-sizing: content-box;
+    }
+
+.tab_border {
+    background-color: #eeeeee;
+    border: 1px solid #BDB5AE;
+    border-radius: 0;
+    box-sizing: content-box;
+    }
+
+.o2_tab_tab {
+    overflow: hidden;
+    }
+
+.o2_tab_tab em {
+    line-height: 300%;
+    }
+
+thead .o2_tab_marker,
+.o2_tab_testa {
+    background-color: #e0ddd9;
+    height: 24px;
+    padding-top: 3px;
+    border-bottom: 1px solid #BDB5AE;
+    font-size: 11px;
+    white-space: nowrap;
+    }
+
+thead .jxord:hover {
+    background-color: #D1C8C0;
+    height: 24px;
+    padding-top: 3px;
+    border-bottom: 1px solid #BDB5AE;
+    font-size: 11px;
+    }
+
+.o2_tab_corpo {
+    padding: 0 3px 0 2px;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 1px dotted #e0ddd9;
+    border-bottom: 1px dotted #e0ddd9;
+    }
+
+tfoot .o2_tab_marker,
+.o2_tab_foot {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-top: 1px solid #BDB5AE;
+    cursor: default;
+    overflow: hidden;
+    border-bottom-left-radius: 5px;
+    }
+
+TD + tfoot .o2_tab_marker,
+.o2_tab_foot {
+    border-bottom-left-radius: 0;
+    padding-right: 3px;
+    }
+
+.o2_tab_riga {
+    background-color: #ffffff;
+    }
+
+.o2_tab_alt {
+    background-color: #ffffff;
+    }
+
+.o2_tab_point {
+    white-space: nowrap;
+    cursor: pointer;
+    }
+
+.o2_tab_point .o2_tab_corpo {
+    border-left: 1px dotted #e0ddd9;
+    }
+
+.o2_tab_sele {
+    background: #73994e;
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 3px 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-left: 1px dotted #e0ddd9;
+    }
+
+.o2_tab_sele * {
+    color: #eeeeee;
+    }
+
+.jxtabedit .o2_tab_sele {
+    padding: 0 2px 0 2px;
+    }
+
+.jxtabedit .o2_tab_sele INPUT[Type="button"], .jxtabedit .o2_tab_sele IMG {
+    /* margin: 0 3px 0 3px; */
+    }
+
+.o2_tab_sort {
+    background: url(tab/sort.png) no-repeat;
+    margin-left: 4px;
+    padding-right: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+
+.o2menu .o2_tab_sort {
+    background: url(tab/marker.png) no-repeat;
+    width: 12px;
+    margin-left: 4px;
+    margin-right: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+
+.o2_tab_sorta {
+    background: url(tab/asc.png) no-repeat;
+    margin-left: 4px;
+    padding-right: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+
+.o2_tab_sortd {
+    background: url(tab/desc.png) no-repeat;
+    margin-left: 4px;
+    padding-right: 4px;
+    vertical-align: middle;
+    cursor: pointer;
+    }
+
+.o2_tab_sorti {
+    color: #6B6661;
+    font-size: 75%;
+    vertical-align: top;
+    }
+
+.o2_tab_popup {
+    padding: 5px;
+    background-color: #D1C8C0;
+    border-bottom: 1px solid #6B6661;
+    border-top: 1px solid #BDB5AE;
+    border-left: 1px solid #a19a93;
+    border-right: 1px solid #a19a93;
+    border-radius: 3px;
+    box-shadow: 0px 6px 15px #6B6661;
+    }
+
+.o2_tab_fcol {
+    width: 16px;
+    border-bottom: 1px dotted #e0ddd9;
+    }
+
+.o2_tab_marker {
+    width: 13px;
+    }
+
+.o2_tab_marker_a {
+    background: url(tab/marker.png) no-repeat center;
+    width: 20px;
+    border: none;
+    }
+
+.o2_tab_marker_focus {
+    background: url(tab/marker_focus.png) no-repeat center;
+    width: 20px;
+    border: none;
+    }
+
+.o2_tab_resize {
+    font-size: 1px;
+    width: 1px;
+    height: 70%;
+    border-left: 1px dotted #bdb5ae;
+    border-right: none;
+    display: inline-block;
+    float: left;
+    cursor: col-resize;
+    }
+
+.o2_tab_resize_line {
+    border-left: 1px dotted #bdb5ae;
+    }
+
+/* =============================== EXTRA =================================== */
+
+.tab_testa_sx {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-bottom: 1px solid #a19a93;
+    cursor: default;
+    overflow: hidden;
+    }
+
+.tab_corpo_sx {
+    padding: 0 5px 0 5px;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    }
+
+.jxtabedit .o2tab_current .tab_corpo_sx {
+    background: #FC7939;
+    background: -moz-linear-gradient(top, #FEC09F, #FC7837);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FEC09F), to(#FC7837));
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FEC09F', EndColorStr='#FC7837');
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 2px 0 2px;
+    white-space: nowrap;
+    }
+
+.tab_foot_sx {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-top: 1px solid #BDB5AE;
+    cursor: default;
+    overflow: hidden;
+    }
+
+.tab_testa_nb {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-bottom: 1px solid #a19a93;
+    cursor: default;
+    overflow: hidden;
+    }
+
+.tab_corpo_nb {
+    padding: 0 5px 0 5px;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    }
+
+.jxtabedit .o2tab_current .tab_corpo_nb {
+    background: #FC7939;
+    background: -moz-linear-gradient(top, #FEC09F, #FC7837);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FEC09F), to(#FC7837));
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FEC09F', EndColorStr='#FC7837');
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 2px 0 2px;
+    white-space: nowrap;
+    }
+
+.tab_foot_nb {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-top: 1px solid #BDB5AE;
+    cursor: default;
+    overflow: hidden;
+    }
+
+.tab_testa_dx {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-bottom: 1px solid #a19a93;
+    cursor: default;
+    overflow: hidden;
+    }
+
+.tab_corpo_dx {
+    padding: 0 5px 0 5px;
+    line-height: 20px;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    }
+
+.jxtabedit .o2tab_current .tab_corpo_dx {
+    background: #FC7939;
+    background: -moz-linear-gradient(top, #FEC09F, #FC7837);
+    background: -webkit-gradient(linear, left top, left bottom, from(#FEC09F), to(#FC7837));
+    filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#FEC09F', EndColorStr='#FC7837');
+    line-height: 20px;
+    vertical-align: middle;
+    padding: 0 2px 0 2px;
+    white-space: nowrap;
+    }
+
+.tab_foot_dx {
+    background-color: #E1DAD4;
+    white-space: nowrap;
+    height: 20px;
+    border-top: 1px solid #BDB5AE;
+    cursor: default;
+    overflow: hidden;
+    }
+
+

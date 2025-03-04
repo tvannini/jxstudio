@@ -1,0 +1,120 @@
+<?php
+function about§§about_form_def(&$form_about) {
+	$form_about->x(195);
+	$form_about->y(100);
+	$form_about->larghezza(390);
+	$form_about->altezza(350);
+	$form_about->titolo("About Janox");
+	$form_about->align_o("Center");
+	$form_about->frm_status(about_exp_1());
+	$ctrl_o2label5 = &$form_about->ctrldef("o2label5", "label", "", "", "");
+		$ctrl_o2label5->x(160);
+		$ctrl_o2label5->y(130);
+		$ctrl_o2label5->larghezza(210);
+		$ctrl_o2label5->altezza(22);
+		$ctrl_o2label5->label("For more informations visit:");
+	$ctrl_o2label8 = &$form_about->ctrldef("o2label8", "label", "", "", "");
+		$ctrl_o2label8->x(160);
+		$ctrl_o2label8->y(240);
+		$ctrl_o2label8->larghezza(210);
+		$ctrl_o2label8->altezza(22);
+		$ctrl_o2label8->label("General Public License (LGPL)");
+	$ctrl_o2label2 = &$form_about->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(160);
+		$ctrl_o2label2->y(90);
+		$ctrl_o2label2->larghezza(210);
+		$ctrl_o2label2->altezza(22);
+		$ctrl_o2label2->label("(C) 2013, www.janox.org");
+	$ctrl_o2label7 = &$form_about->ctrldef("o2label7", "label", "", "", "");
+		$ctrl_o2label7->x(160);
+		$ctrl_o2label7->y(10);
+		$ctrl_o2label7->larghezza(210);
+		$ctrl_o2label7->altezza(22);
+		$ctrl_o2label7->label("Janox - Development Interface");
+	$ctrl_o2label6 = &$form_about->ctrldef("o2label6", "label", "", "", "");
+		$ctrl_o2label6->x(160);
+		$ctrl_o2label6->y(110);
+		$ctrl_o2label6->larghezza(210);
+		$ctrl_o2label6->altezza(22);
+		$ctrl_o2label6->label("Author: tvannini@janox.org");
+	$ctrl_o2label4 = &$form_about->ctrldef("o2label4", "label", "", "", "");
+		$ctrl_o2label4->x(160);
+		$ctrl_o2label4->y(220);
+		$ctrl_o2label4->larghezza(210);
+		$ctrl_o2label4->altezza(22);
+		$ctrl_o2label4->label("terms of the GNU Lesser");
+	$ctrl_o2label3 = &$form_about->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(160);
+		$ctrl_o2label3->y(200);
+		$ctrl_o2label3->larghezza(210);
+		$ctrl_o2label3->altezza(22);
+		$ctrl_o2label3->label("Janox is distributed under the");
+	$ctrl_o2label9 = &$form_about->ctrldef("o2label9", "label", "", "", "");
+		$ctrl_o2label9->x(160);
+		$ctrl_o2label9->y(30);
+		$ctrl_o2label9->larghezza(210);
+		$ctrl_o2label9->altezza(20);
+		$ctrl_o2label9->label(about_exp_5());
+	$ctrl_o2image3 = &$form_about->ctrldef("o2image3", "img", "", "", "");
+		$ctrl_o2image3->x(280);
+		$ctrl_o2image3->y(50);
+		$ctrl_o2image3->larghezza(90);
+		$ctrl_o2image3->altezza(15);
+		$ctrl_o2image3->azione("gotojx");
+		$ctrl_o2image3->label("www.janox.org");
+		$ctrl_o2image3->imgexp(about_exp_3());
+	$ctrl_o2image2 = &$form_about->ctrldef("o2image2", "img", "", "", "");
+		$ctrl_o2image2->x(10);
+		$ctrl_o2image2->y(10);
+		$ctrl_o2image2->larghezza(140);
+		$ctrl_o2image2->altezza(300);
+		$ctrl_o2image2->imgexp(about_exp_2());
+	$ctrl_o2button2 = &$form_about->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(280);
+		$ctrl_o2button2->y(280);
+		$ctrl_o2button2->larghezza(93);
+		$ctrl_o2button2->altezza(33);
+		$ctrl_o2button2->azione("close");
+		$ctrl_o2button2->label("Close");
+	$ctrl_o2button3 = &$form_about->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(160);
+		$ctrl_o2button3->y(150);
+		$ctrl_o2button3->larghezza(130);
+		$ctrl_o2button3->altezza(25);
+		$ctrl_o2button3->azione("gotojx");
+		$ctrl_o2button3->label("www.janox.org");
+		}
+
+function about§§close_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function about§§gotojx_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::gotourl(about_exp_4()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function about_exp_1() {
+	
+return (false);
+	} //|o2_fine_exp|
+
+function about_exp_2() {
+	
+return ("cover.png");
+	} //|o2_fine_exp|
+
+function about_exp_3() {
+	
+return ("<jx>/img/jxpowered.png");
+	} //|o2_fine_exp|
+
+function about_exp_4() {
+	
+return ("http://www.janox.org");
+	} //|o2_fine_exp|
+
+function about_exp_5() {
+	
+return ("Release ".$GLOBALS['o2_runtime']->release);
+	} //|o2_fine_exp|
+?>

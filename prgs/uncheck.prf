@@ -1,0 +1,54 @@
+<?php
+
+function uncheck§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Delete file from user directory") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(uncheck_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, uncheck_exp_2()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function uncheck_exp_1() {
+	$obj = o2par(1);
+/*              Program             */
+if ($obj != o2val('_o2SESSION','rep_appvars')   &&
+    $obj != o2val('_o2SESSION','rep_datatypes') &&
+    $obj != o2val('_o2SESSION','rep_menus')     &&
+    $obj != o2val('_o2SESSION','rep_servers')   &&
+    $obj != o2val('_o2SESSION','rep_tables')    &&
+    $obj != o2val('_o2SESSION','rep_viewmodels')) {
+   o2file_delete(o2val('_o2SESSION','usrdir').$obj.".prg");
+   o2file_delete(o2val('_o2SESSION','usrdir').$obj.".prf");
+   }
+/*        Other repositories        */
+else {
+   o2file_delete(o2val('_o2SESSION','usrdir').$obj);
+   }
+
+
+return (true);
+	} //|o2_fine_exp|
+
+function uncheck_exp_2() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function uncheck_exp_3() {
+
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function uncheck_exp_4() {
+
+return (o2file_date(o2val('_o2SESSION','usrdir').o2par(1)));
+	} //|o2_fine_exp|
+
+function uncheck_exp_5() {
+
+return (o2file_time(o2val('_o2SESSION','usrdir').o2par(1)));
+	} //|o2_fine_exp|
+
+function uncheck_exp_6() {
+
+return (false);
+	} //|o2_fine_exp|
+?>

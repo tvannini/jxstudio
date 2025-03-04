@@ -1,0 +1,1977 @@
+<?php
+
+function operation§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("call_par_index", "_o2number");
+	$task_prg§_§var->definisci("call_par_list", "_o2structure");
+	$task_prg§_§var->definisci("call_par_tot", "_o2number");
+	$task_prg§_§var->definisci("fields_order_bypos", "_o2logical");
+	$task_prg§_§var->definisci("last_call_param_pos", "_o2number");
+	$task_prg§_§var->definisci("list_actions", "_o2structure");
+	$task_prg§_§var->definisci("list_fields", "_o2structure");
+	$task_prg§_§var->definisci("list_views", "_o2structure");
+	$task_prg§_§var->definisci("locate_list", "_o2structure");
+	$task_prg§_§var->definisci("modified", "_o2logical");
+	$task_prg§_§var->definisci("par_list", "_o2structure");
+	$task_prg§_§var->definisci("passed_par_list", "_o2structure");
+	$task_prg§_§var->definisci("prgs_list", "_o2structure");
+	$task_prg§_§var->definisci("save_on_exit", "_o2logical");
+	$task_prg§_§var->definisci("selected_field", "description");
+	$task_prg§_§var->definisci("zoom_ctrl", "description");
+		}
+
+function operation§§operations_def(&$task_operations, $_o2viewalias = "") {
+	$task_operations->righe_vis = 10;
+
+	$task_operations->usa_file("operations","operations","pos",null,null);
+
+	$task_operations->usa("userid","operations","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_operations->usa("prgname","operations","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_operations->usa("actname","operations","actname","operation_exp_3()","operation_exp_3()",null,null);
+	$task_operations->usa("position","operations","position","operation_exp_4()","operation_exp_4()",null,null);
+	$task_operations->usa("operation","operations","operation",null,null,null,null);
+	$task_operations->usa("upd_viewname","operations","upd_viewname",null,null,null,null);
+	$task_operations->usa("upd_fieldname","operations","upd_fieldname",null,null,null,null);
+	$task_operations->usa("upd_value","operations","upd_value",null,null,null,null);
+	$task_operations->usa("call_prgname","operations","call_prgname",null,null,null,null);
+	$task_operations->usa("call_expid","operations","call_expid",null,null,null,null);
+	$task_operations->usa("call_gototype","operations","call_gototype",null,null,null,null);
+	$task_operations->usa("rec_viewname","operations","rec_viewname",null,null,null,null);
+	$task_operations->usa("rec_type","operations","rec_type",null,null,null,null);
+	$task_operations->usa("retpar_parid","operations","retpar_parid",null,null,null,null);
+	$task_operations->usa("retpar_value","operations","retpar_value",null,null,null,null);
+	$task_operations->usa("exeact_actname","operations","exeact_actname",null,null,null,null);
+	$task_operations->usa("exeact_endcond","operations","exeact_endcond",null,null,null,null);
+	$task_operations->usa("exeact_expr","operations","exeact_expr",null,null,null,null);
+	$task_operations->usa("exeact_view","operations","exeact_view",null,null,null,null);
+	$task_operations->usa("exescr_value","operations","exescr_value",null,null,null,null);
+	$task_operations->usa("msg_type","operations","msg_type",null,null,null,null);
+	$task_operations->usa("msg_value","operations","msg_value",null,null,null,null);
+	$task_operations->usa("setmenu_name","operations","setmenu_name",null,null,null,null);
+	$task_operations->usa("io_type","operations","io_type",null,null,null,null);
+	$task_operations->usa("io_protocol","operations","io_protocol",null,null,null,null);
+	$task_operations->usa("io_file","operations","io_file",null,null,null,null);
+	$task_operations->usa("print_template","operations","print_template",null,null,null,null);
+	$task_operations->usa("print_pdffile","operations","print_pdffile",null,null,null,null);
+	$task_operations->usa("print_printer","operations","print_printer",null,null,null,null);
+	$task_operations->usa("rem_text","operations","rem_text",null,null,null,null);
+}
+
+function operation§§appvars_def(&$task_appvars, $_o2viewalias = "") {
+	$task_appvars->righe_vis = 10000;
+
+	$task_appvars->usa_file("appvars","appvars","name",null,null);
+
+	$task_appvars->usa("userid","appvars","userid","operation_exp_25()","operation_exp_25()",null,null);
+	$task_appvars->usa("name","appvars","name",null,null,null,null);
+	$task_appvars->usa("datatype","appvars","datatype",null,null,null,null);
+	$task_appvars->calcola("appvar_code","o2sys_long_str","operation_exp_39()",null,null,null,null);
+	$task_appvars->calcola("appvar_desc","o2sys_long_str","operation_exp_40()",null,null,null,null);
+}
+
+function operation§§appvars_status_def(&$task_appvars_status, $_o2viewalias = "") {
+	$task_appvars_status->righe_vis = 10;
+
+	$task_appvars_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_appvars_status->usa("objname","tstamp_obj","objname","operation_exp_24()","operation_exp_24()",null,null);
+	$task_appvars_status->usa("userid","tstamp_obj","userid",null,null,"operation_exp_5()",null);
+}
+
+function operation§§prgvars_def(&$task_prgvars, $_o2viewalias = "") {
+	$task_prgvars->righe_vis = 10000;
+
+	$task_prgvars->usa_file("prgvars","prgvars","name",null,null);
+
+	$task_prgvars->usa("userid","prgvars","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_prgvars->usa("prgname","prgvars","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_prgvars->usa("name","prgvars","name",null,null,null,null);
+	$task_prgvars->usa("datatype","prgvars","datatype",null,null,null,null);
+	$task_prgvars->calcola("prgvar_code","o2sys_long_str","operation_exp_37()",null,null,null,null);
+	$task_prgvars->calcola("prgvar_desc","o2sys_long_str","operation_exp_38()",null,null,null,null);
+}
+
+function operation§§prgfields_def(&$task_prgfields, $_o2viewalias = "") {
+	$task_prgfields->righe_vis = 10000;
+
+	$task_prgfields->usa_file("fieldsinview","fieldsinview","operation_exp_26()",null,null);
+
+	$task_prgfields->usa("userid","fieldsinview","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_prgfields->usa("prgname","fieldsinview","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_prgfields->usa("viewname","fieldsinview","viewname","operation_exp_33()","operation_exp_33()",null,null);
+	$task_prgfields->usa("type","fieldsinview","type","operation_exp_27()","operation_exp_27()",null,null);
+	$task_prgfields->usa("position","fieldsinview","position",null,null,null,null);
+	$task_prgfields->usa("tablename","fieldsinview","tablename",null,null,null,null);
+	$task_prgfields->usa("fieldname","fieldsinview","fieldname",null,null,null,null);
+	$task_prgfields->usa("name","fieldsinview","name",null,null,null,null);
+	$task_prgfields->calcola("field_code","o2sys_long_str","operation_exp_34()",null,null,null,null);
+	$task_prgfields->calcola("field_desc","o2sys_long_str","operation_exp_35()",null,null,null,null);
+}
+
+function operation§§prgviews_def(&$task_prgviews, $_o2viewalias = "") {
+	$task_prgviews->righe_vis = 10000;
+
+	$task_prgviews->usa_file("prgviews","prgviews","name",null,null);
+
+	$task_prgviews->usa("userid","prgviews","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_prgviews->usa("prgname","prgviews","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_prgviews->usa("name","prgviews","name",null,null,null,null);
+}
+
+function operation§§prgexps_def(&$task_prgexps, $_o2viewalias = "") {
+	$task_prgexps->righe_vis = 10;
+
+	$task_prgexps->usa_file("prgexpressions","prgexpressions","id",null,null);
+
+	$task_prgexps->usa("userid","prgexpressions","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_prgexps->usa("prgname","prgexpressions","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_prgexps->usa("idexp","prgexpressions","idexp","operation_exp_51()","operation_exp_51()",null,null);
+	$task_prgexps->usa("script","prgexpressions","script",null,null,null,null);
+	$task_prgexps->usa("result","prgexpressions","result",null,null,null,null);
+}
+
+function operation§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+	$task_tmp_edit_vars->righe_vis = 10;
+
+	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
+
+	$task_tmp_edit_vars->usa("idexpr","tmp_edit_vars","idexpr",null,null,null,null);
+	$task_tmp_edit_vars->usa("long_str","tmp_edit_vars","long_str",null,null,null,null);
+	$task_tmp_edit_vars->usa("viewname","tmp_edit_vars","viewname",null,null,null,null);
+	$task_tmp_edit_vars->usa("actname","tmp_edit_vars","actname",null,null,null,null);
+	$task_tmp_edit_vars->usa("actname2","tmp_edit_vars","actname2",null,null,null,null);
+	$task_tmp_edit_vars->usa("int_number","tmp_edit_vars","int_number",null,null,null,null);
+	$task_tmp_edit_vars->usa("prgname","tmp_edit_vars","prgname",null,null,null,null);
+}
+
+function operation§§actions_def(&$task_actions, $_o2viewalias = "") {
+	$task_actions->righe_vis = 10000;
+
+	$task_actions->usa_file("actions","actions","name",null,null);
+
+	$task_actions->usa("userid","actions","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_actions->usa("prgname","actions","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_actions->usa("actname","actions","name",null,null,null,null);
+}
+
+function operation§§params_def(&$task_params, $_o2viewalias = "") {
+	$task_params->righe_vis = 10;
+
+	$task_params->usa_file("parameters","parameters","pos",null,null);
+
+	$task_params->usa("userid","parameters","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_params->usa("prgname","parameters","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_params->usa("position","parameters","position",null,null,null,null);
+	$task_params->usa("parname","parameters","name",null,null,null,null);
+	$task_params->usa("datatype","parameters","datatype",null,null,null,null);
+	$task_params->calcola("param_desc","o2sys_long_str","operation_exp_81()",null,null,null,null);
+}
+
+function operation§§operation_details_def(&$task_operation_details, $_o2viewalias = "") {
+	$task_operation_details->righe_vis = 10;
+
+	$task_operation_details->usa_file("operation_detail","operation_detail","pos",null,null);
+
+	$task_operation_details->usa("userid","operation_detail","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_operation_details->usa("prgname","operation_detail","prgname","operation_exp_2()","operation_exp_2()",null,null);
+	$task_operation_details->usa("actname","operation_detail","actname","operation_exp_3()","operation_exp_3()",null,null);
+	$task_operation_details->usa("position","operation_detail","position","operation_exp_96()","operation_exp_96()",null,null);
+	$task_operation_details->usa("operation","operation_detail","operation","operation_exp_97()","operation_exp_97()",null,null);
+	$task_operation_details->usa("operation_detail","operation_detail","operation_detail",null,null,null,null);
+}
+
+function operation§§tmp_locate_def(&$task_tmp_locate, $_o2viewalias = "") {
+	$task_tmp_locate->righe_vis = 10;
+
+	$task_tmp_locate->usa_file("tmp_locate","tmp_locate","pos",null,null);
+
+	$task_tmp_locate->usa("userid","tmp_locate","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_tmp_locate->usa("position","tmp_locate","position",null,null,null,null);
+	$task_tmp_locate->usa("fieldname","tmp_locate","fieldname",null,null,null,null);
+	$task_tmp_locate->usa("idexpr","tmp_locate","idexpr",null,null,null,null);
+}
+
+function operation§§tmp_call_def(&$task_tmp_call, $_o2viewalias = "") {
+	$task_tmp_call->righe_vis = 24;
+
+	$task_tmp_call->usa_file("tmp_call","tmp_call","pos",null,null);
+
+	$task_tmp_call->usa("userid","tmp_call","userid","operation_exp_1()","operation_exp_1()",null,null);
+	$task_tmp_call->usa("position","tmp_call","position",null,null,null,null);
+	$task_tmp_call->usa("param_name","tmp_call","param_name",null,null,null,null);
+	$task_tmp_call->usa("param_type","tmp_call","param_type",null,null,null,null);
+	$task_tmp_call->usa("var_view","tmp_call","var_view",null,null,null,null);
+	$task_tmp_call->usa("var_name","tmp_call","var_name",null,null,null,null);
+	$task_tmp_call->usa("idexpr","tmp_call","idexpr",null,null,null,null);
+	$task_tmp_call->usa("field_desc","tmp_call","field_desc",null,null,null,null);
+}
+function operation§§set_form_def(&$form_set) {
+	$form_set->x(510);
+	$form_set->y(40);
+	$form_set->larghezza(1005);
+	$form_set->altezza(680);
+	$form_set->titolo("Update");
+	$form_set->close_action("close");
+	$form_set->align_o("Center");
+	$form_set->frm_status(operation_exp_9999());
+	$ctrl_o2label3 = &$form_set->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(285);
+		$ctrl_o2label3->y(20);
+		$ctrl_o2label3->larghezza(100);
+		$ctrl_o2label3->altezza(22);
+		$ctrl_o2label3->label("Field:");
+	$ctrl_o2ListBox2 = &$form_set->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "viewname");
+		$ctrl_o2ListBox2->x(20);
+		$ctrl_o2ListBox2->y(40);
+		$ctrl_o2ListBox2->larghezza(260);
+		$ctrl_o2ListBox2->altezza(600);
+		$ctrl_o2ListBox2->modificabile(operation_exp_89());
+		$ctrl_o2ListBox2->azione("load_fields");
+		$ctrl_o2ListBox2->on_change(operation_exp_30());
+		$ctrl_o2ListBox2->valori(operation_exp_28());
+		$ctrl_o2ListBox2->righe(10000);
+	$ctrl_o2label2 = &$form_set->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(20);
+		$ctrl_o2label2->y(20);
+		$ctrl_o2label2->larghezza(100);
+		$ctrl_o2label2->altezza(22);
+		$ctrl_o2label2->label("View:");
+	$ctrl_o2label4 = &$form_set->ctrldef("o2label4", "label", "", "", "");
+		$ctrl_o2label4->x(670);
+		$ctrl_o2label4->y(190);
+		$ctrl_o2label4->larghezza(130);
+		$ctrl_o2label4->altezza(22);
+		$ctrl_o2label4->label("With expression:");
+	$ctrl_o2ListBox3 = &$form_set->ctrldef("o2ListBox3", "listcombo", "", "tmp_edit_vars", "long_str");
+		$ctrl_o2ListBox3->x(285);
+		$ctrl_o2ListBox3->y(40);
+		$ctrl_o2ListBox3->larghezza(350);
+		$ctrl_o2ListBox3->altezza(600);
+		$ctrl_o2ListBox3->modificabile(operation_exp_89());
+		$ctrl_o2ListBox3->valori(operation_exp_29());
+		$ctrl_o2ListBox3->righe(1000);
+	$ctrl_upd_exp = &$form_set->ctrldef("upd_exp", "edit", "", "tmp_edit_vars", "idexpr");
+		$ctrl_upd_exp->x(800);
+		$ctrl_upd_exp->y(190);
+		$ctrl_upd_exp->larghezza(50);
+		$ctrl_upd_exp->altezza(22);
+		$ctrl_upd_exp->modificabile(operation_exp_89());
+		$ctrl_upd_exp->on_change(operation_exp_30());
+	$ctrl_o2textarea2 = &$form_set->ctrldef("o2textarea2", "text", "", "prgexps", "script");
+		$ctrl_o2textarea2->x(640);
+		$ctrl_o2textarea2->y(280);
+		$ctrl_o2textarea2->larghezza(350);
+		$ctrl_o2textarea2->altezza(360);
+		$ctrl_o2textarea2->modificabile(operation_exp_9999());
+		$ctrl_o2textarea2->visibile(operation_exp_43());
+	$ctrl_o2edit3 = &$form_set->ctrldef("o2edit3", "edit", "", "prgexps", "result");
+		$ctrl_o2edit3->x(640);
+		$ctrl_o2edit3->y(250);
+		$ctrl_o2edit3->larghezza(350);
+		$ctrl_o2edit3->altezza(22);
+		$ctrl_o2edit3->modificabile(operation_exp_9999());
+	$ctrl_o2dbnavigator2 = &$form_set->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator2->x(972);
+		$ctrl_o2dbnavigator2->y(40);
+		$ctrl_o2dbnavigator2->larghezza(18);
+		$ctrl_o2dbnavigator2->altezza(200);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator2->act_detail("zoom_edit_vars");
+		$ctrl_o2dbnavigator2->act_select("save_and_close");
+		}
+function operation§§remark_form_def(&$form_remark) {
+	$form_remark->x(248);
+	$form_remark->y(225);
+	$form_remark->larghezza(555);
+	$form_remark->altezza(120);
+	$form_remark->titolo("Remark");
+	$form_remark->close_action("close");
+	$form_remark->align_o("Center");
+	$form_remark->frm_status(operation_exp_9999());
+	$ctrl_o2label5 = &$form_remark->ctrldef("o2label5", "label", "", "", "");
+		$ctrl_o2label5->x(20);
+		$ctrl_o2label5->y(30);
+		$ctrl_o2label5->larghezza(100);
+		$ctrl_o2label5->altezza(22);
+		$ctrl_o2label5->label("Remark text:");
+	$ctrl_o2dbnavigator3 = &$form_remark->ctrldef("o2dbnavigator3", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator3->x(522);
+		$ctrl_o2dbnavigator3->y(52);
+		$ctrl_o2dbnavigator3->larghezza(18);
+		$ctrl_o2dbnavigator3->altezza(18);
+		$ctrl_o2dbnavigator3->vertical();
+		$ctrl_o2dbnavigator3->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator3->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator3->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator3->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator3->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator3->visible_detail(operation_exp_9999());
+		$ctrl_o2dbnavigator3->act_select("save_and_close");
+	$ctrl_o2edit2 = &$form_remark->ctrldef("o2edit2", "edit", "", "tmp_edit_vars", "long_str");
+		$ctrl_o2edit2->x(20);
+		$ctrl_o2edit2->y(50);
+		$ctrl_o2edit2->larghezza(500);
+		$ctrl_o2edit2->altezza(22);
+		$ctrl_o2edit2->modificabile(operation_exp_89());
+		}
+function operation§§exe_form_def(&$form_exe) {
+	$form_exe->x(487);
+	$form_exe->y(40);
+	$form_exe->larghezza(965);
+	$form_exe->altezza(680);
+	$form_exe->titolo("Execute action");
+	$form_exe->close_action("close");
+	$form_exe->align_o("Center");
+	$form_exe->frm_status(operation_exp_9999());
+	$ctrl_o2label6 = &$form_exe->ctrldef("o2label6", "label", "", "", "");
+		$ctrl_o2label6->x(20);
+		$ctrl_o2label6->y(20);
+		$ctrl_o2label6->larghezza(70);
+		$ctrl_o2label6->altezza(22);
+		$ctrl_o2label6->label("Action:");
+	$ctrl_o2ListBox4 = &$form_exe->ctrldef("o2ListBox4", "listcombo", "", "tmp_edit_vars", "actname");
+		$ctrl_o2ListBox4->x(20);
+		$ctrl_o2ListBox4->y(40);
+		$ctrl_o2ListBox4->larghezza(280);
+		$ctrl_o2ListBox4->altezza(600);
+		$ctrl_o2ListBox4->modificabile(operation_exp_89());
+		$ctrl_o2ListBox4->valori(operation_exp_73());
+		$ctrl_o2ListBox4->righe(10000);
+	$ctrl_o2label9 = &$form_exe->ctrldef("o2label9", "label", "", "", "");
+		$ctrl_o2label9->x(600);
+		$ctrl_o2label9->y(190);
+		$ctrl_o2label9->larghezza(100);
+		$ctrl_o2label9->altezza(22);
+		$ctrl_o2label9->visibile(operation_exp_74());
+		$ctrl_o2label9->label("End expression:");
+	$ctrl_o2label7 = &$form_exe->ctrldef("o2label7", "label", "", "", "");
+		$ctrl_o2label7->x(310);
+		$ctrl_o2label7->y(20);
+		$ctrl_o2label7->larghezza(100);
+		$ctrl_o2label7->altezza(20);
+		$ctrl_o2label7->label("Loop on view:");
+	$ctrl_o2label8 = &$form_exe->ctrldef("o2label8", "label", "", "", "");
+		$ctrl_o2label8->x(600);
+		$ctrl_o2label8->y(160);
+		$ctrl_o2label8->larghezza(100);
+		$ctrl_o2label8->altezza(22);
+		$ctrl_o2label8->label("End condition:");
+	$ctrl_o2dbnavigator4 = &$form_exe->ctrldef("o2dbnavigator4", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator4->x(932);
+		$ctrl_o2dbnavigator4->y(40);
+		$ctrl_o2dbnavigator4->larghezza(18);
+		$ctrl_o2dbnavigator4->altezza(200);
+		$ctrl_o2dbnavigator4->vertical();
+		$ctrl_o2dbnavigator4->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator4->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator4->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator4->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator4->enable_new(operation_exp_89());
+		$ctrl_o2dbnavigator4->act_new("ask_new_action");
+		$ctrl_o2dbnavigator4->act_detail("zoom_edit_vars");
+		$ctrl_o2dbnavigator4->act_select("save_and_close");
+	$ctrl_o2ListBox5 = &$form_exe->ctrldef("o2ListBox5", "listcombo", "", "tmp_edit_vars", "viewname");
+		$ctrl_o2ListBox5->x(310);
+		$ctrl_o2ListBox5->y(40);
+		$ctrl_o2ListBox5->larghezza(280);
+		$ctrl_o2ListBox5->altezza(600);
+		$ctrl_o2ListBox5->modificabile(operation_exp_89());
+		$ctrl_o2ListBox5->valori(operation_exp_28());
+		$ctrl_o2ListBox5->righe(10000);
+	$ctrl_o2ListBox6 = &$form_exe->ctrldef("o2ListBox6", "listcombo", "", "tmp_edit_vars", "actname2");
+		$ctrl_o2ListBox6->x(700);
+		$ctrl_o2ListBox6->y(160);
+		$ctrl_o2ListBox6->larghezza(140);
+		$ctrl_o2ListBox6->altezza(22);
+		$ctrl_o2ListBox6->modificabile(operation_exp_89());
+		$ctrl_o2ListBox6->azione("on_endcond_change");
+		$ctrl_o2ListBox6->on_change(operation_exp_30());
+		$ctrl_o2ListBox6->valori(array("By expression" => "By expression","False" => "False","True" => "True"));
+		$ctrl_o2ListBox6->righe(1);
+	$ctrl_end_exp = &$form_exe->ctrldef("end_exp", "edit", "", "tmp_edit_vars", "idexpr");
+		$ctrl_end_exp->x(700);
+		$ctrl_end_exp->y(190);
+		$ctrl_end_exp->larghezza(50);
+		$ctrl_end_exp->altezza(22);
+		$ctrl_end_exp->modificabile(operation_exp_89());
+		$ctrl_end_exp->visibile(operation_exp_74());
+		$ctrl_end_exp->on_change(operation_exp_30());
+	$ctrl_o2edit5 = &$form_exe->ctrldef("o2edit5", "edit", "", "prgexps", "result");
+		$ctrl_o2edit5->x(600);
+		$ctrl_o2edit5->y(250);
+		$ctrl_o2edit5->larghezza(350);
+		$ctrl_o2edit5->altezza(22);
+		$ctrl_o2edit5->modificabile(operation_exp_9999());
+		$ctrl_o2edit5->visibile(operation_exp_74());
+	$ctrl_o2textarea3 = &$form_exe->ctrldef("o2textarea3", "text", "", "prgexps", "script");
+		$ctrl_o2textarea3->x(600);
+		$ctrl_o2textarea3->y(280);
+		$ctrl_o2textarea3->larghezza(350);
+		$ctrl_o2textarea3->altezza(360);
+		$ctrl_o2textarea3->modificabile(operation_exp_9999());
+		$ctrl_o2textarea3->visibile(operation_exp_76());
+		}
+function operation§§ret_form_def(&$form_ret) {
+	$form_ret->x(345);
+	$form_ret->y(40);
+	$form_ret->larghezza(745);
+	$form_ret->altezza(680);
+	$form_ret->titolo("Return parameter");
+	$form_ret->close_action("close");
+	$form_ret->align_o("Center");
+	$form_ret->frm_status(operation_exp_9999());
+	$ctrl_o2label10 = &$form_ret->ctrldef("o2label10", "label", "", "", "");
+		$ctrl_o2label10->x(20);
+		$ctrl_o2label10->y(20);
+		$ctrl_o2label10->larghezza(100);
+		$ctrl_o2label10->altezza(22);
+		$ctrl_o2label10->label("Parameter:");
+	$ctrl_o2ListBox7 = &$form_ret->ctrldef("o2ListBox7", "listcombo", "", "tmp_edit_vars", "int_number");
+		$ctrl_o2ListBox7->x(20);
+		$ctrl_o2ListBox7->y(40);
+		$ctrl_o2ListBox7->larghezza(350);
+		$ctrl_o2ListBox7->altezza(600);
+		$ctrl_o2ListBox7->modificabile(operation_exp_89());
+		$ctrl_o2ListBox7->valori(operation_exp_82());
+		$ctrl_o2ListBox7->righe(1000);
+	$ctrl_o2label11 = &$form_ret->ctrldef("o2label11", "label", "", "", "");
+		$ctrl_o2label11->x(380);
+		$ctrl_o2label11->y(190);
+		$ctrl_o2label11->larghezza(130);
+		$ctrl_o2label11->altezza(22);
+		$ctrl_o2label11->label("With expression:");
+	$ctrl_ret_exp = &$form_ret->ctrldef("ret_exp", "edit", "", "tmp_edit_vars", "idexpr");
+		$ctrl_ret_exp->x(510);
+		$ctrl_ret_exp->y(190);
+		$ctrl_ret_exp->larghezza(50);
+		$ctrl_ret_exp->altezza(22);
+		$ctrl_ret_exp->modificabile(operation_exp_89());
+		$ctrl_ret_exp->on_change(operation_exp_30());
+	$ctrl_o2textarea4 = &$form_ret->ctrldef("o2textarea4", "text", "", "prgexps", "script");
+		$ctrl_o2textarea4->x(380);
+		$ctrl_o2textarea4->y(280);
+		$ctrl_o2textarea4->larghezza(350);
+		$ctrl_o2textarea4->altezza(360);
+		$ctrl_o2textarea4->modificabile(operation_exp_9999());
+		$ctrl_o2textarea4->visibile(operation_exp_43());
+	$ctrl_o2edit6 = &$form_ret->ctrldef("o2edit6", "edit", "", "prgexps", "result");
+		$ctrl_o2edit6->x(380);
+		$ctrl_o2edit6->y(250);
+		$ctrl_o2edit6->larghezza(350);
+		$ctrl_o2edit6->altezza(22);
+		$ctrl_o2edit6->modificabile(operation_exp_9999());
+	$ctrl_o2dbnavigator5 = &$form_ret->ctrldef("o2dbnavigator5", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator5->x(712);
+		$ctrl_o2dbnavigator5->y(40);
+		$ctrl_o2dbnavigator5->larghezza(18);
+		$ctrl_o2dbnavigator5->altezza(200);
+		$ctrl_o2dbnavigator5->vertical();
+		$ctrl_o2dbnavigator5->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator5->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator5->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator5->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator5->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator5->act_detail("zoom_edit_vars");
+		$ctrl_o2dbnavigator5->act_select("save_and_close");
+		}
+function operation§§view_form_def(&$form_view) {
+	$form_view->x(300);
+	$form_view->y(40);
+	$form_view->larghezza(630);
+	$form_view->altezza(680);
+	$form_view->titolo("View method");
+	$form_view->close_action("close");
+	$form_view->align_o("Center");
+	$form_view->frm_status(operation_exp_9999());
+	$ctrl_o2label15 = &$form_view->ctrldef("o2label15", "label", "", "", "");
+		$ctrl_o2label15->x(310);
+		$ctrl_o2label15->y(330);
+		$ctrl_o2label15->larghezza(210);
+		$ctrl_o2label15->altezza(20);
+		$ctrl_o2label15->visibile(operation_exp_98());
+		$ctrl_o2label15->label("Locate conditions:");
+	$ctrl_o2label12 = &$form_view->ctrldef("o2label12", "label", "", "", "");
+		$ctrl_o2label12->x(20);
+		$ctrl_o2label12->y(20);
+		$ctrl_o2label12->larghezza(100);
+		$ctrl_o2label12->altezza(20);
+		$ctrl_o2label12->label("On view:");
+	$ctrl_o2label14 = &$form_view->ctrldef("o2label14", "label", "", "", "");
+		$ctrl_o2label14->x(310);
+		$ctrl_o2label14->y(20);
+		$ctrl_o2label14->larghezza(110);
+		$ctrl_o2label14->altezza(20);
+		$ctrl_o2label14->label("Method:");
+	$ctrl_o2ListBox8 = &$form_view->ctrldef("o2ListBox8", "listcombo", "", "tmp_edit_vars", "viewname");
+		$ctrl_o2ListBox8->x(20);
+		$ctrl_o2ListBox8->y(40);
+		$ctrl_o2ListBox8->larghezza(280);
+		$ctrl_o2ListBox8->altezza(600);
+		$ctrl_o2ListBox8->modificabile(operation_exp_89());
+		$ctrl_o2ListBox8->azione("create_tmp_locate");
+		$ctrl_o2ListBox8->on_change(operation_exp_30());
+		$ctrl_o2ListBox8->valori(operation_exp_28());
+		$ctrl_o2ListBox8->righe(10000);
+	$ctrl_o2ListBox9 = &$form_view->ctrldef("o2ListBox9", "listcombo", "", "tmp_edit_vars", "actname");
+		$ctrl_o2ListBox9->x(310);
+		$ctrl_o2ListBox9->y(40);
+		$ctrl_o2ListBox9->larghezza(282);
+		$ctrl_o2ListBox9->altezza(280);
+		$ctrl_o2ListBox9->modificabile(operation_exp_89());
+		$ctrl_o2ListBox9->on_change(operation_exp_30());
+		$ctrl_o2ListBox9->valori(operation_exp_95());
+		$ctrl_o2ListBox9->righe(12);
+	$ctrl_o2dbnavigator7 = &$form_view->ctrldef("o2dbnavigator7", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator7->x(592);
+		$ctrl_o2dbnavigator7->y(40);
+		$ctrl_o2dbnavigator7->larghezza(18);
+		$ctrl_o2dbnavigator7->altezza(280);
+		$ctrl_o2dbnavigator7->vertical();
+		$ctrl_o2dbnavigator7->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator7->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator7->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator7->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator7->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator7->visible_detail(operation_exp_9999());
+		$ctrl_o2dbnavigator7->act_select("save_and_close");
+	$ctrl_o2table2 = &$form_view->ctrldef("o2table2", "tab", "", "tmp_locate", "");
+		$ctrl_o2table2->x(310);
+		$ctrl_o2table2->y(350);
+		$ctrl_o2table2->larghezza(300);
+		$ctrl_o2table2->altezza(287);
+		$ctrl_o2table2->modificabile(operation_exp_89());
+		$ctrl_o2table2->visibile(operation_exp_98());
+	$ctrl_o2label13 = &$form_view->ctrldef("o2label13", "label", "o2table2", "", "");
+		$ctrl_o2label13->x(10);
+		$ctrl_o2label13->y(30);
+		$ctrl_o2label13->larghezza(200);
+		$ctrl_o2label13->altezza(20);
+		$ctrl_o2label13->info_padre(array("01" ,"01" ,"01" ,"Field" ,False ,"" ,False ,""));
+		$ctrl_o2label13->label(operation_exp_103());
+	$ctrl_locate_exp = &$form_view->ctrldef("locate_exp", "edit", "o2table2", "tmp_locate", "idexpr");
+		$ctrl_locate_exp->x(210);
+		$ctrl_locate_exp->y(30);
+		$ctrl_locate_exp->larghezza(50);
+		$ctrl_locate_exp->altezza(20);
+		$ctrl_locate_exp->info_padre(array("01" ,"02" ,"02" ,"Expr." ,True ,"" ,False ,""));
+	$ctrl_o2dbnavigator6 = &$form_view->ctrldef("o2dbnavigator6", "navigator", "o2table2", "tmp_locate", "");
+		$ctrl_o2dbnavigator6->x(270);
+		$ctrl_o2dbnavigator6->y(30);
+		$ctrl_o2dbnavigator6->larghezza(18);
+		$ctrl_o2dbnavigator6->altezza(200);
+		$ctrl_o2dbnavigator6->info_padre(array("01" ,"03" ,"03"));
+		$ctrl_o2dbnavigator6->vertical();
+		$ctrl_o2dbnavigator6->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator6->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator6->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator6->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator6->act_detail("zoom_tmp_locate");
+		$ctrl_o2dbnavigator6->act_select("save_and_close");
+		}
+function operation§§call_form_def(&$form_call) {
+	$form_call->x(500);
+	$form_call->y(20);
+	$form_call->larghezza(1000);
+	$form_call->altezza(680);
+	$form_call->titolo("Call program");
+	$form_call->align_o("Center");
+	$ctrl_o2label16 = &$form_call->ctrldef("o2label16", "label", "", "", "");
+		$ctrl_o2label16->x(20);
+		$ctrl_o2label16->y(20);
+		$ctrl_o2label16->larghezza(100);
+		$ctrl_o2label16->altezza(20);
+		$ctrl_o2label16->label("Program:");
+	$ctrl_o2ListBox11 = &$form_call->ctrldef("o2ListBox11", "listcombo", "", "tmp_edit_vars", "int_number");
+		$ctrl_o2ListBox11->x(20);
+		$ctrl_o2ListBox11->y(40);
+		$ctrl_o2ListBox11->larghezza(130);
+		$ctrl_o2ListBox11->altezza(20);
+		$ctrl_o2ListBox11->modificabile(operation_exp_89());
+		$ctrl_o2ListBox11->azione("on_callprg_mode_change");
+		$ctrl_o2ListBox11->on_change(operation_exp_30());
+		$ctrl_o2ListBox11->valori(array("0" => "Select from list","1" => "By expression"));
+		$ctrl_o2ListBox11->righe(1);
+	$ctrl_o2label18 = &$form_call->ctrldef("o2label18", "label", "", "", "");
+		$ctrl_o2label18->x(320);
+		$ctrl_o2label18->y(20);
+		$ctrl_o2label18->larghezza(140);
+		$ctrl_o2label18->altezza(20);
+		$ctrl_o2label18->label("Parameters:");
+	$ctrl_call_prg_exp = &$form_call->ctrldef("call_prg_exp", "edit", "", "tmp_edit_vars", "idexpr");
+		$ctrl_call_prg_exp->x(240);
+		$ctrl_call_prg_exp->y(40);
+		$ctrl_call_prg_exp->larghezza(40);
+		$ctrl_call_prg_exp->altezza(20);
+		$ctrl_call_prg_exp->modificabile(operation_exp_89());
+		$ctrl_call_prg_exp->visibile(operation_exp_129());
+	$ctrl_o2edit9 = &$form_call->ctrldef("o2edit9", "edit", "", "prgexps", "result");
+		$ctrl_o2edit9->x(20);
+		$ctrl_o2edit9->y(70);
+		$ctrl_o2edit9->larghezza(280);
+		$ctrl_o2edit9->altezza(22);
+		$ctrl_o2edit9->modificabile(operation_exp_9999());
+		$ctrl_o2edit9->visibile(operation_exp_129());
+	$ctrl_o2textarea5 = &$form_call->ctrldef("o2textarea5", "text", "", "prgexps", "script");
+		$ctrl_o2textarea5->x(20);
+		$ctrl_o2textarea5->y(100);
+		$ctrl_o2textarea5->larghezza(280);
+		$ctrl_o2textarea5->altezza(540);
+		$ctrl_o2textarea5->modificabile(operation_exp_9999());
+		$ctrl_o2textarea5->visibile(operation_exp_129());
+	$ctrl_call_prg_list = &$form_call->ctrldef("call_prg_list", "listcombo", "", "tmp_edit_vars", "prgname");
+		$ctrl_call_prg_list->x(20);
+		$ctrl_call_prg_list->y(70);
+		$ctrl_call_prg_list->larghezza(280);
+		$ctrl_call_prg_list->altezza(570);
+		$ctrl_call_prg_list->modificabile(operation_exp_89());
+		$ctrl_call_prg_list->visibile(operation_exp_130());
+		$ctrl_call_prg_list->azione("create_tmp_call");
+		$ctrl_call_prg_list->on_change(operation_exp_30());
+		$ctrl_call_prg_list->valori(operation_exp_117());
+		$ctrl_call_prg_list->righe(10000);
+	$ctrl_o2table3 = &$form_call->ctrldef("o2table3", "tab", "", "tmp_call", "");
+		$ctrl_o2table3->x(305);
+		$ctrl_o2table3->y(40);
+		$ctrl_o2table3->larghezza(685);
+		$ctrl_o2table3->altezza(570);
+	$ctrl_o2dbnavigator9 = &$form_call->ctrldef("o2dbnavigator9", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator9->x(282);
+		$ctrl_o2dbnavigator9->y(40);
+		$ctrl_o2dbnavigator9->larghezza(18);
+		$ctrl_o2dbnavigator9->altezza(30);
+		$ctrl_o2dbnavigator9->vertical();
+		$ctrl_o2dbnavigator9->visible_nav(operation_exp_9999());
+		$ctrl_o2dbnavigator9->visible_new(operation_exp_9999());
+		$ctrl_o2dbnavigator9->visible_save(operation_exp_9999());
+		$ctrl_o2dbnavigator9->visible_del(operation_exp_9999());
+		$ctrl_o2dbnavigator9->visible_undo(operation_exp_9999());
+		$ctrl_o2dbnavigator9->act_detail("zoom_edit_vars");
+		$ctrl_o2dbnavigator9->act_select("save_and_close");
+	$ctrl_o2ListBox10 = &$form_call->ctrldef("o2ListBox10", "listcombo", "", "tmp_edit_vars", "actname");
+		$ctrl_o2ListBox10->x(860);
+		$ctrl_o2ListBox10->y(620);
+		$ctrl_o2ListBox10->larghezza(130);
+		$ctrl_o2ListBox10->altezza(20);
+		$ctrl_o2ListBox10->modificabile(operation_exp_89());
+		$ctrl_o2ListBox10->valori(array("" => "Uncached","Cached" => "Cached"));
+		$ctrl_o2ListBox10->righe(1);
+	$ctrl_o2label19 = &$form_call->ctrldef("o2label19", "label", "o2table3", "", "");
+		$ctrl_o2label19->x(5);
+		$ctrl_o2label19->y(30);
+		$ctrl_o2label19->larghezza(25);
+		$ctrl_o2label19->altezza(22);
+		$ctrl_o2label19->info_padre(array("01" ,"01" ,"01" ,"#" ,False ,"" ,False ,""));
+		$ctrl_o2label19->label(operation_exp_126());
+	$ctrl_o2label17 = &$form_call->ctrldef("o2label17", "label", "o2table3", "", "");
+		$ctrl_o2label17->x(30);
+		$ctrl_o2label17->y(30);
+		$ctrl_o2label17->larghezza(270);
+		$ctrl_o2label17->altezza(22);
+		$ctrl_o2label17->info_padre(array("01" ,"02" ,"02" ,"Parameter (datatype)" ,False ,"" ,False ,""));
+		$ctrl_o2label17->label(operation_exp_140());
+	$ctrl_call_param_field = &$form_call->ctrldef("call_param_field", "edit", "o2table3", "tmp_call", "field_desc");
+		$ctrl_call_param_field->x(300);
+		$ctrl_call_param_field->y(30);
+		$ctrl_call_param_field->larghezza(300);
+		$ctrl_call_param_field->altezza(20);
+		$ctrl_call_param_field->modificabile(operation_exp_9999());
+		$ctrl_call_param_field->info_padre(array("01" ,"03" ,"03" ,"By reference" ,True ,"" ,False ,""));
+	$ctrl_call_param_exp = &$form_call->ctrldef("call_param_exp", "edit", "o2table3", "tmp_call", "idexpr");
+		$ctrl_call_param_exp->x(620);
+		$ctrl_call_param_exp->y(30);
+		$ctrl_call_param_exp->larghezza(40);
+		$ctrl_call_param_exp->altezza(20);
+		$ctrl_call_param_exp->modificabile(operation_exp_89());
+		$ctrl_call_param_exp->info_padre(array("01" ,"04" ,"04" ,"By exp" ,True ,"" ,False ,""));
+	$ctrl_o2dbnavigator8 = &$form_call->ctrldef("o2dbnavigator8", "navigator", "o2table3", "tmp_call", "");
+		$ctrl_o2dbnavigator8->x(660);
+		$ctrl_o2dbnavigator8->y(30);
+		$ctrl_o2dbnavigator8->larghezza(18);
+		$ctrl_o2dbnavigator8->altezza(200);
+		$ctrl_o2dbnavigator8->info_padre(array("01" ,"05" ,"05"));
+		$ctrl_o2dbnavigator8->vertical();
+		$ctrl_o2dbnavigator8->visible_new(operation_exp_129());
+		$ctrl_o2dbnavigator8->visible_save(operation_exp_141());
+		$ctrl_o2dbnavigator8->visible_del(operation_exp_141());
+		$ctrl_o2dbnavigator8->visible_undo(operation_exp_141());
+		$ctrl_o2dbnavigator8->enable_new(operation_exp_89());
+		$ctrl_o2dbnavigator8->enable_save(operation_exp_89());
+		$ctrl_o2dbnavigator8->enable_del(operation_exp_89());
+		$ctrl_o2dbnavigator8->enable_undo(operation_exp_89());
+		$ctrl_o2dbnavigator8->act_new("call_param_insert");
+		$ctrl_o2dbnavigator8->act_save("save_call_param");
+		$ctrl_o2dbnavigator8->act_del("call_param_delete");
+		$ctrl_o2dbnavigator8->act_undo("call_param_undo");
+		$ctrl_o2dbnavigator8->act_detail("zoom_call_param");
+		$ctrl_o2dbnavigator8->act_select("save_and_close");
+		}
+
+function operation§§ask_new_action_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("tmp_edit_vars", "actname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("new_action", False, "tmp_edit_vars§§actname") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_69() || $o2exe->e()) && o2act::exe("create_new_action", True, "") && $o2exe->e();
+	$o2exe->s(4) && (operation_exp_69() || $o2exe->e()) && o2act::view("actions", "1", "") && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_69() || $o2exe->e()) && o2act::exe("load_actions", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§ask_on_exit_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "save_on_exit", operation_exp_21()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call(operation_exp_18(), False, operation_exp_19(), "prg§_§var§§save_on_exit") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_20() || $o2exe->e()) && o2act::exe("save", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§blank_unused_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_7() || $o2exe->e()) && o2act::set("operations", "upd_viewname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_7() || $o2exe->e()) && o2act::set("operations", "upd_fieldname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_7() || $o2exe->e()) && o2act::set("operations", "upd_value", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(4) && (operation_exp_8() || $o2exe->e()) && o2act::set("operations", "call_prgname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_8() || $o2exe->e()) && o2act::set("operations", "call_expid", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(6) && (operation_exp_9() || $o2exe->e()) && o2act::set("operations", "call_gototype", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(7) && (operation_exp_10() || $o2exe->e()) && o2act::set("operations", "rec_viewname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(8) && (operation_exp_10() || $o2exe->e()) && o2act::set("operations", "rec_type", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(9) && (operation_exp_11() || $o2exe->e()) && o2act::set("operations", "retpar_parid", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(10) && (operation_exp_11() || $o2exe->e()) && o2act::set("operations", "retpar_value", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(11) && (operation_exp_12() || $o2exe->e()) && o2act::set("operations", "exeact_actname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(12) && (operation_exp_12() || $o2exe->e()) && o2act::set("operations", "exeact_endcond", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(13) && (operation_exp_12() || $o2exe->e()) && o2act::set("operations", "exeact_expr", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(14) && (operation_exp_12() || $o2exe->e()) && o2act::set("operations", "exeact_view", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(15) && (operation_exp_13() || $o2exe->e()) && o2act::set("operations", "exescr_value", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(16) && (operation_exp_14() || $o2exe->e()) && o2act::set("operations", "msg_type", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(17) && (operation_exp_14() || $o2exe->e()) && o2act::set("operations", "msg_value", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(18) && (operation_exp_15() || $o2exe->e()) && o2act::set("operations", "setmenu_name", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(19) && (operation_exp_16() || $o2exe->e()) && o2act::set("operations", "io_type", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(20) && (operation_exp_16() || $o2exe->e()) && o2act::set("operations", "io_protocol", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(21) && (operation_exp_16() || $o2exe->e()) && o2act::set("operations", "io_file", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(22) && (operation_exp_17() || $o2exe->e()) && o2act::set("operations", "print_template", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(23) && (operation_exp_17() || $o2exe->e()) && o2act::set("operations", "print_pdffile", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(24) && (operation_exp_17() || $o2exe->e()) && o2act::set("operations", "print_printer", operation_exp_6()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§call_details_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "1", "") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_104() || $o2exe->e()) && o2act::view("operation_details", "I", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operation_details", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operation_details", "prgname", operation_exp_2()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("operation_details", "actname", operation_exp_3()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("operation_details", "position", operation_exp_96()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("operation_details", "operation", operation_exp_97()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("prg§_§var", "passed_par_list", operation_exp_150()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::exe("compose_call_param", False, "tmp_call") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("prg§_§var", "call_par_tot", operation_exp_152()) && $o2exe->e();
+	$o2exe->s(11) && True && o2act::set("operation_details", "operation_detail", operation_exp_148()) && $o2exe->e();
+	$o2exe->s(12) && True && o2act::view("operation_details", "S", "") && $o2exe->e();
+	$o2exe->s(13) && True && o2act::script(operation_exp_149()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§call_param_delete_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "C", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "modified", operation_exp_30()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§call_param_insert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "4", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "last_call_param_pos", operation_exp_126()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("tmp_call", "I", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_call", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_call", "position", operation_exp_139()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§call_param_undo_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§clear_tmp_call_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§clear_tmp_locate_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_locate", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§close_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_22() || $o2exe->e()) && o2act::exe("ask_on_exit", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§compose_call_param_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "passed_par_list", operation_exp_151()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§compose_locate_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_106() || $o2exe->e()) && o2act::set("operation_details", "operation_detail", operation_exp_107()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§create_locate_cond_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_locate", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_locate", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_locate", "position", operation_exp_100()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_locate", "fieldname", operation_exp_101()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_locate", "idexpr", operation_exp_102()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::view("tmp_locate", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§create_new_action_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("actions", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("actions", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("actions", "prgname", operation_exp_2()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("actions", "actname", operation_exp_69()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("actions", "S", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::view("actions", "1", "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::exe("load_actions", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§create_parameter_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_call", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_call", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_call", "position", operation_exp_121()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_call", "param_name", operation_exp_122()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_call", "param_type", operation_exp_123()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("tmp_call", "idexpr", operation_exp_145()) && $o2exe->e();
+	$o2exe->s(7) && (operation_exp_146() || $o2exe->e()) && o2act::set("tmp_call", "var_view", operation_exp_143()) && $o2exe->e();
+	$o2exe->s(8) && (operation_exp_146() || $o2exe->e()) && o2act::set("tmp_call", "var_name", operation_exp_144()) && $o2exe->e();
+	$o2exe->s(9) && (operation_exp_146() || $o2exe->e()) && o2act::set("tmp_call", "field_desc", operation_exp_147()) && $o2exe->e();
+	$o2exe->s(10) && True && o2act::view("tmp_call", "S", "") && $o2exe->e();
+	$o2exe->s(11) && True && o2act::set("prg§_§var", "call_par_index", operation_exp_125()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§create_tmp_call_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("clear_tmp_call", False, "tmp_call") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "passed_par_list", operation_exp_128()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "call_par_list", operation_exp_118()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "call_par_tot", operation_exp_119()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "call_par_index", operation_exp_6()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("create_parameter", "operation_exp_120()", "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::view("tmp_call", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§create_tmp_locate_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("clear_tmp_locate", False, "tmp_locate") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "locate_list", operation_exp_99()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("create_locate_cond", False, "prgfields") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::view("tmp_locate", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§load_actions_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "list_actions", operation_exp_68()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§load_fields_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "list_fields", operation_exp_31()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§load_prgs_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prgs_list", operation_exp_115()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§load_views_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "list_views", operation_exp_32()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§locate_details_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_locate", "1", "") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_104() || $o2exe->e()) && o2act::view("operation_details", "I", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operation_details", "userid", operation_exp_1()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operation_details", "prgname", operation_exp_2()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("operation_details", "actname", operation_exp_3()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("operation_details", "position", operation_exp_96()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("operation_details", "operation", operation_exp_97()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("operation_details", "operation_detail", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::exe("compose_locate", False, "tmp_locate") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("operation_details", "operation_detail", operation_exp_108()) && $o2exe->e();
+	$o2exe->s(11) && True && o2act::view("operation_details", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§on_callprg_mode_change_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set focus") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(operation_exp_131()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("clear_tmp_call", False, "tmp_call") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§on_endcond_change_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_77() || $o2exe->e()) && o2act::set("tmp_edit_vars", "idexpr", operation_exp_6()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_alert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "msg_type", operation_exp_58()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "operations§§msg_value") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("save_and_close", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_call_goto_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Load record values in buffer") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "prgname", operation_exp_109()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "idexpr", operation_exp_111()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_edit_vars", "int_number", operation_exp_132()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_edit_vars", "actname", operation_exp_112()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("load_prgs", True, "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::exe("create_tmp_call", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_eval_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "operations§§exescr_value") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("save_and_close", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_exe_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Load record values in buffer") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "actname", operation_exp_64()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "actname2", operation_exp_67()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_edit_vars", "idexpr", operation_exp_65()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_edit_vars", "viewname", operation_exp_66()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("load_actions", True, "") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::exe("load_views", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_menu_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_menu", False, "operations§§setmenu_name") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("save_and_close", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_remark_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("tmp_edit_vars", "long_str", operation_exp_55()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_ret_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Load record values in buffer") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "int_number", operation_exp_79()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "idexpr", operation_exp_86()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "par_list", operation_exp_80()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_set_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Load record values in buffer") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "viewname", operation_exp_47()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "long_str", operation_exp_36()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_edit_vars", "idexpr", operation_exp_48()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::exe("load_views", True, "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("load_fields", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§prepare_view_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Load record values in buffer") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "viewname", operation_exp_92()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "actname", operation_exp_93()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::exe("load_views", True, "") && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_98() || $o2exe->e()) && o2act::exe("create_tmp_locate", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("blank_unused", True, "") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_23() || $o2exe->e()) && o2act::exe("save_set", True, "") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_54() || $o2exe->e()) && o2act::exe("save_remark", True, "") && $o2exe->e();
+	$o2exe->s(4) && (operation_exp_57() || $o2exe->e()) && o2act::exe("save_alert", True, "") && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_61() || $o2exe->e()) && o2act::exe("save_eval", True, "") && $o2exe->e();
+	$o2exe->s(6) && (operation_exp_63() || $o2exe->e()) && o2act::exe("save_exe", True, "") && $o2exe->e();
+	$o2exe->s(7) && (operation_exp_78() || $o2exe->e()) && o2act::exe("save_ret", True, "") && $o2exe->e();
+	$o2exe->s(8) && (operation_exp_87() || $o2exe->e()) && o2act::exe("save_menu", True, "") && $o2exe->e();
+	$o2exe->s(9) && (operation_exp_91() || $o2exe->e()) && o2act::exe("save_view", True, "") && $o2exe->e();
+	$o2exe->s(10) && (operation_exp_105() || $o2exe->e()) && o2act::exe("save_call_goto", True, "") && $o2exe->e();
+	$o2exe->s(11) && True && o2act::view("operations", "S", "") && $o2exe->e();
+	$o2exe->s(12) && (operation_exp_89() || $o2exe->e()) && o2act::ret(5, operation_exp_53()) && $o2exe->e();
+	$o2exe->s(13) && (operation_exp_89() || $o2exe->e()) && o2act::ret(8, operation_exp_135()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_alert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "rem_text", operation_exp_59()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_and_close_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("save", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_call_goto_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "call_prgname", operation_exp_113()) && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_51() || $o2exe->e()) && o2act::set("operations", "call_prgname", operation_exp_5()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "call_expid", operation_exp_51()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operations", "call_gototype", operation_exp_69()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("operations", "rem_text", operation_exp_114()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::exe("call_details", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_call_param_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_136() || $o2exe->e()) && o2act::set("prg§_§var", "modified", operation_exp_30()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("tmp_call", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_eval_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "rem_text", operation_exp_62()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_exe_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "exeact_actname", operation_exp_69()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "exeact_endcond", operation_exp_70()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "exeact_expr", operation_exp_51()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operations", "exeact_view", operation_exp_71()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("operations", "rem_text", operation_exp_72()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_menu_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "rem_text", operation_exp_88()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_remark_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "rem_text", operation_exp_56()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_ret_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "retpar_parid", operation_exp_85()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "retpar_value", operation_exp_51()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "rem_text", operation_exp_84()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_set_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "upd_viewname", operation_exp_49()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "upd_fieldname", operation_exp_50()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "upd_value", operation_exp_51()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operations", "rem_text", operation_exp_52()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§save_view_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("operations", "rec_viewname", operation_exp_71()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rec_type", operation_exp_69()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "rem_text", operation_exp_94()) && $o2exe->e();
+	$o2exe->s(4) && (operation_exp_98() || $o2exe->e()) && o2act::exe("locate_details", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "modified", operation_exp_134()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "operation", operation_exp_60()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::script(operation_exp_44()) && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_23() || $o2exe->e()) && o2act::exe("prepare_set", True, "") && $o2exe->e();
+	$o2exe->s(6) && (operation_exp_54() || $o2exe->e()) && o2act::exe("prepare_remark", True, "") && $o2exe->e();
+	$o2exe->s(7) && (operation_exp_57() || $o2exe->e()) && o2act::exe("prepare_alert", True, "") && $o2exe->e();
+	$o2exe->s(8) && (operation_exp_61() || $o2exe->e()) && o2act::exe("prepare_eval", True, "") && $o2exe->e();
+	$o2exe->s(9) && (operation_exp_63() || $o2exe->e()) && o2act::exe("prepare_exe", True, "") && $o2exe->e();
+	$o2exe->s(10) && (operation_exp_78() || $o2exe->e()) && o2act::exe("prepare_ret", True, "") && $o2exe->e();
+	$o2exe->s(11) && (operation_exp_87() || $o2exe->e()) && o2act::exe("prepare_menu", True, "") && $o2exe->e();
+	$o2exe->s(12) && (operation_exp_91() || $o2exe->e()) && o2act::exe("prepare_view", True, "") && $o2exe->e();
+	$o2exe->s(13) && (operation_exp_105() || $o2exe->e()) && o2act::exe("prepare_call_goto", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§tmp_locate_post_act(&$o2exe) {
+	$o2exe->s(1) && (operation_exp_137() || $o2exe->e()) && o2act::set("prg§_§var", "modified", operation_exp_30()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("tmp_locate", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_call_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Select parameter expression") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_138() || $o2exe->e()) && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_edit_vars§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_138() || $o2exe->e()) && o2act::view("prgexps", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_call_param_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_ctrl", operation_exp_45()) && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_133() || $o2exe->e()) && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_call§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_133() || $o2exe->e()) && o2act::view("tmp_call", "0", "") && $o2exe->e();
+	$o2exe->s(4) && (operation_exp_142() || $o2exe->e()) && o2act::call("select_prg_field", False, operation_exp_1(), operation_exp_2(), "tmp_call§§var_view", "tmp_call§§var_name", "tmp_call§§field_desc") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_edit_vars_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_ctrl", operation_exp_45()) && $o2exe->e();
+//	$o2exe->s(2) && True && o2act::remark("UPDATE") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_23() || $o2exe->e()) && o2act::exe("zoom_set", True, "") && $o2exe->e();
+//	$o2exe->s(4) && True && o2act::remark("EXECUTE ACTION") && $o2exe->e();
+	$o2exe->s(5) && (operation_exp_63() || $o2exe->e()) && o2act::exe("zoom_exe", True, "") && $o2exe->e();
+//	$o2exe->s(6) && True && o2act::remark("RETURN PARAMETER") && $o2exe->e();
+	$o2exe->s(7) && (operation_exp_78() || $o2exe->e()) && o2act::exe("zoom_ret", True, "") && $o2exe->e();
+//	$o2exe->s(8) && True && o2act::remark("CALL PROGRAM") && $o2exe->e();
+	$o2exe->s(9) && (operation_exp_116() || $o2exe->e()) && o2act::exe("zoom_call", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_exe_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Select end expression") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_75() || $o2exe->e()) && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_edit_vars§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_75() || $o2exe->e()) && o2act::view("prgexps", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_locate_exp_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_locate§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("tmp_locate", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_ret_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Select return expression") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_83() || $o2exe->e()) && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_edit_vars§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_83() || $o2exe->e()) && o2act::view("prgexps", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_set_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Select update expression") && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_46() || $o2exe->e()) && o2act::call("expressions", False, operation_exp_1(), operation_exp_2(), "tmp_edit_vars§§idexpr", operation_exp_90(), "prg§_§var§§modified") && $o2exe->e();
+	$o2exe->s(3) && (operation_exp_46() || $o2exe->e()) && o2act::view("prgexps", "0", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation§§zoom_tmp_locate_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_ctrl", operation_exp_45()) && $o2exe->e();
+	$o2exe->s(2) && (operation_exp_110() || $o2exe->e()) && o2act::exe("zoom_locate_exp", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function operation_exp_1() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function operation_exp_2() {
+
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function operation_exp_3() {
+
+return (o2par(3));
+	} //|o2_fine_exp|
+
+function operation_exp_4() {
+
+return (o2par(4));
+	} //|o2_fine_exp|
+
+function operation_exp_5() {
+
+return ("");
+	} //|o2_fine_exp|
+
+function operation_exp_6() {
+
+return (0);
+	} //|o2_fine_exp|
+
+function operation_exp_7() {
+
+return (o2val('operations','operation') != "set");
+	} //|o2_fine_exp|
+
+function operation_exp_8() {
+
+return ((o2val('operations','operation') != "call") && (o2val('operations','operation') != "goto"));
+	} //|o2_fine_exp|
+
+function operation_exp_9() {
+
+return (o2val('operations','operation') != "goto");
+	} //|o2_fine_exp|
+
+function operation_exp_10() {
+
+return (o2val('operations','operation') != "view");
+	} //|o2_fine_exp|
+
+function operation_exp_11() {
+
+return (o2val('operations','operation') != "ret");
+	} //|o2_fine_exp|
+
+function operation_exp_12() {
+
+return (o2val('operations','operation') != "exe");
+	} //|o2_fine_exp|
+
+function operation_exp_13() {
+
+return (o2val('operations','operation') != "script");
+	} //|o2_fine_exp|
+
+function operation_exp_14() {
+
+return (o2val('operations','operation') != "alert");
+	} //|o2_fine_exp|
+
+function operation_exp_15() {
+
+return (o2val('operations','operation') != "menu");
+	} //|o2_fine_exp|
+
+function operation_exp_16() {
+
+return (o2val('operations','operation') != "io");
+	} //|o2_fine_exp|
+
+function operation_exp_17() {
+
+return (o2val('operations','operation') != "report");
+	} //|o2_fine_exp|
+
+function operation_exp_18() {
+
+return ("tools/o2sys_confirm");
+	} //|o2_fine_exp|
+
+function operation_exp_19() {
+
+return ("Save modified data?");
+	} //|o2_fine_exp|
+
+function operation_exp_20() {
+
+return (o2val('prg§_§var','save_on_exit'));
+	} //|o2_fine_exp|
+
+function operation_exp_21() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function operation_exp_22() {
+
+return (o2view_mod("operations") && !o2par(7));
+	} //|o2_fine_exp|
+
+function operation_exp_23() {
+
+return (o2val('operations','operation') == "set");
+	} //|o2_fine_exp|
+
+function operation_exp_24() {
+
+return (o2val('_o2SESSION','rep_appvars'));
+	} //|o2_fine_exp|
+
+function operation_exp_25() {
+
+return ((o2val('appvars_status','userid') == o2app_user() ? o2val('appvars_status','userid') : ''));
+	} //|o2_fine_exp|
+
+function operation_exp_26() {
+
+return ((o2val('prg§_§var','fields_order_bypos') ? "pos" : "abs_name"));
+	} //|o2_fine_exp|
+
+function operation_exp_27() {
+
+return ("S");
+	} //|o2_fine_exp|
+
+function operation_exp_28() {
+
+return (o2val('prg§_§var','list_views'));
+	} //|o2_fine_exp|
+
+function operation_exp_29() {
+
+return (o2val('prg§_§var','list_fields'));
+	} //|o2_fine_exp|
+
+function operation_exp_30() {
+
+return (true);
+	} //|o2_fine_exp|
+
+function operation_exp_31() {
+	$view = o2val('tmp_edit_vars','viewname');
+$list = array();
+if (!$view || $view == "_o2SESSION") {
+   $list+= o2_view2list("appvars", "appvar_code", "appvar_desc");
+   }
+if (!$view || $view == "prg§_§var") {
+   $list+= o2_view2list("prgvars", "prgvar_code", "prgvar_desc");
+   }
+if (!$view || ($view != "prg§_§var" && $view != "_o2SESSION")) {
+   $list+= o2_view2list("prgfields", "field_code", "field_desc");
+   }
+unset($list[""]);
+natcasesort($list);
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_32() {
+	if (o2val('operations','operation') != "exe") {
+   $list = array("" => "< ALL >");
+   if (o2view_rec("appvars")) {
+      $list["_o2SESSION"] = "< Session variables >";
+      }
+   if (o2view_rec("prgvars")) {
+      $list["prg§_§var"] = "< Local variables >";
+      }
+   }
+else {
+   $list = array("" => "< NONE >");
+   }
+$list+= o2_view2list("prgviews", "name", "name");
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_33() {
+
+return ((o2zero('tmp_edit_vars','viewname') ? null : o2val('tmp_edit_vars','viewname')));
+	} //|o2_fine_exp|
+
+function operation_exp_34() {
+
+return (o2val('prgfields','viewname')."@".o2val('prgfields','name'));
+	} //|o2_fine_exp|
+
+function operation_exp_35() {
+
+return (o2val('prgfields','name')." (".o2val('prgfields','viewname').")");
+	} //|o2_fine_exp|
+
+function operation_exp_36() {
+
+return (o2val('operations','upd_viewname')."@".o2val('operations','upd_fieldname'));
+	} //|o2_fine_exp|
+
+function operation_exp_37() {
+
+return ("prg§_§var@".o2val('prgvars','name'));
+	} //|o2_fine_exp|
+
+function operation_exp_38() {
+
+return (o2val('prgvars','name')." (<Local>)");
+	} //|o2_fine_exp|
+
+function operation_exp_39() {
+
+return ("_o2SESSION@".o2val('appvars','name'));
+	} //|o2_fine_exp|
+
+function operation_exp_40() {
+
+return (o2val('appvars','name')." (<Session>)");
+	} //|o2_fine_exp|
+
+function operation_exp_41() {
+
+return (o2val('operations','upd_value'));
+	} //|o2_fine_exp|
+
+function operation_exp_42() {
+
+return (o2val('prgexps','result'));
+	} //|o2_fine_exp|
+
+function operation_exp_43() {
+
+return (o2val('prgexps','script'));
+	} //|o2_fine_exp|
+
+function operation_exp_44() {
+
+return (true);
+	} //|o2_fine_exp|
+
+function operation_exp_45() {
+
+return (o2app_submit("ctrl"));
+	} //|o2_fine_exp|
+
+function operation_exp_46() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "upd_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_47() {
+
+return (o2val('operations','upd_viewname'));
+	} //|o2_fine_exp|
+
+function operation_exp_48() {
+
+return (o2val('operations','upd_value'));
+	} //|o2_fine_exp|
+
+function operation_exp_49() {
+	list($view, $dummy) = explode("@", o2val('tmp_edit_vars','long_str'));
+return ($view);
+	} //|o2_fine_exp|
+
+function operation_exp_50() {
+	list($dummy, $field) = explode("@", o2val('tmp_edit_vars','long_str'));
+return ($field);
+	} //|o2_fine_exp|
+
+function operation_exp_51() {
+
+return (o2val('tmp_edit_vars','idexpr'));
+	} //|o2_fine_exp|
+
+function operation_exp_52() {
+	$view = o2val('operations','upd_viewname');
+if ($view == "prg§_§var") {
+   $desc = "(Local) ";
+   }
+elseif ($view == "_o2SESSION") {
+   $desc = "(Session) ";
+   }
+else {
+   $desc = $view."->";
+   }
+$desc.= o2val('operations','upd_fieldname').
+        " = [".o2val('operations','upd_value')."]";
+return ($desc);
+	} //|o2_fine_exp|
+
+function operation_exp_53() {
+
+return (o2val('operations','rem_text'));
+	} //|o2_fine_exp|
+
+function operation_exp_54() {
+
+return (o2val('operations','operation') == "remark");
+	} //|o2_fine_exp|
+
+function operation_exp_55() {
+
+return (o2val('operations','rem_text'));
+	} //|o2_fine_exp|
+
+function operation_exp_56() {
+
+return (o2val('tmp_edit_vars','long_str'));
+	} //|o2_fine_exp|
+
+function operation_exp_57() {
+
+return (o2val('operations','operation') == "alert");
+	} //|o2_fine_exp|
+
+function operation_exp_58() {
+
+return ("Box");
+	} //|o2_fine_exp|
+
+function operation_exp_59() {
+
+return ("[".o2val('operations','msg_value')."]");
+	} //|o2_fine_exp|
+
+function operation_exp_60() {
+
+return (o2par(6));
+	} //|o2_fine_exp|
+
+function operation_exp_61() {
+
+return (o2val('operations','operation') == "script");
+	} //|o2_fine_exp|
+
+function operation_exp_62() {
+
+return ("[".o2val('operations','exescr_value')."]");
+	} //|o2_fine_exp|
+
+function operation_exp_63() {
+
+return (o2val('operations','operation') == "exe");
+	} //|o2_fine_exp|
+
+function operation_exp_64() {
+
+return (o2val('operations','exeact_actname'));
+	} //|o2_fine_exp|
+
+function operation_exp_65() {
+
+return (o2val('operations','exeact_expr'));
+	} //|o2_fine_exp|
+
+function operation_exp_66() {
+
+return (o2val('operations','exeact_view'));
+	} //|o2_fine_exp|
+
+function operation_exp_67() {
+
+return ((o2zero('operations','exeact_endcond') ? "True" : o2val('operations','exeact_endcond')));
+	} //|o2_fine_exp|
+
+function operation_exp_68() {
+	$list = o2_view2list("actions", "actname", "actname");
+unset($list[""]);
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_69() {
+
+return (o2val('tmp_edit_vars','actname'));
+	} //|o2_fine_exp|
+
+function operation_exp_70() {
+
+return (o2val('tmp_edit_vars','actname2'));
+	} //|o2_fine_exp|
+
+function operation_exp_71() {
+
+return (o2val('tmp_edit_vars','viewname'));
+	} //|o2_fine_exp|
+
+function operation_exp_72() {
+	$end_cond  = o2val('operations','exeact_endcond');
+$loop_view = o2val('operations','exeact_view');
+$txt       = o2val('operations','exeact_actname').
+             " (END ".($end_cond == "True" ?
+                       "TRUE" :
+                       ($end_cond == "False" ?
+                        "FALSE" :
+                        "[".o2val('operations','exeact_expr')."]")).
+             ")".($loop_view ? " ON [".$loop_view."]" : "");
+return ($txt);
+	} //|o2_fine_exp|
+
+function operation_exp_73() {
+
+return (o2val('prg§_§var','list_actions'));
+	} //|o2_fine_exp|
+
+function operation_exp_74() {
+
+return (o2val('tmp_edit_vars','actname2') == "By expression");
+	} //|o2_fine_exp|
+
+function operation_exp_75() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "end_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_76() {
+
+return ((o2val('tmp_edit_vars','actname2') == "By expression") && o2val('prgexps','script'));
+	} //|o2_fine_exp|
+
+function operation_exp_77() {
+
+return (o2val('tmp_edit_vars','actname2') != "By expression");
+	} //|o2_fine_exp|
+
+function operation_exp_78() {
+
+return (o2val('operations','operation') == "ret");
+	} //|o2_fine_exp|
+
+function operation_exp_79() {
+
+return (o2val('operations','retpar_parid'));
+	} //|o2_fine_exp|
+
+function operation_exp_80() {
+	$list = o2_view2list("params", "position", "param_desc");
+unset($list[0]);
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_81() {
+
+return (o2val('params','position').". ".o2val('params','parname')." (".o2val('params','datatype').")");
+	} //|o2_fine_exp|
+
+function operation_exp_82() {
+
+return (o2val('prg§_§var','par_list'));
+	} //|o2_fine_exp|
+
+function operation_exp_83() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "ret_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_84() {
+
+return ("PARAMETER ".o2val('operations','retpar_parid')." = [".o2val('operations','retpar_value')."]");
+	} //|o2_fine_exp|
+
+function operation_exp_85() {
+
+return (o2val('tmp_edit_vars','int_number'));
+	} //|o2_fine_exp|
+
+function operation_exp_86() {
+
+return (o2val('operations','retpar_value'));
+	} //|o2_fine_exp|
+
+function operation_exp_87() {
+
+return (o2val('operations','operation') == "menu");
+	} //|o2_fine_exp|
+
+function operation_exp_88() {
+
+return (o2val('operations','setmenu_name'));
+	} //|o2_fine_exp|
+
+function operation_exp_89() {
+
+return (!o2par(7));
+	} //|o2_fine_exp|
+
+function operation_exp_90() {
+
+return (o2par(7));
+	} //|o2_fine_exp|
+
+function operation_exp_91() {
+
+return (o2val('operations','operation') == "view");
+	} //|o2_fine_exp|
+
+function operation_exp_92() {
+
+return (o2val('operations','rec_viewname'));
+	} //|o2_fine_exp|
+
+function operation_exp_93() {
+
+return (o2val('operations','rec_type'));
+	} //|o2_fine_exp|
+
+function operation_exp_94() {
+	$list = o2val('_o2SESSION','view_actions');
+$desc = o2val('operations','rec_viewname')." :: ".$list[o2val('operations','rec_type')];
+return ($desc);
+	} //|o2_fine_exp|
+
+function operation_exp_95() {
+
+return (o2val('_o2SESSION','view_actions'));
+	} //|o2_fine_exp|
+
+function operation_exp_96() {
+
+return (o2val('operations','position'));
+	} //|o2_fine_exp|
+
+function operation_exp_97() {
+
+return (o2val('operations','operation'));
+	} //|o2_fine_exp|
+
+function operation_exp_98() {
+
+return (o2val('tmp_edit_vars','actname') == "L");
+	} //|o2_fine_exp|
+
+function operation_exp_99() {
+	$detail = o2val('operation_details','operation_detail');
+if ($detail) {
+   eval("\$list = ".$detail.";");
+   }
+if (!is_array($list)) {
+   $list = array();
+   }
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_100() {
+
+return (o2val('prgfields','position'));
+	} //|o2_fine_exp|
+
+function operation_exp_101() {
+
+return (o2val('prgfields','name'));
+	} //|o2_fine_exp|
+
+function operation_exp_102() {
+	$list = o2val('prg§_§var','locate_list');
+if (isset($list[o2val('tmp_locate','fieldname')])) {
+    $exp = $list[o2val('tmp_locate','fieldname')];
+    }
+else {
+    $exp = 0;
+    }
+return ($exp);
+	} //|o2_fine_exp|
+
+function operation_exp_103() {
+
+return (o2val('tmp_locate','fieldname'));
+	} //|o2_fine_exp|
+
+function operation_exp_104() {
+
+return (!o2view_retrows("operation_details"));
+	} //|o2_fine_exp|
+
+function operation_exp_105() {
+
+return (o2val('operations','operation') == "call");
+	} //|o2_fine_exp|
+
+function operation_exp_106() {
+
+return (o2val('tmp_locate','idexpr'));
+	} //|o2_fine_exp|
+
+function operation_exp_107() {
+	$ret = o2val('operation_details','operation_detail');
+$ret.= ($ret ? "," : "").
+       "\"".o2val('tmp_locate','fieldname')."\" => ".o2val('tmp_locate','idexpr');
+return ($ret);
+	} //|o2_fine_exp|
+
+function operation_exp_108() {
+
+return ("array(".o2val('operation_details','operation_detail').")");
+	} //|o2_fine_exp|
+
+function operation_exp_109() {
+
+return (o2val('operations','call_prgname'));
+	} //|o2_fine_exp|
+
+function operation_exp_110() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "locate_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_111() {
+
+return (o2val('operations','call_expid'));
+	} //|o2_fine_exp|
+
+function operation_exp_112() {
+
+return (o2val('operations','call_gototype'));
+	} //|o2_fine_exp|
+
+function operation_exp_113() {
+
+return (o2val('tmp_edit_vars','prgname'));
+	} //|o2_fine_exp|
+
+function operation_exp_114() {
+	$txt = (o2zero('operations','call_expid') ?
+        o2val('operations','call_prgname') :
+        "[".o2val('operations','call_expid')."]").
+       (o2val('prg§_§var','call_par_tot') ?
+        " (".o2val('prg§_§var','call_par_tot').")" :
+        "").
+       (o2val('operations','call_gototype') == "C" ?
+        " (Cached)" :
+        "");
+return ($txt);
+	} //|o2_fine_exp|
+
+function operation_exp_115() {
+	$res       = array();
+$checked   = array();
+$prgs_all  = o2dir_list(o2val('_o2SESSION','prgdir'), "*.prf");
+$prgs_user = o2dir_list(o2val('_o2SESSION','usrdir'), "*.prf");
+$tot       = count($prgs_user);
+for ($i = 0; $i < $tot; $i++) {
+    $basename           = o2file_basename($prgs_user[$i]);
+    $checked[$basename] = $basename." [ EDIT ]";
+    }
+$tot = count($prgs_all);
+for ($i = 0; $i < $tot; $i++) {
+    $basename       = o2file_basename($prgs_all[$i]);
+    $res[$basename] = $basename;
+    }
+$res = array_merge($res, $checked);
+return ($res);
+	} //|o2_fine_exp|
+
+function operation_exp_116() {
+
+return (o2val('operations','operation') == "call" && (o2zero('operations','call_gototype') || o2val('operations','call_gototype') == "Cached"));
+	} //|o2_fine_exp|
+
+function operation_exp_117() {
+
+return (o2val('prg§_§var','prgs_list'));
+	} //|o2_fine_exp|
+
+function operation_exp_118() {
+	$prg_txt = file_get_contents(o2val('_o2SESSION','prgdir').
+                             o2val('tmp_edit_vars','prgname').".prg");
+$exp_par  = '/o2def::par\(\s*(.*)\s*,\s*"(.*)"\s*,\s*"(.*)"\s*\);/';
+preg_match_all($exp_par, $prg_txt, $list);
+unset($list[0]);
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_119() {
+
+return (count(o2val('prg§_§var','call_par_list',1)));
+	} //|o2_fine_exp|
+
+function operation_exp_120() {
+
+return (o2val('prg§_§var','call_par_index') >= o2val('prg§_§var','call_par_tot'));
+	} //|o2_fine_exp|
+
+function operation_exp_121() {
+
+return (o2val('prg§_§var','call_par_list',1,o2val('prg§_§var','call_par_index')));
+	} //|o2_fine_exp|
+
+function operation_exp_122() {
+
+return (o2val('prg§_§var','call_par_list',2,o2val('prg§_§var','call_par_index')));
+	} //|o2_fine_exp|
+
+function operation_exp_123() {
+
+return (o2val('prg§_§var','call_par_list',3,o2val('prg§_§var','call_par_index')));
+	} //|o2_fine_exp|
+
+function operation_exp_124() {
+
+return (o2val('tmp_call','param_name'));
+	} //|o2_fine_exp|
+
+function operation_exp_125() {
+
+return (o2val('prg§_§var','call_par_index') + 1);
+	} //|o2_fine_exp|
+
+function operation_exp_126() {
+
+return (o2val('tmp_call','position'));
+	} //|o2_fine_exp|
+
+function operation_exp_127() {
+
+return (o2val('tmp_call','param_type'));
+	} //|o2_fine_exp|
+
+function operation_exp_128() {
+	$detail = o2val('operation_details','operation_detail');
+if ($detail) {
+   $list = unserialize($detail);
+   }
+if (!is_array($list)) {
+   $list = array();
+   }
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_129() {
+
+return (!o2zero('tmp_edit_vars','int_number'));
+	} //|o2_fine_exp|
+
+function operation_exp_130() {
+
+return (o2zero('tmp_edit_vars','int_number'));
+	} //|o2_fine_exp|
+
+function operation_exp_131() {
+	o2ctrl_focus("call", (o2zero('tmp_edit_vars','int_number') ? "call_prg_list" : "call_prg_exp"));
+return (true);
+	} //|o2_fine_exp|
+
+function operation_exp_132() {
+
+return ((o2zero('operations','call_expid') ? 0 : 1));
+	} //|o2_fine_exp|
+
+function operation_exp_133() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "call_param_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_134() {
+
+return (o2par(8));
+	} //|o2_fine_exp|
+
+function operation_exp_135() {
+
+return (o2view_mod("tmp_edit_vars") || o2val('prg§_§var','modified'));
+	} //|o2_fine_exp|
+
+function operation_exp_136() {
+
+return (o2view_mod("tmp_call"));
+	} //|o2_fine_exp|
+
+function operation_exp_137() {
+
+return (o2view_mod("tmp_locate"));
+	} //|o2_fine_exp|
+
+function operation_exp_138() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "call_prg_exp");
+	} //|o2_fine_exp|
+
+function operation_exp_139() {
+
+return (o2val('prg§_§var','last_call_param_pos') + 1);
+	} //|o2_fine_exp|
+
+function operation_exp_140() {
+
+return (o2val('tmp_call','param_name')." (".o2val('tmp_call','param_type').")");
+	} //|o2_fine_exp|
+
+function operation_exp_141() {
+
+return (!o2par(7) && !o2zero('tmp_edit_vars','int_number'));
+	} //|o2_fine_exp|
+
+function operation_exp_142() {
+
+return (o2val('prg§_§var','zoom_ctrl') == "call_param_field");
+	} //|o2_fine_exp|
+
+function operation_exp_143() {
+
+return (o2val('prg§_§var','passed_par_list',o2val('tmp_call','position'),1));
+	} //|o2_fine_exp|
+
+function operation_exp_144() {
+
+return ($list = o2val('prg§_§var','passed_par_list',o2val('tmp_call','position'),2));
+	} //|o2_fine_exp|
+
+function operation_exp_145() {
+
+return ($list = o2val('prg§_§var','passed_par_list',o2val('tmp_call','position'),3));
+	} //|o2_fine_exp|
+
+function operation_exp_146() {
+
+return (o2zero('tmp_call','idexpr'));
+	} //|o2_fine_exp|
+
+function operation_exp_147() {
+
+return ((o2zero('tmp_call','var_name') ? "" : o2val('tmp_call','var_view')."->".o2val('tmp_call','var_name')));
+	} //|o2_fine_exp|
+
+function operation_exp_148() {
+
+return (serialize(o2val('prg§_§var','passed_par_list')));
+	} //|o2_fine_exp|
+
+function operation_exp_149() {
+
+return (true);
+	} //|o2_fine_exp|
+
+function operation_exp_150() {
+
+return (array());
+	} //|o2_fine_exp|
+
+function operation_exp_151() {
+	$list = o2val('prg§_§var','passed_par_list');
+$list[o2val('tmp_call','position')] = array(1 => o2val('tmp_call','var_view'),
+                                            2 => o2val('tmp_call','var_name'),
+                                            3 => (o2zero('tmp_call','idexpr') ?
+                                                  "" :
+                                                  o2val('tmp_call','idexpr')));
+return ($list);
+	} //|o2_fine_exp|
+
+function operation_exp_152() {
+
+return (count(o2val('prg§_§var','passed_par_list')));
+	} //|o2_fine_exp|
+
+function operation_exp_9999() {
+
+return (false);
+	} //|o2_fine_exp|
+?>

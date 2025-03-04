@@ -1,0 +1,202 @@
+<?php
+
+function expression§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("id_counter", "idexpr");
+		}
+
+function expression§§expressions_def(&$task_expressions, $_o2viewalias = "") {
+	$task_expressions->righe_vis = 10;
+
+	$task_expressions->usa_file("prgexpressions","prgexpressions","id");
+
+	$task_expressions->usa("userid","prgexpressions","userid","expression_exp_7()","expression_exp_7()",null,null);
+	$task_expressions->usa("prgname","prgexpressions","prgname","expression_exp_8()","expression_exp_8()",null,null);
+	$task_expressions->usa("idexp","prgexpressions","idexp","expression_exp_9()","expression_exp_9()",null,null);
+	$task_expressions->usa("script","prgexpressions","script",null,null,null,null);
+	$task_expressions->usa("result","prgexpressions","result",null,null,null,null);
+}
+
+function expression§§exp_id_def(&$task_exp_id, $_o2viewalias = "") {
+	$task_exp_id->righe_vis = 10;
+
+	$task_exp_id->usa_file("prgexpressions","prgexpressions","id");
+
+	$task_exp_id->usa("userid","prgexpressions","userid","expression_exp_7()","expression_exp_7()",null,null);
+	$task_exp_id->usa("prgname","prgexpressions","prgname","expression_exp_8()","expression_exp_8()",null,null);
+	$task_exp_id->usa("idexp","prgexpressions","idexp",null,null,null,null);
+}
+function expression§§exp_form_def(&$form_exp) {
+	$form_exp->x(205);
+	$form_exp->y(92);
+	$form_exp->larghezza(597);
+	$form_exp->altezza(537);
+	$form_exp->titolo("Code editor");
+	$form_exp->close_action("done");
+	$ctrl_o2gtk_ide = &$form_exp->ctrldef("o2gtk_ide", "text", "", "expressions", "result");
+		$ctrl_o2gtk_ide->x(10);
+		$ctrl_o2gtk_ide->y(10);
+		$ctrl_o2gtk_ide->larghezza(570);
+		$ctrl_o2gtk_ide->altezza(35);
+		$ctrl_o2gtk_ide->modificabile(expression_exp_10());
+		$ctrl_o2gtk_ide->visibile(expression_exp_1());
+		$ctrl_o2gtk_ide->css(expression_exp_3());
+	$ctrl_o2textarea2 = &$form_exp->ctrldef("o2textarea2", "text", "", "expressions", "script");
+		$ctrl_o2textarea2->x(10);
+		$ctrl_o2textarea2->y(50);
+		$ctrl_o2textarea2->larghezza(570);
+		$ctrl_o2textarea2->altezza(410);
+		$ctrl_o2textarea2->modificabile(expression_exp_10());
+	$ctrl_o2button2 = &$form_exp->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(390);
+		$ctrl_o2button2->y(470);
+		$ctrl_o2button2->larghezza(90);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->azione("done");
+		$ctrl_o2button2->label("OK");
+	$ctrl_o2button3 = &$form_exp->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(490);
+		$ctrl_o2button3->y(470);
+		$ctrl_o2button3->larghezza(90);
+		$ctrl_o2button3->altezza(30);
+		$ctrl_o2button3->azione("cancel");
+		$ctrl_o2button3->label("Cancel");
+		}
+
+function expression§§assign_id_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "id_counter", expression_exp_13()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("look4id", "expression_exp_15()", "exp_id") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("expressions", "idexp", expression_exp_16()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("expressions", "userid", expression_exp_7()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("expressions", "prgname", expression_exp_8()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::ret(3, expression_exp_17()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§cancel_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§create_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("expressions", "I", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§done_act(&$o2exe) {
+	$o2exe->s(1) && (expression_exp_12() || $o2exe->e()) && o2act::exe("assign_id", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("expressions", "S", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::ret(5, expression_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§look4id_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "id_counter", expression_exp_14()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§start_act(&$o2exe) {
+	$o2exe->s(1) && (expression_exp_12() || $o2exe->e()) && o2act::exe("create", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression§§zoom_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::alert(expression_exp_5(), 0) && $o2exe->e();
+	} //|o2_fine_act|
+
+function expression_exp_1() {
+	if ($GLOBALS['o2_runtime']->interface != "GTK") {
+   $vis = true;
+   }
+else {
+   $vis = false;
+   include_once(o2app_dir_home().'o2gtk_ide.php');
+   $app  = $_SESSION['o2_app'];
+   $form = $app->istanze_prg[$app->progressivo_istanze]->form['exp_form'];
+   o2gtk::ctrl_win($form);
+   $myself = $form->controlli['o2gtk_ide'];
+   if ($myself->o2ide) {
+      /* refresh */
+      }
+   else {
+      $myself->o2ide = new o2gtk_ide($myself);
+      $myself->o2ide->set_action_on_zoom("zoom");
+      }
+   }
+return ($vis);
+	} //|o2_fine_exp|
+
+function expression_exp_2() {
+
+return ("");
+	} //|o2_fine_exp|
+
+function expression_exp_3() {
+
+return ("o2ide");
+	} //|o2_fine_exp|
+
+function expression_exp_4() {
+	$t = file_get_contents(__FILE__);
+return ($t);
+	} //|o2_fine_exp|
+
+function expression_exp_5() {
+
+return ("Zoom");
+	} //|o2_fine_exp|
+
+function expression_exp_6() {
+
+return ("Done");
+	} //|o2_fine_exp|
+
+function expression_exp_7() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function expression_exp_8() {
+
+return (o2par(2));
+	} //|o2_fine_exp|
+
+function expression_exp_9() {
+
+return (o2par(3));
+	} //|o2_fine_exp|
+
+function expression_exp_10() {
+
+return (!o2par(4));
+	} //|o2_fine_exp|
+
+function expression_exp_11() {
+
+return (true);
+	} //|o2_fine_exp|
+
+function expression_exp_12() {
+
+return (o2par(6));
+	} //|o2_fine_exp|
+
+function expression_exp_13() {
+
+return (0);
+	} //|o2_fine_exp|
+
+function expression_exp_14() {
+
+return (o2val('prg§_§var','id_counter') + 1);
+	} //|o2_fine_exp|
+
+function expression_exp_15() {
+
+return (o2val('exp_id','idexp') > o2val('prg§_§var','id_counter'));
+	} //|o2_fine_exp|
+
+function expression_exp_16() {
+
+return (o2val('prg§_§var','id_counter') + (o2val('prg§_§var','id_counter') < o2view_total("exp_id") ? 0 : 1));
+	} //|o2_fine_exp|
+
+function expression_exp_17() {
+
+return (o2val('expressions','idexp'));
+	} //|o2_fine_exp|
+?>

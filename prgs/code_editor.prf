@@ -1,0 +1,87 @@
+<?php
+
+function code_editor§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("local_buffer", "_o2text");
+		}
+function code_editor§§code_editor_1_form_def(&$form_code_editor_1) {
+	$form_code_editor_1->x(205);
+	$form_code_editor_1->y(92);
+	$form_code_editor_1->larghezza(597);
+	$form_code_editor_1->altezza(503);
+	$form_code_editor_1->titolo("Code editor");
+	$ctrl_o2gtk_ide = &$form_code_editor_1->ctrldef("o2gtk_ide", "text", "", "prg§_§var", "local_buffer");
+		$ctrl_o2gtk_ide->x(0);
+		$ctrl_o2gtk_ide->y(0);
+		$ctrl_o2gtk_ide->larghezza(590);
+		$ctrl_o2gtk_ide->altezza(470);
+		$ctrl_o2gtk_ide->modificabile(code_editor_exp_7());
+		$ctrl_o2gtk_ide->visibile(code_editor_exp_1());
+		$ctrl_o2gtk_ide->css(code_editor_exp_3());
+		}
+
+function code_editor§§done_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::alert(code_editor_exp_6(), 0) && $o2exe->e();
+	} //|o2_fine_act|
+
+function code_editor§§start_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "local_buffer", code_editor_exp_4()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function code_editor§§zoom_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::alert(code_editor_exp_5(), 0) && $o2exe->e();
+	} //|o2_fine_act|
+
+function code_editor_exp_1() {
+	if ($GLOBALS['o2_runtime']->interface != "GTK") {
+   $vis = true;
+   }
+else {
+   $vis = false;
+   include_once(o2app_dir_home().'o2gtk_ide.php');
+   $app  = $_SESSION['o2_app'];
+   $form = $app->istanze_prg[$app->progressivo_istanze]->form['code_editor_1_form'];
+   o2gtk::ctrl_win($form); 
+   $myself = $form->controlli['o2gtk_ide'];
+   if ($myself->o2ide) {
+      /* refresh */
+      }
+   else {
+      $myself->o2ide = new o2gtk_ide($myself);
+      $myself->o2ide->set_action_on_zoom("zoom");
+      $myself->o2ide->set_action_on_done("done");
+      }
+   }
+return ($vis);
+	} //|o2_fine_exp|
+
+function code_editor_exp_2() {
+	
+return ("");
+	} //|o2_fine_exp|
+
+function code_editor_exp_3() {
+	
+return ("o2ide");
+	} //|o2_fine_exp|
+
+function code_editor_exp_4() {
+	$t = file_get_contents(__FILE__);
+return ($t);
+	} //|o2_fine_exp|
+
+function code_editor_exp_5() {
+	
+return ("Zoom");
+	} //|o2_fine_exp|
+
+function code_editor_exp_6() {
+	
+return ("Done");
+	} //|o2_fine_exp|
+
+function code_editor_exp_7() {
+	
+return (!o2par(1));
+	} //|o2_fine_exp|
+?>

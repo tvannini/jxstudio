@@ -1,0 +1,641 @@
+:root {
+    --jx-color-font: #363030;
+    --jx-color-sele: #ffaf84;
+    }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), url(fonts/RobotoFlex.ttf);
+    }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Roboto'), url(fonts/RobotoFlex.ttf);
+    font-variation-settings: "slnt" -10;
+    }
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: bold;
+    font-weight: 700;
+    src: local('Roboto'), url(fonts/RobotoFlex.ttf);
+    }
+
+* { font-size: 15px; font-family: Roboto, Arial, sans-serif;}
+
+.disp_area code {
+    font: normal 13px mono;
+    }
+
+
+/* __________________________________________ Navigator / Toolbar ___ */
+
+.jxnav {
+    height: 40px;
+    background-color: var(--jx-color-face);
+    border: none;
+    border-bottom: 1px solid var(--jx-color-border);
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+
+.jxnav .o2_ctrl_nav_e {
+    display: none;
+    }
+
+.jxnav .o2_ctrl_nav_i {
+    display: none;
+    }
+
+.jxnav .o2_ctrl_nav_sep {
+    width: 100%;
+    }
+
+.jxnav .o2_ctrl_nav_first {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/first.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_first:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/first.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_first.dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/first_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_prevpg {
+    display: none;
+    }
+
+.jxnav .o2_ctrl_nav_prev {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/prev.png) no-repeat top;
+    border: 1px solid transparent;
+    display: block;
+    }
+
+.jxnav .o2_ctrl_nav_prev:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/prev.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    display: block;
+    }
+
+.jxnav .o2_ctrl_nav_prev.dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/prev_dis.png) no-repeat top;
+    display: block;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_last {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/last.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_last:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/last.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_last.dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/last_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_nextpg {
+    display: none;
+    }
+
+.jxnav .o2_ctrl_nav_next {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/next.png) no-repeat top;
+    border: 1px solid transparent;
+    display: block;
+    }
+
+.jxnav .o2_ctrl_nav_next:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/next.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    display: block;
+    }
+
+.jxnav .o2_ctrl_nav_next.dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/next_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    display: block;
+    }
+
+.jxnav .o2_ctrl_nav_new {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/new.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_new:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/new.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_new_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/new_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_save {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/save.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_save:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/save.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_save_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/save_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_del {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/del.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_del:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/del.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_del_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/del_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_det {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/det.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_det:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/det.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_det_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/det_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_sele {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/sele.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_sele:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/sele.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_sele_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/sele_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_undo {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/undo.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+.jxnav .o2_ctrl_nav_undo:hover {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/undo.png) no-repeat top;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.jxnav .o2_ctrl_nav_undo_dis {
+    width: 32px;
+    height: 32px;
+    background: url(nav/big/undo_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    }
+
+
+/* _________________________________________________ Tool-buttons ___ */
+
+.tool_btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid transparent;
+    }
+
+.tool_btn:hover {
+    width: 32px;
+    height: 32px;
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_checked {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/checked.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_checked:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_checkin {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/checkin.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_checkin:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_checkin_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/checkin_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_checkout {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/checkout.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_checkout:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_checkout_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/checkout_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_uncheck {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/uncheck.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_uncheck:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_uncheck_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/uncheck_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_discard {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/discard.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_discard:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_discard_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/discard_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_save {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/save.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_save:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_save_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/save_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_def {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/tables.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_def:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_def_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/tables_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_prop {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/properties.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+.tool_btn_prop:hover {
+    background-color: var(--jx-color-on);
+    border: 1px solid var(--jx-color-border-hover);
+    border-radius: 3px;
+    }
+
+.tool_btn_prop_dis {
+    width: 32px;
+    height: 24px;
+    background: url(toolbar/properties_dis.png) no-repeat top;
+    border: 1px solid transparent;
+    margin-top: 1px;
+    }
+
+
+/* ______________________________________ Readonly fields in grid ___ */
+
+.o2_tab_sele .o2_ctrl_edit_dis {
+    color: var(--jx-color-font);
+    background: transparent;
+    border-color: transparent;
+    border: none;
+    padding-left: 0;
+    }
+
+.o2_ctrl_edit_dis:focus, .o2_tab_sele .o2_ctrl_edit_dis:focus {
+    color: var(--jx-color-disabled);
+    background-color: var(--jx-color-bgdisabled);
+    border: 1px solid var(--jx-color-border-focus);
+    }
+
+.o2_tab_sele .o2_ctrl_listcombo_field_dis {
+    color: var(--jx-color-font);
+    background: transparent;
+    border-color: transparent;
+    border: none;
+    padding-left: 0;
+    }
+
+.o2_ctrl_listcombo_field_dis:focus, .o2_tab_sele .o2_ctrl_listcombo_field_dis:focus {
+    color: var(--jx-color-disabled);
+    background-color: var(--jx-color-bgdisabled);
+    border: 1px solid var(--jx-color-border-focus);
+    }
+
+
+/* ___________________________________________________ Operations ___ */
+
+.operation_call * {
+    color: #000000;
+    }
+
+.operation_gotoprg * {
+    color: #000000;
+    }
+
+.operation_close * {
+    color: #000000;
+    }
+
+.operation_exe * {
+    color: #0cb60c;
+    }
+
+.operation_script * {
+    color: #0cb60c;
+    }
+
+.operation_set * {
+    color: #4b4bff;
+    }
+
+.operation_ret * {
+    color: #4b4bff  ;
+    }
+
+.operation_menu * {
+    color: #4b4bff  ;
+    }
+
+.operation_alert * {
+    color: #9b57af;
+    }
+
+.operation_io * {
+    color: #d42828;
+    }
+
+.operation_report * {
+    color: #d42828;
+    }
+
+.operation_view * {
+    color: #d42828;
+    }
+
+.operation_remark * {
+    color: #999999;
+    font-style: italic;
+    }
+
+
+/* _____________________________________________________ Programs ___ */
+
+.checked_by_me * {
+    color: #009900;
+    background-color: #fefefe;
+    }
+.checked_by_me_alt * {
+    color: #009900;
+    background-color: #f0f0f0;
+    }
+.checked_by_other * {
+    color: #990000;
+    background-color: #fefefe;
+    }
+.checked_by_other_alt * {
+    color: #990000;
+    background-color: #f0f0f0;
+    }
+
+
+/* ________________________________________________ Miscellaneous ___ */
+
+.o2_tab_testa {
+    font-size: 90%;
+    }
+
+.o2_ctrl_multi_in .o2_tab_space {
+    border-bottom: none;
+    }
+
+.id_spaced {
+    padding-right: 20px;
+    }
+
+.id_spaced .o2_ctrl_edit_dis {
+    padding-right: 17px;
+    }
+
+.select_range * {
+    color: #000099;
+    }
+
+.select_range_alt * {
+    color: #000099;
+    background-color: #f0f0f0;
+    }
+
+.catch_action {
+    color: #d42828;
+    }
+
+.o2_ctrl_multi_on:only-child {
+    font-size: 90%;
+    font-weight: bold;
+    height: 24px;
+    padding-top: 3px;
+    }
+
+.page_title, .page_title_dis {
+    font-weight: bold;
+    text-align: center;
+    }
+
+.jxtree {
+    border-top: none;
+    border-bottom: none;
+    }

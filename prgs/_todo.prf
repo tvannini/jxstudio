@@ -1,0 +1,17 @@
+<?php
+function _todo§§_todo_1_form_def(&$form__todo_1) {
+	$form__todo_1->x(258);
+	$form__todo_1->y(103);
+	$form__todo_1->larghezza(551);
+	$form__todo_1->altezza(340);
+	$form__todo_1->titolo("TODO");
+	$form__todo_1->align_o("Center");
+	$ctrl_o2label2 = &$form__todo_1->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(140);
+		$ctrl_o2label2->y(120);
+		$ctrl_o2label2->larghezza(220);
+		$ctrl_o2label2->altezza(20);
+		$ctrl_o2label2->label("Function not implemented yet");
+		}
+
+?>

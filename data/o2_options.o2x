@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<!--                 o2xdb table document                -->
+<!-- created       : 27.01.2025 01:45:04                 -->
+<!-- application   : jxstudio                            -->
+<!-- by            : tommaso                             -->
+<!-- from          : SQLITE3                             -->
+<!-- database      :                                     -->
+<!-- table         : o2sys_options                       -->
+<rset>
+<r><f></f><f><![CDATA[cli_lang]]></f><f><![CDATA[it]]></f></r>
+<r><f></f><f><![CDATA[keyb_ctrl_zoom]]></f><f><![CDATA[116;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_form_exit]]></f><f><![CDATA[27;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_form_refresh]]></f><f><![CDATA[116;;;X]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_del]]></f><f><![CDATA[113;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_detail]]></f><f><![CDATA[116;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_first]]></f><f><![CDATA[36;;X;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_last]]></f><f><![CDATA[35;;X;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_new]]></f><f><![CDATA[115;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_next]]></f><f><![CDATA[40;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_nextpg]]></f><f><![CDATA[34;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_prev]]></f><f><![CDATA[38;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_prevpg]]></f><f><![CDATA[33;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_save]]></f><f><![CDATA[123;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_sele]]></f><f><![CDATA[13;;;]]></f></r>
+<r><f></f><f><![CDATA[keyb_nav_undo]]></f><f><![CDATA[117;;;]]></f></r>
+<r><f></f><f><![CDATA[lookup_time]]></f><f><![CDATA[300]]></f></r>
+<r><f></f><f><![CDATA[menu_newsess]]></f><f><![CDATA[1]]></f></r>
+<r><f></f><f><![CDATA[menu_open_on]]></f><f><![CDATA[C]]></f></r>
+<r><f></f><f><![CDATA[menu_style]]></f><f><![CDATA[T]]></f></r>
+<r><f></f><f><![CDATA[tab_dblclick]]></f><f><![CDATA[B]]></f></r>
+<r><f></f><f><![CDATA[tab_settings_save]]></f><f><![CDATA[2]]></f></r>
+</rset>
+<!-- Total 2076 bytes wrote -->

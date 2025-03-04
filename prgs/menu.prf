@@ -1,0 +1,250 @@
+<?php
+
+function menu§§menu_def(&$task_menu, $_o2viewalias = "") {
+	$task_menu->righe_vis = 25;
+
+	$task_menu->usa_file("menu","menu","parent");
+
+	$task_menu->usa("userid","menu","userid","menu_exp_3()","menu_exp_3()",null,null);
+	$task_menu->usa("name","menu","name",null,null,null,null);
+	$task_menu->usa("parentname","menu","parentname","menu_exp_8()","menu_exp_8()",null,null);
+	$task_menu->usa("position","menu","position",null,null,null,null);
+	$task_menu->usa("type","menu","type",null,null,null,null);
+	$task_menu->usa("label","menu","label",null,null,null,null);
+	$task_menu->usa("prgname","menu","prgname",null,null,null,null);
+	$task_menu->usa("icon","menu","icon",null,null,null,null);
+	$task_menu->usa("url","menu","url",null,null,null,null);
+}
+
+function menu§§obj_status_def(&$task_obj_status, $_o2viewalias = "") {
+	$task_obj_status->righe_vis = 10;
+
+	$task_obj_status->usa_file("tstamp_obj","tstamp_obj","obj");
+
+	$task_obj_status->usa("objname","tstamp_obj","objname","menu_exp_4()","menu_exp_4()",null,null);
+	$task_obj_status->usa("userid","tstamp_obj","userid",null,null,"menu_exp_11()",null);
+}
+function menu§§menu_1_form_def(&$form_menu_1) {
+	$form_menu_1->x(335);
+	$form_menu_1->y(5);
+	$form_menu_1->larghezza(640);
+	$form_menu_1->altezza(634);
+	$form_menu_1->titolo("menu");
+	$form_menu_1->align_o("Center");
+	$ctrl_o2label2 = &$form_menu_1->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(320);
+		$ctrl_o2label2->y(10);
+		$ctrl_o2label2->larghezza(300);
+		$ctrl_o2label2->altezza(20);
+		$ctrl_o2label2->visibile(menu_exp_6());
+		$ctrl_o2label2->label(menu_exp_1());
+	$ctrl_o2table2 = &$form_menu_1->ctrldef("o2table2", "tab", "", "menu", "");
+		$ctrl_o2table2->x(10);
+		$ctrl_o2table2->y(40);
+		$ctrl_o2table2->larghezza(610);
+		$ctrl_o2table2->altezza(510);
+		$ctrl_o2table2->modificabile(menu_exp_2());
+	$ctrl_o2button2 = &$form_menu_1->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(270);
+		$ctrl_o2button2->y(560);
+		$ctrl_o2button2->larghezza(90);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->modificabile(menu_exp_2());
+		$ctrl_o2button2->azione("save");
+		$ctrl_o2button2->label("Save");
+	$ctrl_o2button3 = &$form_menu_1->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(10);
+		$ctrl_o2button3->y(5);
+		$ctrl_o2button3->larghezza(90);
+		$ctrl_o2button3->altezza(30);
+		$ctrl_o2button3->modificabile(menu_exp_5());
+		$ctrl_o2button3->azione("checkout");
+		$ctrl_o2button3->label("Check-out");
+	$ctrl_o2button4 = &$form_menu_1->ctrldef("o2button4", "button", "", "", "");
+		$ctrl_o2button4->x(110);
+		$ctrl_o2button4->y(5);
+		$ctrl_o2button4->larghezza(90);
+		$ctrl_o2button4->altezza(30);
+		$ctrl_o2button4->modificabile(menu_exp_2());
+		$ctrl_o2button4->azione("uncheck");
+		$ctrl_o2button4->label("Un-check");
+	$ctrl_o2button5 = &$form_menu_1->ctrldef("o2button5", "button", "", "", "");
+		$ctrl_o2button5->x(210);
+		$ctrl_o2button5->y(5);
+		$ctrl_o2button5->larghezza(90);
+		$ctrl_o2button5->altezza(30);
+		$ctrl_o2button5->modificabile(menu_exp_2());
+		$ctrl_o2button5->azione("checkin");
+		$ctrl_o2button5->label("Check-in");
+	$ctrl_o2button6 = &$form_menu_1->ctrldef("o2button6", "button", "", "", "");
+		$ctrl_o2button6->x(530);
+		$ctrl_o2button6->y(5);
+		$ctrl_o2button6->larghezza(90);
+		$ctrl_o2button6->altezza(30);
+		$ctrl_o2button6->modificabile(menu_exp_12());
+		$ctrl_o2button6->label("Up");
+	$ctrl_o2edit3 = &$form_menu_1->ctrldef("o2edit3", "edit", "o2table2", "menu", "position");
+		$ctrl_o2edit3->x(0);
+		$ctrl_o2edit3->y(30);
+		$ctrl_o2edit3->larghezza(20);
+		$ctrl_o2edit3->altezza(20);
+		$ctrl_o2edit3->info_padre(array("01" ,"01" ,"01" ,"#" ,False ,"" ,False ,""));
+	$ctrl_o2edit2 = &$form_menu_1->ctrldef("o2edit2", "edit", "o2table2", "menu", "name");
+		$ctrl_o2edit2->x(20);
+		$ctrl_o2edit2->y(30);
+		$ctrl_o2edit2->larghezza(120);
+		$ctrl_o2edit2->altezza(20);
+		$ctrl_o2edit2->info_padre(array("01" ,"02" ,"02" ,"Name" ,False ,"" ,False ,""));
+	$ctrl_o2ListBox2 = &$form_menu_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "menu", "type");
+		$ctrl_o2ListBox2->x(140);
+		$ctrl_o2ListBox2->y(30);
+		$ctrl_o2ListBox2->larghezza(80);
+		$ctrl_o2ListBox2->altezza(20);
+		$ctrl_o2ListBox2->info_padre(array("01" ,"03" ,"03" ,"Type" ,True ,"" ,False ,""));
+		$ctrl_o2ListBox2->valori(array());
+		$ctrl_o2ListBox2->righe(1);
+	$ctrl_o2edit4 = &$form_menu_1->ctrldef("o2edit4", "edit", "o2table2", "menu", "label");
+		$ctrl_o2edit4->x(220);
+		$ctrl_o2edit4->y(30);
+		$ctrl_o2edit4->larghezza(170);
+		$ctrl_o2edit4->altezza(20);
+		$ctrl_o2edit4->info_padre(array("01" ,"04" ,"04" ,"Label" ,False ,"" ,False ,""));
+	$ctrl_o2edit5 = &$form_menu_1->ctrldef("o2edit5", "edit", "o2table2", "menu", "prgname");
+		$ctrl_o2edit5->x(390);
+		$ctrl_o2edit5->y(30);
+		$ctrl_o2edit5->larghezza(130);
+		$ctrl_o2edit5->altezza(20);
+		$ctrl_o2edit5->info_padre(array("01" ,"05" ,"05" ,"Value" ,False ,"" ,False ,""));
+	$ctrl_o2dbnavigator2 = &$form_menu_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "menu", "");
+		$ctrl_o2dbnavigator2->x(580);
+		$ctrl_o2dbnavigator2->y(30);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(200);
+		$ctrl_o2dbnavigator2->info_padre(array("01" ,"06" ,"06"));
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_select(menu_exp_9999());
+		$ctrl_o2dbnavigator2->enable_new(menu_exp_2());
+		$ctrl_o2dbnavigator2->enable_save(menu_exp_2());
+		$ctrl_o2dbnavigator2->enable_del(menu_exp_2());
+		$ctrl_o2dbnavigator2->enable_undo(menu_exp_2());
+		$ctrl_o2dbnavigator2->enable_detail(menu_exp_10());
+		$ctrl_o2dbnavigator2->act_new("menu_insert");
+		$ctrl_o2dbnavigator2->act_save("menu_post");
+		$ctrl_o2dbnavigator2->act_del("menu_delete");
+		$ctrl_o2dbnavigator2->act_undo("menu_undo");
+		$ctrl_o2dbnavigator2->act_detail("menu_detail");
+		}
+
+function menu§§checkin_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("save", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("checkin", False, menu_exp_4()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("checkstatus", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§checkout_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("checkstatus", True, "") && $o2exe->e();
+	$o2exe->s(2) && (menu_exp_5() || $o2exe->e()) && o2act::call("checkout", False, menu_exp_4()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("checkstatus", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§checkstatus_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§menu_delete_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("menu", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§menu_detail_act(&$o2exe) {
+	} //|o2_fine_act|
+
+function menu§§menu_insert_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("menu", "I", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§menu_post_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("menu", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§menu_undo_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::view("menu", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§save_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::exe("menu_post", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("save_menu", False, menu_exp_3()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§uncheck_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call("uncheck", False, menu_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("checkstatus", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function menu§§up_act(&$o2exe) {
+	} //|o2_fine_act|
+
+function menu_exp_1() {
+
+return ('Checked by:'. o2val('obj_status','userid'));
+	} //|o2_fine_exp|
+
+function menu_exp_2() {
+
+return (o2val('obj_status','userid')==o2app_user());
+	} //|o2_fine_exp|
+
+function menu_exp_3() {
+
+return (o2val('obj_status','userid') == o2app_user() ? o2val('obj_status','userid') : '');
+	} //|o2_fine_exp|
+
+function menu_exp_4() {
+
+return ('menu_repository.inc');
+	} //|o2_fine_exp|
+
+function menu_exp_5() {
+
+return (o2zero('obj_status','userid'));
+	} //|o2_fine_exp|
+
+function menu_exp_6() {
+
+return (!o2zero('obj_status','userid'));
+	} //|o2_fine_exp|
+
+function menu_exp_7() {
+
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function menu_exp_8() {
+
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function menu_exp_9() {
+
+return (o2val('menu','name'));
+	} //|o2_fine_exp|
+
+function menu_exp_10() {
+
+return (o2val('menu','type')=='M');
+	} //|o2_fine_exp|
+
+function menu_exp_11() {
+
+return ('');
+	} //|o2_fine_exp|
+
+function menu_exp_12() {
+
+return (o2val('menu','parentname'));
+	} //|o2_fine_exp|
+
+function menu_exp_9999() {
+
+return (false);
+	} //|o2_fine_exp|
+?>

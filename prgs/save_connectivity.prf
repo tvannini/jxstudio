@@ -1,0 +1,158 @@
+<?php
+
+function save_connectivity§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("contents", "_o2text");
+	$task_prg§_§var->definisci("pathfile", "path");
+		}
+
+function save_connectivity§§servers_def(&$task_servers, $_o2viewalias = "") {
+	$task_servers->righe_vis = 10;
+
+	$task_servers->usa_file("servers","servers","name");
+
+	$task_servers->usa("userid","servers","userid","save_connectivity_exp_10()","save_connectivity_exp_10()",null,null);
+	$task_servers->usa("servername","servers","servername",null,null,null,null);
+	$task_servers->usa("engine","servers","engine",null,null,null,null);
+	$task_servers->usa("hostname","servers","hostname",null,null,null,null);
+	$task_servers->usa("user","servers","user",null,null,null,null);
+	$task_servers->usa("password","servers","password",null,null,null,null);
+	$task_servers->usa("chunksize","servers","chunksize",null,null,null,null);
+}
+
+function save_connectivity§§databases_def(&$task_databases, $_o2viewalias = "") {
+	$task_databases->righe_vis = 10;
+
+	$task_databases->usa_file("databases","databases","name");
+
+	$task_databases->usa("userid","databases","userid","save_connectivity_exp_10()","save_connectivity_exp_10()",null,null);
+	$task_databases->usa("jxname","databases","jxname",null,null,null,null);
+	$task_databases->usa("servername","databases","servername",null,null,null,null);
+	$task_databases->usa("dbname","databases","dbname",null,null,null,null);
+	$task_databases->usa("dbowner","databases","dbowner",null,null,null,null);
+	$task_databases->usa("asp","databases","asp",null,null,null,null);
+	$task_databases->usa("create_tables","databases","create_tables",null,null,null,null);
+}
+
+function save_connectivity§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+	$task_ts_obj->righe_vis = 10;
+
+	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
+
+	$task_ts_obj->usa("objname","tstamp_obj","objname","save_connectivity_exp_4()","save_connectivity_exp_4()",null,null);
+	$task_ts_obj->usa("userid","tstamp_obj","userid","save_connectivity_exp_10()","save_connectivity_exp_10()",null,null);
+	$task_ts_obj->usa("fdate","tstamp_obj","fdate",null,null,null,null);
+	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
+}
+
+function save_connectivity§§set_ts_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_connectivity_exp_12()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_connectivity_exp_13()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_connectivity§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set repository file path") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_connectivity_exp_2()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_5()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::exe("write_server", False, "servers") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_3()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::exe("write_db", False, "databases") && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_8()) && $o2exe->e();
+//	$o2exe->s(9) && True && o2act::remark("Write file") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::script(save_connectivity_exp_9()) && $o2exe->e();
+	$o2exe->s(11) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_connectivity§§write_db_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_connectivity§§write_server_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function save_connectivity_exp_1() {
+	$ret =  o2val('prg§_§var','contents').'
+o2def::server("'.o2val('servers','servername').'", "'.
+                 o2val('servers','engine').'", "'.
+                 o2val('servers','hostname').'", "'.
+                 o2val('servers','user').'", "'.
+                 o2val('servers','password').'", '.
+                 o2val('servers','chunksize').');';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_2() {
+	$path = (o2file_exists(o2val('_o2SESSION','usrdir').o2val('_o2SESSION','rep_servers')) ?
+         o2val('_o2SESSION','usrdir') :
+         o2val('_o2SESSION','prgdir')).o2val('_o2SESSION','rep_servers');
+
+return ($path);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_3() {
+	$ret = o2val('prg§_§var','contents')."
+
+/* ============== DATABASES ============== */";
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_4() {
+
+return (o2val('_o2SESSION','rep_servers'));
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_5() {
+	$ret = '<?php
+/* =============== SERVERS =============== */';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_6() {
+
+return (o2val('prg§_§var','pathfile'));
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_7() {
+
+return (false);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_8() {
+
+return (trim(o2val('prg§_§var','contents'))."\n?>");
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_9() {
+	file_put_contents(o2val('prg§_§var','pathfile'), o2val('prg§_§var','contents'));
+return (true);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_10() {
+
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_11() {
+	$ret =  o2val('prg§_§var','contents').'
+o2def::db("'.o2val('databases','jxname').'", "'.
+             o2val('databases','servername').'", "'.
+             o2val('databases','dbname').'", "'.
+             o2val('databases','dbowner').'", '.
+             (o2val('databases','asp') ? 'true' : 'false').', '.
+             (o2val('databases','create_tables') ? 'true' : 'false').');';
+return ($ret);
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_12() {
+
+return (o2file_date(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+
+function save_connectivity_exp_13() {
+
+return (o2file_time(o2val('prg§_§var','pathfile')));
+	} //|o2_fine_exp|
+?>

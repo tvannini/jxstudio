@@ -1,0 +1,80 @@
+<?php
+
+function root_access§§users_def(&$task_users, $_o2viewalias = "") {
+	$task_users->righe_vis = 10;
+
+	$task_users->usa_file("o2_users","o2_users","o2user",null,null);
+
+	$task_users->usa("user","o2_users","o2user",null,null,null,null);
+	$task_users->usa("hidden","o2_users","hidden",null,null,"root_access_exp_9998()",null);
+}
+function root_access§§root_access_1_form_def(&$form_root_access_1) {
+	$form_root_access_1->x(200);
+	$form_root_access_1->y(100);
+	$form_root_access_1->larghezza(400);
+	$form_root_access_1->altezza(400);
+	$form_root_access_1->align_o("Center");
+	$form_root_access_1->titolo("Root access");
+	$form_root_access_1->frm_title(root_access_exp_9999());
+	$form_root_access_1->frm_status(root_access_exp_9999());
+	$ctrl_o2separator2 = &$form_root_access_1->ctrldef("o2separator2", "line", "", "", "");
+		$ctrl_o2separator2->x(20);
+		$ctrl_o2separator2->y(320);
+		$ctrl_o2separator2->larghezza(360);
+		$ctrl_o2separator2->altezza(10);
+	$ctrl_o2htmlarea2 = &$form_root_access_1->ctrldef("o2htmlarea2", "htmlarea", "", "", "");
+		$ctrl_o2htmlarea2->x(20);
+		$ctrl_o2htmlarea2->y(20);
+		$ctrl_o2htmlarea2->larghezza(360);
+		$ctrl_o2htmlarea2->altezza(300);
+		$ctrl_o2htmlarea2->html(root_access_exp_1());
+		$ctrl_o2htmlarea2->css(root_access_exp_2());
+	$ctrl_o2button2 = &$form_root_access_1->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(20);
+		$ctrl_o2button2->y(350);
+		$ctrl_o2button2->larghezza(360);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->azione("developers");
+		$ctrl_o2button2->label("Manage developers");
+		}
+
+function root_access§§developers_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::gotoprg(root_access_exp_3(), false) && $o2exe->e();
+	} //|o2_fine_act|
+
+function root_access_exp_1() {
+	$u = '';
+foreach (o2_view2list('users', 'user', 'user') as $user) {
+   if ($user && ($user != 'root')) { 
+      $u.= '&nbsp;<code>'.$user.'</code><br>';
+      }
+   }   
+$m = '<center><h1>Welcome to Janox development</h1></center><hr class="o2_ctrl_line"><br>'.
+     'You are logged in as "root" and you can\'t work this way:'.     
+     ($u ? 
+      ' login as one of the existing developers:<br><br>'.$u.'<br>or ' : '').
+     ' create a new developer to work as.';
+     
+return ($m);
+	} //|o2_fine_exp|
+
+function root_access_exp_2() {
+	
+return ('disp_area');
+	} //|o2_fine_exp|
+
+function root_access_exp_3() {
+	
+return ('tools/jxgranting');
+	} //|o2_fine_exp|
+
+function root_access_exp_9998() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function root_access_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>

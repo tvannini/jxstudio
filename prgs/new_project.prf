@@ -1,0 +1,194 @@
+<?php
+
+function new_project§§prg§_§var_def(&$task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("appname", "name");
+	$task_prg§_§var->definisci("apppath", "path");
+	$task_prg§_§var->definisci("o2rntpath", "path");
+		}
+
+function new_project§§recents_def(&$task_recents, $_o2viewalias = "") {
+	$task_recents->righe_vis = 10;
+
+	$task_recents->usa_file("recents","recents","path",null,null);
+
+	$task_recents->usa("username","recents","username","new_project_exp_5()","new_project_exp_5()",null,null);
+	$task_recents->usa("path","recents","path","new_project_exp_6()","new_project_exp_6()",null,null);
+}
+function new_project§§new_project_1_form_def(&$form_new_project_1) {
+	$form_new_project_1->x(350);
+	$form_new_project_1->y(120);
+	$form_new_project_1->larghezza(700);
+	$form_new_project_1->altezza(200);
+	$form_new_project_1->align_o("Center");
+	$form_new_project_1->titolo("New project");
+	$form_new_project_1->frm_status(new_project_exp_13());
+	$ctrl_o2label2 = &$form_new_project_1->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(20);
+		$ctrl_o2label2->y(20);
+		$ctrl_o2label2->larghezza(160);
+		$ctrl_o2label2->altezza(24);
+		$ctrl_o2label2->label("Project name:");
+	$ctrl_o2label3 = &$form_new_project_1->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(20);
+		$ctrl_o2label3->y(50);
+		$ctrl_o2label3->larghezza(160);
+		$ctrl_o2label3->altezza(24);
+		$ctrl_o2label3->label("Project main folder:");
+	$ctrl_o2edit2 = &$form_new_project_1->ctrldef("o2edit2", "edit", "", "prg§_§var", "appname");
+		$ctrl_o2edit2->x(180);
+		$ctrl_o2edit2->y(20);
+		$ctrl_o2edit2->larghezza(150);
+		$ctrl_o2edit2->altezza(24);
+		$ctrl_o2edit2->on_change(new_project_exp_14());
+	$ctrl_o2edit3 = &$form_new_project_1->ctrldef("o2edit3", "edit", "", "prg§_§var", "apppath");
+		$ctrl_o2edit3->x(180);
+		$ctrl_o2edit3->y(50);
+		$ctrl_o2edit3->larghezza(474);
+		$ctrl_o2edit3->altezza(24);
+		$ctrl_o2edit3->on_change(new_project_exp_14());
+	$ctrl_o2button2 = &$form_new_project_1->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(590);
+		$ctrl_o2button2->y(110);
+		$ctrl_o2button2->larghezza(90);
+		$ctrl_o2button2->altezza(30);
+		$ctrl_o2button2->modificabile(new_project_exp_2());
+		$ctrl_o2button2->azione("createproject");
+		$ctrl_o2button2->label("&Create");
+	$ctrl_o2button3 = &$form_new_project_1->ctrldef("o2button3", "button", "", "", "");
+		$ctrl_o2button3->x(656);
+		$ctrl_o2button3->y(50);
+		$ctrl_o2button3->larghezza(24);
+		$ctrl_o2button3->altezza(24);
+		$ctrl_o2button3->azione("select_folder");
+		$ctrl_o2button3->label("...");
+		}
+
+function new_project§§createproject_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::script(new_project_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && (new_project_exp_7() || $o2exe->e()) && o2act::view("recents", "I", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("recents", "username", new_project_exp_5()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("recents", "path", new_project_exp_6()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("recents", "S", "") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::ret(1, new_project_exp_9()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function new_project§§select_folder_act(&$o2exe) {
+	$o2exe->s(1) && True && o2act::call(new_project_exp_10(), False, "prg§_§var§§apppath", new_project_exp_11(), new_project_exp_12(), new_project_exp_13(), new_project_exp_14(), new_project_exp_13(), new_project_exp_13(), new_project_exp_13(), new_project_exp_15()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function new_project_exp_1() {
+	
+return ('Please fill all fields');
+	} //|o2_fine_exp|
+
+function new_project_exp_2() {
+	
+return (!o2zero('prg§_§var','appname') && !o2zero('prg§_§var','apppath'));
+	} //|o2_fine_exp|
+
+function new_project_exp_3() {
+	
+return (!o2exp(2));
+	} //|o2_fine_exp|
+
+function new_project_exp_4() {
+	/* create folders */
+$apppath = o2val('prg§_§var','apppath');
+if (!o2file_exists($apppath)) {
+   o2dir_create(o2val('prg§_§var','apppath'));
+   }
+if (!o2file_exists($apppath.DIRECTORY_SEPARATOR.'prgs'.DIRECTORY_SEPARATOR)) {
+   o2dir_create($apppath.DIRECTORY_SEPARATOR.'prgs'.DIRECTORY_SEPARATOR);
+   }
+if (!o2file_exists($apppath.DIRECTORY_SEPARATOR.'htdocs'.DIRECTORY_SEPARATOR)) {
+   o2dir_create($apppath.DIRECTORY_SEPARATOR.'htdocs'.DIRECTORY_SEPARATOR);
+   }
+if (!o2file_exists($apppath.DIRECTORY_SEPARATOR.'models'.DIRECTORY_SEPARATOR)) {
+   o2dir_create($apppath.DIRECTORY_SEPARATOR.'models'.DIRECTORY_SEPARATOR);
+   }
+/* create application.ini */
+$filename    = o2val('prg§_§var','apppath').DIRECTORY_SEPARATOR.
+               o2val('prg§_§var','appname').'.ini';
+$ini_content = '[app]
+models      = mod_repository.inc
+dbs         = db_repository.inc
+tables      = file_repository.inc
+menus       = menu_repository.inc
+vars        = vars_repository.inc
+viewmodels  = viewmodels_repository.inc
+encoding    = UTF-8
+validate    = 0
+timeout     = 10
+';
+if (!file_put_contents($filename, $ini_content)) {
+   o2log("Cannot write to file $filename");
+   }
+
+/* create application.php */
+$filename    = o2val('prg§_§var','apppath').DIRECTORY_SEPARATOR.
+               'htdocs'.DIRECTORY_SEPARATOR.o2val('prg§_§var','appname').'.php';
+$app_content = file_get_contents(o2rnt_root().'htdocs'.DIRECTORY_SEPARATOR.
+                                 'jxapp.php');               
+if (!file_put_contents($filename, $app_content)) {
+   o2log("Cannot write to file $filename");
+   }
+return (true);
+	} //|o2_fine_exp|
+
+function new_project_exp_5() {
+	
+return (o2app_user());
+	} //|o2_fine_exp|
+
+function new_project_exp_6() {
+	
+return (o2val('prg§_§var','apppath').'htdocs'.DIRECTORY_SEPARATOR.o2val('prg§_§var','appname').'.php');
+	} //|o2_fine_exp|
+
+function new_project_exp_7() {
+	
+return (!o2view_rec("recents"));
+	} //|o2_fine_exp|
+
+function new_project_exp_8() {
+	
+return (o2view_retrows("recents"));
+	} //|o2_fine_exp|
+
+function new_project_exp_9() {
+	
+return (o2val('recents','path'));
+	} //|o2_fine_exp|
+
+function new_project_exp_10() {
+	
+return ("tools/o2sys_fs_browser");
+	} //|o2_fine_exp|
+
+function new_project_exp_11() {
+	
+return ("*");
+	} //|o2_fine_exp|
+
+function new_project_exp_12() {
+	
+return (DIRECTORY_SEPARATOR);
+	} //|o2_fine_exp|
+
+function new_project_exp_13() {
+	
+return (false);
+	} //|o2_fine_exp|
+
+function new_project_exp_14() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function new_project_exp_15() {
+	
+return ("Select project main folder");
+	} //|o2_fine_exp|
+?>

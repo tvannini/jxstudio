@@ -1,0 +1,28 @@
+<?php
+
+function app_exit§§end_act(&$o2exe) {
+	$o2exe->s(1) && (app_exit_exp_1() || $o2exe->e()) && o2act::script(app_exit_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && (app_exit_exp_3() || $o2exe->e()) && o2act::gotourl(app_exit_exp_2()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function app_exit_exp_1() {
+
+return (o2rnt_interface() == "GTK");
+	} //|o2_fine_exp|
+
+function app_exit_exp_2() {
+
+return ("/");
+	} //|o2_fine_exp|
+
+function app_exit_exp_3() {
+
+return (o2rnt_interface() == "HTML");
+	} //|o2_fine_exp|
+
+function app_exit_exp_4() {
+	o2gtk::end();
+
+return (true);
+	} //|o2_fine_exp|
+?>

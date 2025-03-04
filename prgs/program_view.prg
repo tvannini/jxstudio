@@ -1,0 +1,93 @@
+<?php
+//2.9
+//o2def::module("");
+//o2def::folder("");
+/*
+o2def::prgnotes("");
+*/
+
+o2def::prg("program_view", "start", "", __FILE__);
+
+o2def::view('prg§_§var');
+o2def::view("obj_status", false, "", "", 1, 0);
+o2def::view("views", false, "", "", 1, 0);
+o2def::view("combo_datatypes", false, "", "", 1, 0);
+o2def::view("datatypes_status", false, "", "", 1, 0);
+o2def::view("view_tables", false, "", "view_tables_post", 1, 0);
+o2def::view("main_tab", false, "", "", 1, 0);
+o2def::view("link_tab", false, "", "", 1, 0);
+o2def::view("link_fields", false, "", "link_fields_post", 1, 0);
+o2def::view("fields", false, "", "fields_post", 1, 0);
+o2def::view("tables_status", false, "", "", 1, 0);
+o2def::view("combo_link_fields", false, "", "", 1, 0);
+o2def::view("view_aggregations", false, "", "", 0, 0);
+o2def::view("combo_actions", false, "", "", 0, 0);
+o2def::view("combo_view_field", false, "", "", 0, 0);
+o2def::view("combo_variables", false, "", "", 0, 0);
+o2def::view("combo_tables", false, "", "", 0, 0);
+o2def::view("combo_table_field", false, "", "", 0, 0);
+o2def::act("checkin");
+o2def::act("checkout");
+o2def::act("close");
+o2def::act("close_all");
+o2def::act("discard_program");
+o2def::act("exit");
+o2def::act("fields_delete");
+o2def::act("fields_detail");
+o2def::act("fields_insert");
+o2def::act("fields_post");
+o2def::act("fields_undo");
+o2def::act("link_fields_delete");
+o2def::act("link_fields_detail");
+o2def::act("link_fields_insert");
+o2def::act("link_fields_post");
+o2def::act("link_fields_undo");
+o2def::act("on_fieldtype_change");
+o2def::act("on_viewname_change");
+o2def::act("rename_tab_in_fields");
+o2def::act("rename_tab_in_linkfields");
+o2def::act("save_program");
+o2def::act("select_field_like_exp");
+o2def::act("select_field_max_exp");
+o2def::act("select_field_min_exp");
+o2def::act("select_field_not_exp");
+o2def::act("select_field_table");
+o2def::act("select_field_table_field");
+o2def::act("select_index_in_view");
+o2def::act("select_link_like_exp");
+o2def::act("select_link_max_exp");
+o2def::act("select_link_min_exp");
+o2def::act("select_link_not_exp");
+o2def::act("select_table_in_view");
+o2def::act("select_view_tab_key_exp");
+o2def::act("set_prg_modified");
+o2def::act("show_definition");
+o2def::act("show_prop");
+o2def::act("start");
+o2def::act("tree_select");
+o2def::act("uncheck");
+o2def::act("view_aggregations_delete");
+o2def::act("view_aggregations_insert");
+o2def::act("view_aggregations_post");
+o2def::act("view_aggregations_undo");
+o2def::act("view_tables_delete");
+o2def::act("view_tables_detail");
+o2def::act("view_tables_insert");
+o2def::act("view_tables_post");
+o2def::act("view_tables_undo");
+o2def::act("views_delete");
+o2def::act("views_post");
+o2def::act("zoom_aggr_field");
+o2def::act("zoom_aggr_var");
+o2def::act("zoom_custom_where");
+o2def::act("zoom_formula");
+o2def::act("zoom_link_field");
+o2def::act("zoom_prefix_act");
+o2def::act("zoom_rowlimit_exp");
+o2def::act("zoom_select");
+o2def::act("zoom_suffix_act");
+o2def::form("prg_view", "", False, "true", false);
+o2def::par(1, "prgname", "prgname");
+o2def::par(2, "viewname", "viewname");
+
+?>

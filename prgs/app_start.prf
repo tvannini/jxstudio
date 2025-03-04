@@ -1,0 +1,73 @@
+<?php
+
+function app_start§§start_act(&$o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set descriptions for operations") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("_o2SESSION", "operations", app_start_exp_1()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("And view actions lists") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("_o2SESSION", "view_actions", app_start_exp_2()) && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Go to Select Project") && $o2exe->e();
+	$o2exe->s(6) && (app_start_exp_4() || $o2exe->e()) && o2act::gotoprg("applications", false) && $o2exe->e();
+	$o2exe->s(7) && (app_start_exp_5() || $o2exe->e()) && o2act::gotoprg("root_access", false) && $o2exe->e();
+	} //|o2_fine_act|
+
+function app_start_exp_1() {
+	$res = array("call"    => "Call",
+             "close"   => "Close",
+             "confirm" => "Confirm",
+             "exe"     => "Execute",
+             "script"  => "Evaluate",
+             "gotoprg" => "Goto",
+             "io"      => "I/O",
+             "menu"    => "Menu",
+             "alert"   => "Message",
+             "report"  => "Print",
+             "remark"  => "Remark",
+             "ret"     => "Return",
+             "set"     => "Update",
+             "view"    => "View");
+return ($res);
+	} //|o2_fine_exp|
+
+function app_start_exp_2() {
+	$res = array('1'  => 'First',
+             '5'  => 'Previous page',
+             '2'  => 'Previous',
+             '3'  => 'Next',
+             '6'  => 'Next page',
+             '4'  => 'Last',
+             'L'  => 'Locate',
+             's1' => ' ---',
+             'I'  => 'Prepare insert',
+             'S'  => 'Post row',
+             'C'  => 'Delete row',
+             'A'  => 'Undo',
+             '0'  => 'Refresh',
+             'D'  => 'Delete all rows',
+             'K'  => 'Lock recordset',
+             'G'  => 'Aggregate',
+             's2' => ' ---',
+             'B'  => 'Prepare bulk insert',
+             'E'  => 'Bulk end',
+             'SS' => 'Snapshot start',
+             'SA' => 'Snapshot attach',
+             'SM' => 'Snapshot sync',
+             'SC' => 'Snapshot clear');
+return ($res);
+	} //|o2_fine_exp|
+
+function app_start_exp_3() {
+	o2tab_drop("tmp_edit_vars");
+o2tab_create("tmp_edit_vars");
+return (true);
+	} //|o2_fine_exp|
+
+function app_start_exp_4() {
+	
+return (o2app_user() != 'root');
+	} //|o2_fine_exp|
+
+function app_start_exp_5() {
+	
+return (o2app_user() == 'root');
+	} //|o2_fine_exp|
+?>
