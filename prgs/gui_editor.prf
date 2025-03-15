@@ -1,5 +1,12 @@
 <?php
-function gui_editor§§gui_editor_form_def(&$form_gui_editor) {
+
+function gui_editor§§prg§_§var_def($task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("prop", "_o2alpha");
+	$task_prg§_§var->definisci("response", "_o2structure");
+	$task_prg§_§var->definisci("value", "_o2text");
+		}
+function gui_editor§§gui_editor_form_def($form_gui_editor) {
 	$form_gui_editor->x(400);
 	$form_gui_editor->y(50);
 	$form_gui_editor->larghezza(800);
@@ -8,12 +15,22 @@ function gui_editor§§gui_editor_form_def(&$form_gui_editor) {
 	$form_gui_editor->titolo("Design GUI");
 		}
 
-function gui_editor§§start_act(&$o2exe) {
+function gui_editor§§reset_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "response", gui_editor_exp_7()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function gui_editor§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(gui_editor_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function gui_editor§§zoom_act(&$o2exe) {
-	$o2exe->s(1) && True && o2act::alert(gui_editor_exp_3(), 0) && $o2exe->e();
+function gui_editor§§zoom_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prop", gui_editor_exp_5()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "value", gui_editor_exp_6()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("reset", True, "") && $o2exe->e();
+	$o2exe->s(4) && (gui_editor_exp_8() || $o2exe->e()) && o2act::call("expressions", False, gui_editor_exp_11(), gui_editor_exp_12(), "prg§_§var§§value") && $o2exe->e();
+	$o2exe->s(5) && (gui_editor_exp_10() || $o2exe->e()) && o2act::call("select_action", False, gui_editor_exp_11(), gui_editor_exp_12(), "prg§_§var§§value") && $o2exe->e();
+	$o2exe->s(6) && (gui_editor_exp_9() || $o2exe->e()) && o2act::alert(gui_editor_exp_3(), 0) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("prg§_§var", "response", gui_editor_exp_4()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function gui_editor_exp_1() {
@@ -22,12 +39,65 @@ return (true);
 	} //|o2_fine_exp|
 
 function gui_editor_exp_2() {
-	
-return (o2app_alias().'design/jxdesign.html');
+	$url = o2app_alias().'design/jxdesign.html'.
+      (o2zero('prg§_§var','response') ? '' : 
+       '?'. urlencode(json_encode(o2val('prg§_§var','response'))));
+return ($url);
 	} //|o2_fine_exp|
 
 function gui_editor_exp_3() {
 	
-return ('Zoom from '.o2_reqpar(1).' : '.o2_reqpar(2));
+return ('Zoom from '.o2val('prg§_§var','prop').' : '.o2val('prg§_§var','value'));
+	} //|o2_fine_exp|
+
+function gui_editor_exp_4() {
+	$res =['res' => ['prop' => o2val('prg§_§var','prop'), 'value' => o2val('prg§_§var','value')]];
+return ($res);
+	} //|o2_fine_exp|
+
+function gui_editor_exp_5() {
+	
+return (o2_reqpar(1));
+	} //|o2_fine_exp|
+
+function gui_editor_exp_6() {
+	
+return (o2_reqpar(2));
+	} //|o2_fine_exp|
+
+function gui_editor_exp_7() {
+	
+return (array());
+	} //|o2_fine_exp|
+
+function gui_editor_exp_8() {
+	$p = o2val('prg§_§var','prop');
+$c = (($p === 'visible') ||
+      ($p === 'enable')  ||
+      ($p === 'submit')  ||
+      ($p === 'tooltip'));
+return ($c);
+	} //|o2_fine_exp|
+
+function gui_editor_exp_9() {
+	
+return (!o2exp(8) && !o2exp(10));
+	} //|o2_fine_exp|
+
+function gui_editor_exp_10() {
+	$p = o2val('prg§_§var','prop');
+$c = (($p === 'action') ||
+      ($p === 'zoom'));
+return ($c);
+	} //|o2_fine_exp|
+
+function gui_editor_exp_11() {
+	
+return ('');
+	} //|o2_fine_exp|
+
+function gui_editor_exp_12() {
+	
+return ('agenti');
 	} //|o2_fine_exp|
 ?>
