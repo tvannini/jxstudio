@@ -1,0 +1,62 @@
+<?php
+
+function remark_text§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
+	$task_tmp_edit_vars->righe_vis = 10;
+
+	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
+
+	$task_tmp_edit_vars->usa("remark_text","tmp_edit_vars","long_str",null,null,null,null);
+}
+function remark_text§§remark_text_form_def($form_remark_text) {
+	$form_remark_text->x(360);
+	$form_remark_text->y(160);
+	$form_remark_text->larghezza(560);
+	$form_remark_text->altezza(100);
+	$form_remark_text->align_o("Center");
+	$form_remark_text->titolo("Remark text");
+	$form_remark_text->frm_status(remark_text_exp_9999());
+	$ctrl_o2edit2 = $form_remark_text->ctrldef("o2edit2", "edit", "", "tmp_edit_vars", "remark_text");
+		$ctrl_o2edit2->x(20);
+		$ctrl_o2edit2->y(20);
+		$ctrl_o2edit2->larghezza(500);
+		$ctrl_o2edit2->altezza(24);
+	$ctrl_o2dbnavigator2 = $form_remark_text->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator2->x(520);
+		$ctrl_o2dbnavigator2->y(20);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(24);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(remark_text_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("tmp_edit_vars_select");
+		}
+
+function remark_text§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "remark_text", remark_text_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function remark_text§§tmp_edit_vars_select_act($o2exe) {
+	$o2exe->s(1) && True && o2act::ret(1, remark_text_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function remark_text_exp_1() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function remark_text_exp_2() {
+	
+return (o2val('tmp_edit_vars','remark_text'));
+	} //|o2_fine_exp|
+
+function remark_text_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>
