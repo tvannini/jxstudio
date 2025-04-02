@@ -1,6 +1,6 @@
 <?php
 
-function select_app_archive§§prg§_§var_def(&$task_prg§_§var) {
+function select_app_archive§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("as400_new", "_o2logical");
 	$task_prg§_§var->definisci("conn_db", "conn_db_info");
@@ -11,7 +11,7 @@ function select_app_archive§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("conn_user", "conn_db_info");
 	$task_prg§_§var->definisci("engine_selection", "_o2logical");
 		}
-function select_app_archive§§as400_form_def(&$form_as400) {
+function select_app_archive§§as400_form_def($form_as400) {
 	$form_as400->x(210);
 	$form_as400->y(150);
 	$form_as400->larghezza(460);
@@ -19,7 +19,7 @@ function select_app_archive§§as400_form_def(&$form_as400) {
 	$form_as400->titolo("AS400 connection");
 	$form_as400->align_o("Center");
 	$form_as400->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button6 = &$form_as400->ctrldef("o2button6", "button", "", "", "");
+	$ctrl_o2button6 = $form_as400->ctrldef("o2button6", "button", "", "", "");
 		$ctrl_o2button6->x(337);
 		$ctrl_o2button6->y(220);
 		$ctrl_o2button6->larghezza(93);
@@ -27,7 +27,7 @@ function select_app_archive§§as400_form_def(&$form_as400) {
 		$ctrl_o2button6->azione("connections_post");
 		$ctrl_o2button6->label("     Save");
 		$ctrl_o2button6->css("wiz_save");
-	$ctrl_o2button7 = &$form_as400->ctrldef("o2button7", "button", "", "", "");
+	$ctrl_o2button7 = $form_as400->ctrldef("o2button7", "button", "", "", "");
 		$ctrl_o2button7->x(240);
 		$ctrl_o2button7->y(220);
 		$ctrl_o2button7->larghezza(93);
@@ -35,87 +35,87 @@ function select_app_archive§§as400_form_def(&$form_as400) {
 		$ctrl_o2button7->azione("quit");
 		$ctrl_o2button7->label("     Cancel");
 		$ctrl_o2button7->css("wiz_cancel");
-	$ctrl_o2label41 = &$form_as400->ctrldef("o2label41", "label", "", "", "");
+	$ctrl_o2label41 = $form_as400->ctrldef("o2label41", "label", "", "", "");
 		$ctrl_o2label41->x(30);
 		$ctrl_o2label41->y(135);
 		$ctrl_o2label41->larghezza(100);
 		$ctrl_o2label41->altezza(22);
 		$ctrl_o2label41->info_padre(array(0));
 		$ctrl_o2label41->label("Database:");
-	$ctrl_o2label36 = &$form_as400->ctrldef("o2label36", "label", "", "", "");
+	$ctrl_o2label36 = $form_as400->ctrldef("o2label36", "label", "", "", "");
 		$ctrl_o2label36->x(30);
 		$ctrl_o2label36->y(30);
 		$ctrl_o2label36->larghezza(120);
 		$ctrl_o2label36->altezza(22);
 		$ctrl_o2label36->info_padre(array(0));
 		$ctrl_o2label36->label("AS400 serie >= 4:");
-	$ctrl_o2label38 = &$form_as400->ctrldef("o2label38", "label", "", "", "");
+	$ctrl_o2label38 = $form_as400->ctrldef("o2label38", "label", "", "", "");
 		$ctrl_o2label38->x(30);
 		$ctrl_o2label38->y(85);
 		$ctrl_o2label38->larghezza(100);
 		$ctrl_o2label38->altezza(22);
 		$ctrl_o2label38->info_padre(array(0));
 		$ctrl_o2label38->label("User:");
-	$ctrl_o2label39 = &$form_as400->ctrldef("o2label39", "label", "", "", "");
+	$ctrl_o2label39 = $form_as400->ctrldef("o2label39", "label", "", "", "");
 		$ctrl_o2label39->x(30);
 		$ctrl_o2label39->y(110);
 		$ctrl_o2label39->larghezza(100);
 		$ctrl_o2label39->altezza(22);
 		$ctrl_o2label39->info_padre(array(0));
 		$ctrl_o2label39->label("Password:");
-	$ctrl_o2label37 = &$form_as400->ctrldef("o2label37", "label", "", "", "");
+	$ctrl_o2label37 = $form_as400->ctrldef("o2label37", "label", "", "", "");
 		$ctrl_o2label37->x(30);
 		$ctrl_o2label37->y(60);
 		$ctrl_o2label37->larghezza(100);
 		$ctrl_o2label37->altezza(22);
 		$ctrl_o2label37->info_padre(array(0));
 		$ctrl_o2label37->label("Host:");
-	$ctrl_o2label42 = &$form_as400->ctrldef("o2label42", "label", "", "", "");
+	$ctrl_o2label42 = $form_as400->ctrldef("o2label42", "label", "", "", "");
 		$ctrl_o2label42->x(30);
 		$ctrl_o2label42->y(160);
 		$ctrl_o2label42->larghezza(100);
 		$ctrl_o2label42->altezza(22);
 		$ctrl_o2label42->info_padre(array(0));
 		$ctrl_o2label42->label("Schema:");
-	$ctrl_o2checkbox3 = &$form_as400->ctrldef("o2checkbox3", "check", "", "prg§_§var", "as400_new");
+	$ctrl_o2checkbox3 = $form_as400->ctrldef("o2checkbox3", "check", "", "prg§_§var", "as400_new");
 		$ctrl_o2checkbox3->x(200);
 		$ctrl_o2checkbox3->y(30);
 		$ctrl_o2checkbox3->larghezza(18);
 		$ctrl_o2checkbox3->altezza(22);
 		$ctrl_o2checkbox3->info_padre(array(0));
-	$ctrl_o2edit36 = &$form_as400->ctrldef("o2edit36", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit36 = $form_as400->ctrldef("o2edit36", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit36->x(130);
 		$ctrl_o2edit36->y(60);
 		$ctrl_o2edit36->larghezza(300);
 		$ctrl_o2edit36->altezza(22);
 		$ctrl_o2edit36->info_padre(array(0));
-	$ctrl_o2edit37 = &$form_as400->ctrldef("o2edit37", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit37 = $form_as400->ctrldef("o2edit37", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit37->x(130);
 		$ctrl_o2edit37->y(85);
 		$ctrl_o2edit37->larghezza(300);
 		$ctrl_o2edit37->altezza(22);
 		$ctrl_o2edit37->info_padre(array(0));
-	$ctrl_o2edit38 = &$form_as400->ctrldef("o2edit38", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit38 = $form_as400->ctrldef("o2edit38", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit38->x(130);
 		$ctrl_o2edit38->y(110);
 		$ctrl_o2edit38->larghezza(300);
 		$ctrl_o2edit38->altezza(22);
 		$ctrl_o2edit38->info_padre(array(0));
 		$ctrl_o2edit38->pswd(true);
-	$ctrl_o2edit39 = &$form_as400->ctrldef("o2edit39", "edit", "", "prg§_§var", "conn_schema");
+	$ctrl_o2edit39 = $form_as400->ctrldef("o2edit39", "edit", "", "prg§_§var", "conn_schema");
 		$ctrl_o2edit39->x(130);
 		$ctrl_o2edit39->y(135);
 		$ctrl_o2edit39->larghezza(300);
 		$ctrl_o2edit39->altezza(22);
 		$ctrl_o2edit39->info_padre(array(0));
-	$ctrl_o2edit40 = &$form_as400->ctrldef("o2edit40", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit40 = $form_as400->ctrldef("o2edit40", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit40->x(130);
 		$ctrl_o2edit40->y(160);
 		$ctrl_o2edit40->larghezza(300);
 		$ctrl_o2edit40->altezza(22);
 		$ctrl_o2edit40->info_padre(array(0));
 		}
-function select_app_archive§§db2_form_def(&$form_db2) {
+function select_app_archive§§db2_form_def($form_db2) {
 	$form_db2->x(210);
 	$form_db2->y(150);
 	$form_db2->larghezza(460);
@@ -123,7 +123,7 @@ function select_app_archive§§db2_form_def(&$form_db2) {
 	$form_db2->titolo("DB2 connection");
 	$form_db2->align_o("Center");
 	$form_db2->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button8 = &$form_db2->ctrldef("o2button8", "button", "", "", "");
+	$ctrl_o2button8 = $form_db2->ctrldef("o2button8", "button", "", "", "");
 		$ctrl_o2button8->x(337);
 		$ctrl_o2button8->y(220);
 		$ctrl_o2button8->larghezza(93);
@@ -131,7 +131,7 @@ function select_app_archive§§db2_form_def(&$form_db2) {
 		$ctrl_o2button8->azione("connections_post");
 		$ctrl_o2button8->label("     Save");
 		$ctrl_o2button8->css("wiz_save");
-	$ctrl_o2button9 = &$form_db2->ctrldef("o2button9", "button", "", "", "");
+	$ctrl_o2button9 = $form_db2->ctrldef("o2button9", "button", "", "", "");
 		$ctrl_o2button9->x(240);
 		$ctrl_o2button9->y(220);
 		$ctrl_o2button9->larghezza(93);
@@ -139,74 +139,74 @@ function select_app_archive§§db2_form_def(&$form_db2) {
 		$ctrl_o2button9->azione("quit");
 		$ctrl_o2button9->label("     Cancel");
 		$ctrl_o2button9->css("wiz_cancel");
-	$ctrl_o2label48 = &$form_db2->ctrldef("o2label48", "label", "", "", "");
+	$ctrl_o2label48 = $form_db2->ctrldef("o2label48", "label", "", "", "");
 		$ctrl_o2label48->x(30);
 		$ctrl_o2label48->y(105);
 		$ctrl_o2label48->larghezza(100);
 		$ctrl_o2label48->altezza(22);
 		$ctrl_o2label48->info_padre(array(1));
 		$ctrl_o2label48->label("Database:");
-	$ctrl_o2label46 = &$form_db2->ctrldef("o2label46", "label", "", "", "");
+	$ctrl_o2label46 = $form_db2->ctrldef("o2label46", "label", "", "", "");
 		$ctrl_o2label46->x(30);
 		$ctrl_o2label46->y(55);
 		$ctrl_o2label46->larghezza(100);
 		$ctrl_o2label46->altezza(22);
 		$ctrl_o2label46->info_padre(array(1));
 		$ctrl_o2label46->label("User:");
-	$ctrl_o2label47 = &$form_db2->ctrldef("o2label47", "label", "", "", "");
+	$ctrl_o2label47 = $form_db2->ctrldef("o2label47", "label", "", "", "");
 		$ctrl_o2label47->x(30);
 		$ctrl_o2label47->y(80);
 		$ctrl_o2label47->larghezza(100);
 		$ctrl_o2label47->altezza(22);
 		$ctrl_o2label47->info_padre(array(1));
 		$ctrl_o2label47->label("Password:");
-	$ctrl_o2label45 = &$form_db2->ctrldef("o2label45", "label", "", "", "");
+	$ctrl_o2label45 = $form_db2->ctrldef("o2label45", "label", "", "", "");
 		$ctrl_o2label45->x(30);
 		$ctrl_o2label45->y(30);
 		$ctrl_o2label45->larghezza(100);
 		$ctrl_o2label45->altezza(22);
 		$ctrl_o2label45->info_padre(array(1));
 		$ctrl_o2label45->label("Host:");
-	$ctrl_o2label49 = &$form_db2->ctrldef("o2label49", "label", "", "", "");
+	$ctrl_o2label49 = $form_db2->ctrldef("o2label49", "label", "", "", "");
 		$ctrl_o2label49->x(30);
 		$ctrl_o2label49->y(130);
 		$ctrl_o2label49->larghezza(100);
 		$ctrl_o2label49->altezza(22);
 		$ctrl_o2label49->info_padre(array(1));
 		$ctrl_o2label49->label("Schema:");
-	$ctrl_o2edit43 = &$form_db2->ctrldef("o2edit43", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit43 = $form_db2->ctrldef("o2edit43", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit43->x(130);
 		$ctrl_o2edit43->y(30);
 		$ctrl_o2edit43->larghezza(300);
 		$ctrl_o2edit43->altezza(22);
 		$ctrl_o2edit43->info_padre(array(1));
-	$ctrl_o2edit44 = &$form_db2->ctrldef("o2edit44", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit44 = $form_db2->ctrldef("o2edit44", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit44->x(130);
 		$ctrl_o2edit44->y(55);
 		$ctrl_o2edit44->larghezza(300);
 		$ctrl_o2edit44->altezza(22);
 		$ctrl_o2edit44->info_padre(array(1));
-	$ctrl_o2edit45 = &$form_db2->ctrldef("o2edit45", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit45 = $form_db2->ctrldef("o2edit45", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit45->x(130);
 		$ctrl_o2edit45->y(80);
 		$ctrl_o2edit45->larghezza(300);
 		$ctrl_o2edit45->altezza(22);
 		$ctrl_o2edit45->info_padre(array(1));
 		$ctrl_o2edit45->pswd(true);
-	$ctrl_o2edit46 = &$form_db2->ctrldef("o2edit46", "edit", "", "prg§_§var", "conn_schema");
+	$ctrl_o2edit46 = $form_db2->ctrldef("o2edit46", "edit", "", "prg§_§var", "conn_schema");
 		$ctrl_o2edit46->x(130);
 		$ctrl_o2edit46->y(105);
 		$ctrl_o2edit46->larghezza(300);
 		$ctrl_o2edit46->altezza(22);
 		$ctrl_o2edit46->info_padre(array(1));
-	$ctrl_o2edit47 = &$form_db2->ctrldef("o2edit47", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit47 = $form_db2->ctrldef("o2edit47", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit47->x(130);
 		$ctrl_o2edit47->y(130);
 		$ctrl_o2edit47->larghezza(300);
 		$ctrl_o2edit47->altezza(22);
 		$ctrl_o2edit47->info_padre(array(1));
 		}
-function select_app_archive§§mssql_form_def(&$form_mssql) {
+function select_app_archive§§mssql_form_def($form_mssql) {
 	$form_mssql->x(210);
 	$form_mssql->y(150);
 	$form_mssql->larghezza(460);
@@ -214,7 +214,7 @@ function select_app_archive§§mssql_form_def(&$form_mssql) {
 	$form_mssql->titolo("MSSQL connection");
 	$form_mssql->align_o("Center");
 	$form_mssql->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button10 = &$form_mssql->ctrldef("o2button10", "button", "", "", "");
+	$ctrl_o2button10 = $form_mssql->ctrldef("o2button10", "button", "", "", "");
 		$ctrl_o2button10->x(337);
 		$ctrl_o2button10->y(220);
 		$ctrl_o2button10->larghezza(93);
@@ -222,7 +222,7 @@ function select_app_archive§§mssql_form_def(&$form_mssql) {
 		$ctrl_o2button10->azione("connections_post");
 		$ctrl_o2button10->label("     Save");
 		$ctrl_o2button10->css("wiz_save");
-	$ctrl_o2button11 = &$form_mssql->ctrldef("o2button11", "button", "", "", "");
+	$ctrl_o2button11 = $form_mssql->ctrldef("o2button11", "button", "", "", "");
 		$ctrl_o2button11->x(240);
 		$ctrl_o2button11->y(220);
 		$ctrl_o2button11->larghezza(93);
@@ -230,74 +230,74 @@ function select_app_archive§§mssql_form_def(&$form_mssql) {
 		$ctrl_o2button11->azione("quit");
 		$ctrl_o2button11->label("     Cancel");
 		$ctrl_o2button11->css("wiz_cancel");
-	$ctrl_o2label54 = &$form_mssql->ctrldef("o2label54", "label", "", "", "");
+	$ctrl_o2label54 = $form_mssql->ctrldef("o2label54", "label", "", "", "");
 		$ctrl_o2label54->x(30);
 		$ctrl_o2label54->y(80);
 		$ctrl_o2label54->larghezza(100);
 		$ctrl_o2label54->altezza(22);
 		$ctrl_o2label54->info_padre(array(1));
 		$ctrl_o2label54->label("Password:");
-	$ctrl_o2label53 = &$form_mssql->ctrldef("o2label53", "label", "", "", "");
+	$ctrl_o2label53 = $form_mssql->ctrldef("o2label53", "label", "", "", "");
 		$ctrl_o2label53->x(30);
 		$ctrl_o2label53->y(55);
 		$ctrl_o2label53->larghezza(100);
 		$ctrl_o2label53->altezza(22);
 		$ctrl_o2label53->info_padre(array(1));
 		$ctrl_o2label53->label("User:");
-	$ctrl_o2label56 = &$form_mssql->ctrldef("o2label56", "label", "", "", "");
+	$ctrl_o2label56 = $form_mssql->ctrldef("o2label56", "label", "", "", "");
 		$ctrl_o2label56->x(30);
 		$ctrl_o2label56->y(130);
 		$ctrl_o2label56->larghezza(100);
 		$ctrl_o2label56->altezza(22);
 		$ctrl_o2label56->info_padre(array(1));
 		$ctrl_o2label56->label("Schema:");
-	$ctrl_o2label52 = &$form_mssql->ctrldef("o2label52", "label", "", "", "");
+	$ctrl_o2label52 = $form_mssql->ctrldef("o2label52", "label", "", "", "");
 		$ctrl_o2label52->x(30);
 		$ctrl_o2label52->y(30);
 		$ctrl_o2label52->larghezza(100);
 		$ctrl_o2label52->altezza(22);
 		$ctrl_o2label52->info_padre(array(1));
 		$ctrl_o2label52->label("Host:");
-	$ctrl_o2label55 = &$form_mssql->ctrldef("o2label55", "label", "", "", "");
+	$ctrl_o2label55 = $form_mssql->ctrldef("o2label55", "label", "", "", "");
 		$ctrl_o2label55->x(30);
 		$ctrl_o2label55->y(105);
 		$ctrl_o2label55->larghezza(100);
 		$ctrl_o2label55->altezza(22);
 		$ctrl_o2label55->info_padre(array(1));
 		$ctrl_o2label55->label("Database:");
-	$ctrl_o2edit50 = &$form_mssql->ctrldef("o2edit50", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit50 = $form_mssql->ctrldef("o2edit50", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit50->x(130);
 		$ctrl_o2edit50->y(30);
 		$ctrl_o2edit50->larghezza(300);
 		$ctrl_o2edit50->altezza(22);
 		$ctrl_o2edit50->info_padre(array(1));
-	$ctrl_o2edit51 = &$form_mssql->ctrldef("o2edit51", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit51 = $form_mssql->ctrldef("o2edit51", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit51->x(130);
 		$ctrl_o2edit51->y(55);
 		$ctrl_o2edit51->larghezza(300);
 		$ctrl_o2edit51->altezza(22);
 		$ctrl_o2edit51->info_padre(array(1));
-	$ctrl_o2edit52 = &$form_mssql->ctrldef("o2edit52", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit52 = $form_mssql->ctrldef("o2edit52", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit52->x(130);
 		$ctrl_o2edit52->y(80);
 		$ctrl_o2edit52->larghezza(300);
 		$ctrl_o2edit52->altezza(22);
 		$ctrl_o2edit52->info_padre(array(1));
 		$ctrl_o2edit52->pswd(true);
-	$ctrl_o2edit53 = &$form_mssql->ctrldef("o2edit53", "edit", "", "prg§_§var", "conn_schema");
+	$ctrl_o2edit53 = $form_mssql->ctrldef("o2edit53", "edit", "", "prg§_§var", "conn_schema");
 		$ctrl_o2edit53->x(130);
 		$ctrl_o2edit53->y(105);
 		$ctrl_o2edit53->larghezza(300);
 		$ctrl_o2edit53->altezza(22);
 		$ctrl_o2edit53->info_padre(array(1));
-	$ctrl_o2edit54 = &$form_mssql->ctrldef("o2edit54", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit54 = $form_mssql->ctrldef("o2edit54", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit54->x(130);
 		$ctrl_o2edit54->y(130);
 		$ctrl_o2edit54->larghezza(300);
 		$ctrl_o2edit54->altezza(22);
 		$ctrl_o2edit54->info_padre(array(1));
 		}
-function select_app_archive§§mysql_form_def(&$form_mysql) {
+function select_app_archive§§mysql_form_def($form_mysql) {
 	$form_mysql->x(210);
 	$form_mysql->y(150);
 	$form_mysql->larghezza(460);
@@ -305,7 +305,7 @@ function select_app_archive§§mysql_form_def(&$form_mysql) {
 	$form_mysql->titolo("MySQL connection");
 	$form_mysql->align_o("Center");
 	$form_mysql->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button12 = &$form_mysql->ctrldef("o2button12", "button", "", "", "");
+	$ctrl_o2button12 = $form_mysql->ctrldef("o2button12", "button", "", "", "");
 		$ctrl_o2button12->x(337);
 		$ctrl_o2button12->y(180);
 		$ctrl_o2button12->larghezza(93);
@@ -313,7 +313,7 @@ function select_app_archive§§mysql_form_def(&$form_mysql) {
 		$ctrl_o2button12->azione("connections_post");
 		$ctrl_o2button12->label("     Save");
 		$ctrl_o2button12->css("wiz_save");
-	$ctrl_o2button13 = &$form_mysql->ctrldef("o2button13", "button", "", "", "");
+	$ctrl_o2button13 = $form_mysql->ctrldef("o2button13", "button", "", "", "");
 		$ctrl_o2button13->x(240);
 		$ctrl_o2button13->y(180);
 		$ctrl_o2button13->larghezza(93);
@@ -321,61 +321,61 @@ function select_app_archive§§mysql_form_def(&$form_mysql) {
 		$ctrl_o2button13->azione("quit");
 		$ctrl_o2button13->label("     Cancel");
 		$ctrl_o2button13->css("wiz_cancel");
-	$ctrl_o2label75 = &$form_mysql->ctrldef("o2label75", "label", "", "", "");
+	$ctrl_o2label75 = $form_mysql->ctrldef("o2label75", "label", "", "", "");
 		$ctrl_o2label75->x(30);
 		$ctrl_o2label75->y(80);
 		$ctrl_o2label75->larghezza(100);
 		$ctrl_o2label75->altezza(22);
 		$ctrl_o2label75->info_padre(array(1));
 		$ctrl_o2label75->label("Password:");
-	$ctrl_o2label74 = &$form_mysql->ctrldef("o2label74", "label", "", "", "");
+	$ctrl_o2label74 = $form_mysql->ctrldef("o2label74", "label", "", "", "");
 		$ctrl_o2label74->x(30);
 		$ctrl_o2label74->y(55);
 		$ctrl_o2label74->larghezza(100);
 		$ctrl_o2label74->altezza(22);
 		$ctrl_o2label74->info_padre(array(1));
 		$ctrl_o2label74->label("User:");
-	$ctrl_o2label73 = &$form_mysql->ctrldef("o2label73", "label", "", "", "");
+	$ctrl_o2label73 = $form_mysql->ctrldef("o2label73", "label", "", "", "");
 		$ctrl_o2label73->x(30);
 		$ctrl_o2label73->y(30);
 		$ctrl_o2label73->larghezza(100);
 		$ctrl_o2label73->altezza(22);
 		$ctrl_o2label73->info_padre(array(1));
 		$ctrl_o2label73->label("Host:");
-	$ctrl_o2label76 = &$form_mysql->ctrldef("o2label76", "label", "", "", "");
+	$ctrl_o2label76 = $form_mysql->ctrldef("o2label76", "label", "", "", "");
 		$ctrl_o2label76->x(30);
 		$ctrl_o2label76->y(105);
 		$ctrl_o2label76->larghezza(100);
 		$ctrl_o2label76->altezza(22);
 		$ctrl_o2label76->info_padre(array(1));
 		$ctrl_o2label76->label("Database:");
-	$ctrl_o2edit71 = &$form_mysql->ctrldef("o2edit71", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit71 = $form_mysql->ctrldef("o2edit71", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit71->x(130);
 		$ctrl_o2edit71->y(30);
 		$ctrl_o2edit71->larghezza(300);
 		$ctrl_o2edit71->altezza(22);
 		$ctrl_o2edit71->info_padre(array(1));
-	$ctrl_o2edit72 = &$form_mysql->ctrldef("o2edit72", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit72 = $form_mysql->ctrldef("o2edit72", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit72->x(130);
 		$ctrl_o2edit72->y(55);
 		$ctrl_o2edit72->larghezza(300);
 		$ctrl_o2edit72->altezza(22);
 		$ctrl_o2edit72->info_padre(array(1));
-	$ctrl_o2edit73 = &$form_mysql->ctrldef("o2edit73", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit73 = $form_mysql->ctrldef("o2edit73", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit73->x(130);
 		$ctrl_o2edit73->y(80);
 		$ctrl_o2edit73->larghezza(300);
 		$ctrl_o2edit73->altezza(22);
 		$ctrl_o2edit73->info_padre(array(1));
 		$ctrl_o2edit73->pswd(true);
-	$ctrl_o2edit74 = &$form_mysql->ctrldef("o2edit74", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit74 = $form_mysql->ctrldef("o2edit74", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit74->x(130);
 		$ctrl_o2edit74->y(105);
 		$ctrl_o2edit74->larghezza(300);
 		$ctrl_o2edit74->altezza(22);
 		$ctrl_o2edit74->info_padre(array(1));
 		}
-function select_app_archive§§oracle_form_def(&$form_oracle) {
+function select_app_archive§§oracle_form_def($form_oracle) {
 	$form_oracle->x(210);
 	$form_oracle->y(150);
 	$form_oracle->larghezza(460);
@@ -383,7 +383,7 @@ function select_app_archive§§oracle_form_def(&$form_oracle) {
 	$form_oracle->titolo("Oracle connection");
 	$form_oracle->align_o("Center");
 	$form_oracle->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button14 = &$form_oracle->ctrldef("o2button14", "button", "", "", "");
+	$ctrl_o2button14 = $form_oracle->ctrldef("o2button14", "button", "", "", "");
 		$ctrl_o2button14->x(337);
 		$ctrl_o2button14->y(220);
 		$ctrl_o2button14->larghezza(93);
@@ -391,7 +391,7 @@ function select_app_archive§§oracle_form_def(&$form_oracle) {
 		$ctrl_o2button14->azione("connections_post");
 		$ctrl_o2button14->label("     Save");
 		$ctrl_o2button14->css("wiz_save");
-	$ctrl_o2button15 = &$form_oracle->ctrldef("o2button15", "button", "", "", "");
+	$ctrl_o2button15 = $form_oracle->ctrldef("o2button15", "button", "", "", "");
 		$ctrl_o2button15->x(240);
 		$ctrl_o2button15->y(220);
 		$ctrl_o2button15->larghezza(93);
@@ -399,74 +399,74 @@ function select_app_archive§§oracle_form_def(&$form_oracle) {
 		$ctrl_o2button15->azione("quit");
 		$ctrl_o2button15->label("     Cancel");
 		$ctrl_o2button15->css("wiz_cancel");
-	$ctrl_o2label63 = &$form_oracle->ctrldef("o2label63", "label", "", "", "");
+	$ctrl_o2label63 = $form_oracle->ctrldef("o2label63", "label", "", "", "");
 		$ctrl_o2label63->x(30);
 		$ctrl_o2label63->y(130);
 		$ctrl_o2label63->larghezza(100);
 		$ctrl_o2label63->altezza(22);
 		$ctrl_o2label63->info_padre(array(1));
 		$ctrl_o2label63->label("Schema:");
-	$ctrl_o2label59 = &$form_oracle->ctrldef("o2label59", "label", "", "", "");
+	$ctrl_o2label59 = $form_oracle->ctrldef("o2label59", "label", "", "", "");
 		$ctrl_o2label59->x(30);
 		$ctrl_o2label59->y(30);
 		$ctrl_o2label59->larghezza(100);
 		$ctrl_o2label59->altezza(22);
 		$ctrl_o2label59->info_padre(array(1));
 		$ctrl_o2label59->label("Host:");
-	$ctrl_o2label62 = &$form_oracle->ctrldef("o2label62", "label", "", "", "");
+	$ctrl_o2label62 = $form_oracle->ctrldef("o2label62", "label", "", "", "");
 		$ctrl_o2label62->x(30);
 		$ctrl_o2label62->y(105);
 		$ctrl_o2label62->larghezza(100);
 		$ctrl_o2label62->altezza(22);
 		$ctrl_o2label62->info_padre(array(1));
 		$ctrl_o2label62->label("Database:");
-	$ctrl_o2label61 = &$form_oracle->ctrldef("o2label61", "label", "", "", "");
+	$ctrl_o2label61 = $form_oracle->ctrldef("o2label61", "label", "", "", "");
 		$ctrl_o2label61->x(30);
 		$ctrl_o2label61->y(80);
 		$ctrl_o2label61->larghezza(100);
 		$ctrl_o2label61->altezza(22);
 		$ctrl_o2label61->info_padre(array(1));
 		$ctrl_o2label61->label("Password:");
-	$ctrl_o2label60 = &$form_oracle->ctrldef("o2label60", "label", "", "", "");
+	$ctrl_o2label60 = $form_oracle->ctrldef("o2label60", "label", "", "", "");
 		$ctrl_o2label60->x(30);
 		$ctrl_o2label60->y(55);
 		$ctrl_o2label60->larghezza(100);
 		$ctrl_o2label60->altezza(22);
 		$ctrl_o2label60->info_padre(array(1));
 		$ctrl_o2label60->label("User:");
-	$ctrl_o2edit57 = &$form_oracle->ctrldef("o2edit57", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit57 = $form_oracle->ctrldef("o2edit57", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit57->x(130);
 		$ctrl_o2edit57->y(30);
 		$ctrl_o2edit57->larghezza(300);
 		$ctrl_o2edit57->altezza(22);
 		$ctrl_o2edit57->info_padre(array(1));
-	$ctrl_o2edit58 = &$form_oracle->ctrldef("o2edit58", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit58 = $form_oracle->ctrldef("o2edit58", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit58->x(130);
 		$ctrl_o2edit58->y(55);
 		$ctrl_o2edit58->larghezza(300);
 		$ctrl_o2edit58->altezza(22);
 		$ctrl_o2edit58->info_padre(array(1));
-	$ctrl_o2edit59 = &$form_oracle->ctrldef("o2edit59", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit59 = $form_oracle->ctrldef("o2edit59", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit59->x(130);
 		$ctrl_o2edit59->y(80);
 		$ctrl_o2edit59->larghezza(300);
 		$ctrl_o2edit59->altezza(22);
 		$ctrl_o2edit59->info_padre(array(1));
 		$ctrl_o2edit59->pswd(true);
-	$ctrl_o2edit60 = &$form_oracle->ctrldef("o2edit60", "edit", "", "prg§_§var", "conn_schema");
+	$ctrl_o2edit60 = $form_oracle->ctrldef("o2edit60", "edit", "", "prg§_§var", "conn_schema");
 		$ctrl_o2edit60->x(130);
 		$ctrl_o2edit60->y(105);
 		$ctrl_o2edit60->larghezza(300);
 		$ctrl_o2edit60->altezza(22);
 		$ctrl_o2edit60->info_padre(array(1));
-	$ctrl_o2edit61 = &$form_oracle->ctrldef("o2edit61", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit61 = $form_oracle->ctrldef("o2edit61", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit61->x(130);
 		$ctrl_o2edit61->y(130);
 		$ctrl_o2edit61->larghezza(300);
 		$ctrl_o2edit61->altezza(22);
 		$ctrl_o2edit61->info_padre(array(1));
 		}
-function select_app_archive§§postgres_form_def(&$form_postgres) {
+function select_app_archive§§postgres_form_def($form_postgres) {
 	$form_postgres->x(210);
 	$form_postgres->y(150);
 	$form_postgres->larghezza(460);
@@ -474,7 +474,7 @@ function select_app_archive§§postgres_form_def(&$form_postgres) {
 	$form_postgres->titolo("Postgres connection");
 	$form_postgres->align_o("Center");
 	$form_postgres->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button16 = &$form_postgres->ctrldef("o2button16", "button", "", "", "");
+	$ctrl_o2button16 = $form_postgres->ctrldef("o2button16", "button", "", "", "");
 		$ctrl_o2button16->x(337);
 		$ctrl_o2button16->y(220);
 		$ctrl_o2button16->larghezza(93);
@@ -482,7 +482,7 @@ function select_app_archive§§postgres_form_def(&$form_postgres) {
 		$ctrl_o2button16->azione("connections_post");
 		$ctrl_o2button16->label("     Save");
 		$ctrl_o2button16->css("wiz_save");
-	$ctrl_o2button17 = &$form_postgres->ctrldef("o2button17", "button", "", "", "");
+	$ctrl_o2button17 = $form_postgres->ctrldef("o2button17", "button", "", "", "");
 		$ctrl_o2button17->x(240);
 		$ctrl_o2button17->y(220);
 		$ctrl_o2button17->larghezza(93);
@@ -490,74 +490,74 @@ function select_app_archive§§postgres_form_def(&$form_postgres) {
 		$ctrl_o2button17->azione("quit");
 		$ctrl_o2button17->label("     Cancel");
 		$ctrl_o2button17->css("wiz_cancel");
-	$ctrl_o2label66 = &$form_postgres->ctrldef("o2label66", "label", "", "", "");
+	$ctrl_o2label66 = $form_postgres->ctrldef("o2label66", "label", "", "", "");
 		$ctrl_o2label66->x(30);
 		$ctrl_o2label66->y(30);
 		$ctrl_o2label66->larghezza(100);
 		$ctrl_o2label66->altezza(22);
 		$ctrl_o2label66->info_padre(array(1));
 		$ctrl_o2label66->label("Host:");
-	$ctrl_o2label68 = &$form_postgres->ctrldef("o2label68", "label", "", "", "");
+	$ctrl_o2label68 = $form_postgres->ctrldef("o2label68", "label", "", "", "");
 		$ctrl_o2label68->x(30);
 		$ctrl_o2label68->y(80);
 		$ctrl_o2label68->larghezza(100);
 		$ctrl_o2label68->altezza(22);
 		$ctrl_o2label68->info_padre(array(1));
 		$ctrl_o2label68->label("Password:");
-	$ctrl_o2label70 = &$form_postgres->ctrldef("o2label70", "label", "", "", "");
+	$ctrl_o2label70 = $form_postgres->ctrldef("o2label70", "label", "", "", "");
 		$ctrl_o2label70->x(30);
 		$ctrl_o2label70->y(130);
 		$ctrl_o2label70->larghezza(100);
 		$ctrl_o2label70->altezza(22);
 		$ctrl_o2label70->info_padre(array(1));
 		$ctrl_o2label70->label("Schema:");
-	$ctrl_o2label69 = &$form_postgres->ctrldef("o2label69", "label", "", "", "");
+	$ctrl_o2label69 = $form_postgres->ctrldef("o2label69", "label", "", "", "");
 		$ctrl_o2label69->x(30);
 		$ctrl_o2label69->y(105);
 		$ctrl_o2label69->larghezza(100);
 		$ctrl_o2label69->altezza(22);
 		$ctrl_o2label69->info_padre(array(1));
 		$ctrl_o2label69->label("Database:");
-	$ctrl_o2label67 = &$form_postgres->ctrldef("o2label67", "label", "", "", "");
+	$ctrl_o2label67 = $form_postgres->ctrldef("o2label67", "label", "", "", "");
 		$ctrl_o2label67->x(30);
 		$ctrl_o2label67->y(55);
 		$ctrl_o2label67->larghezza(100);
 		$ctrl_o2label67->altezza(22);
 		$ctrl_o2label67->info_padre(array(1));
 		$ctrl_o2label67->label("User:");
-	$ctrl_o2edit64 = &$form_postgres->ctrldef("o2edit64", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit64 = $form_postgres->ctrldef("o2edit64", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit64->x(130);
 		$ctrl_o2edit64->y(30);
 		$ctrl_o2edit64->larghezza(300);
 		$ctrl_o2edit64->altezza(22);
 		$ctrl_o2edit64->info_padre(array(1));
-	$ctrl_o2edit65 = &$form_postgres->ctrldef("o2edit65", "edit", "", "prg§_§var", "conn_user");
+	$ctrl_o2edit65 = $form_postgres->ctrldef("o2edit65", "edit", "", "prg§_§var", "conn_user");
 		$ctrl_o2edit65->x(130);
 		$ctrl_o2edit65->y(55);
 		$ctrl_o2edit65->larghezza(300);
 		$ctrl_o2edit65->altezza(22);
 		$ctrl_o2edit65->info_padre(array(1));
-	$ctrl_o2edit66 = &$form_postgres->ctrldef("o2edit66", "edit", "", "prg§_§var", "conn_password");
+	$ctrl_o2edit66 = $form_postgres->ctrldef("o2edit66", "edit", "", "prg§_§var", "conn_password");
 		$ctrl_o2edit66->x(130);
 		$ctrl_o2edit66->y(80);
 		$ctrl_o2edit66->larghezza(300);
 		$ctrl_o2edit66->altezza(22);
 		$ctrl_o2edit66->info_padre(array(1));
 		$ctrl_o2edit66->pswd(true);
-	$ctrl_o2edit67 = &$form_postgres->ctrldef("o2edit67", "edit", "", "prg§_§var", "conn_schema");
+	$ctrl_o2edit67 = $form_postgres->ctrldef("o2edit67", "edit", "", "prg§_§var", "conn_schema");
 		$ctrl_o2edit67->x(130);
 		$ctrl_o2edit67->y(105);
 		$ctrl_o2edit67->larghezza(300);
 		$ctrl_o2edit67->altezza(22);
 		$ctrl_o2edit67->info_padre(array(1));
-	$ctrl_o2edit68 = &$form_postgres->ctrldef("o2edit68", "edit", "", "prg§_§var", "conn_db");
+	$ctrl_o2edit68 = $form_postgres->ctrldef("o2edit68", "edit", "", "prg§_§var", "conn_db");
 		$ctrl_o2edit68->x(130);
 		$ctrl_o2edit68->y(130);
 		$ctrl_o2edit68->larghezza(300);
 		$ctrl_o2edit68->altezza(22);
 		$ctrl_o2edit68->info_padre(array(1));
 		}
-function select_app_archive§§sqlite_form_def(&$form_sqlite) {
+function select_app_archive§§sqlite_form_def($form_sqlite) {
 	$form_sqlite->x(210);
 	$form_sqlite->y(150);
 	$form_sqlite->larghezza(460);
@@ -565,14 +565,14 @@ function select_app_archive§§sqlite_form_def(&$form_sqlite) {
 	$form_sqlite->titolo("SQLite connection");
 	$form_sqlite->align_o("Center");
 	$form_sqlite->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2button3 = &$form_sqlite->ctrldef("o2button3", "button", "", "", "");
+	$ctrl_o2button3 = $form_sqlite->ctrldef("o2button3", "button", "", "", "");
 		$ctrl_o2button3->x(410);
 		$ctrl_o2button3->y(70);
 		$ctrl_o2button3->larghezza(22);
 		$ctrl_o2button3->altezza(22);
 		$ctrl_o2button3->azione("select_dbfile");
 		$ctrl_o2button3->label("...");
-	$ctrl_o2button18 = &$form_sqlite->ctrldef("o2button18", "button", "", "", "");
+	$ctrl_o2button18 = $form_sqlite->ctrldef("o2button18", "button", "", "", "");
 		$ctrl_o2button18->x(337);
 		$ctrl_o2button18->y(150);
 		$ctrl_o2button18->larghezza(93);
@@ -580,7 +580,7 @@ function select_app_archive§§sqlite_form_def(&$form_sqlite) {
 		$ctrl_o2button18->azione("connections_post");
 		$ctrl_o2button18->label("     Save");
 		$ctrl_o2button18->css("wiz_save");
-	$ctrl_o2button19 = &$form_sqlite->ctrldef("o2button19", "button", "", "", "");
+	$ctrl_o2button19 = $form_sqlite->ctrldef("o2button19", "button", "", "", "");
 		$ctrl_o2button19->x(240);
 		$ctrl_o2button19->y(150);
 		$ctrl_o2button19->larghezza(93);
@@ -588,21 +588,21 @@ function select_app_archive§§sqlite_form_def(&$form_sqlite) {
 		$ctrl_o2button19->azione("quit");
 		$ctrl_o2button19->label("     Cancel");
 		$ctrl_o2button19->css("wiz_cancel");
-	$ctrl_o2label79 = &$form_sqlite->ctrldef("o2label79", "label", "", "", "");
+	$ctrl_o2label79 = $form_sqlite->ctrldef("o2label79", "label", "", "", "");
 		$ctrl_o2label79->x(30);
 		$ctrl_o2label79->y(70);
 		$ctrl_o2label79->larghezza(100);
 		$ctrl_o2label79->altezza(22);
 		$ctrl_o2label79->info_padre(array(1));
 		$ctrl_o2label79->label("Database file:");
-	$ctrl_o2edit77 = &$form_sqlite->ctrldef("o2edit77", "edit", "", "prg§_§var", "conn_host");
+	$ctrl_o2edit77 = $form_sqlite->ctrldef("o2edit77", "edit", "", "prg§_§var", "conn_host");
 		$ctrl_o2edit77->x(130);
 		$ctrl_o2edit77->y(70);
 		$ctrl_o2edit77->larghezza(280);
 		$ctrl_o2edit77->altezza(22);
 		$ctrl_o2edit77->info_padre(array(1));
 		}
-function select_app_archive§§engine_form_def(&$form_engine) {
+function select_app_archive§§engine_form_def($form_engine) {
 	$form_engine->x(200);
 	$form_engine->y(200);
 	$form_engine->larghezza(360);
@@ -611,20 +611,20 @@ function select_app_archive§§engine_form_def(&$form_engine) {
 	$form_engine->close_action("quit");
 	$form_engine->align_o("Center");
 	$form_engine->frm_status(select_app_archive_exp_9999());
-	$ctrl_o2label80 = &$form_engine->ctrldef("o2label80", "label", "", "", "");
+	$ctrl_o2label80 = $form_engine->ctrldef("o2label80", "label", "", "", "");
 		$ctrl_o2label80->x(30);
 		$ctrl_o2label80->y(40);
 		$ctrl_o2label80->larghezza(170);
 		$ctrl_o2label80->altezza(22);
 		$ctrl_o2label80->label("Database server engine:");
-	$ctrl_o2ListBox2 = &$form_engine->ctrldef("o2ListBox2", "listcombo", "", "prg§_§var", "conn_type");
+	$ctrl_o2ListBox2 = $form_engine->ctrldef("o2ListBox2", "listcombo", "", "prg§_§var", "conn_type");
 		$ctrl_o2ListBox2->x(200);
 		$ctrl_o2ListBox2->y(40);
 		$ctrl_o2ListBox2->larghezza(130);
 		$ctrl_o2ListBox2->altezza(22);
 		$ctrl_o2ListBox2->valori(array("as400" => "AS400","db2" => "DB2","mssql" => "MSSQL","mysql" => "MySQL","oracle" => "Oracle","postgres" => "Postgres","sqlite" => "SQLite"));
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2button4 = &$form_engine->ctrldef("o2button4", "button", "", "", "");
+	$ctrl_o2button4 = $form_engine->ctrldef("o2button4", "button", "", "", "");
 		$ctrl_o2button4->x(240);
 		$ctrl_o2button4->y(110);
 		$ctrl_o2button4->larghezza(93);
@@ -632,7 +632,7 @@ function select_app_archive§§engine_form_def(&$form_engine) {
 		$ctrl_o2button4->azione("from_engine2detail");
 		$ctrl_o2button4->label("   Next");
 		$ctrl_o2button4->css("wiz_next");
-	$ctrl_o2button5 = &$form_engine->ctrldef("o2button5", "button", "", "", "");
+	$ctrl_o2button5 = $form_engine->ctrldef("o2button5", "button", "", "", "");
 		$ctrl_o2button5->x(140);
 		$ctrl_o2button5->y(110);
 		$ctrl_o2button5->larghezza(93);
@@ -642,7 +642,7 @@ function select_app_archive§§engine_form_def(&$form_engine) {
 		$ctrl_o2button5->css("wiz_cancel");
 		}
 
-function select_app_archive§§connections_post_act(&$o2exe) {
+function select_app_archive§§connections_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::ret(1, select_app_archive_exp_28()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::ret(2, select_app_archive_exp_3()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::ret(3, select_app_archive_exp_24()) && $o2exe->e();
@@ -652,19 +652,19 @@ function select_app_archive§§connections_post_act(&$o2exe) {
 	$o2exe->s(7) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
-function select_app_archive§§from_engine2detail_act(&$o2exe) {
+function select_app_archive§§from_engine2detail_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "engine_selection", select_app_archive_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function select_app_archive§§quit_act(&$o2exe) {
+function select_app_archive§§quit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
-function select_app_archive§§select_dbfile_act(&$o2exe) {
+function select_app_archive§§select_dbfile_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call(select_app_archive_exp_7(), False, "prg§_§var§§conn_host", select_app_archive_exp_35(), select_app_archive_exp_36(), select_app_archive_exp_1(), select_app_archive_exp_9999(), select_app_archive_exp_9999(), select_app_archive_exp_9999(), select_app_archive_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function select_app_archive§§start_act(&$o2exe) {
+function select_app_archive§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "conn_type", select_app_archive_exp_18()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "conn_host", select_app_archive_exp_19()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "conn_user", select_app_archive_exp_20()) && $o2exe->e();

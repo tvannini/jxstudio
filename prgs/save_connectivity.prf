@@ -1,12 +1,12 @@
 <?php
 
-function save_connectivity§§prg§_§var_def(&$task_prg§_§var) {
+function save_connectivity§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("pathfile", "path");
 		}
 
-function save_connectivity§§servers_def(&$task_servers, $_o2viewalias = "") {
+function save_connectivity§§servers_def($task_servers, $_o2viewalias = "") {
 	$task_servers->righe_vis = 10;
 
 	$task_servers->usa_file("servers","servers","name");
@@ -20,7 +20,7 @@ function save_connectivity§§servers_def(&$task_servers, $_o2viewalias = "") {
 	$task_servers->usa("chunksize","servers","chunksize",null,null,null,null);
 }
 
-function save_connectivity§§databases_def(&$task_databases, $_o2viewalias = "") {
+function save_connectivity§§databases_def($task_databases, $_o2viewalias = "") {
 	$task_databases->righe_vis = 10;
 
 	$task_databases->usa_file("databases","databases","name");
@@ -34,7 +34,7 @@ function save_connectivity§§databases_def(&$task_databases, $_o2viewalias = "") 
 	$task_databases->usa("create_tables","databases","create_tables",null,null,null,null);
 }
 
-function save_connectivity§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+function save_connectivity§§ts_obj_def($task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->righe_vis = 10;
 
 	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -45,13 +45,13 @@ function save_connectivity§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
 }
 
-function save_connectivity§§set_ts_act(&$o2exe) {
+function save_connectivity§§set_ts_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_connectivity_exp_12()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_connectivity_exp_13()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_connectivity§§start_act(&$o2exe) {
+function save_connectivity§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Set repository file path") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_connectivity_exp_2()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
@@ -65,11 +65,11 @@ function save_connectivity§§start_act(&$o2exe) {
 	$o2exe->s(11) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_connectivity§§write_db_act(&$o2exe) {
+function save_connectivity§§write_db_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_11()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_connectivity§§write_server_act(&$o2exe) {
+function save_connectivity§§write_server_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_connectivity_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 

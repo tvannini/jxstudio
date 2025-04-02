@@ -1,13 +1,13 @@
 <?php
 
-function connectivity§§prg§_§var_def(&$task_prg§_§var) {
+function connectivity§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("confirm", "_o2logical");
 	$task_prg§_§var->definisci("menu_selected_item", "_o2alpha");
 	$task_prg§_§var->definisci("modified", "_o2logical");
 		}
 
-function connectivity§§servers_def(&$task_servers, $_o2viewalias = "") {
+function connectivity§§servers_def($task_servers, $_o2viewalias = "") {
 	$task_servers->righe_vis = 100;
 
 	$task_servers->usa_file("servers","servers","name",null,null);
@@ -21,7 +21,7 @@ function connectivity§§servers_def(&$task_servers, $_o2viewalias = "") {
 	$task_servers->usa("chunksize","servers","chunksize",null,null,null,null);
 }
 
-function connectivity§§databases_def(&$task_databases, $_o2viewalias = "") {
+function connectivity§§databases_def($task_databases, $_o2viewalias = "") {
 	$task_databases->righe_vis = 100;
 
 	$task_databases->usa_file("databases","databases","name",null,null);
@@ -35,7 +35,7 @@ function connectivity§§databases_def(&$task_databases, $_o2viewalias = "") {
 	$task_databases->usa("create_tables","databases","create_tables",null,null,null,null);
 }
 
-function connectivity§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
+function connectivity§§objstatus_def($task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->righe_vis = 10;
 
 	$task_objstatus->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -44,7 +44,7 @@ function connectivity§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->usa("userid","tstamp_obj","userid",null,null,"connectivity_exp_9()",null);
 }
 
-function connectivity§§servers4combo_def(&$task_servers4combo, $_o2viewalias = "") {
+function connectivity§§servers4combo_def($task_servers4combo, $_o2viewalias = "") {
 	$task_servers4combo->righe_vis = 20;
 
 	$task_servers4combo->usa_file("servers","servers","name",null,null);
@@ -52,7 +52,7 @@ function connectivity§§servers4combo_def(&$task_servers4combo, $_o2viewalias = "
 	$task_servers4combo->usa("userid","servers","userid","connectivity_exp_3()","connectivity_exp_3()",null,null);
 	$task_servers4combo->usa("servername","servers","servername",null,null,null,null);
 }
-function connectivity§§connectivity_form_def(&$form_connectivity) {
+function connectivity§§connectivity_form_def($form_connectivity) {
 	$form_connectivity->x(0);
 	$form_connectivity->y(0);
 	$form_connectivity->larghezza(1000);
@@ -62,7 +62,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 	$form_connectivity->frm_status(connectivity_exp_9999());
 	$form_connectivity->css_finestra(" open_body");
 	$form_connectivity->css_body(" open_body");
-	$ctrl_nav_s = &$form_connectivity->ctrldef("nav_s", "navigator", "", "servers", "");
+	$ctrl_nav_s = $form_connectivity->ctrldef("nav_s", "navigator", "", "servers", "");
 		$ctrl_nav_s->x(300);
 		$ctrl_nav_s->y(0);
 		$ctrl_nav_s->larghezza(700);
@@ -79,7 +79,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_nav_s->act_save("servers_post");
 		$ctrl_nav_s->act_del("servers_delete");
 		$ctrl_nav_s->act_undo("servers_undo");
-	$ctrl_o2tree2 = &$form_connectivity->ctrldef("o2tree2", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_o2tree2 = $form_connectivity->ctrldef("o2tree2", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_o2tree2->x(0);
 		$ctrl_o2tree2->y(0);
 		$ctrl_o2tree2->larghezza(300);
@@ -88,7 +88,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_o2tree2->azione("tree_select");
 		$ctrl_o2tree2->activation(1);
 		$ctrl_o2tree2->nodes(connectivity_exp_6());
-	$ctrl_btn_checkout = &$form_connectivity->ctrldef("btn_checkout", "img", "", "", "");
+	$ctrl_btn_checkout = $form_connectivity->ctrldef("btn_checkout", "img", "", "", "");
 		$ctrl_btn_checkout->x(450);
 		$ctrl_btn_checkout->y(4);
 		$ctrl_btn_checkout->larghezza(32);
@@ -98,19 +98,19 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_btn_checkout->label("Check-Out");
 		$ctrl_btn_checkout->css(connectivity_exp_64());
 		$ctrl_btn_checkout->imgexp(connectivity_exp_65());
-	$ctrl_o2image4 = &$form_connectivity->ctrldef("o2image4", "img", "", "", "");
+	$ctrl_o2image4 = $form_connectivity->ctrldef("o2image4", "img", "", "", "");
 		$ctrl_o2image4->x(444);
 		$ctrl_o2image4->y(10);
 		$ctrl_o2image4->larghezza(3);
 		$ctrl_o2image4->altezza(17);
 		$ctrl_o2image4->imgexp(connectivity_exp_70());
-	$ctrl_o2image7 = &$form_connectivity->ctrldef("o2image7", "img", "", "", "");
+	$ctrl_o2image7 = $form_connectivity->ctrldef("o2image7", "img", "", "", "");
 		$ctrl_o2image7->x(690);
 		$ctrl_o2image7->y(4);
 		$ctrl_o2image7->larghezza(32);
 		$ctrl_o2image7->altezza(32);
 		$ctrl_o2image7->imgexp(connectivity_exp_22());
-	$ctrl_btn_save = &$form_connectivity->ctrldef("btn_save", "img", "", "", "");
+	$ctrl_btn_save = $form_connectivity->ctrldef("btn_save", "img", "", "", "");
 		$ctrl_btn_save->x(555);
 		$ctrl_btn_save->y(4);
 		$ctrl_btn_save->larghezza(32);
@@ -120,7 +120,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_btn_save->label("Save & Export");
 		$ctrl_btn_save->css(connectivity_exp_68());
 		$ctrl_btn_save->imgexp(connectivity_exp_65());
-	$ctrl_btn_uncheck = &$form_connectivity->ctrldef("btn_uncheck", "img", "", "", "");
+	$ctrl_btn_uncheck = $form_connectivity->ctrldef("btn_uncheck", "img", "", "", "");
 		$ctrl_btn_uncheck->x(514);
 		$ctrl_btn_uncheck->y(4);
 		$ctrl_btn_uncheck->larghezza(32);
@@ -130,7 +130,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_btn_uncheck->label("Un-Check");
 		$ctrl_btn_uncheck->css(connectivity_exp_67());
 		$ctrl_btn_uncheck->imgexp(connectivity_exp_65());
-	$ctrl_btn_discard = &$form_connectivity->ctrldef("btn_discard", "img", "", "", "");
+	$ctrl_btn_discard = $form_connectivity->ctrldef("btn_discard", "img", "", "", "");
 		$ctrl_btn_discard->x(587);
 		$ctrl_btn_discard->y(4);
 		$ctrl_btn_discard->larghezza(32);
@@ -141,13 +141,13 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_btn_discard->css(connectivity_exp_69());
 		$ctrl_btn_discard->imgexp(connectivity_exp_65());
 		$ctrl_btn_discard->confirm_message("All changes will be lost.\nProceed?");
-	$ctrl_o2image3 = &$form_connectivity->ctrldef("o2image3", "img", "", "", "");
+	$ctrl_o2image3 = $form_connectivity->ctrldef("o2image3", "img", "", "", "");
 		$ctrl_o2image3->x(549);
 		$ctrl_o2image3->y(10);
 		$ctrl_o2image3->larghezza(3);
 		$ctrl_o2image3->altezza(17);
 		$ctrl_o2image3->imgexp(connectivity_exp_70());
-	$ctrl_btn_checkin = &$form_connectivity->ctrldef("btn_checkin", "img", "", "", "");
+	$ctrl_btn_checkin = $form_connectivity->ctrldef("btn_checkin", "img", "", "", "");
 		$ctrl_btn_checkin->x(482);
 		$ctrl_btn_checkin->y(4);
 		$ctrl_btn_checkin->larghezza(32);
@@ -157,7 +157,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_btn_checkin->label("Check-In");
 		$ctrl_btn_checkin->css(connectivity_exp_66());
 		$ctrl_btn_checkin->imgexp(connectivity_exp_65());
-	$ctrl_tab_s = &$form_connectivity->ctrldef("tab_s", "tab", "", "servers", "");
+	$ctrl_tab_s = $form_connectivity->ctrldef("tab_s", "tab", "", "servers", "");
 		$ctrl_tab_s->x(300);
 		$ctrl_tab_s->y(39);
 		$ctrl_tab_s->larghezza(700);
@@ -165,7 +165,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_tab_s->expand("B");
 		$ctrl_tab_s->modificabile(connectivity_exp_2());
 		$ctrl_tab_s->hide_indicator(connectivity_exp_2());
-	$ctrl_tab_d = &$form_connectivity->ctrldef("tab_d", "tab", "", "databases", "");
+	$ctrl_tab_d = $form_connectivity->ctrldef("tab_d", "tab", "", "databases", "");
 		$ctrl_tab_d->x(300);
 		$ctrl_tab_d->y(209);
 		$ctrl_tab_d->larghezza(700);
@@ -173,7 +173,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_tab_d->expand("B");
 		$ctrl_tab_d->modificabile(connectivity_exp_2());
 		$ctrl_tab_d->hide_indicator(connectivity_exp_2());
-	$ctrl_nav_d = &$form_connectivity->ctrldef("nav_d", "navigator", "", "databases", "");
+	$ctrl_nav_d = $form_connectivity->ctrldef("nav_d", "navigator", "", "databases", "");
 		$ctrl_nav_d->x(300);
 		$ctrl_nav_d->y(170);
 		$ctrl_nav_d->larghezza(700);
@@ -190,7 +190,7 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_nav_d->act_save("databases_post");
 		$ctrl_nav_d->act_del("databases_delete");
 		$ctrl_nav_d->act_undo("databases_undo");
-	$ctrl_o2button2 = &$form_connectivity->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_connectivity->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(720);
 		$ctrl_o2button2->y(10);
 		$ctrl_o2button2->larghezza(100);
@@ -199,14 +199,14 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_o2button2->modificabile(connectivity_exp_9999());
 		$ctrl_o2button2->label(connectivity_exp_56());
 		$ctrl_o2button2->css(connectivity_exp_21());
-	$ctrl_o2edit7 = &$form_connectivity->ctrldef("o2edit7", "edit", "tab_d", "databases", "jxname");
+	$ctrl_o2edit7 = $form_connectivity->ctrldef("o2edit7", "edit", "tab_d", "databases", "jxname");
 		$ctrl_o2edit7->x(0);
 		$ctrl_o2edit7->y(10);
 		$ctrl_o2edit7->larghezza(100);
 		$ctrl_o2edit7->altezza(24);
 		$ctrl_o2edit7->expand("H");
 		$ctrl_o2edit7->info_padre(array("01", "01", "01", "Database name", False, "", False, "", "", "", ""));
-	$ctrl_o2ListBox3 = &$form_connectivity->ctrldef("o2ListBox3", "listcombo", "tab_d", "databases", "servername");
+	$ctrl_o2ListBox3 = $form_connectivity->ctrldef("o2ListBox3", "listcombo", "tab_d", "databases", "servername");
 		$ctrl_o2ListBox3->x(100);
 		$ctrl_o2ListBox3->y(10);
 		$ctrl_o2ListBox3->larghezza(130);
@@ -215,40 +215,40 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_o2ListBox3->info_padre(array("01", "02", "02", "Server", False, "", False, ""));
 		$ctrl_o2ListBox3->valori(o2_view2list("servers4combo", "servername", "servername"));
 		$ctrl_o2ListBox3->righe(1);
-	$ctrl_o2edit8 = &$form_connectivity->ctrldef("o2edit8", "edit", "tab_d", "databases", "dbname");
+	$ctrl_o2edit8 = $form_connectivity->ctrldef("o2edit8", "edit", "tab_d", "databases", "dbname");
 		$ctrl_o2edit8->x(230);
 		$ctrl_o2edit8->y(10);
 		$ctrl_o2edit8->larghezza(150);
 		$ctrl_o2edit8->altezza(24);
 		$ctrl_o2edit8->expand("H");
 		$ctrl_o2edit8->info_padre(array("01", "03", "03", "Physical name", False, "", False, ""));
-	$ctrl_o2edit9 = &$form_connectivity->ctrldef("o2edit9", "edit", "tab_d", "databases", "dbowner");
+	$ctrl_o2edit9 = $form_connectivity->ctrldef("o2edit9", "edit", "tab_d", "databases", "dbowner");
 		$ctrl_o2edit9->x(380);
 		$ctrl_o2edit9->y(10);
 		$ctrl_o2edit9->larghezza(100);
 		$ctrl_o2edit9->altezza(24);
 		$ctrl_o2edit9->expand("H");
 		$ctrl_o2edit9->info_padre(array("01", "04", "04", "Schema", False, "", False, "", "", "", ""));
-	$ctrl_o2checkbox2 = &$form_connectivity->ctrldef("o2checkbox2", "check", "tab_d", "databases", "asp");
+	$ctrl_o2checkbox2 = $form_connectivity->ctrldef("o2checkbox2", "check", "tab_d", "databases", "asp");
 		$ctrl_o2checkbox2->x(480);
 		$ctrl_o2checkbox2->y(10);
 		$ctrl_o2checkbox2->larghezza(20);
 		$ctrl_o2checkbox2->altezza(24);
 		$ctrl_o2checkbox2->info_padre(array("01", "05", "05", "ASP", False, "", False, "", "", "", ""));
-	$ctrl_o2checkbox3 = &$form_connectivity->ctrldef("o2checkbox3", "check", "tab_d", "databases", "create_tables");
+	$ctrl_o2checkbox3 = $form_connectivity->ctrldef("o2checkbox3", "check", "tab_d", "databases", "create_tables");
 		$ctrl_o2checkbox3->x(500);
 		$ctrl_o2checkbox3->y(10);
 		$ctrl_o2checkbox3->larghezza(20);
 		$ctrl_o2checkbox3->altezza(24);
 		$ctrl_o2checkbox3->info_padre(array("01", "06", "06", "Manage tables", False, "", False, "", "", "", ""));
-	$ctrl_o2edit2 = &$form_connectivity->ctrldef("o2edit2", "edit", "tab_s", "servers", "servername");
+	$ctrl_o2edit2 = $form_connectivity->ctrldef("o2edit2", "edit", "tab_s", "servers", "servername");
 		$ctrl_o2edit2->x(0);
 		$ctrl_o2edit2->y(10);
 		$ctrl_o2edit2->larghezza(100);
 		$ctrl_o2edit2->altezza(24);
 		$ctrl_o2edit2->expand("H");
 		$ctrl_o2edit2->info_padre(array("01", "01", "01", "Server name", False, "", False, "", "", "", ""));
-	$ctrl_o2ListBox2 = &$form_connectivity->ctrldef("o2ListBox2", "listcombo", "tab_s", "servers", "engine");
+	$ctrl_o2ListBox2 = $form_connectivity->ctrldef("o2ListBox2", "listcombo", "tab_s", "servers", "engine");
 		$ctrl_o2ListBox2->x(100);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(100);
@@ -256,28 +256,28 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_o2ListBox2->info_padre(array("01", "02", "02", "Engine", False, "", False, ""));
 		$ctrl_o2ListBox2->valori(array());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2edit3 = &$form_connectivity->ctrldef("o2edit3", "edit", "tab_s", "servers", "hostname");
+	$ctrl_o2edit3 = $form_connectivity->ctrldef("o2edit3", "edit", "tab_s", "servers", "hostname");
 		$ctrl_o2edit3->x(200);
 		$ctrl_o2edit3->y(10);
 		$ctrl_o2edit3->larghezza(180);
 		$ctrl_o2edit3->altezza(24);
 		$ctrl_o2edit3->expand("H");
 		$ctrl_o2edit3->info_padre(array("01", "03", "03", "Host", False, "", False, "", "", "", ""));
-	$ctrl_o2edit4 = &$form_connectivity->ctrldef("o2edit4", "edit", "tab_s", "servers", "user");
+	$ctrl_o2edit4 = $form_connectivity->ctrldef("o2edit4", "edit", "tab_s", "servers", "user");
 		$ctrl_o2edit4->x(380);
 		$ctrl_o2edit4->y(10);
 		$ctrl_o2edit4->larghezza(100);
 		$ctrl_o2edit4->altezza(24);
 		$ctrl_o2edit4->expand("H");
 		$ctrl_o2edit4->info_padre(array("01", "04", "04", "User", False, "", False, "", "", "", ""));
-	$ctrl_o2edit5 = &$form_connectivity->ctrldef("o2edit5", "edit", "tab_s", "servers", "password");
+	$ctrl_o2edit5 = $form_connectivity->ctrldef("o2edit5", "edit", "tab_s", "servers", "password");
 		$ctrl_o2edit5->x(480);
 		$ctrl_o2edit5->y(10);
 		$ctrl_o2edit5->larghezza(100);
 		$ctrl_o2edit5->altezza(24);
 		$ctrl_o2edit5->expand("H");
 		$ctrl_o2edit5->info_padre(array("01", "05", "05", "Password", False, "", False, ""));
-	$ctrl_o2edit6 = &$form_connectivity->ctrldef("o2edit6", "edit", "tab_s", "servers", "chunksize");
+	$ctrl_o2edit6 = $form_connectivity->ctrldef("o2edit6", "edit", "tab_s", "servers", "chunksize");
 		$ctrl_o2edit6->x(580);
 		$ctrl_o2edit6->y(10);
 		$ctrl_o2edit6->larghezza(50);
@@ -285,11 +285,11 @@ function connectivity§§connectivity_form_def(&$form_connectivity) {
 		$ctrl_o2edit6->info_padre(array("01", "06", "06", "Chunk", False, "", False, ""));
 		}
 
-function connectivity§§check_status_act(&$o2exe) {
+function connectivity§§check_status_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§checkin_act(&$o2exe) {
+function connectivity§§checkin_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("save", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("checkin", False, connectivity_exp_4()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("servers", "SC", "") && $o2exe->e();
@@ -297,33 +297,33 @@ function connectivity§§checkin_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§checkout_act(&$o2exe) {
+function connectivity§§checkout_act($o2exe) {
 	$o2exe->s(1) && (connectivity_exp_5() || $o2exe->e()) && o2act::call("checkout", False, connectivity_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "modified", connectivity_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§databases_delete_act(&$o2exe) {
+function connectivity§§databases_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("databases", "C", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "modified", connectivity_exp_15()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§databases_insert_act(&$o2exe) {
+function connectivity§§databases_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("databases", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("databases", "userid", connectivity_exp_7()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§databases_post_act(&$o2exe) {
+function connectivity§§databases_post_act($o2exe) {
 	$o2exe->s(1) && (connectivity_exp_17() || $o2exe->e()) && o2act::set("prg§_§var", "modified", connectivity_exp_15()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("databases", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§databases_undo_act(&$o2exe) {
+function connectivity§§databases_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("databases", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§discard_act(&$o2exe) {
+function connectivity§§discard_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("databases", "SC", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("servers", "SS", "") && $o2exe->e();
@@ -331,14 +331,14 @@ function connectivity§§discard_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::set("prg§_§var", "modified", connectivity_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§edit_act(&$o2exe) {
+function connectivity§§edit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("databases", "SC", "") && $o2exe->e();
 	$o2exe->s(3) && (connectivity_exp_2() || $o2exe->e()) && o2act::view("servers", "SS", "") && $o2exe->e();
 	$o2exe->s(4) && (connectivity_exp_2() || $o2exe->e()) && o2act::view("databases", "SS", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§exit_act(&$o2exe) {
+function connectivity§§exit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("servers_post", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("databases_post", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "confirm", connectivity_exp_9999()) && $o2exe->e();
@@ -348,27 +348,27 @@ function connectivity§§exit_act(&$o2exe) {
 	$o2exe->s(7) && True && o2act::view("databases", "SC", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§goto_appvars_act(&$o2exe) {
+function connectivity§§goto_appvars_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("app_vars", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§goto_datatypes_act(&$o2exe) {
+function connectivity§§goto_datatypes_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("datatypes", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§goto_programs_act(&$o2exe) {
+function connectivity§§goto_programs_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("programs", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§goto_tables_act(&$o2exe) {
+function connectivity§§goto_tables_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("tables", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§save_act(&$o2exe) {
+function connectivity§§save_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "SM", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("databases", "SM", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::call("save_connectivity", False) && $o2exe->e();
@@ -377,38 +377,38 @@ function connectivity§§save_act(&$o2exe) {
 	$o2exe->s(6) && True && o2act::set("prg§_§var", "modified", connectivity_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§servers_delete_act(&$o2exe) {
+function connectivity§§servers_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "C", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("servers4combo", "1", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "modified", connectivity_exp_15()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§servers_insert_act(&$o2exe) {
+function connectivity§§servers_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("servers", "userid", connectivity_exp_7()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§servers_post_act(&$o2exe) {
+function connectivity§§servers_post_act($o2exe) {
 	$o2exe->s(1) && (connectivity_exp_16() || $o2exe->e()) && o2act::set("prg§_§var", "modified", connectivity_exp_15()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("servers", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§servers_undo_act(&$o2exe) {
+function connectivity§§servers_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§start_act(&$o2exe) {
+function connectivity§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", connectivity_exp_18()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::script(connectivity_exp_10()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§tree_select_act(&$o2exe) {
+function connectivity§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("project", False, connectivity_exp_61()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function connectivity§§uncheck_act(&$o2exe) {
+function connectivity§§uncheck_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("uncheck", False, connectivity_exp_4()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("objstatus", "1", "") && $o2exe->e();

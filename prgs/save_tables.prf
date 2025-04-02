@@ -1,12 +1,12 @@
 <?php
 
-function save_tables§§prg§_§var_def(&$task_prg§_§var) {
+function save_tables§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("pathfile", "path");
 		}
 
-function save_tables§§tables_def(&$task_tables, $_o2viewalias = "") {
+function save_tables§§tables_def($task_tables, $_o2viewalias = "") {
 	$task_tables->righe_vis = 10;
 
 	$task_tables->usa_file("tables","tables","pos");
@@ -21,7 +21,7 @@ function save_tables§§tables_def(&$task_tables, $_o2viewalias = "") {
 	$task_tables->usa("folder","tables","folder",null,null,null,null);
 }
 
-function save_tables§§fields_def(&$task_fields, $_o2viewalias = "") {
+function save_tables§§fields_def($task_fields, $_o2viewalias = "") {
 	$task_fields->righe_vis = 10;
 
 	$task_fields->usa_file("fields","fields","pos");
@@ -34,7 +34,7 @@ function save_tables§§fields_def(&$task_fields, $_o2viewalias = "") {
 	$task_fields->usa("datatype","fields","datatype",null,null,null,null);
 }
 
-function save_tables§§indexes_def(&$task_indexes, $_o2viewalias = "") {
+function save_tables§§indexes_def($task_indexes, $_o2viewalias = "") {
 	$task_indexes->righe_vis = 10;
 
 	$task_indexes->usa_file("indexes","indexes","pos");
@@ -46,7 +46,7 @@ function save_tables§§indexes_def(&$task_indexes, $_o2viewalias = "") {
 	$task_indexes->usa("dbname","indexes","dbname",null,null,null,null);
 }
 
-function save_tables§§segments_def(&$task_segments, $_o2viewalias = "") {
+function save_tables§§segments_def($task_segments, $_o2viewalias = "") {
 	$task_segments->righe_vis = 10;
 
 	$task_segments->usa_file("idxsegments","idxsegments","pos");
@@ -59,7 +59,7 @@ function save_tables§§segments_def(&$task_segments, $_o2viewalias = "") {
 	$task_segments->usa("direction","idxsegments","direction",null,null,null,null);
 }
 
-function save_tables§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+function save_tables§§ts_obj_def($task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->righe_vis = 1;
 
 	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -70,27 +70,27 @@ function save_tables§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
 }
 
-function save_tables§§field_act(&$o2exe) {
+function save_tables§§field_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_11()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§index_act(&$o2exe) {
+function save_tables§§index_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_14()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("segment", False, "segments") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "contents", save_tables_exp_16()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§segment_act(&$o2exe) {
+function save_tables§§segment_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_15()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§set_ts_act(&$o2exe) {
+function save_tables§§set_ts_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_tables_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_tables_exp_19()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§start_act(&$o2exe) {
+function save_tables§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Set path to file") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_tables_exp_2()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
@@ -102,7 +102,7 @@ function save_tables§§start_act(&$o2exe) {
 	$o2exe->s(9) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§table_act(&$o2exe) {
+function save_tables§§table_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_1()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("field", False, "fields") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "contents", save_tables_exp_17()) && $o2exe->e();
@@ -110,11 +110,11 @@ function save_tables§§table_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::set("prg§_§var", "contents", save_tables_exp_18()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§write_db_act(&$o2exe) {
+function save_tables§§write_db_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_11()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_tables§§write_server_act(&$o2exe) {
+function save_tables§§write_server_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_tables_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 

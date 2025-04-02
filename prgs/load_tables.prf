@@ -1,6 +1,6 @@
 <?php
 
-function load_tables§§prg§_§var_def(&$task_prg§_§var) {
+function load_tables§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_dett_tab", "_o2structure");
 	$task_prg§_§var->definisci("array_field", "_o2structure");
@@ -22,7 +22,7 @@ function load_tables§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("tot_tables", "_o2number");
 		}
 
-function load_tables§§tables_def(&$task_tables, $_o2viewalias = "") {
+function load_tables§§tables_def($task_tables, $_o2viewalias = "") {
 	$task_tables->righe_vis = 10;
 
 	$task_tables->usa_file("tables","tables","pos",null,null);
@@ -35,7 +35,7 @@ function load_tables§§tables_def(&$task_tables, $_o2viewalias = "") {
 	$task_tables->usa("pkey","tables","pkey",null,null,null,null);
 }
 
-function load_tables§§fields_def(&$task_fields, $_o2viewalias = "") {
+function load_tables§§fields_def($task_fields, $_o2viewalias = "") {
 	$task_fields->righe_vis = 10;
 
 	$task_fields->usa_file("fields","fields","pos",null,null);
@@ -48,7 +48,7 @@ function load_tables§§fields_def(&$task_fields, $_o2viewalias = "") {
 	$task_fields->usa("datatype","fields","datatype",null,null,null,null);
 }
 
-function load_tables§§indexes_def(&$task_indexes, $_o2viewalias = "") {
+function load_tables§§indexes_def($task_indexes, $_o2viewalias = "") {
 	$task_indexes->righe_vis = 10;
 
 	$task_indexes->usa_file("indexes","indexes","pos",null,null);
@@ -61,7 +61,7 @@ function load_tables§§indexes_def(&$task_indexes, $_o2viewalias = "") {
 	$task_indexes->usa("dbname","indexes","dbname",null,null,null,null);
 }
 
-function load_tables§§segments_def(&$task_segments, $_o2viewalias = "") {
+function load_tables§§segments_def($task_segments, $_o2viewalias = "") {
 	$task_segments->righe_vis = 10;
 
 	$task_segments->usa_file("idxsegments","idxsegments","pos",null,null);
@@ -74,7 +74,7 @@ function load_tables§§segments_def(&$task_segments, $_o2viewalias = "") {
 	$task_segments->usa("direction","idxsegments","direction",null,null,null,null);
 }
 
-function load_tables§§del_tables_def(&$task_del_tables, $_o2viewalias = "") {
+function load_tables§§del_tables_def($task_del_tables, $_o2viewalias = "") {
 	$task_del_tables->righe_vis = 10;
 
 	$task_del_tables->usa_file("tables","tables","pos",null,null);
@@ -83,7 +83,7 @@ function load_tables§§del_tables_def(&$task_del_tables, $_o2viewalias = "") {
 	$task_del_tables->usa("tabname","tables","tabname",null,null,null,null);
 }
 
-function load_tables§§create_field_act(&$o2exe) {
+function load_tables§§create_field_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "B", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("fields", "userid", load_tables_exp_66()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("fields", "tablename", load_tables_exp_40()) && $o2exe->e();
@@ -95,7 +95,7 @@ function load_tables§§create_field_act(&$o2exe) {
 	$o2exe->s(9) && True && o2act::set("prg§_§var", "counter_fields", load_tables_exp_42()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§create_index_act(&$o2exe) {
+function load_tables§§create_index_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("indexes", "B", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("indexes", "userid", load_tables_exp_66()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("indexes", "tablename", load_tables_exp_40()) && $o2exe->e();
@@ -111,7 +111,7 @@ function load_tables§§create_index_act(&$o2exe) {
 	$o2exe->s(13) && True && o2act::set("prg§_§var", "counter_indexes", load_tables_exp_48()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§create_segment_act(&$o2exe) {
+function load_tables§§create_segment_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("segments", "B", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("segments", "userid", load_tables_exp_66()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("segments", "tablename", load_tables_exp_40()) && $o2exe->e();
@@ -123,7 +123,7 @@ function load_tables§§create_segment_act(&$o2exe) {
 	$o2exe->s(9) && True && o2act::set("prg§_§var", "counter_segments", load_tables_exp_60()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§create_table_act(&$o2exe) {
+function load_tables§§create_table_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tables", "B", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("tables", "userid", load_tables_exp_66()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("tables", "position", load_tables_exp_73()) && $o2exe->e();
@@ -134,29 +134,29 @@ function load_tables§§create_table_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::view("tables", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§default_act(&$o2exe) {
+function load_tables§§default_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", load_tables_exp_62()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "array_global", load_tables_exp_13()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("single_table", "load_tables_exp_15()", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§del_field_act(&$o2exe) {
+function load_tables§§del_field_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_tables_exp_59()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§del_index_act(&$o2exe) {
+function load_tables§§del_index_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_tables_exp_69()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§del_segment_act(&$o2exe) {
+function load_tables§§del_segment_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_tables_exp_70()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§del_tables_act(&$o2exe) {
+function load_tables§§del_tables_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_tables_exp_58()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§load_tables_act(&$o2exe) {
+function load_tables§§load_tables_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_global", load_tables_exp_13()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "tot_tables", load_tables_exp_71()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "counter", load_tables_exp_10()) && $o2exe->e();
@@ -167,7 +167,7 @@ function load_tables§§load_tables_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::view("segments", "E", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§single_table_act(&$o2exe) {
+function load_tables§§single_table_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_tab", load_tables_exp_16()) && $o2exe->e();
 	$o2exe->s(2) && (load_tables_exp_9999() || $o2exe->e()) && o2act::set("prg§_§var", "table_found", load_tables_exp_79()) && $o2exe->e();
 	$o2exe->s(3) && (load_tables_exp_72() || $o2exe->e()) && o2act::exe("create_table", True, "") && $o2exe->e();
@@ -180,7 +180,7 @@ function load_tables§§single_table_act(&$o2exe) {
 	$o2exe->s(10) && True && o2act::set("prg§_§var", "counter", load_tables_exp_9()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_tables§§start_act(&$o2exe) {
+function load_tables§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("-- Svuoto tabelle --") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("del_tables", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("del_field", True, "") && $o2exe->e();

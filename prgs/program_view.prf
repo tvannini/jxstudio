@@ -1,6 +1,6 @@
 <?php
 
-function program_view§§prg§_§var_def(&$task_prg§_§var) {
+function program_view§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("actions", "_o2structure");
 	$task_prg§_§var->definisci("confirm", "_o2logical");
@@ -17,7 +17,7 @@ function program_view§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("zoommed_ctrl", "_o2alpha");
 		}
 
-function program_view§§obj_status_def(&$task_obj_status, $_o2viewalias = "") {
+function program_view§§obj_status_def($task_obj_status, $_o2viewalias = "") {
 	$task_obj_status->righe_vis = 10;
 
 	$task_obj_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -26,7 +26,7 @@ function program_view§§obj_status_def(&$task_obj_status, $_o2viewalias = "") {
 	$task_obj_status->usa("userid","tstamp_obj","userid",null,null,"program_view_exp_1()",null);
 }
 
-function program_view§§views_def(&$task_views, $_o2viewalias = "") {
+function program_view§§views_def($task_views, $_o2viewalias = "") {
 	$task_views->righe_vis = 30;
 
 	$task_views->usa_file("prgviews","prgviews","name",null,null);
@@ -43,7 +43,7 @@ function program_view§§views_def(&$task_views, $_o2viewalias = "") {
 	$task_views->usa("custom_where","prgviews","custom_where",null,null,null,null);
 }
 
-function program_view§§combo_datatypes_def(&$task_combo_datatypes, $_o2viewalias = "") {
+function program_view§§combo_datatypes_def($task_combo_datatypes, $_o2viewalias = "") {
 	$task_combo_datatypes->righe_vis = 50;
 
 	$task_combo_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -52,7 +52,7 @@ function program_view§§combo_datatypes_def(&$task_combo_datatypes, $_o2viewalias
 	$task_combo_datatypes->usa("name","datatypes","name",null,null,null,null);
 }
 
-function program_view§§datatypes_status_def(&$task_datatypes_status, $_o2viewalias = "") {
+function program_view§§datatypes_status_def($task_datatypes_status, $_o2viewalias = "") {
 	$task_datatypes_status->righe_vis = 100;
 
 	$task_datatypes_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -61,7 +61,7 @@ function program_view§§datatypes_status_def(&$task_datatypes_status, $_o2viewali
 	$task_datatypes_status->usa("userid","tstamp_obj","userid",null,null,"program_view_exp_1()",null);
 }
 
-function program_view§§view_tables_def(&$task_view_tables, $_o2viewalias = "") {
+function program_view§§view_tables_def($task_view_tables, $_o2viewalias = "") {
 	$task_view_tables->righe_vis = 100;
 
 	$task_view_tables->usa_file("tablesinview","tablesinview","pos",null,null);
@@ -79,7 +79,7 @@ function program_view§§view_tables_def(&$task_view_tables, $_o2viewalias = "") {
 	$task_view_tables->usa("dbexp","tablesinview","dbexp",null,null,null,null);
 }
 
-function program_view§§main_tab_def(&$task_main_tab, $_o2viewalias = "") {
+function program_view§§main_tab_def($task_main_tab, $_o2viewalias = "") {
 	$task_main_tab->righe_vis = 10;
 
 	$task_main_tab->usa_file("tablesinview","tablesinview","pos",null,null);
@@ -95,7 +95,7 @@ function program_view§§main_tab_def(&$task_main_tab, $_o2viewalias = "") {
 	$task_main_tab->usa("keyexp","tablesinview","keyexp",null,null,null,null);
 }
 
-function program_view§§link_tab_def(&$task_link_tab, $_o2viewalias = "") {
+function program_view§§link_tab_def($task_link_tab, $_o2viewalias = "") {
 	$task_link_tab->righe_vis = 10;
 
 	$task_link_tab->usa_file("tablesinview","tablesinview","pos",null,null);
@@ -111,7 +111,7 @@ function program_view§§link_tab_def(&$task_link_tab, $_o2viewalias = "") {
 	$task_link_tab->usa("keyexp","tablesinview","keyexp",null,null,null,null);
 }
 
-function program_view§§link_fields_def(&$task_link_fields, $_o2viewalias = "") {
+function program_view§§link_fields_def($task_link_fields, $_o2viewalias = "") {
 	$task_link_fields->righe_vis = 10;
 
 	$task_link_fields->usa_file("tablesinview_link","tablesinview_link","pos",null,null);
@@ -128,7 +128,7 @@ function program_view§§link_fields_def(&$task_link_fields, $_o2viewalias = "") {
 	$task_link_fields->usa("exp_like","tablesinview_link","exp_like",null,null,null,null);
 }
 
-function program_view§§fields_def(&$task_fields, $_o2viewalias = "") {
+function program_view§§fields_def($task_fields, $_o2viewalias = "") {
 	$task_fields->righe_vis = 100;
 
 	$task_fields->usa_file("fieldsinview","fieldsinview","pos",null,null);
@@ -156,7 +156,7 @@ function program_view§§fields_def(&$task_fields, $_o2viewalias = "") {
 	$task_fields->usa("tab_phys_name","tablesinview","tablename",null,null,null,null);
 }
 
-function program_view§§tables_status_def(&$task_tables_status, $_o2viewalias = "") {
+function program_view§§tables_status_def($task_tables_status, $_o2viewalias = "") {
 	$task_tables_status->righe_vis = 10;
 
 	$task_tables_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -165,7 +165,7 @@ function program_view§§tables_status_def(&$task_tables_status, $_o2viewalias = "
 	$task_tables_status->usa("userid","tstamp_obj","userid",null,null,"program_view_exp_1()",null);
 }
 
-function program_view§§combo_link_fields_def(&$task_combo_link_fields, $_o2viewalias = "") {
+function program_view§§combo_link_fields_def($task_combo_link_fields, $_o2viewalias = "") {
 	$task_combo_link_fields->righe_vis = 50;
 
 	$task_combo_link_fields->usa_file("fields","fields","name",null,null);
@@ -175,7 +175,7 @@ function program_view§§combo_link_fields_def(&$task_combo_link_fields, $_o2viewa
 	$task_combo_link_fields->usa("fieldname","fields","fieldname",null,null,null,null);
 }
 
-function program_view§§view_aggregations_def(&$task_view_aggregations, $_o2viewalias = "") {
+function program_view§§view_aggregations_def($task_view_aggregations, $_o2viewalias = "") {
 	$task_view_aggregations->righe_vis = 10;
 
 	$task_view_aggregations->usa_file("aggreagateinview","aggreagateinview","name",null,null);
@@ -188,7 +188,7 @@ function program_view§§view_aggregations_def(&$task_view_aggregations, $_o2viewa
 	$task_view_aggregations->usa("fieldout","aggreagateinview","fieldout",null,null,null,null);
 }
 
-function program_view§§combo_actions_def(&$task_combo_actions, $_o2viewalias = "") {
+function program_view§§combo_actions_def($task_combo_actions, $_o2viewalias = "") {
 	$task_combo_actions->righe_vis = 50;
 
 	$task_combo_actions->usa_file("actions","actions","name",null,null);
@@ -198,7 +198,7 @@ function program_view§§combo_actions_def(&$task_combo_actions, $_o2viewalias = "
 	$task_combo_actions->usa("name","actions","name",null,null,null,null);
 }
 
-function program_view§§combo_view_field_def(&$task_combo_view_field, $_o2viewalias = "") {
+function program_view§§combo_view_field_def($task_combo_view_field, $_o2viewalias = "") {
 	$task_combo_view_field->righe_vis = 10;
 
 	$task_combo_view_field->usa_file("fieldsinview","fieldsinview","name",null,null);
@@ -209,7 +209,7 @@ function program_view§§combo_view_field_def(&$task_combo_view_field, $_o2viewali
 	$task_combo_view_field->usa("name","fieldsinview","name",null,null,null,null);
 }
 
-function program_view§§combo_variables_def(&$task_combo_variables, $_o2viewalias = "") {
+function program_view§§combo_variables_def($task_combo_variables, $_o2viewalias = "") {
 	$task_combo_variables->righe_vis = 10;
 
 	$task_combo_variables->usa_file("prgvars","prgvars","name",null,null);
@@ -218,7 +218,7 @@ function program_view§§combo_variables_def(&$task_combo_variables, $_o2viewalias
 	$task_combo_variables->usa("name","prgvars","name",null,null,null,null);
 }
 
-function program_view§§combo_tables_def(&$task_combo_tables, $_o2viewalias = "") {
+function program_view§§combo_tables_def($task_combo_tables, $_o2viewalias = "") {
 	$task_combo_tables->righe_vis = 10;
 
 	$task_combo_tables->usa_file("tablesinview","tablesinview","pos",null,null);
@@ -229,7 +229,7 @@ function program_view§§combo_tables_def(&$task_combo_tables, $_o2viewalias = "")
 	$task_combo_tables->usa("name","tablesinview","name",null,null,null,null);
 }
 
-function program_view§§combo_table_field_def(&$task_combo_table_field, $_o2viewalias = "") {
+function program_view§§combo_table_field_def($task_combo_table_field, $_o2viewalias = "") {
 	$task_combo_table_field->righe_vis = 10;
 
 	$task_combo_table_field->usa_file("fields","fields","name",null,null);
@@ -238,7 +238,7 @@ function program_view§§combo_table_field_def(&$task_combo_table_field, $_o2viewa
 	$task_combo_table_field->usa("tablename","fields","tablename","program_view_exp_12()","program_view_exp_12()",null,null);
 	$task_combo_table_field->usa("fieldname","fields","fieldname",null,null,null,null);
 }
-function program_view§§prg_view_form_def(&$form_prg_view) {
+function program_view§§prg_view_form_def($form_prg_view) {
 	$form_prg_view->x(0);
 	$form_prg_view->y(0);
 	$form_prg_view->larghezza(1100);
@@ -249,7 +249,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 	$form_prg_view->css_finestra(" open_body");
 	$form_prg_view->css_body(" open_body");
 	$form_prg_view->close_action("close");
-	$ctrl_tree = &$form_prg_view->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_tree = $form_prg_view->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_tree->x(0);
 		$ctrl_tree->y(0);
 		$ctrl_tree->larghezza(300);
@@ -258,7 +258,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_tree->azione("tree_select");
 		$ctrl_tree->activation(1);
 		$ctrl_tree->nodes(program_view_exp_189());
-	$ctrl_o2multipage2 = &$form_prg_view->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "page");
+	$ctrl_o2multipage2 = $form_prg_view->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "page");
 		$ctrl_o2multipage2->x(300);
 		$ctrl_o2multipage2->y(39);
 		$ctrl_o2multipage2->larghezza(800);
@@ -268,7 +268,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2multipage2->css_label_on(program_view_exp_198());
 		$ctrl_o2multipage2->css_label_off(program_view_exp_198());
 		$ctrl_o2multipage2->buttons("T");
-	$ctrl_o2multipage3 = &$form_prg_view->ctrldef("o2multipage3", "multipage", "", "", "");
+	$ctrl_o2multipage3 = $form_prg_view->ctrldef("o2multipage3", "multipage", "", "", "");
 		$ctrl_o2multipage3->x(300);
 		$ctrl_o2multipage3->y(0);
 		$ctrl_o2multipage3->larghezza(800);
@@ -279,7 +279,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2multipage3->css_label_on(program_view_exp_198());
 		$ctrl_o2multipage3->css_label_off(program_view_exp_198());
 		$ctrl_o2multipage3->buttons("T");
-	$ctrl_tab = &$form_prg_view->ctrldef("tab", "tab", "o2multipage2", "view_tables", "");
+	$ctrl_tab = $form_prg_view->ctrldef("tab", "tab", "o2multipage2", "view_tables", "");
 		$ctrl_tab->x(0);
 		$ctrl_tab->y(39);
 		$ctrl_tab->larghezza(529);
@@ -287,7 +287,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_tab->expand("B");
 		$ctrl_tab->info_padre(array(0));
 		$ctrl_tab->hide_indicator(program_view_exp_13());
-	$ctrl_tab_l = &$form_prg_view->ctrldef("tab_l", "tab", "o2multipage2", "link_fields", "");
+	$ctrl_tab_l = $form_prg_view->ctrldef("tab_l", "tab", "o2multipage2", "link_fields", "");
 		$ctrl_tab_l->x(530);
 		$ctrl_tab_l->y(39);
 		$ctrl_tab_l->larghezza(270);
@@ -295,7 +295,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_tab_l->expand("B");
 		$ctrl_tab_l->info_padre(array(0));
 		$ctrl_tab_l->hide_indicator(program_view_exp_13());
-	$ctrl_tab_s = &$form_prg_view->ctrldef("tab_s", "tab", "o2multipage2", "fields", "");
+	$ctrl_tab_s = $form_prg_view->ctrldef("tab_s", "tab", "o2multipage2", "fields", "");
 		$ctrl_tab_s->x(0);
 		$ctrl_tab_s->y(179);
 		$ctrl_tab_s->larghezza(800);
@@ -303,14 +303,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_tab_s->expand("B");
 		$ctrl_tab_s->info_padre(array(0));
 		$ctrl_tab_s->hide_indicator(program_view_exp_13());
-	$ctrl_o2htmlarea7 = &$form_prg_view->ctrldef("o2htmlarea7", "htmlarea", "o2multipage2", "", "");
+	$ctrl_o2htmlarea7 = $form_prg_view->ctrldef("o2htmlarea7", "htmlarea", "o2multipage2", "", "");
 		$ctrl_o2htmlarea7->x(200);
 		$ctrl_o2htmlarea7->y(10);
 		$ctrl_o2htmlarea7->larghezza(200);
 		$ctrl_o2htmlarea7->altezza(20);
 		$ctrl_o2htmlarea7->expand("H");
 		$ctrl_o2htmlarea7->info_padre(array(0));
-	$ctrl_nav = &$form_prg_view->ctrldef("nav", "navigator", "o2multipage2", "view_tables", "");
+	$ctrl_nav = $form_prg_view->ctrldef("nav", "navigator", "o2multipage2", "view_tables", "");
 		$ctrl_nav->x(0);
 		$ctrl_nav->y(0);
 		$ctrl_nav->larghezza(530);
@@ -328,7 +328,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_nav->act_save("view_tables_post");
 		$ctrl_nav->act_del("view_tables_delete");
 		$ctrl_nav->act_undo("view_tables_undo");
-	$ctrl_nav_l = &$form_prg_view->ctrldef("nav_l", "navigator", "o2multipage2", "link_fields", "");
+	$ctrl_nav_l = $form_prg_view->ctrldef("nav_l", "navigator", "o2multipage2", "link_fields", "");
 		$ctrl_nav_l->x(530);
 		$ctrl_nav_l->y(0);
 		$ctrl_nav_l->larghezza(268);
@@ -346,7 +346,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_nav_l->act_save("link_fields_post");
 		$ctrl_nav_l->act_del("link_fields_delete");
 		$ctrl_nav_l->act_undo("link_fields_undo");
-	$ctrl_nav_s = &$form_prg_view->ctrldef("nav_s", "navigator", "o2multipage2", "fields", "");
+	$ctrl_nav_s = $form_prg_view->ctrldef("nav_s", "navigator", "o2multipage2", "fields", "");
 		$ctrl_nav_s->x(0);
 		$ctrl_nav_s->y(140);
 		$ctrl_nav_s->larghezza(798);
@@ -364,70 +364,70 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_nav_s->act_del("fields_delete");
 		$ctrl_nav_s->act_undo("fields_undo");
 		$ctrl_nav_s->act_detail("fields_detail");
-	$ctrl_o2image5 = &$form_prg_view->ctrldef("o2image5", "img", "o2multipage2", "", "");
+	$ctrl_o2image5 = $form_prg_view->ctrldef("o2image5", "img", "o2multipage2", "", "");
 		$ctrl_o2image5->x(527);
 		$ctrl_o2image5->y(7);
 		$ctrl_o2image5->larghezza(3);
 		$ctrl_o2image5->altezza(17);
 		$ctrl_o2image5->info_padre(array(0));
 		$ctrl_o2image5->imgexp(program_view_exp_182());
-	$ctrl_o2label2 = &$form_prg_view->ctrldef("o2label2", "label", "o2multipage2", "", "");
+	$ctrl_o2label2 = $form_prg_view->ctrldef("o2label2", "label", "o2multipage2", "", "");
 		$ctrl_o2label2->x(30);
 		$ctrl_o2label2->y(70);
 		$ctrl_o2label2->larghezza(200);
 		$ctrl_o2label2->altezza(24);
 		$ctrl_o2label2->info_padre(array(1));
 		$ctrl_o2label2->label("View name:");
-	$ctrl_o2label3 = &$form_prg_view->ctrldef("o2label3", "label", "o2multipage2", "", "");
+	$ctrl_o2label3 = $form_prg_view->ctrldef("o2label3", "label", "o2multipage2", "", "");
 		$ctrl_o2label3->x(30);
 		$ctrl_o2label3->y(100);
 		$ctrl_o2label3->larghezza(200);
 		$ctrl_o2label3->altezza(24);
 		$ctrl_o2label3->info_padre(array(1));
 		$ctrl_o2label3->label("Rows number:");
-	$ctrl_o2label4 = &$form_prg_view->ctrldef("o2label4", "label", "o2multipage2", "", "");
+	$ctrl_o2label4 = $form_prg_view->ctrldef("o2label4", "label", "o2multipage2", "", "");
 		$ctrl_o2label4->x(390);
 		$ctrl_o2label4->y(100);
 		$ctrl_o2label4->larghezza(180);
 		$ctrl_o2label4->altezza(24);
 		$ctrl_o2label4->info_padre(array(1));
 		$ctrl_o2label4->label("By expression:");
-	$ctrl_o2label5 = &$form_prg_view->ctrldef("o2label5", "label", "o2multipage2", "", "");
+	$ctrl_o2label5 = $form_prg_view->ctrldef("o2label5", "label", "o2multipage2", "", "");
 		$ctrl_o2label5->x(30);
 		$ctrl_o2label5->y(150);
 		$ctrl_o2label5->larghezza(360);
 		$ctrl_o2label5->altezza(24);
 		$ctrl_o2label5->info_padre(array(1));
 		$ctrl_o2label5->label("Prefix action (on row selection):");
-	$ctrl_o2label6 = &$form_prg_view->ctrldef("o2label6", "label", "o2multipage2", "", "");
+	$ctrl_o2label6 = $form_prg_view->ctrldef("o2label6", "label", "o2multipage2", "", "");
 		$ctrl_o2label6->x(30);
 		$ctrl_o2label6->y(180);
 		$ctrl_o2label6->larghezza(360);
 		$ctrl_o2label6->altezza(24);
 		$ctrl_o2label6->info_padre(array(1));
 		$ctrl_o2label6->label("Suffix action (on leaving modified row):");
-	$ctrl_o2label7 = &$form_prg_view->ctrldef("o2label7", "label", "o2multipage2", "", "");
+	$ctrl_o2label7 = $form_prg_view->ctrldef("o2label7", "label", "o2multipage2", "", "");
 		$ctrl_o2label7->x(30);
 		$ctrl_o2label7->y(590);
 		$ctrl_o2label7->larghezza(360);
 		$ctrl_o2label7->altezza(24);
 		$ctrl_o2label7->info_padre(array(1));
 		$ctrl_o2label7->label("Evaluate aggregations automatically:");
-	$ctrl_o2label8 = &$form_prg_view->ctrldef("o2label8", "label", "o2multipage2", "", "");
+	$ctrl_o2label8 = $form_prg_view->ctrldef("o2label8", "label", "o2multipage2", "", "");
 		$ctrl_o2label8->x(30);
 		$ctrl_o2label8->y(260);
 		$ctrl_o2label8->larghezza(360);
 		$ctrl_o2label8->altezza(24);
 		$ctrl_o2label8->info_padre(array(1));
 		$ctrl_o2label8->label("Optimized for multiple reading:");
-	$ctrl_o2label10 = &$form_prg_view->ctrldef("o2label10", "label", "o2multipage2", "", "");
+	$ctrl_o2label10 = $form_prg_view->ctrldef("o2label10", "label", "o2multipage2", "", "");
 		$ctrl_o2label10->x(30);
 		$ctrl_o2label10->y(230);
 		$ctrl_o2label10->larghezza(360);
 		$ctrl_o2label10->altezza(24);
 		$ctrl_o2label10->info_padre(array(1));
 		$ctrl_o2label10->label("Custom SQL WHERE:");
-	$ctrl_o2edit14 = &$form_prg_view->ctrldef("o2edit14", "edit", "o2multipage2", "views", "name");
+	$ctrl_o2edit14 = $form_prg_view->ctrldef("o2edit14", "edit", "o2multipage2", "views", "name");
 		$ctrl_o2edit14->x(230);
 		$ctrl_o2edit14->y(70);
 		$ctrl_o2edit14->larghezza(400);
@@ -436,14 +436,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit14->azione("on_viewname_change");
 		$ctrl_o2edit14->on_change(program_view_exp_13());
 		$ctrl_o2edit14->info_padre(array(1));
-	$ctrl_o2edit23 = &$form_prg_view->ctrldef("o2edit23", "edit", "o2multipage2", "views", "rowlimit");
+	$ctrl_o2edit23 = $form_prg_view->ctrldef("o2edit23", "edit", "o2multipage2", "views", "rowlimit");
 		$ctrl_o2edit23->x(230);
 		$ctrl_o2edit23->y(100);
 		$ctrl_o2edit23->larghezza(60);
 		$ctrl_o2edit23->altezza(24);
 		$ctrl_o2edit23->modificabile(program_view_exp_142());
 		$ctrl_o2edit23->info_padre(array(1));
-	$ctrl_o2edit24 = &$form_prg_view->ctrldef("o2edit24", "edit", "o2multipage2", "views", "rowlimitexp");
+	$ctrl_o2edit24 = $form_prg_view->ctrldef("o2edit24", "edit", "o2multipage2", "views", "rowlimitexp");
 		$ctrl_o2edit24->x(570);
 		$ctrl_o2edit24->y(100);
 		$ctrl_o2edit24->larghezza(60);
@@ -451,7 +451,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit24->modificabile(program_view_exp_142());
 		$ctrl_o2edit24->info_padre(array(1));
 		$ctrl_o2edit24->act_zoom("zoom_rowlimit_exp");
-	$ctrl_o2ListBox4 = &$form_prg_view->ctrldef("o2ListBox4", "listcombo", "o2multipage2", "views", "readrowact");
+	$ctrl_o2ListBox4 = $form_prg_view->ctrldef("o2ListBox4", "listcombo", "o2multipage2", "views", "readrowact");
 		$ctrl_o2ListBox4->x(390);
 		$ctrl_o2ListBox4->y(150);
 		$ctrl_o2ListBox4->larghezza(240);
@@ -461,7 +461,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox4->act_zoom("zoom_prefix_act");
 		$ctrl_o2ListBox4->valori(o2_view2list("combo_actions", "name", "name"));
 		$ctrl_o2ListBox4->righe(1);
-	$ctrl_o2ListBox6 = &$form_prg_view->ctrldef("o2ListBox6", "listcombo", "o2multipage2", "views", "modrowact");
+	$ctrl_o2ListBox6 = $form_prg_view->ctrldef("o2ListBox6", "listcombo", "o2multipage2", "views", "modrowact");
 		$ctrl_o2ListBox6->x(390);
 		$ctrl_o2ListBox6->y(180);
 		$ctrl_o2ListBox6->larghezza(240);
@@ -471,7 +471,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox6->act_zoom("zoom_suffix_act");
 		$ctrl_o2ListBox6->valori(o2_view2list("combo_actions", "name", "name"));
 		$ctrl_o2ListBox6->righe(1);
-	$ctrl_o2edit7 = &$form_prg_view->ctrldef("o2edit7", "edit", "o2multipage2", "views", "custom_where");
+	$ctrl_o2edit7 = $form_prg_view->ctrldef("o2edit7", "edit", "o2multipage2", "views", "custom_where");
 		$ctrl_o2edit7->x(390);
 		$ctrl_o2edit7->y(230);
 		$ctrl_o2edit7->larghezza(60);
@@ -479,14 +479,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit7->modificabile(program_view_exp_142());
 		$ctrl_o2edit7->info_padre(array(1));
 		$ctrl_o2edit7->act_zoom("zoom_custom_where");
-	$ctrl_o2checkbox3 = &$form_prg_view->ctrldef("o2checkbox3", "check", "o2multipage2", "views", "preparedstmts");
+	$ctrl_o2checkbox3 = $form_prg_view->ctrldef("o2checkbox3", "check", "o2multipage2", "views", "preparedstmts");
 		$ctrl_o2checkbox3->x(390);
 		$ctrl_o2checkbox3->y(260);
 		$ctrl_o2checkbox3->larghezza(20);
 		$ctrl_o2checkbox3->altezza(24);
 		$ctrl_o2checkbox3->modificabile(program_view_exp_142());
 		$ctrl_o2checkbox3->info_padre(array(1));
-	$ctrl_o2multipage5 = &$form_prg_view->ctrldef("o2multipage5", "multipage", "o2multipage2", "", "");
+	$ctrl_o2multipage5 = $form_prg_view->ctrldef("o2multipage5", "multipage", "o2multipage2", "", "");
 		$ctrl_o2multipage5->x(30);
 		$ctrl_o2multipage5->y(310);
 		$ctrl_o2multipage5->larghezza(600);
@@ -495,14 +495,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2multipage5->info_padre(array(1));
 		$ctrl_o2multipage5->label(array("Aggregations"));
 		$ctrl_o2multipage5->buttons("T");
-	$ctrl_o2checkbox2 = &$form_prg_view->ctrldef("o2checkbox2", "check", "o2multipage2", "views", "autoaggregate");
+	$ctrl_o2checkbox2 = $form_prg_view->ctrldef("o2checkbox2", "check", "o2multipage2", "views", "autoaggregate");
 		$ctrl_o2checkbox2->x(390);
 		$ctrl_o2checkbox2->y(590);
 		$ctrl_o2checkbox2->larghezza(20);
 		$ctrl_o2checkbox2->altezza(24);
 		$ctrl_o2checkbox2->modificabile(program_view_exp_142());
 		$ctrl_o2checkbox2->info_padre(array(1));
-	$ctrl_o2multipage4 = &$form_prg_view->ctrldef("o2multipage4", "multipage", "o2multipage2", "", "");
+	$ctrl_o2multipage4 = $form_prg_view->ctrldef("o2multipage4", "multipage", "o2multipage2", "", "");
 		$ctrl_o2multipage4->x(0);
 		$ctrl_o2multipage4->y(0);
 		$ctrl_o2multipage4->larghezza(800);
@@ -514,14 +514,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2multipage4->css_label_on(program_view_exp_198());
 		$ctrl_o2multipage4->css_label_off(program_view_exp_198());
 		$ctrl_o2multipage4->buttons("T");
-	$ctrl_o2image12 = &$form_prg_view->ctrldef("o2image12", "img", "o2multipage3", "", "");
+	$ctrl_o2image12 = $form_prg_view->ctrldef("o2image12", "img", "o2multipage3", "", "");
 		$ctrl_o2image12->x(144);
 		$ctrl_o2image12->y(7);
 		$ctrl_o2image12->larghezza(3);
 		$ctrl_o2image12->altezza(17);
 		$ctrl_o2image12->info_padre(array(0));
 		$ctrl_o2image12->imgexp(program_view_exp_182());
-	$ctrl_btn_checkout = &$form_prg_view->ctrldef("btn_checkout", "img", "o2multipage3", "", "");
+	$ctrl_btn_checkout = $form_prg_view->ctrldef("btn_checkout", "img", "o2multipage3", "", "");
 		$ctrl_btn_checkout->x(150);
 		$ctrl_btn_checkout->y(4);
 		$ctrl_btn_checkout->larghezza(32);
@@ -531,7 +531,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_btn_checkout->info_padre(array(0));
 		$ctrl_btn_checkout->css(program_view_exp_183());
 		$ctrl_btn_checkout->imgexp(program_view_exp_181());
-	$ctrl_btn_checkin = &$form_prg_view->ctrldef("btn_checkin", "img", "o2multipage3", "", "");
+	$ctrl_btn_checkin = $form_prg_view->ctrldef("btn_checkin", "img", "o2multipage3", "", "");
 		$ctrl_btn_checkin->x(182);
 		$ctrl_btn_checkin->y(4);
 		$ctrl_btn_checkin->larghezza(32);
@@ -541,7 +541,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_btn_checkin->info_padre(array(0));
 		$ctrl_btn_checkin->css(program_view_exp_184());
 		$ctrl_btn_checkin->imgexp(program_view_exp_181());
-	$ctrl_btn_uncheck = &$form_prg_view->ctrldef("btn_uncheck", "img", "o2multipage3", "", "");
+	$ctrl_btn_uncheck = $form_prg_view->ctrldef("btn_uncheck", "img", "o2multipage3", "", "");
 		$ctrl_btn_uncheck->x(214);
 		$ctrl_btn_uncheck->y(4);
 		$ctrl_btn_uncheck->larghezza(32);
@@ -551,14 +551,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_btn_uncheck->info_padre(array(0));
 		$ctrl_btn_uncheck->css(program_view_exp_185());
 		$ctrl_btn_uncheck->imgexp(program_view_exp_181());
-	$ctrl_o2image13 = &$form_prg_view->ctrldef("o2image13", "img", "o2multipage3", "", "");
+	$ctrl_o2image13 = $form_prg_view->ctrldef("o2image13", "img", "o2multipage3", "", "");
 		$ctrl_o2image13->x(249);
 		$ctrl_o2image13->y(7);
 		$ctrl_o2image13->larghezza(3);
 		$ctrl_o2image13->altezza(17);
 		$ctrl_o2image13->info_padre(array(0));
 		$ctrl_o2image13->imgexp(program_view_exp_182());
-	$ctrl_o2image14 = &$form_prg_view->ctrldef("o2image14", "img", "o2multipage3", "", "");
+	$ctrl_o2image14 = $form_prg_view->ctrldef("o2image14", "img", "o2multipage3", "", "");
 		$ctrl_o2image14->x(255);
 		$ctrl_o2image14->y(4);
 		$ctrl_o2image14->larghezza(32);
@@ -568,7 +568,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2image14->info_padre(array(0));
 		$ctrl_o2image14->css(program_view_exp_186());
 		$ctrl_o2image14->imgexp(program_view_exp_181());
-	$ctrl_o2image15 = &$form_prg_view->ctrldef("o2image15", "img", "o2multipage3", "", "");
+	$ctrl_o2image15 = $form_prg_view->ctrldef("o2image15", "img", "o2multipage3", "", "");
 		$ctrl_o2image15->x(287);
 		$ctrl_o2image15->y(4);
 		$ctrl_o2image15->larghezza(32);
@@ -578,7 +578,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2image15->info_padre(array(0));
 		$ctrl_o2image15->css(program_view_exp_187());
 		$ctrl_o2image15->imgexp(program_view_exp_181());
-	$ctrl_o2image2 = &$form_prg_view->ctrldef("o2image2", "img", "o2multipage3", "", "");
+	$ctrl_o2image2 = $form_prg_view->ctrldef("o2image2", "img", "o2multipage3", "", "");
 		$ctrl_o2image2->x(390);
 		$ctrl_o2image2->y(4);
 		$ctrl_o2image2->larghezza(32);
@@ -586,7 +586,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2image2->modificabile(program_view_exp_203());
 		$ctrl_o2image2->info_padre(array(0));
 		$ctrl_o2image2->imgexp(program_view_exp_203());
-	$ctrl_o2image3 = &$form_prg_view->ctrldef("o2image3", "img", "o2multipage3", "", "");
+	$ctrl_o2image3 = $form_prg_view->ctrldef("o2image3", "img", "o2multipage3", "", "");
 		$ctrl_o2image3->x(50);
 		$ctrl_o2image3->y(4);
 		$ctrl_o2image3->larghezza(32);
@@ -596,7 +596,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2image3->info_padre(array(0));
 		$ctrl_o2image3->css(program_view_exp_206());
 		$ctrl_o2image3->imgexp(program_view_exp_181());
-	$ctrl_o2image4 = &$form_prg_view->ctrldef("o2image4", "img", "o2multipage3", "", "");
+	$ctrl_o2image4 = $form_prg_view->ctrldef("o2image4", "img", "o2multipage3", "", "");
 		$ctrl_o2image4->x(82);
 		$ctrl_o2image4->y(4);
 		$ctrl_o2image4->larghezza(32);
@@ -606,7 +606,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2image4->info_padre(array(0));
 		$ctrl_o2image4->css(program_view_exp_207());
 		$ctrl_o2image4->imgexp(program_view_exp_181());
-	$ctrl_o2button2 = &$form_prg_view->ctrldef("o2button2", "button", "o2multipage3", "", "");
+	$ctrl_o2button2 = $form_prg_view->ctrldef("o2button2", "button", "o2multipage3", "", "");
 		$ctrl_o2button2->x(420);
 		$ctrl_o2button2->y(10);
 		$ctrl_o2button2->larghezza(100);
@@ -616,35 +616,35 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2button2->info_padre(array(0));
 		$ctrl_o2button2->label(program_view_exp_174());
 		$ctrl_o2button2->css(program_view_exp_21());
-	$ctrl_o2label9 = &$form_prg_view->ctrldef("o2label9", "label", "o2multipage4", "", "");
+	$ctrl_o2label9 = $form_prg_view->ctrldef("o2label9", "label", "o2multipage4", "", "");
 		$ctrl_o2label9->x(320);
 		$ctrl_o2label9->y(10);
 		$ctrl_o2label9->larghezza(150);
 		$ctrl_o2label9->altezza(24);
 		$ctrl_o2label9->info_padre(array(0));
 		$ctrl_o2label9->label("View properties");
-	$ctrl_o2htmlarea3 = &$form_prg_view->ctrldef("o2htmlarea3", "htmlarea", "o2multipage4", "", "");
+	$ctrl_o2htmlarea3 = $form_prg_view->ctrldef("o2htmlarea3", "htmlarea", "o2multipage4", "", "");
 		$ctrl_o2htmlarea3->x(520);
 		$ctrl_o2htmlarea3->y(10);
 		$ctrl_o2htmlarea3->larghezza(120);
 		$ctrl_o2htmlarea3->altezza(24);
 		$ctrl_o2htmlarea3->expand("H");
 		$ctrl_o2htmlarea3->info_padre(array(0));
-	$ctrl_o2htmlarea2 = &$form_prg_view->ctrldef("o2htmlarea2", "htmlarea", "o2multipage4", "", "");
+	$ctrl_o2htmlarea2 = $form_prg_view->ctrldef("o2htmlarea2", "htmlarea", "o2multipage4", "", "");
 		$ctrl_o2htmlarea2->x(150);
 		$ctrl_o2htmlarea2->y(10);
 		$ctrl_o2htmlarea2->larghezza(120);
 		$ctrl_o2htmlarea2->altezza(24);
 		$ctrl_o2htmlarea2->expand("H");
 		$ctrl_o2htmlarea2->info_padre(array(0));
-	$ctrl_o2table2 = &$form_prg_view->ctrldef("o2table2", "tab", "o2multipage5", "view_aggregations", "");
+	$ctrl_o2table2 = $form_prg_view->ctrldef("o2table2", "tab", "o2multipage5", "view_aggregations", "");
 		$ctrl_o2table2->x(0);
 		$ctrl_o2table2->y(64);
 		$ctrl_o2table2->larghezza(600);
 		$ctrl_o2table2->altezza(205);
 		$ctrl_o2table2->info_padre(array(0));
 		$ctrl_o2table2->hide_indicator(program_view_exp_13());
-	$ctrl_o2dbnavigator2 = &$form_prg_view->ctrldef("o2dbnavigator2", "navigator", "o2multipage5", "view_aggregations", "");
+	$ctrl_o2dbnavigator2 = $form_prg_view->ctrldef("o2dbnavigator2", "navigator", "o2multipage5", "view_aggregations", "");
 		$ctrl_o2dbnavigator2->x(1);
 		$ctrl_o2dbnavigator2->y(24);
 		$ctrl_o2dbnavigator2->larghezza(598);
@@ -657,7 +657,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2dbnavigator2->act_save("view_aggregations_post");
 		$ctrl_o2dbnavigator2->act_del("view_aggregations_delete");
 		$ctrl_o2dbnavigator2->act_undo("view_aggregations_undo");
-	$ctrl_o2ListBox7 = &$form_prg_view->ctrldef("o2ListBox7", "listcombo", "o2table2", "view_aggregations", "aggrfunction");
+	$ctrl_o2ListBox7 = $form_prg_view->ctrldef("o2ListBox7", "listcombo", "o2table2", "view_aggregations", "aggrfunction");
 		$ctrl_o2ListBox7->x(0);
 		$ctrl_o2ListBox7->y(10);
 		$ctrl_o2ListBox7->larghezza(80);
@@ -665,7 +665,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox7->info_padre(array("01", "01", "01"));
 		$ctrl_o2ListBox7->valori(array());
 		$ctrl_o2ListBox7->righe(1);
-	$ctrl_o2ListBox8 = &$form_prg_view->ctrldef("o2ListBox8", "listcombo", "o2table2", "view_aggregations", "field");
+	$ctrl_o2ListBox8 = $form_prg_view->ctrldef("o2ListBox8", "listcombo", "o2table2", "view_aggregations", "field");
 		$ctrl_o2ListBox8->x(80);
 		$ctrl_o2ListBox8->y(10);
 		$ctrl_o2ListBox8->larghezza(240);
@@ -674,7 +674,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox8->act_zoom("zoom_aggr_field");
 		$ctrl_o2ListBox8->valori(o2_view2list("combo_view_field", "name", "name"));
 		$ctrl_o2ListBox8->righe(1);
-	$ctrl_o2ListBox9 = &$form_prg_view->ctrldef("o2ListBox9", "listcombo", "o2table2", "view_aggregations", "fieldout");
+	$ctrl_o2ListBox9 = $form_prg_view->ctrldef("o2ListBox9", "listcombo", "o2table2", "view_aggregations", "fieldout");
 		$ctrl_o2ListBox9->x(320);
 		$ctrl_o2ListBox9->y(10);
 		$ctrl_o2ListBox9->larghezza(240);
@@ -683,14 +683,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox9->act_zoom("zoom_aggr_var");
 		$ctrl_o2ListBox9->valori(o2_view2list("combo_variables", "name", "name"));
 		$ctrl_o2ListBox9->righe(1);
-	$ctrl_o2edit2 = &$form_prg_view->ctrldef("o2edit2", "edit", "tab", "view_tables", "position");
+	$ctrl_o2edit2 = $form_prg_view->ctrldef("o2edit2", "edit", "tab", "view_tables", "position");
 		$ctrl_o2edit2->x(0);
 		$ctrl_o2edit2->y(10);
 		$ctrl_o2edit2->larghezza(50);
 		$ctrl_o2edit2->altezza(24);
 		$ctrl_o2edit2->modificabile(program_view_exp_142());
 		$ctrl_o2edit2->info_padre(array("01", "01", "01", "#", True, program_view_exp_197(), 0, "", "", "", "", ""));
-	$ctrl_o2ListBox2 = &$form_prg_view->ctrldef("o2ListBox2", "listcombo", "tab", "view_tables", "type");
+	$ctrl_o2ListBox2 = $form_prg_view->ctrldef("o2ListBox2", "listcombo", "tab", "view_tables", "type");
 		$ctrl_o2ListBox2->x(50);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(60);
@@ -699,7 +699,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox2->info_padre(array("01", "02", "02", "Use", True, "", 0, "", "", "", "", ""));
 		$ctrl_o2ListBox2->valori(array());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2edit3 = &$form_prg_view->ctrldef("o2edit3", "edit", "tab", "view_tables", "tablename");
+	$ctrl_o2edit3 = $form_prg_view->ctrldef("o2edit3", "edit", "tab", "view_tables", "tablename");
 		$ctrl_o2edit3->x(110);
 		$ctrl_o2edit3->y(10);
 		$ctrl_o2edit3->larghezza(80);
@@ -708,7 +708,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit3->modificabile(program_view_exp_142());
 		$ctrl_o2edit3->info_padre(array("01", "03", "03", "Table name", False, "", False, ""));
 		$ctrl_o2edit3->act_zoom("select_table_in_view");
-	$ctrl_o2edit4 = &$form_prg_view->ctrldef("o2edit4", "edit", "tab", "view_tables", "name");
+	$ctrl_o2edit4 = $form_prg_view->ctrldef("o2edit4", "edit", "tab", "view_tables", "name");
 		$ctrl_o2edit4->x(190);
 		$ctrl_o2edit4->y(10);
 		$ctrl_o2edit4->larghezza(80);
@@ -716,7 +716,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit4->expand("H");
 		$ctrl_o2edit4->modificabile(program_view_exp_142());
 		$ctrl_o2edit4->info_padre(array("01", "04", "04", "Table alias", False, "", False, "", "", ""));
-	$ctrl_o2edit5 = &$form_prg_view->ctrldef("o2edit5", "edit", "tab", "view_tables", "keyname");
+	$ctrl_o2edit5 = $form_prg_view->ctrldef("o2edit5", "edit", "tab", "view_tables", "keyname");
 		$ctrl_o2edit5->x(270);
 		$ctrl_o2edit5->y(10);
 		$ctrl_o2edit5->larghezza(80);
@@ -725,21 +725,21 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit5->modificabile(program_view_exp_142());
 		$ctrl_o2edit5->info_padre(array("01", "05", "05", "Index", False, "", False, "", "", ""));
 		$ctrl_o2edit5->act_zoom("select_index_in_view");
-	$ctrl_o2edit21 = &$form_prg_view->ctrldef("o2edit21", "edit", "tab", "view_tables", "tabexp");
+	$ctrl_o2edit21 = $form_prg_view->ctrldef("o2edit21", "edit", "tab", "view_tables", "tabexp");
 		$ctrl_o2edit21->x(350);
 		$ctrl_o2edit21->y(10);
 		$ctrl_o2edit21->larghezza(60);
 		$ctrl_o2edit21->altezza(24);
 		$ctrl_o2edit21->modificabile(program_view_exp_142());
 		$ctrl_o2edit21->info_padre(array("01", "06", "06", "Exp", False, "", 0, "", "", "", "", ""));
-	$ctrl_o2edit22 = &$form_prg_view->ctrldef("o2edit22", "edit", "tab", "view_tables", "dbexp");
+	$ctrl_o2edit22 = $form_prg_view->ctrldef("o2edit22", "edit", "tab", "view_tables", "dbexp");
 		$ctrl_o2edit22->x(410);
 		$ctrl_o2edit22->y(10);
 		$ctrl_o2edit22->larghezza(60);
 		$ctrl_o2edit22->altezza(24);
 		$ctrl_o2edit22->modificabile(program_view_exp_142());
 		$ctrl_o2edit22->info_padre(array("01", "07", "07", "DB", False, "", 0, "", "", "", "", ""));
-	$ctrl_o2ListBox5 = &$form_prg_view->ctrldef("o2ListBox5", "listcombo", "tab_l", "link_fields", "field");
+	$ctrl_o2ListBox5 = $form_prg_view->ctrldef("o2ListBox5", "listcombo", "tab_l", "link_fields", "field");
 		$ctrl_o2ListBox5->x(0);
 		$ctrl_o2ListBox5->y(10);
 		$ctrl_o2ListBox5->larghezza(180);
@@ -750,7 +750,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox5->act_zoom("zoom_link_field");
 		$ctrl_o2ListBox5->valori(o2_view2list("combo_link_fields", "fieldname", "fieldname"));
 		$ctrl_o2ListBox5->righe(1);
-	$ctrl_o2edit17 = &$form_prg_view->ctrldef("o2edit17", "edit", "tab_l", "link_fields", "exp_from");
+	$ctrl_o2edit17 = $form_prg_view->ctrldef("o2edit17", "edit", "tab_l", "link_fields", "exp_from");
 		$ctrl_o2edit17->x(180);
 		$ctrl_o2edit17->y(10);
 		$ctrl_o2edit17->larghezza(10);
@@ -759,7 +759,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit17->modificabile(program_view_exp_44());
 		$ctrl_o2edit17->info_padre(array("01", "02", "02", "From", True, "", False, ""));
 		$ctrl_o2edit17->act_zoom("select_link_min_exp");
-	$ctrl_o2edit18 = &$form_prg_view->ctrldef("o2edit18", "edit", "tab_l", "link_fields", "exp_to");
+	$ctrl_o2edit18 = $form_prg_view->ctrldef("o2edit18", "edit", "tab_l", "link_fields", "exp_to");
 		$ctrl_o2edit18->x(190);
 		$ctrl_o2edit18->y(10);
 		$ctrl_o2edit18->larghezza(10);
@@ -768,7 +768,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit18->modificabile(program_view_exp_44());
 		$ctrl_o2edit18->info_padre(array("01", "03", "03", "To", True, "", False, ""));
 		$ctrl_o2edit18->act_zoom("select_link_max_exp");
-	$ctrl_o2edit19 = &$form_prg_view->ctrldef("o2edit19", "edit", "tab_l", "link_fields", "exp_not");
+	$ctrl_o2edit19 = $form_prg_view->ctrldef("o2edit19", "edit", "tab_l", "link_fields", "exp_not");
 		$ctrl_o2edit19->x(200);
 		$ctrl_o2edit19->y(10);
 		$ctrl_o2edit19->larghezza(10);
@@ -777,7 +777,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit19->modificabile(program_view_exp_44());
 		$ctrl_o2edit19->info_padre(array("01", "04", "04", "Not", True, "", False, ""));
 		$ctrl_o2edit19->act_zoom("select_link_not_exp");
-	$ctrl_o2edit20 = &$form_prg_view->ctrldef("o2edit20", "edit", "tab_l", "link_fields", "exp_like");
+	$ctrl_o2edit20 = $form_prg_view->ctrldef("o2edit20", "edit", "tab_l", "link_fields", "exp_like");
 		$ctrl_o2edit20->x(210);
 		$ctrl_o2edit20->y(10);
 		$ctrl_o2edit20->larghezza(10);
@@ -786,20 +786,20 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit20->modificabile(program_view_exp_44());
 		$ctrl_o2edit20->info_padre(array("01", "05", "05", "Like", True, "", False, ""));
 		$ctrl_o2edit20->act_zoom("select_link_like_exp");
-	$ctrl_o2htmlarea5 = &$form_prg_view->ctrldef("o2htmlarea5", "htmlarea", "tab_l", "", "");
+	$ctrl_o2htmlarea5 = $form_prg_view->ctrldef("o2htmlarea5", "htmlarea", "tab_l", "", "");
 		$ctrl_o2htmlarea5->x(220);
 		$ctrl_o2htmlarea5->y(10);
 		$ctrl_o2htmlarea5->larghezza(15);
 		$ctrl_o2htmlarea5->altezza(24);
 		$ctrl_o2htmlarea5->info_padre(array("01", "06", "06"));
-	$ctrl_o2edit6 = &$form_prg_view->ctrldef("o2edit6", "edit", "tab_s", "fields", "position");
+	$ctrl_o2edit6 = $form_prg_view->ctrldef("o2edit6", "edit", "tab_s", "fields", "position");
 		$ctrl_o2edit6->x(0);
 		$ctrl_o2edit6->y(10);
 		$ctrl_o2edit6->larghezza(50);
 		$ctrl_o2edit6->altezza(24);
 		$ctrl_o2edit6->modificabile(program_view_exp_142());
 		$ctrl_o2edit6->info_padre(array("01", "01", "01", "#", False, program_view_exp_197(), 0, "", "", "", "", ""));
-	$ctrl_o2ListBox3 = &$form_prg_view->ctrldef("o2ListBox3", "listcombo", "tab_s", "fields", "type");
+	$ctrl_o2ListBox3 = $form_prg_view->ctrldef("o2ListBox3", "listcombo", "tab_s", "fields", "type");
 		$ctrl_o2ListBox3->x(50);
 		$ctrl_o2ListBox3->y(10);
 		$ctrl_o2ListBox3->larghezza(80);
@@ -810,7 +810,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox3->info_padre(array("01", "02", "02", "Type", False, "", False, "", "", ""));
 		$ctrl_o2ListBox3->valori(array());
 		$ctrl_o2ListBox3->righe(1);
-	$ctrl_o2ListBox10 = &$form_prg_view->ctrldef("o2ListBox10", "listcombo", "tab_s", "fields", "tablename");
+	$ctrl_o2ListBox10 = $form_prg_view->ctrldef("o2ListBox10", "listcombo", "tab_s", "fields", "tablename");
 		$ctrl_o2ListBox10->x(130);
 		$ctrl_o2ListBox10->y(10);
 		$ctrl_o2ListBox10->larghezza(90);
@@ -823,14 +823,14 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox10->act_zoom("select_field_table");
 		$ctrl_o2ListBox10->valori(o2_view2list("combo_tables", "name", "name"));
 		$ctrl_o2ListBox10->righe(1);
-	$ctrl_o2htmlarea6 = &$form_prg_view->ctrldef("o2htmlarea6", "htmlarea", "tab_s", "", "");
+	$ctrl_o2htmlarea6 = $form_prg_view->ctrldef("o2htmlarea6", "htmlarea", "tab_s", "", "");
 		$ctrl_o2htmlarea6->x(220);
 		$ctrl_o2htmlarea6->y(10);
 		$ctrl_o2htmlarea6->larghezza(90);
 		$ctrl_o2htmlarea6->altezza(24);
 		$ctrl_o2htmlarea6->visibile(program_view_exp_45());
 		$ctrl_o2htmlarea6->info_padre(array("01", "04", "04"));
-	$ctrl_o2ListBox11 = &$form_prg_view->ctrldef("o2ListBox11", "listcombo", "tab_s", "fields", "fieldname");
+	$ctrl_o2ListBox11 = $form_prg_view->ctrldef("o2ListBox11", "listcombo", "tab_s", "fields", "fieldname");
 		$ctrl_o2ListBox11->x(310);
 		$ctrl_o2ListBox11->y(10);
 		$ctrl_o2ListBox11->larghezza(90);
@@ -841,7 +841,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2ListBox11->act_zoom("select_field_table_field");
 		$ctrl_o2ListBox11->valori(program_view_exp_14());
 		$ctrl_o2ListBox11->righe(1);
-	$ctrl_o2edit9 = &$form_prg_view->ctrldef("o2edit9", "edit", "tab_s", "fields", "name");
+	$ctrl_o2edit9 = $form_prg_view->ctrldef("o2edit9", "edit", "tab_s", "fields", "name");
 		$ctrl_o2edit9->x(400);
 		$ctrl_o2edit9->y(10);
 		$ctrl_o2edit9->larghezza(90);
@@ -849,7 +849,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit9->expand("H");
 		$ctrl_o2edit9->modificabile(program_view_exp_142());
 		$ctrl_o2edit9->info_padre(array("01", "06", "06", "Name", False, "", False, "", "", ""));
-	$ctrl_o2edit10 = &$form_prg_view->ctrldef("o2edit10", "edit", "tab_s", "fields", "exp_calc");
+	$ctrl_o2edit10 = $form_prg_view->ctrldef("o2edit10", "edit", "tab_s", "fields", "exp_calc");
 		$ctrl_o2edit10->x(490);
 		$ctrl_o2edit10->y(10);
 		$ctrl_o2edit10->larghezza(60);
@@ -857,7 +857,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit10->modificabile(program_view_exp_18());
 		$ctrl_o2edit10->info_padre(array("01", "07", "07", "Def.", False, "", 0, "", "", "", "", ""));
 		$ctrl_o2edit10->act_zoom("zoom_formula");
-	$ctrl_o2edit11 = &$form_prg_view->ctrldef("o2edit11", "edit", "tab_s", "fields", "exp_from");
+	$ctrl_o2edit11 = $form_prg_view->ctrldef("o2edit11", "edit", "tab_s", "fields", "exp_from");
 		$ctrl_o2edit11->x(550);
 		$ctrl_o2edit11->y(10);
 		$ctrl_o2edit11->larghezza(60);
@@ -865,7 +865,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit11->modificabile(program_view_exp_142());
 		$ctrl_o2edit11->info_padre(array("01", "08", "08", "From", True, "", False, ""));
 		$ctrl_o2edit11->act_zoom("select_field_min_exp");
-	$ctrl_o2edit13 = &$form_prg_view->ctrldef("o2edit13", "edit", "tab_s", "fields", "exp_to");
+	$ctrl_o2edit13 = $form_prg_view->ctrldef("o2edit13", "edit", "tab_s", "fields", "exp_to");
 		$ctrl_o2edit13->x(610);
 		$ctrl_o2edit13->y(10);
 		$ctrl_o2edit13->larghezza(60);
@@ -873,7 +873,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit13->modificabile(program_view_exp_142());
 		$ctrl_o2edit13->info_padre(array("01", "09", "09", "To", True, "", False, ""));
 		$ctrl_o2edit13->act_zoom("select_field_max_exp");
-	$ctrl_o2edit15 = &$form_prg_view->ctrldef("o2edit15", "edit", "tab_s", "fields", "exp_not");
+	$ctrl_o2edit15 = $form_prg_view->ctrldef("o2edit15", "edit", "tab_s", "fields", "exp_not");
 		$ctrl_o2edit15->x(670);
 		$ctrl_o2edit15->y(10);
 		$ctrl_o2edit15->larghezza(60);
@@ -881,7 +881,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit15->modificabile(program_view_exp_142());
 		$ctrl_o2edit15->info_padre(array("01", "10", "10", "Not", True, "", False, ""));
 		$ctrl_o2edit15->act_zoom("select_field_not_exp");
-	$ctrl_o2edit16 = &$form_prg_view->ctrldef("o2edit16", "edit", "tab_s", "fields", "exp_like");
+	$ctrl_o2edit16 = $form_prg_view->ctrldef("o2edit16", "edit", "tab_s", "fields", "exp_like");
 		$ctrl_o2edit16->x(730);
 		$ctrl_o2edit16->y(10);
 		$ctrl_o2edit16->larghezza(60);
@@ -889,7 +889,7 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2edit16->modificabile(program_view_exp_142());
 		$ctrl_o2edit16->info_padre(array("01", "11", "11", "Like", True, "", False, ""));
 		$ctrl_o2edit16->act_zoom("select_field_like_exp");
-	$ctrl_o2htmlarea4 = &$form_prg_view->ctrldef("o2htmlarea4", "htmlarea", "tab_s", "", "");
+	$ctrl_o2htmlarea4 = $form_prg_view->ctrldef("o2htmlarea4", "htmlarea", "tab_s", "", "");
 		$ctrl_o2htmlarea4->x(790);
 		$ctrl_o2htmlarea4->y(10);
 		$ctrl_o2htmlarea4->larghezza(20);
@@ -897,69 +897,69 @@ function program_view§§prg_view_form_def(&$form_prg_view) {
 		$ctrl_o2htmlarea4->info_padre(array("01", "12", "12"));
 		}
 
-function program_view§§checkin_act(&$o2exe) {
+function program_view§§checkin_act($o2exe) {
 	$o2exe->s(1) && (program_view_exp_110() || $o2exe->e()) && o2act::exe("save_program", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("checkin", False, program_view_exp_2()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§checkout_act(&$o2exe) {
+function program_view§§checkout_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("checkout", False, program_view_exp_2()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§close_act(&$o2exe) {
+function program_view§§close_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§close_all_act(&$o2exe) {
+function program_view§§close_all_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "shown_win", program_view_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§discard_program_act(&$o2exe) {
+function program_view§§discard_program_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("obj_status", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§exit_act(&$o2exe) {
+function program_view§§exit_act($o2exe) {
 	$o2exe->s(1) && (program_view_exp_110() || $o2exe->e()) && o2act::call(program_view_exp_116(), False, program_view_exp_117(), "prg§_§var§§confirm") && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_118() || $o2exe->e()) && o2act::exe("save_program", True, "") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_119() || $o2exe->e()) && o2act::exe("discard_program", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§fields_delete_act(&$o2exe) {
+function program_view§§fields_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "C", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§fields_detail_act(&$o2exe) {
+function program_view§§fields_detail_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("ZOOM actions for SELECT") && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_46() || $o2exe->e()) && o2act::exe("zoom_select", True, "") && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("ZOOM actions for FORMULA") && $o2exe->e();
 	$o2exe->s(4) && (program_view_exp_45() || $o2exe->e()) && o2act::exe("zoom_formula", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§fields_insert_act(&$o2exe) {
+function program_view§§fields_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("fields", "position", program_view_exp_208()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("fields", "type", program_view_exp_6()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§fields_post_act(&$o2exe) {
+function program_view§§fields_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "S", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§fields_undo_act(&$o2exe) {
+function program_view§§fields_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§link_fields_delete_act(&$o2exe) {
+function program_view§§link_fields_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("link_fields", "C", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§link_fields_detail_act(&$o2exe) {
+function program_view§§link_fields_detail_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoommed_ctrl", program_view_exp_54()) && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_56() || $o2exe->e()) && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_from", program_view_exp_142(), "prg§_§var§§prg_modified") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_57() || $o2exe->e()) && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_to", program_view_exp_142(), "prg§_§var§§prg_modified") && $o2exe->e();
@@ -967,165 +967,165 @@ function program_view§§link_fields_detail_act(&$o2exe) {
 	$o2exe->s(5) && (program_view_exp_59() || $o2exe->e()) && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_like", program_view_exp_142(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§link_fields_insert_act(&$o2exe) {
+function program_view§§link_fields_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("link_fields", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§link_fields_post_act(&$o2exe) {
+function program_view§§link_fields_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("link_fields", "S", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§link_fields_undo_act(&$o2exe) {
+function program_view§§link_fields_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("link_fields", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§on_fieldtype_change_act(&$o2exe) {
+function program_view§§on_fieldtype_change_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("fields", "tablename", program_view_exp_1()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("fields", "fieldname", program_view_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§on_viewname_change_act(&$o2exe) {
+function program_view§§on_viewname_change_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("views_post", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§rename_tab_in_fields_act(&$o2exe) {
+function program_view§§rename_tab_in_fields_act($o2exe) {
 	$o2exe->s(1) && (program_view_exp_72() || $o2exe->e()) && o2act::set("fields", "tablename", program_view_exp_66()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("fields", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§rename_tab_in_linkfields_act(&$o2exe) {
+function program_view§§rename_tab_in_linkfields_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("link_fields", "tabname", program_view_exp_66()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("link_fields", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§save_program_act(&$o2exe) {
+function program_view§§save_program_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_modified", program_view_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_like_exp_act(&$o2exe) {
+function program_view§§select_field_like_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("LIKE expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_like", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_max_exp_act(&$o2exe) {
+function program_view§§select_field_max_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("MAX expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_to", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_min_exp_act(&$o2exe) {
+function program_view§§select_field_min_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("MIN expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_from", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_not_exp_act(&$o2exe) {
+function program_view§§select_field_not_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("NOT expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_not", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_table_act(&$o2exe) {
+function program_view§§select_field_table_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("FROM TABLE selection") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("select_view_table", False, program_view_exp_3(), program_view_exp_2(), program_view_exp_32(), "fields§§tablename") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_field_table_field_act(&$o2exe) {
+function program_view§§select_field_table_field_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Select FIELD") && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_46() || $o2exe->e()) && o2act::call("select_table_field", False, program_view_exp_12(), "fields§§fieldname") && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Select Datatype") && $o2exe->e();
 	$o2exe->s(4) && (program_view_exp_45() || $o2exe->e()) && o2act::call("select_datatype", False, "fields§§fieldname") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_index_in_view_act(&$o2exe) {
+function program_view§§select_index_in_view_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Select key") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("select_table_key", False, program_view_exp_41(), "view_tables§§keyname") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_31() || $o2exe->e()) && o2act::exe("select_view_tab_key_exp", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_link_like_exp_act(&$o2exe) {
+function program_view§§select_link_like_exp_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_like", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_link_max_exp_act(&$o2exe) {
+function program_view§§select_link_max_exp_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_to", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_link_min_exp_act(&$o2exe) {
+function program_view§§select_link_min_exp_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_from", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_link_not_exp_act(&$o2exe) {
+function program_view§§select_link_not_exp_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "link_fields§§exp_not", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_table_in_view_act(&$o2exe) {
+function program_view§§select_table_in_view_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Select table") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("select_table", False, "view_tables§§tablename") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§select_view_tab_key_exp_act(&$o2exe) {
+function program_view§§select_view_tab_key_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Key expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "view_tables§§keyexp", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§set_prg_modified_act(&$o2exe) {
+function program_view§§set_prg_modified_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_modified", program_view_exp_13()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§show_definition_act(&$o2exe) {
+function program_view§§show_definition_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "page", program_view_exp_208()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§show_prop_act(&$o2exe) {
+function program_view§§show_prop_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "page", program_view_exp_209()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§start_act(&$o2exe) {
+function program_view§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", program_view_exp_195()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::script(program_view_exp_196()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§tree_select_act(&$o2exe) {
+function program_view§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("project", False, program_view_exp_179(), program_view_exp_2()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§uncheck_act(&$o2exe) {
+function program_view§§uncheck_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("uncheck", False, program_view_exp_2()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_aggregations_delete_act(&$o2exe) {
+function program_view§§view_aggregations_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_aggregations", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_aggregations_insert_act(&$o2exe) {
+function program_view§§view_aggregations_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_aggregations", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("view_aggregations", "userid", program_view_exp_9()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("view_aggregations", "prgname", program_view_exp_2()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("view_aggregations", "viewname", program_view_exp_190()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_aggregations_post_act(&$o2exe) {
+function program_view§§view_aggregations_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_aggregations", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_aggregations_undo_act(&$o2exe) {
+function program_view§§view_aggregations_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_aggregations", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_tables_delete_act(&$o2exe) {
+function program_view§§view_tables_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_tables", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_tables_detail_act(&$o2exe) {
+function program_view§§view_tables_detail_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Key expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "view_tables§§keyexp", program_view_exp_142(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_tables_insert_act(&$o2exe) {
+function program_view§§view_tables_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_tables", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_tables_post_act(&$o2exe) {
+function program_view§§view_tables_post_act($o2exe) {
 	$o2exe->s(1) && (program_view_exp_71() || $o2exe->e()) && o2act::exe("rename_tab_in_fields", False, "fields") && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_71() || $o2exe->e()) && o2act::view("fields", "1", "") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_71() || $o2exe->e()) && o2act::exe("rename_tab_in_linkfields", False, "link_fields") && $o2exe->e();
@@ -1134,52 +1134,52 @@ function program_view§§view_tables_post_act(&$o2exe) {
 	$o2exe->s(6) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§view_tables_undo_act(&$o2exe) {
+function program_view§§view_tables_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("view_tables", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§views_delete_act(&$o2exe) {
+function program_view§§views_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("views", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§views_post_act(&$o2exe) {
+function program_view§§views_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("views", "S", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "prg_modified", program_view_exp_13()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_aggr_field_act(&$o2exe) {
+function program_view§§zoom_aggr_field_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_prg_field", False) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_aggr_var_act(&$o2exe) {
+function program_view§§zoom_aggr_var_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_prg_field", False) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_custom_where_act(&$o2exe) {
+function program_view§§zoom_custom_where_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Row limit expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "views§§rowlimit", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_formula_act(&$o2exe) {
+function program_view§§zoom_formula_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Formula expression") && $o2exe->e();
 	$o2exe->s(2) && (program_view_exp_15() || $o2exe->e()) && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_calc", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_16() || $o2exe->e()) && o2act::call("sql_formula", False, program_view_exp_2(), program_view_exp_17(), "fields§§exp_calc", "fields§§concat_ser", "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_link_field_act(&$o2exe) {
+function program_view§§zoom_link_field_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_prg_field", False, program_view_exp_3(), program_view_exp_2(), program_view_exp_17(), "link_fields§§field") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_prefix_act_act(&$o2exe) {
+function program_view§§zoom_prefix_act_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_action", False, program_view_exp_3(), program_view_exp_2(), "views§§readrowact", program_view_exp_155()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_rowlimit_exp_act(&$o2exe) {
+function program_view§§zoom_rowlimit_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Custom WHERE expression") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "views§§custom_where", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_select_act(&$o2exe) {
+function program_view§§zoom_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoommed_ctrl", program_view_exp_54()) && $o2exe->e();
 //	$o2exe->s(2) && True && o2act::remark("FROM TABLE selection") && $o2exe->e();
 	$o2exe->s(3) && (program_view_exp_67() || $o2exe->e()) && o2act::call("select_view_table", False, program_view_exp_3(), program_view_exp_2(), program_view_exp_32(), "fields§§tablename") && $o2exe->e();
@@ -1195,7 +1195,7 @@ function program_view§§zoom_select_act(&$o2exe) {
 	$o2exe->s(13) && (program_view_exp_64() || $o2exe->e()) && o2act::call("expressions", False, program_view_exp_3(), program_view_exp_2(), "fields§§exp_like", program_view_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_view§§zoom_suffix_act_act(&$o2exe) {
+function program_view§§zoom_suffix_act_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_action", False, program_view_exp_3(), program_view_exp_2(), "views§§modrowact", program_view_exp_155()) && $o2exe->e();
 	} //|o2_fine_act|
 

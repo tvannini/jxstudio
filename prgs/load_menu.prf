@@ -1,6 +1,6 @@
 <?php
 
-function load_menu§§prg§_§var_def(&$task_prg§_§var) {
+function load_menu§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_menu", "_o2structure");
 	$task_prg§_§var->definisci("counter", "id");
@@ -10,7 +10,7 @@ function load_menu§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("tot_menus", "_o2number");
 		}
 
-function load_menu§§menu_def(&$task_menu, $_o2viewalias = "") {
+function load_menu§§menu_def($task_menu, $_o2viewalias = "") {
 	$task_menu->righe_vis = 10;
 
 	$task_menu->usa_file("menu","menu","name",null,null);
@@ -27,7 +27,7 @@ function load_menu§§menu_def(&$task_menu, $_o2viewalias = "") {
 	$task_menu->usa("url","menu","url",null,null,null,null);
 }
 
-function load_menu§§del_menu_def(&$task_del_menu, $_o2viewalias = "") {
+function load_menu§§del_menu_def($task_del_menu, $_o2viewalias = "") {
 	$task_del_menu->righe_vis = 10;
 
 	$task_del_menu->usa_file("menu","menu","name",null,null);
@@ -36,7 +36,7 @@ function load_menu§§del_menu_def(&$task_del_menu, $_o2viewalias = "") {
 	$task_del_menu->usa("name","menu","name",null,null,null,null);
 }
 
-function load_menu§§create_menu_act(&$o2exe) {
+function load_menu§§create_menu_act($o2exe) {
 	$o2exe->s(1) && (load_menu_exp_30() || $o2exe->e()) && o2act::set("prg§_§var", "position_loc", load_menu_exp_29()) && $o2exe->e();
 	$o2exe->s(2) && (load_menu_exp_17() || $o2exe->e()) && o2act::view("menu", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("menu", "userid", load_menu_exp_28()) && $o2exe->e();
@@ -55,7 +55,7 @@ function load_menu§§create_menu_act(&$o2exe) {
 	$o2exe->s(16) && True && o2act::set("prg§_§var", "position_loc", load_menu_exp_41()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_menu§§default_act(&$o2exe) {
+function load_menu§§default_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("menu", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("menu", "userid", load_menu_exp_23()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("menu", "name", load_menu_exp_37()) && $o2exe->e();
@@ -66,18 +66,18 @@ function load_menu§§default_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::view("menu", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_menu§§del_menu_act(&$o2exe) {
+function load_menu§§del_menu_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_menu_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_menu§§load_menus_act(&$o2exe) {
+function load_menu§§load_menus_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_menu", load_menu_exp_5()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "tot_menus", load_menu_exp_45()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "counter", load_menu_exp_10()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::exe("create_menu", "load_menu_exp_8()", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_menu§§start_act(&$o2exe) {
+function load_menu§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("-- Svuoto tabella --") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("del_menu", True, "") && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("-- Determino il path --") && $o2exe->e();

@@ -1,12 +1,12 @@
 <?php
 
-function save_menu§§prg§_§var_def(&$task_prg§_§var) {
+function save_menu§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("pathfile", "path");
 		}
 
-function save_menu§§menu_def(&$task_menu, $_o2viewalias = "") {
+function save_menu§§menu_def($task_menu, $_o2viewalias = "") {
 	$task_menu->righe_vis = 10;
 
 	$task_menu->usa_file("menu","menu","level");
@@ -23,7 +23,7 @@ function save_menu§§menu_def(&$task_menu, $_o2viewalias = "") {
 	$task_menu->usa("icon","menu","icon",null,null,null,null);
 }
 
-function save_menu§§start_act(&$o2exe) {
+function save_menu§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("--Determino il path ---") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_menu_exp_2()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("--scrivo su file---") && $o2exe->e();
@@ -33,11 +33,11 @@ function save_menu§§start_act(&$o2exe) {
 	$o2exe->s(7) && True && o2act::script(save_menu_exp_9()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_menu§§write_menu_act(&$o2exe) {
+function save_menu§§write_menu_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_menu_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_menu§§write_var_act(&$o2exe) {
+function save_menu§§write_var_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_menu_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 

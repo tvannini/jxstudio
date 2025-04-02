@@ -1,13 +1,13 @@
 <?php
 
-function datatypes§§prg§_§var_def(&$task_prg§_§var) {
+function datatypes§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("confirm", "_o2logical");
 	$task_prg§_§var->definisci("menu_selected_item", "_o2alpha");
 	$task_prg§_§var->definisci("modified", "_o2logical");
 		}
 
-function datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
+function datatypes§§datatypes_def($task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->righe_vis = 100;
 
 	$task_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -21,7 +21,7 @@ function datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->usa("zoom_prg","datatypes","zoom_prg",null,null,null,null);
 }
 
-function datatypes§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
+function datatypes§§objstatus_def($task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->righe_vis = 10;
 
 	$task_objstatus->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -29,7 +29,7 @@ function datatypes§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->usa("objname","tstamp_obj","objname","datatypes_exp_4()","datatypes_exp_4()",null,null);
 	$task_objstatus->usa("userid","tstamp_obj","userid",null,null,"datatypes_exp_8()",null);
 }
-function datatypes§§datatypes_form_def(&$form_datatypes) {
+function datatypes§§datatypes_form_def($form_datatypes) {
 	$form_datatypes->x(0);
 	$form_datatypes->y(0);
 	$form_datatypes->larghezza(1000);
@@ -39,7 +39,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 	$form_datatypes->frm_status(datatypes_exp_9999());
 	$form_datatypes->css_finestra(" open_body");
 	$form_datatypes->css_body(" open_body");
-	$ctrl_tree = &$form_datatypes->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_tree = $form_datatypes->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_tree->x(0);
 		$ctrl_tree->y(0);
 		$ctrl_tree->larghezza(300);
@@ -48,7 +48,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_tree->azione("tree_select");
 		$ctrl_tree->activation(1);
 		$ctrl_tree->nodes(datatypes_exp_65());
-	$ctrl_tab = &$form_datatypes->ctrldef("tab", "tab", "", "datatypes", "");
+	$ctrl_tab = $form_datatypes->ctrldef("tab", "tab", "", "datatypes", "");
 		$ctrl_tab->x(300);
 		$ctrl_tab->y(39);
 		$ctrl_tab->larghezza(700);
@@ -56,7 +56,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_tab->expand("B");
 		$ctrl_tab->modificabile(datatypes_exp_2());
 		$ctrl_tab->hide_indicator(datatypes_exp_2());
-	$ctrl_nav = &$form_datatypes->ctrldef("nav", "navigator", "", "datatypes", "");
+	$ctrl_nav = $form_datatypes->ctrldef("nav", "navigator", "", "datatypes", "");
 		$ctrl_nav->x(300);
 		$ctrl_nav->y(0);
 		$ctrl_nav->larghezza(700);
@@ -73,7 +73,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_nav->act_save("datatypes_post");
 		$ctrl_nav->act_del("datatypes_delete");
 		$ctrl_nav->act_undo("datatypes_undo");
-	$ctrl_btn_checkout = &$form_datatypes->ctrldef("btn_checkout", "img", "", "", "");
+	$ctrl_btn_checkout = $form_datatypes->ctrldef("btn_checkout", "img", "", "", "");
 		$ctrl_btn_checkout->x(450);
 		$ctrl_btn_checkout->y(4);
 		$ctrl_btn_checkout->larghezza(32);
@@ -82,7 +82,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_btn_checkout->azione("checkout");
 		$ctrl_btn_checkout->css(datatypes_exp_57());
 		$ctrl_btn_checkout->imgexp(datatypes_exp_54());
-	$ctrl_btn_checkin = &$form_datatypes->ctrldef("btn_checkin", "img", "", "", "");
+	$ctrl_btn_checkin = $form_datatypes->ctrldef("btn_checkin", "img", "", "", "");
 		$ctrl_btn_checkin->x(482);
 		$ctrl_btn_checkin->y(4);
 		$ctrl_btn_checkin->larghezza(32);
@@ -91,7 +91,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_btn_checkin->azione("checkin");
 		$ctrl_btn_checkin->css(datatypes_exp_56());
 		$ctrl_btn_checkin->imgexp(datatypes_exp_54());
-	$ctrl_btn_uncheck = &$form_datatypes->ctrldef("btn_uncheck", "img", "", "", "");
+	$ctrl_btn_uncheck = $form_datatypes->ctrldef("btn_uncheck", "img", "", "", "");
 		$ctrl_btn_uncheck->x(514);
 		$ctrl_btn_uncheck->y(4);
 		$ctrl_btn_uncheck->larghezza(32);
@@ -100,7 +100,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_btn_uncheck->azione("uncheck");
 		$ctrl_btn_uncheck->css(datatypes_exp_58());
 		$ctrl_btn_uncheck->imgexp(datatypes_exp_54());
-	$ctrl_o2image5 = &$form_datatypes->ctrldef("o2image5", "img", "", "", "");
+	$ctrl_o2image5 = $form_datatypes->ctrldef("o2image5", "img", "", "", "");
 		$ctrl_o2image5->x(555);
 		$ctrl_o2image5->y(4);
 		$ctrl_o2image5->larghezza(32);
@@ -109,7 +109,7 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_o2image5->azione("save");
 		$ctrl_o2image5->css(datatypes_exp_59());
 		$ctrl_o2image5->imgexp(datatypes_exp_54());
-	$ctrl_o2image6 = &$form_datatypes->ctrldef("o2image6", "img", "", "", "");
+	$ctrl_o2image6 = $form_datatypes->ctrldef("o2image6", "img", "", "", "");
 		$ctrl_o2image6->x(587);
 		$ctrl_o2image6->y(4);
 		$ctrl_o2image6->larghezza(32);
@@ -118,13 +118,13 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_o2image6->azione("discard");
 		$ctrl_o2image6->css(datatypes_exp_60());
 		$ctrl_o2image6->imgexp(datatypes_exp_54());
-	$ctrl_o2image2 = &$form_datatypes->ctrldef("o2image2", "img", "", "", "");
+	$ctrl_o2image2 = $form_datatypes->ctrldef("o2image2", "img", "", "", "");
 		$ctrl_o2image2->x(690);
 		$ctrl_o2image2->y(4);
 		$ctrl_o2image2->larghezza(32);
 		$ctrl_o2image2->altezza(32);
 		$ctrl_o2image2->imgexp(datatypes_exp_50());
-	$ctrl_o2button2 = &$form_datatypes->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_datatypes->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(720);
 		$ctrl_o2button2->y(10);
 		$ctrl_o2button2->larghezza(100);
@@ -133,26 +133,26 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_o2button2->modificabile(datatypes_exp_9999());
 		$ctrl_o2button2->label(datatypes_exp_21());
 		$ctrl_o2button2->css(datatypes_exp_12());
-	$ctrl_o2image3 = &$form_datatypes->ctrldef("o2image3", "img", "", "", "");
+	$ctrl_o2image3 = $form_datatypes->ctrldef("o2image3", "img", "", "", "");
 		$ctrl_o2image3->x(549);
 		$ctrl_o2image3->y(7);
 		$ctrl_o2image3->larghezza(3);
 		$ctrl_o2image3->altezza(17);
 		$ctrl_o2image3->imgexp(datatypes_exp_55());
-	$ctrl_o2image4 = &$form_datatypes->ctrldef("o2image4", "img", "", "", "");
+	$ctrl_o2image4 = $form_datatypes->ctrldef("o2image4", "img", "", "", "");
 		$ctrl_o2image4->x(444);
 		$ctrl_o2image4->y(7);
 		$ctrl_o2image4->larghezza(3);
 		$ctrl_o2image4->altezza(17);
 		$ctrl_o2image4->imgexp(datatypes_exp_55());
-	$ctrl_o2edit2 = &$form_datatypes->ctrldef("o2edit2", "edit", "tab", "datatypes", "name");
+	$ctrl_o2edit2 = $form_datatypes->ctrldef("o2edit2", "edit", "tab", "datatypes", "name");
 		$ctrl_o2edit2->x(0);
 		$ctrl_o2edit2->y(10);
 		$ctrl_o2edit2->larghezza(180);
 		$ctrl_o2edit2->altezza(24);
 		$ctrl_o2edit2->expand("H");
 		$ctrl_o2edit2->info_padre(array("01", "01", "01", "Name", False, "", False, ""));
-	$ctrl_o2ListBox2 = &$form_datatypes->ctrldef("o2ListBox2", "listcombo", "tab", "datatypes", "type");
+	$ctrl_o2ListBox2 = $form_datatypes->ctrldef("o2ListBox2", "listcombo", "tab", "datatypes", "type");
 		$ctrl_o2ListBox2->x(180);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(80);
@@ -160,14 +160,14 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_o2ListBox2->info_padre(array("01", "02", "02", "Type", False, "", False, ""));
 		$ctrl_o2ListBox2->valori(array());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2edit3 = &$form_datatypes->ctrldef("o2edit3", "edit", "tab", "datatypes", "mask");
+	$ctrl_o2edit3 = $form_datatypes->ctrldef("o2edit3", "edit", "tab", "datatypes", "mask");
 		$ctrl_o2edit3->x(260);
 		$ctrl_o2edit3->y(10);
 		$ctrl_o2edit3->larghezza(250);
 		$ctrl_o2edit3->altezza(24);
 		$ctrl_o2edit3->expand("H");
 		$ctrl_o2edit3->info_padre(array("01", "03", "03", "Mask", False, "", False, ""));
-	$ctrl_o2edit4 = &$form_datatypes->ctrldef("o2edit4", "edit", "tab", "datatypes", "zoom_prg");
+	$ctrl_o2edit4 = $form_datatypes->ctrldef("o2edit4", "edit", "tab", "datatypes", "zoom_prg");
 		$ctrl_o2edit4->x(510);
 		$ctrl_o2edit4->y(10);
 		$ctrl_o2edit4->larghezza(150);
@@ -176,50 +176,50 @@ function datatypes§§datatypes_form_def(&$form_datatypes) {
 		$ctrl_o2edit4->info_padre(array("01", "04", "04", "Zoom program", False, "", False, "", "", ""));
 		}
 
-function datatypes§§checkin_act(&$o2exe) {
+function datatypes§§checkin_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("save", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("checkin", False, datatypes_exp_4()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("datatypes", "SC", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§checkout_act(&$o2exe) {
+function datatypes§§checkout_act($o2exe) {
 	$o2exe->s(1) && (datatypes_exp_6() || $o2exe->e()) && o2act::call("checkout", False, datatypes_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "modified", datatypes_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§datatypes_delete_act(&$o2exe) {
+function datatypes§§datatypes_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§datatypes_insert_act(&$o2exe) {
+function datatypes§§datatypes_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("datatypes", "userid", datatypes_exp_7()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§datatypes_post_act(&$o2exe) {
+function datatypes§§datatypes_post_act($o2exe) {
 	$o2exe->s(1) && (datatypes_exp_10() || $o2exe->e()) && o2act::set("prg§_§var", "modified", datatypes_exp_9()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("datatypes", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§datatypes_undo_act(&$o2exe) {
+function datatypes§§datatypes_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§discard_act(&$o2exe) {
+function datatypes§§discard_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("datatypes", "SS", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "modified", datatypes_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§edit_act(&$o2exe) {
+function datatypes§§edit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && (datatypes_exp_2() || $o2exe->e()) && o2act::view("datatypes", "SS", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§exit_act(&$o2exe) {
+function datatypes§§exit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("datatypes_post", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "confirm", datatypes_exp_9999()) && $o2exe->e();
 	$o2exe->s(3) && (datatypes_exp_31() || $o2exe->e()) && o2act::confirm("prg§_§var", "confirm", datatypes_exp_36()) && $o2exe->e();
@@ -227,25 +227,25 @@ function datatypes§§exit_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::view("datatypes", "SC", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§save_act(&$o2exe) {
+function datatypes§§save_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("datatypes", "SM", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("save_datatypes", False) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("datatypes", "SS", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "modified", datatypes_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§start_act(&$o2exe) {
+function datatypes§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", datatypes_exp_66()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::script(datatypes_exp_5()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§tree_select_act(&$o2exe) {
+function datatypes§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("project", False, datatypes_exp_64()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function datatypes§§uncheck_act(&$o2exe) {
+function datatypes§§uncheck_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("uncheck", False, datatypes_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("datatypes", "SC", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("objstatus", "1", "") && $o2exe->e();

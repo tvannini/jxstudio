@@ -1,6 +1,6 @@
 <?php
 
-function tables_x_tommy§§tables_def(&$task_tables, $_o2viewalias = "") {
+function tables_x_tommy§§tables_def($task_tables, $_o2viewalias = "") {
 	$task_tables->righe_vis = 14;
 
 	$task_tables->usa_file("tables","tables","pos");
@@ -14,7 +14,7 @@ function tables_x_tommy§§tables_def(&$task_tables, $_o2viewalias = "") {
 	$task_tables->usa("folder","tables","folder",null,null,null,null);
 }
 
-function tables_x_tommy§§fields_def(&$task_fields, $_o2viewalias = "") {
+function tables_x_tommy§§fields_def($task_fields, $_o2viewalias = "") {
 	$task_fields->righe_vis = 20;
 
 	$task_fields->usa_file("fields","fields","pos");
@@ -26,7 +26,7 @@ function tables_x_tommy§§fields_def(&$task_fields, $_o2viewalias = "") {
 	$task_fields->usa("datatype","fields","datatype",null,null,null,null);
 }
 
-function tables_x_tommy§§indexes_def(&$task_indexes, $_o2viewalias = "") {
+function tables_x_tommy§§indexes_def($task_indexes, $_o2viewalias = "") {
 	$task_indexes->righe_vis = 10;
 
 	$task_indexes->usa_file("indexes","indexes","pos");
@@ -37,7 +37,7 @@ function tables_x_tommy§§indexes_def(&$task_indexes, $_o2viewalias = "") {
 	$task_indexes->usa("dbname","indexes","dbname",null,null,null,null);
 }
 
-function tables_x_tommy§§segments_def(&$task_segments, $_o2viewalias = "") {
+function tables_x_tommy§§segments_def($task_segments, $_o2viewalias = "") {
 	$task_segments->righe_vis = 10;
 
 	$task_segments->usa_file("idxsegments","idxsegments","pos");
@@ -49,7 +49,7 @@ function tables_x_tommy§§segments_def(&$task_segments, $_o2viewalias = "") {
 	$task_segments->usa("direction","idxsegments","direction",null,null,null,null);
 }
 
-function tables_x_tommy§§combo_fields_def(&$task_combo_fields, $_o2viewalias = "") {
+function tables_x_tommy§§combo_fields_def($task_combo_fields, $_o2viewalias = "") {
 	$task_combo_fields->righe_vis = 10;
 
 	$task_combo_fields->usa_file("fields","fields","pos");
@@ -58,77 +58,77 @@ function tables_x_tommy§§combo_fields_def(&$task_combo_fields, $_o2viewalias = "
 	$task_combo_fields->usa("fieldname","fields","fieldname",null,null,null,null);
 }
 
-function tables_x_tommy§§combo_database_def(&$task_combo_database, $_o2viewalias = "") {
+function tables_x_tommy§§combo_database_def($task_combo_database, $_o2viewalias = "") {
 	$task_combo_database->righe_vis = 10;
 
 	$task_combo_database->usa_file("databases","databases","name");
 
 	$task_combo_database->usa("dbname","databases","dbname",null,null,null,null);
 }
-function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
+function tables_x_tommy§§tables_x_tommy_1_form_def($form_tables_x_tommy_1) {
 	$form_tables_x_tommy_1->x(501);
 	$form_tables_x_tommy_1->y(3);
 	$form_tables_x_tommy_1->larghezza(988);
 	$form_tables_x_tommy_1->altezza(728);
 	$form_tables_x_tommy_1->titolo("Table Repository");
 	$form_tables_x_tommy_1->align_o("Center");
-	$ctrl_o2label3 = &$form_tables_x_tommy_1->ctrldef("o2label3", "label", "", "", "");
+	$ctrl_o2label3 = $form_tables_x_tommy_1->ctrldef("o2label3", "label", "", "", "");
 		$ctrl_o2label3->x(620);
 		$ctrl_o2label3->y(360);
 		$ctrl_o2label3->larghezza(100);
 		$ctrl_o2label3->altezza(20);
 		$ctrl_o2label3->label("Segments:");
-	$ctrl_o2label4 = &$form_tables_x_tommy_1->ctrldef("o2label4", "label", "", "", "");
+	$ctrl_o2label4 = $form_tables_x_tommy_1->ctrldef("o2label4", "label", "", "", "");
 		$ctrl_o2label4->x(10);
 		$ctrl_o2label4->y(360);
 		$ctrl_o2label4->larghezza(100);
 		$ctrl_o2label4->altezza(20);
 		$ctrl_o2label4->label("Columns:");
-	$ctrl_o2label2 = &$form_tables_x_tommy_1->ctrldef("o2label2", "label", "", "", "");
+	$ctrl_o2label2 = $form_tables_x_tommy_1->ctrldef("o2label2", "label", "", "", "");
 		$ctrl_o2label2->x(620);
 		$ctrl_o2label2->y(20);
 		$ctrl_o2label2->larghezza(100);
 		$ctrl_o2label2->altezza(20);
 		$ctrl_o2label2->label("Indexes:");
-	$ctrl_o2table2 = &$form_tables_x_tommy_1->ctrldef("o2table2", "tab", "", "tables", "");
+	$ctrl_o2table2 = $form_tables_x_tommy_1->ctrldef("o2table2", "tab", "", "tables", "");
 		$ctrl_o2table2->x(10);
 		$ctrl_o2table2->y(20);
 		$ctrl_o2table2->larghezza(600);
 		$ctrl_o2table2->altezza(330);
-	$ctrl_o2table3 = &$form_tables_x_tommy_1->ctrldef("o2table3", "tab", "", "fields", "");
+	$ctrl_o2table3 = $form_tables_x_tommy_1->ctrldef("o2table3", "tab", "", "fields", "");
 		$ctrl_o2table3->x(10);
 		$ctrl_o2table3->y(380);
 		$ctrl_o2table3->larghezza(600);
 		$ctrl_o2table3->altezza(310);
-	$ctrl_o2table4 = &$form_tables_x_tommy_1->ctrldef("o2table4", "tab", "", "indexes", "");
+	$ctrl_o2table4 = $form_tables_x_tommy_1->ctrldef("o2table4", "tab", "", "indexes", "");
 		$ctrl_o2table4->x(620);
 		$ctrl_o2table4->y(40);
 		$ctrl_o2table4->larghezza(350);
 		$ctrl_o2table4->altezza(310);
-	$ctrl_o2table5 = &$form_tables_x_tommy_1->ctrldef("o2table5", "tab", "", "segments", "");
+	$ctrl_o2table5 = $form_tables_x_tommy_1->ctrldef("o2table5", "tab", "", "segments", "");
 		$ctrl_o2table5->x(620);
 		$ctrl_o2table5->y(380);
 		$ctrl_o2table5->larghezza(350);
 		$ctrl_o2table5->altezza(310);
-	$ctrl_o2edit2 = &$form_tables_x_tommy_1->ctrldef("o2edit2", "edit", "o2table2", "tables", "position");
+	$ctrl_o2edit2 = $form_tables_x_tommy_1->ctrldef("o2edit2", "edit", "o2table2", "tables", "position");
 		$ctrl_o2edit2->x(0);
 		$ctrl_o2edit2->y(30);
 		$ctrl_o2edit2->larghezza(40);
 		$ctrl_o2edit2->altezza(22);
 		$ctrl_o2edit2->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2edit3 = &$form_tables_x_tommy_1->ctrldef("o2edit3", "edit", "o2table2", "tables", "tabname");
+	$ctrl_o2edit3 = $form_tables_x_tommy_1->ctrldef("o2edit3", "edit", "o2table2", "tables", "tabname");
 		$ctrl_o2edit3->x(40);
 		$ctrl_o2edit3->y(30);
 		$ctrl_o2edit3->larghezza(150);
 		$ctrl_o2edit3->altezza(22);
 		$ctrl_o2edit3->info_padre(array("01" ,"02" ,"02"));
-	$ctrl_o2edit4 = &$form_tables_x_tommy_1->ctrldef("o2edit4", "edit", "o2table2", "tables", "dbname");
+	$ctrl_o2edit4 = $form_tables_x_tommy_1->ctrldef("o2edit4", "edit", "o2table2", "tables", "dbname");
 		$ctrl_o2edit4->x(190);
 		$ctrl_o2edit4->y(30);
 		$ctrl_o2edit4->larghezza(150);
 		$ctrl_o2edit4->altezza(22);
 		$ctrl_o2edit4->info_padre(array("01" ,"03" ,"03"));
-	$ctrl_o2ListBox2 = &$form_tables_x_tommy_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "tables", "databasename");
+	$ctrl_o2ListBox2 = $form_tables_x_tommy_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "tables", "databasename");
 		$ctrl_o2ListBox2->x(340);
 		$ctrl_o2ListBox2->y(30);
 		$ctrl_o2ListBox2->larghezza(120);
@@ -136,7 +136,7 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2ListBox2->info_padre(array("01" ,"04" ,"04"));
 		$ctrl_o2ListBox2->valori(o2_view2list("combo_database", "dbname", "dbname"));
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2ListBox3 = &$form_tables_x_tommy_1->ctrldef("o2ListBox3", "listcombo", "o2table2", "tables", "pkey");
+	$ctrl_o2ListBox3 = $form_tables_x_tommy_1->ctrldef("o2ListBox3", "listcombo", "o2table2", "tables", "pkey");
 		$ctrl_o2ListBox3->x(460);
 		$ctrl_o2ListBox3->y(30);
 		$ctrl_o2ListBox3->larghezza(100);
@@ -144,7 +144,7 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2ListBox3->info_padre(array("01" ,"05" ,"05"));
 		$ctrl_o2ListBox3->valori(o2_view2list("indexes", "idxname", "idxname"));
 		$ctrl_o2ListBox3->righe(1);
-	$ctrl_o2dbnavigator2 = &$form_tables_x_tommy_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "tables", "");
+	$ctrl_o2dbnavigator2 = $form_tables_x_tommy_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "tables", "");
 		$ctrl_o2dbnavigator2->x(570);
 		$ctrl_o2dbnavigator2->y(30);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -157,31 +157,31 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2dbnavigator2->act_del("table_delete");
 		$ctrl_o2dbnavigator2->act_undo("table_undo");
 		$ctrl_o2dbnavigator2->act_select("table_select");
-	$ctrl_o2edit5 = &$form_tables_x_tommy_1->ctrldef("o2edit5", "edit", "o2table3", "fields", "position");
+	$ctrl_o2edit5 = $form_tables_x_tommy_1->ctrldef("o2edit5", "edit", "o2table3", "fields", "position");
 		$ctrl_o2edit5->x(10);
 		$ctrl_o2edit5->y(30);
 		$ctrl_o2edit5->larghezza(40);
 		$ctrl_o2edit5->altezza(22);
 		$ctrl_o2edit5->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2edit6 = &$form_tables_x_tommy_1->ctrldef("o2edit6", "edit", "o2table3", "fields", "fieldname");
+	$ctrl_o2edit6 = $form_tables_x_tommy_1->ctrldef("o2edit6", "edit", "o2table3", "fields", "fieldname");
 		$ctrl_o2edit6->x(80);
 		$ctrl_o2edit6->y(30);
 		$ctrl_o2edit6->larghezza(150);
 		$ctrl_o2edit6->altezza(22);
 		$ctrl_o2edit6->info_padre(array("01" ,"02" ,"02"));
-	$ctrl_o2edit7 = &$form_tables_x_tommy_1->ctrldef("o2edit7", "edit", "o2table3", "fields", "dbname");
+	$ctrl_o2edit7 = $form_tables_x_tommy_1->ctrldef("o2edit7", "edit", "o2table3", "fields", "dbname");
 		$ctrl_o2edit7->x(240);
 		$ctrl_o2edit7->y(30);
 		$ctrl_o2edit7->larghezza(150);
 		$ctrl_o2edit7->altezza(22);
 		$ctrl_o2edit7->info_padre(array("01" ,"03" ,"03"));
-	$ctrl_o2edit8 = &$form_tables_x_tommy_1->ctrldef("o2edit8", "edit", "o2table3", "fields", "datatype");
+	$ctrl_o2edit8 = $form_tables_x_tommy_1->ctrldef("o2edit8", "edit", "o2table3", "fields", "datatype");
 		$ctrl_o2edit8->x(400);
 		$ctrl_o2edit8->y(30);
 		$ctrl_o2edit8->larghezza(150);
 		$ctrl_o2edit8->altezza(22);
 		$ctrl_o2edit8->info_padre(array("01" ,"04" ,"04"));
-	$ctrl_o2dbnavigator3 = &$form_tables_x_tommy_1->ctrldef("o2dbnavigator3", "navigator", "o2table3", "fields", "");
+	$ctrl_o2dbnavigator3 = $form_tables_x_tommy_1->ctrldef("o2dbnavigator3", "navigator", "o2table3", "fields", "");
 		$ctrl_o2dbnavigator3->x(560);
 		$ctrl_o2dbnavigator3->y(30);
 		$ctrl_o2dbnavigator3->larghezza(18);
@@ -194,19 +194,19 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2dbnavigator3->act_save("fields_post");
 		$ctrl_o2dbnavigator3->act_del("fields_delete");
 		$ctrl_o2dbnavigator3->act_undo("fields_undo");
-	$ctrl_o2edit9 = &$form_tables_x_tommy_1->ctrldef("o2edit9", "edit", "o2table4", "indexes", "position");
+	$ctrl_o2edit9 = $form_tables_x_tommy_1->ctrldef("o2edit9", "edit", "o2table4", "indexes", "position");
 		$ctrl_o2edit9->x(10);
 		$ctrl_o2edit9->y(30);
 		$ctrl_o2edit9->larghezza(40);
 		$ctrl_o2edit9->altezza(22);
 		$ctrl_o2edit9->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2edit10 = &$form_tables_x_tommy_1->ctrldef("o2edit10", "edit", "o2table4", "indexes", "idxname");
+	$ctrl_o2edit10 = $form_tables_x_tommy_1->ctrldef("o2edit10", "edit", "o2table4", "indexes", "idxname");
 		$ctrl_o2edit10->x(60);
 		$ctrl_o2edit10->y(30);
 		$ctrl_o2edit10->larghezza(130);
 		$ctrl_o2edit10->altezza(22);
 		$ctrl_o2edit10->info_padre(array("01" ,"02" ,"02"));
-	$ctrl_o2dbnavigator4 = &$form_tables_x_tommy_1->ctrldef("o2dbnavigator4", "navigator", "o2table4", "indexes", "");
+	$ctrl_o2dbnavigator4 = $form_tables_x_tommy_1->ctrldef("o2dbnavigator4", "navigator", "o2table4", "indexes", "");
 		$ctrl_o2dbnavigator4->x(210);
 		$ctrl_o2dbnavigator4->y(30);
 		$ctrl_o2dbnavigator4->larghezza(18);
@@ -219,13 +219,13 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2dbnavigator4->act_save("indexes_post");
 		$ctrl_o2dbnavigator4->act_del("indexes_delete");
 		$ctrl_o2dbnavigator4->act_undo("indexes_undo");
-	$ctrl_o2edit11 = &$form_tables_x_tommy_1->ctrldef("o2edit11", "edit", "o2table5", "segments", "position");
+	$ctrl_o2edit11 = $form_tables_x_tommy_1->ctrldef("o2edit11", "edit", "o2table5", "segments", "position");
 		$ctrl_o2edit11->x(0);
 		$ctrl_o2edit11->y(30);
 		$ctrl_o2edit11->larghezza(40);
 		$ctrl_o2edit11->altezza(22);
 		$ctrl_o2edit11->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2ListBox4 = &$form_tables_x_tommy_1->ctrldef("o2ListBox4", "listcombo", "o2table5", "segments", "fieldname");
+	$ctrl_o2ListBox4 = $form_tables_x_tommy_1->ctrldef("o2ListBox4", "listcombo", "o2table5", "segments", "fieldname");
 		$ctrl_o2ListBox4->x(40);
 		$ctrl_o2ListBox4->y(30);
 		$ctrl_o2ListBox4->larghezza(160);
@@ -233,7 +233,7 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2ListBox4->info_padre(array("01" ,"02" ,"02"));
 		$ctrl_o2ListBox4->valori(o2_view2list("combo_fields", "fieldname", "fieldname"));
 		$ctrl_o2ListBox4->righe(1);
-	$ctrl_o2ListBox5 = &$form_tables_x_tommy_1->ctrldef("o2ListBox5", "listcombo", "o2table5", "segments", "direction");
+	$ctrl_o2ListBox5 = $form_tables_x_tommy_1->ctrldef("o2ListBox5", "listcombo", "o2table5", "segments", "direction");
 		$ctrl_o2ListBox5->x(210);
 		$ctrl_o2ListBox5->y(30);
 		$ctrl_o2ListBox5->larghezza(100);
@@ -241,7 +241,7 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2ListBox5->info_padre(array("01" ,"03" ,"03"));
 		$ctrl_o2ListBox5->valori(array("A" => "Ascending","D" => "Descending"));
 		$ctrl_o2ListBox5->righe(1);
-	$ctrl_o2dbnavigator5 = &$form_tables_x_tommy_1->ctrldef("o2dbnavigator5", "navigator", "o2table5", "segments", "");
+	$ctrl_o2dbnavigator5 = $form_tables_x_tommy_1->ctrldef("o2dbnavigator5", "navigator", "o2table5", "segments", "");
 		$ctrl_o2dbnavigator5->x(320);
 		$ctrl_o2dbnavigator5->y(30);
 		$ctrl_o2dbnavigator5->larghezza(18);
@@ -256,71 +256,71 @@ function tables_x_tommy§§tables_x_tommy_1_form_def(&$form_tables_x_tommy_1) {
 		$ctrl_o2dbnavigator5->act_undo("segments_undo");
 		}
 
-function tables_x_tommy§§fields_delete_act(&$o2exe) {
+function tables_x_tommy§§fields_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§fields_insert_act(&$o2exe) {
+function tables_x_tommy§§fields_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§fields_post_act(&$o2exe) {
+function tables_x_tommy§§fields_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§fields_undo_act(&$o2exe) {
+function tables_x_tommy§§fields_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("fields", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§indexes_delete_act(&$o2exe) {
+function tables_x_tommy§§indexes_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("indexes", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§indexes_insert_act(&$o2exe) {
+function tables_x_tommy§§indexes_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("indexes", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§indexes_post_act(&$o2exe) {
+function tables_x_tommy§§indexes_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("indexes", "dbname", tables_x_tommy_exp_2()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("indexes", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§indexes_undo_act(&$o2exe) {
+function tables_x_tommy§§indexes_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("indexes", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§segments_delete_act(&$o2exe) {
+function tables_x_tommy§§segments_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("segments", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§segments_insert_act(&$o2exe) {
+function tables_x_tommy§§segments_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("segments", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§segments_post_act(&$o2exe) {
+function tables_x_tommy§§segments_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("segments", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§segments_undo_act(&$o2exe) {
+function tables_x_tommy§§segments_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("segments", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§table_delete_act(&$o2exe) {
+function tables_x_tommy§§table_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tables", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§table_insert_act(&$o2exe) {
+function tables_x_tommy§§table_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tables", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§table_post_act(&$o2exe) {
+function tables_x_tommy§§table_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tables", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function tables_x_tommy§§table_select_act(&$o2exe) {
+function tables_x_tommy§§table_select_act($o2exe) {
 	} //|o2_fine_act|
 
-function tables_x_tommy§§table_undo_act(&$o2exe) {
+function tables_x_tommy§§table_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tables", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 

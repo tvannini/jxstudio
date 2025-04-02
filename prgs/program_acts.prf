@@ -4,11 +4,11 @@ function program_acts§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("action_catched", "_o2logical");
 	$task_prg§_§var->definisci("action_name", "actname");
-	$task_prg§_§var->definisci("actions", "_o2structure");
 	$task_prg§_§var->definisci("confirm", "_o2logical");
 	$task_prg§_§var->definisci("flag_catch_action", "_o2logical");
 	$task_prg§_§var->definisci("menu_items", "_o2structure");
 	$task_prg§_§var->definisci("menu_selected_item", "path");
+	$task_prg§_§var->definisci("parameters", "_o2structure");
 	$task_prg§_§var->definisci("pos_insert", "id");
 	$task_prg§_§var->definisci("prg_modified", "_o2logical");
 	$task_prg§_§var->definisci("reorder_mode", "asc_desc");
@@ -88,16 +88,17 @@ function program_acts§§protocols_def($task_protocols, $_o2viewalias = "") {
 	$task_protocols->usa("protocol_type","prg_protocols","protocol_type",null,null,null,null);
 }
 
-function program_acts§§combo_params_def($task_combo_params, $_o2viewalias = "") {
-	$task_combo_params->righe_vis = 100;
+function program_acts§§params_def($task_params, $_o2viewalias = "") {
+	$task_params->righe_vis = 100;
 
-	$task_combo_params->usa_file("parameters","parameters","pos",null,null);
+	$task_params->usa_file("parameters","parameters","pos",null,null);
 
-	$task_combo_params->usa("userid","parameters","userid","program_acts_exp_3()","program_acts_exp_3()",null,null);
-	$task_combo_params->usa("prgname","parameters","prgname","program_acts_exp_2()","program_acts_exp_2()",null,null);
-	$task_combo_params->usa("position","parameters","position",null,null,null,null);
-	$task_combo_params->usa("parname","parameters","name",null,null,null,null);
-	$task_combo_params->usa("datatype","parameters","datatype",null,null,null,null);
+	$task_params->usa("userid","parameters","userid","program_acts_exp_3()","program_acts_exp_3()",null,null);
+	$task_params->usa("prgname","parameters","prgname","program_acts_exp_2()","program_acts_exp_2()",null,null);
+	$task_params->usa("position","parameters","position",null,null,null,null);
+	$task_params->usa("parname","parameters","name",null,null,null,null);
+	$task_params->usa("datatype","parameters","datatype",null,null,null,null);
+	$task_params->calcola("parameter","operation_txt","program_acts_exp_44()",null,null,null,null);
 }
 
 function program_acts§§combo_datatypes_def($task_combo_datatypes, $_o2viewalias = "") {
@@ -134,6 +135,30 @@ function program_acts§§operations_def($task_operations, $_o2viewalias = "") {
 	$task_operations->usa("rem_text","operations","rem_text",null,null,null,null);
 	$task_operations->usa("exeact_actname","operations","exeact_actname",null,null,null,null);
 	$task_operations->usa("pars_exp","operations","pars_exp",null,null,null,null);
+	$task_operations->usa("upd_viewname","operations","upd_viewname",null,null,null,null);
+	$task_operations->usa("upd_fieldname","operations","upd_fieldname",null,null,null,null);
+	$task_operations->usa("upd_value","operations","upd_value",null,null,null,null);
+	$task_operations->usa("call_prgname","operations","call_prgname",null,null,null,null);
+	$task_operations->usa("call_expid","operations","call_expid",null,null,null,null);
+	$task_operations->usa("call_gototype","operations","call_gototype",null,null,null,null);
+	$task_operations->usa("rec_viewname","operations","rec_viewname",null,null,null,null);
+	$task_operations->usa("rec_type","operations","rec_type",null,null,null,null);
+	$task_operations->usa("retpar_parid","operations","retpar_parid",null,null,null,null);
+	$task_operations->usa("retpar_value","operations","retpar_value",null,null,null,null);
+	$task_operations->usa("exeact_endcond","operations","exeact_endcond",null,null,null,null);
+	$task_operations->usa("exeact_expr","operations","exeact_expr",null,null,null,null);
+	$task_operations->usa("exeact_view","operations","exeact_view",null,null,null,null);
+	$task_operations->usa("exescr_value","operations","exescr_value",null,null,null,null);
+	$task_operations->usa("msg_type","operations","msg_type",null,null,null,null);
+	$task_operations->usa("msg_value","operations","msg_value",null,null,null,null);
+	$task_operations->usa("setmenu_name","operations","setmenu_name",null,null,null,null);
+	$task_operations->usa("io_type","operations","io_type",null,null,null,null);
+	$task_operations->usa("io_protocol","operations","io_protocol",null,null,null,null);
+	$task_operations->usa("io_file","operations","io_file",null,null,null,null);
+	$task_operations->usa("print_template","operations","print_template",null,null,null,null);
+	$task_operations->usa("print_pdffile","operations","print_pdffile",null,null,null,null);
+	$task_operations->usa("print_printer","operations","print_printer",null,null,null,null);
+	$task_operations->usa("serialized_detail","operations","serialized_detail",null,null,null,null);
 }
 
 function program_acts§§expressions_def($task_expressions, $_o2viewalias = "") {
@@ -213,7 +238,7 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_props->larghezza(600);
 		$ctrl_props->altezza(81);
 		$ctrl_props->expand("H");
-		$ctrl_props->label(array("Properties"));
+		$ctrl_props->label(array("Action"));
 		$ctrl_props->buttons("T");
 	$ctrl_nav = $form_prg_act->ctrldef("nav", "navigator", "", "acts", "");
 		$ctrl_nav->x(300);
@@ -314,7 +339,7 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_o2edit3->larghezza(80);
 		$ctrl_o2edit3->altezza(24);
 		$ctrl_o2edit3->expand("H");
-		$ctrl_o2edit3->info_padre(array("01", "01", "01", "Action", False, "", 0, "", "", "", "", ""));
+		$ctrl_o2edit3->info_padre(array("01", "01", "01", "Actions", False, "", 0, "", "", "", "", ""));
 	$ctrl_o2label2 = $form_prg_act->ctrldef("o2label2", "label", "props", "", "");
 		$ctrl_o2label2->x(10);
 		$ctrl_o2label2->y(40);
@@ -323,16 +348,16 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_o2label2->info_padre(array(0));
 		$ctrl_o2label2->label("Name:");
 	$ctrl_o2label3 = $form_prg_act->ctrldef("o2label3", "label", "props", "", "");
-		$ctrl_o2label3->x(290);
+		$ctrl_o2label3->x(300);
 		$ctrl_o2label3->y(40);
-		$ctrl_o2label3->larghezza(100);
+		$ctrl_o2label3->larghezza(90);
 		$ctrl_o2label3->altezza(24);
 		$ctrl_o2label3->info_padre(array(0));
 		$ctrl_o2label3->label("Catch action:");
 	$ctrl_o2label4 = $form_prg_act->ctrldef("o2label4", "label", "props", "", "");
 		$ctrl_o2label4->x(420);
 		$ctrl_o2label4->y(40);
-		$ctrl_o2label4->larghezza(100);
+		$ctrl_o2label4->larghezza(150);
 		$ctrl_o2label4->altezza(24);
 		$ctrl_o2label4->expand("H");
 		$ctrl_o2label4->info_padre(array(0));
@@ -341,7 +366,7 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 	$ctrl_o2edit7 = $form_prg_act->ctrldef("o2edit7", "edit", "props", "acts", "name");
 		$ctrl_o2edit7->x(110);
 		$ctrl_o2edit7->y(40);
-		$ctrl_o2edit7->larghezza(100);
+		$ctrl_o2edit7->larghezza(120);
 		$ctrl_o2edit7->altezza(24);
 		$ctrl_o2edit7->expand("H");
 		$ctrl_o2edit7->modificabile(program_acts_exp_142());
@@ -349,7 +374,7 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 	$ctrl_o2checkbox2 = $form_prg_act->ctrldef("o2checkbox2", "check", "props", "prg§_§var", "flag_catch_action");
 		$ctrl_o2checkbox2->x(390);
 		$ctrl_o2checkbox2->y(40);
-		$ctrl_o2checkbox2->larghezza(24);
+		$ctrl_o2checkbox2->larghezza(20);
 		$ctrl_o2checkbox2->altezza(24);
 		$ctrl_o2checkbox2->modificabile(program_acts_exp_142());
 		$ctrl_o2checkbox2->azione("on_change_flag_catch");
@@ -367,8 +392,6 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_steps_nav->act_save("operations_post");
 		$ctrl_steps_nav->act_del("operations_delete");
 		$ctrl_steps_nav->act_undo("operations_undo");
-		$ctrl_steps_nav->act_detail("operations_detail");
-		$ctrl_steps_nav->act_select("operations_detail");
 	$ctrl_steps_grid = $form_prg_act->ctrldef("steps_grid", "tab", "steps", "operations", "");
 		$ctrl_steps_grid->x(0);
 		$ctrl_steps_grid->y(63);
@@ -398,25 +421,25 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_o2ListBox2->info_padre(array("01", "02", "02", "Statement", True, "", 0, "", "", "", "", ""));
 		$ctrl_o2ListBox2->valori(program_acts_exp_12());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2edit6 = $form_prg_act->ctrldef("o2edit6", "edit", "steps_grid", "operations", "rem_text");
-		$ctrl_o2edit6->x(140);
-		$ctrl_o2edit6->y(10);
-		$ctrl_o2edit6->larghezza(160);
-		$ctrl_o2edit6->altezza(24);
-		$ctrl_o2edit6->expand("H");
-		$ctrl_o2edit6->modificabile(program_acts_exp_9999());
-		$ctrl_o2edit6->info_padre(array("01", "03", "03", "Object", False, "", 0, "", "", "", "", ""));
-		$ctrl_o2edit6->act_zoom("zoom_object");
-	$ctrl_o2edit5 = $form_prg_act->ctrldef("o2edit5", "edit", "steps_grid", "operations", "pars_exp");
-		$ctrl_o2edit5->x(300);
-		$ctrl_o2edit5->y(10);
-		$ctrl_o2edit5->larghezza(100);
-		$ctrl_o2edit5->altezza(24);
-		$ctrl_o2edit5->modificabile(program_acts_exp_142());
-		$ctrl_o2edit5->info_padre(array("01", "04", "04", "Parameters", True, "", 0, "", "", "", "", ""));
-		$ctrl_o2edit5->act_zoom("zoom_param_exp");
+	$ctrl_operation_object = $form_prg_act->ctrldef("operation_object", "edit", "steps_grid", "operations", "rem_text");
+		$ctrl_operation_object->x(140);
+		$ctrl_operation_object->y(10);
+		$ctrl_operation_object->larghezza(220);
+		$ctrl_operation_object->altezza(24);
+		$ctrl_operation_object->expand("H");
+		$ctrl_operation_object->modificabile(program_acts_exp_9999());
+		$ctrl_operation_object->info_padre(array("01", "03", "03", "Object", False, "", 0, "", "", "", "", ""));
+		$ctrl_operation_object->act_zoom("zoom_object");
+	$ctrl_operation_pars = $form_prg_act->ctrldef("operation_pars", "edit", "steps_grid", "operations", "pars_exp");
+		$ctrl_operation_pars->x(360);
+		$ctrl_operation_pars->y(10);
+		$ctrl_operation_pars->larghezza(100);
+		$ctrl_operation_pars->altezza(24);
+		$ctrl_operation_pars->modificabile(program_acts_exp_142());
+		$ctrl_operation_pars->info_padre(array("01", "04", "04", "Parameters", True, "", 0, "", "", "", "", ""));
+		$ctrl_operation_pars->act_zoom("zoom_param_exp");
 	$ctrl_o2edit2 = $form_prg_act->ctrldef("o2edit2", "edit", "steps_grid", "operations", "condition_exp");
-		$ctrl_o2edit2->x(400);
+		$ctrl_o2edit2->x(460);
 		$ctrl_o2edit2->y(10);
 		$ctrl_o2edit2->larghezza(100);
 		$ctrl_o2edit2->altezza(24);
@@ -424,9 +447,9 @@ function program_acts§§prg_act_form_def($form_prg_act) {
 		$ctrl_o2edit2->info_padre(array("01", "05", "05", "Condition", True, "", 0, "", "", "", "", ""));
 		$ctrl_o2edit2->act_zoom("zoom_condition");
 	$ctrl_o2htmlarea2 = $form_prg_act->ctrldef("o2htmlarea2", "htmlarea", "steps_grid", "", "");
-		$ctrl_o2htmlarea2->x(500);
+		$ctrl_o2htmlarea2->x(560);
 		$ctrl_o2htmlarea2->y(10);
-		$ctrl_o2htmlarea2->larghezza(40);
+		$ctrl_o2htmlarea2->larghezza(20);
 		$ctrl_o2htmlarea2->altezza(24);
 		$ctrl_o2htmlarea2->expand("H");
 		$ctrl_o2htmlarea2->info_padre(array("01", "06", "06"));
@@ -476,14 +499,6 @@ function program_acts§§discard_program_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("obj_status", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function program_acts§§edit_operation_act($o2exe) {
-//	$o2exe->s(1) && True && o2act::remark("Save new record before detail") && $o2exe->e();
-	$o2exe->s(2) && (program_acts_exp_127() || $o2exe->e()) && o2act::exe("operations_post", True, "") && $o2exe->e();
-	$o2exe->s(3) && True && o2act::call("operation", False, program_acts_exp_3(), program_acts_exp_2(), program_acts_exp_50(), program_acts_exp_125(), "operations§§rem_text", program_acts_exp_23(), program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
-	$o2exe->s(4) && (program_acts_exp_167() || $o2exe->e()) && o2act::view("acts", "1", "") && $o2exe->e();
-	$o2exe->s(5) && (program_acts_exp_167() || $o2exe->e()) && o2act::set("prg§_§var", "actions", program_acts_exp_20()) && $o2exe->e();
-	} //|o2_fine_act|
-
 function program_acts§§exit_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Send dependent views to first to") && $o2exe->e();
 //	$o2exe->s(2) && True && o2act::remark("activate auto-post for rows in edit") && $o2exe->e();
@@ -492,6 +507,76 @@ function program_acts§§exit_act($o2exe) {
 	$o2exe->s(5) && (program_acts_exp_110() || $o2exe->e()) && o2act::call(program_acts_exp_116(), False, program_acts_exp_117(), "prg§_§var§§confirm") && $o2exe->e();
 	$o2exe->s(6) && (program_acts_exp_118() || $o2exe->e()) && o2act::exe("save_program", True, "") && $o2exe->e();
 	$o2exe->s(7) && (program_acts_exp_119() || $o2exe->e()) && o2act::exe("discard_program", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_alert_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_alert_mode", False, "operations§§msg_type") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_56()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_call_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_program", False, "operations§§call_prgname") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_31()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_close_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Do nothing") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::gotoprg("app_exit", false) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_confirm_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_field", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§upd_viewname", "operations§§upd_fieldname") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_32()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_execute_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_action", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§exeact_actname", program_acts_exp_9998(), "operations§§exeact_view", "operations§§exeact_endcond", "operations§§exeact_expr") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("acts", "1", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("operations", "rem_text", program_acts_exp_35()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_goto_act($o2exe) {
+	$o2exe->s(1) && (program_acts_exp_57() || $o2exe->e()) && o2act::call("select_goto_type", False, "operations§§call_gototype") && $o2exe->e();
+	$o2exe->s(2) && (program_acts_exp_58() || $o2exe->e()) && o2act::call("select_program", False, "operations§§call_prgname") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Missing URL edit") && $o2exe->e();
+	$o2exe->s(4) && (program_acts_exp_59() || $o2exe->e()) && o2act::call("_todo", False) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("operations", "rem_text", program_acts_exp_31()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_io_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("_todo", False) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_menu_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_menu", False, "operations§§setmenu_name") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_48()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_remark_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("remark_text", False, "operations§§rem_text") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_report_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("_todo", False) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_return_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_param", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§retpar_parid") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_46()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_script_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Do nothing") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_update_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_field", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§upd_viewname", "operations§§upd_fieldname") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_32()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§obj_view_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_view", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§rec_viewname", program_acts_exp_9998(), "operations§§rec_type") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("operations", "rem_text", program_acts_exp_41()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§on_change_flag_catch_act($o2exe) {
@@ -515,18 +600,12 @@ function program_acts§§operations_delete_act($o2exe) {
 	} //|o2_fine_act|
 
 function program_acts§§operations_detail_act($o2exe) {
-	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoommed_ctrl", program_acts_exp_54()) && $o2exe->e();
-//	$o2exe->s(2) && True && o2act::remark("Edit operation") && $o2exe->e();
-	$o2exe->s(3) && (program_acts_exp_52() || $o2exe->e()) && o2act::exe("edit_operation", True, "") && $o2exe->e();
-//	$o2exe->s(4) && True && o2act::remark("Select condition expression") && $o2exe->e();
-	$o2exe->s(5) && (program_acts_exp_51() || $o2exe->e()) && o2act::exe("select_expression", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§operations_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "pos_insert", program_acts_exp_128()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("operations", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("operations", "operation", program_acts_exp_53()) && $o2exe->e();
-//	$o2exe->s(4) && True && o2act::remark("Set focus to combo operation type") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§operations_post_act($o2exe) {
@@ -544,6 +623,38 @@ function program_acts§§operations_select_act($o2exe) {
 
 function program_acts§§operations_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("operations", "A", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_alert_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§msg_value", program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_call_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("call_goto_params", False, program_acts_exp_2(), program_acts_exp_31(), "operations§§serialized_detail", program_acts_exp_9999(), "operations§§pars_exp") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_confirm_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§msg_value", program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_goto_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("call_goto_params", False, program_acts_exp_2(), program_acts_exp_31(), "operations§§serialized_detail", program_acts_exp_9998(), "operations§§pars_exp") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_locate_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("locate_pararms", False, program_acts_exp_2(), program_acts_exp_62(), "operations§§serialized_detail", "operations§§pars_exp") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_return_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§retpar_value", program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_script_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§exescr_value", program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_acts§§parexp_update_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, program_acts_exp_3(), program_acts_exp_2(), "operations§§upd_value", program_acts_exp_155(), "prg§_§var§§prg_modified") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§remove_catch_action_act($o2exe) {
@@ -600,6 +711,7 @@ function program_acts§§start_act($o2exe) {
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "menu_selected_item", program_acts_exp_11()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Maximize win and move ctrls without actions list") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::script(program_acts_exp_178()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "parameters", program_acts_exp_45()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§tree_select_act($o2exe) {
@@ -616,9 +728,65 @@ function program_acts§§zoom_condition_act($o2exe) {
 	} //|o2_fine_act|
 
 function program_acts§§zoom_object_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Save row if modified or in insert mode") && $o2exe->e();
+	$o2exe->s(2) && (program_acts_exp_142() || $o2exe->e()) && o2act::exe("operations_post", True, "") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Alert") && $o2exe->e();
+	$o2exe->s(4) && (program_acts_exp_55() || $o2exe->e()) && o2act::exe("obj_alert", True, "") && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Call") && $o2exe->e();
+	$o2exe->s(6) && (program_acts_exp_29() || $o2exe->e()) && o2act::exe("obj_call", True, "") && $o2exe->e();
+//	$o2exe->s(7) && True && o2act::remark("Close - Do nothing") && $o2exe->e();
+	$o2exe->s(8) && (program_acts_exp_36() || $o2exe->e()) && o2act::exe("obj_close", True, "") && $o2exe->e();
+//	$o2exe->s(9) && True && o2act::remark("Confirm") && $o2exe->e();
+	$o2exe->s(10) && (program_acts_exp_33() || $o2exe->e()) && o2act::exe("obj_confirm", True, "") && $o2exe->e();
+//	$o2exe->s(11) && True && o2act::remark("Execute") && $o2exe->e();
+	$o2exe->s(12) && (program_acts_exp_34() || $o2exe->e()) && o2act::exe("obj_execute", True, "") && $o2exe->e();
+//	$o2exe->s(13) && True && o2act::remark("Execute script - Do nothing") && $o2exe->e();
+	$o2exe->s(14) && (program_acts_exp_37() || $o2exe->e()) && o2act::exe("obj_script", True, "") && $o2exe->e();
+//	$o2exe->s(15) && True && o2act::remark("Goto") && $o2exe->e();
+	$o2exe->s(16) && (program_acts_exp_20() || $o2exe->e()) && o2act::exe("obj_goto", True, "") && $o2exe->e();
+//	$o2exe->s(17) && True && o2act::remark("IO") && $o2exe->e();
+	$o2exe->s(18) && (program_acts_exp_38() || $o2exe->e()) && o2act::exe("obj_io", True, "") && $o2exe->e();
+//	$o2exe->s(19) && True && o2act::remark("Report") && $o2exe->e();
+	$o2exe->s(20) && (program_acts_exp_39() || $o2exe->e()) && o2act::exe("obj_report", True, "") && $o2exe->e();
+//	$o2exe->s(21) && True && o2act::remark("View method") && $o2exe->e();
+	$o2exe->s(22) && (program_acts_exp_40() || $o2exe->e()) && o2act::exe("obj_view", True, "") && $o2exe->e();
+//	$o2exe->s(23) && True && o2act::remark("Remark") && $o2exe->e();
+	$o2exe->s(24) && (program_acts_exp_42() || $o2exe->e()) && o2act::exe("obj_remark", True, "") && $o2exe->e();
+//	$o2exe->s(25) && True && o2act::remark("Return parameter") && $o2exe->e();
+	$o2exe->s(26) && (program_acts_exp_43() || $o2exe->e()) && o2act::exe("obj_return", True, "") && $o2exe->e();
+//	$o2exe->s(27) && True && o2act::remark("Set menu") && $o2exe->e();
+	$o2exe->s(28) && (program_acts_exp_47() || $o2exe->e()) && o2act::exe("obj_menu", True, "") && $o2exe->e();
+//	$o2exe->s(29) && True && o2act::remark("Update") && $o2exe->e();
+	$o2exe->s(30) && (program_acts_exp_49() || $o2exe->e()) && o2act::exe("obj_update", True, "") && $o2exe->e();
+	$o2exe->s(31) && (program_acts_exp_30() || $o2exe->e()) && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
+	$o2exe->s(32) && (program_acts_exp_142() || $o2exe->e()) && o2act::view("operations", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts§§zoom_param_exp_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Save row if modified or in insert mode") && $o2exe->e();
+	$o2exe->s(2) && (program_acts_exp_142() || $o2exe->e()) && o2act::exe("operations_post", True, "") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("No params for close, exe, remark, menu, io and print") && $o2exe->e();
+//	$o2exe->s(4) && True && o2act::remark("---") && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Expression as single parameter:") && $o2exe->e();
+//	$o2exe->s(6) && True && o2act::remark("Alert") && $o2exe->e();
+	$o2exe->s(7) && (program_acts_exp_55() || $o2exe->e()) && o2act::exe("parexp_alert", True, "") && $o2exe->e();
+//	$o2exe->s(8) && True && o2act::remark("Confirm") && $o2exe->e();
+	$o2exe->s(9) && (program_acts_exp_33() || $o2exe->e()) && o2act::exe("parexp_confirm", True, "") && $o2exe->e();
+//	$o2exe->s(10) && True && o2act::remark("Script") && $o2exe->e();
+	$o2exe->s(11) && (program_acts_exp_37() || $o2exe->e()) && o2act::exe("parexp_script", True, "") && $o2exe->e();
+//	$o2exe->s(12) && True && o2act::remark("Return parameter") && $o2exe->e();
+	$o2exe->s(13) && (program_acts_exp_43() || $o2exe->e()) && o2act::exe("parexp_return", True, "") && $o2exe->e();
+//	$o2exe->s(14) && True && o2act::remark("Update") && $o2exe->e();
+	$o2exe->s(15) && (program_acts_exp_49() || $o2exe->e()) && o2act::exe("parexp_update", True, "") && $o2exe->e();
+//	$o2exe->s(16) && True && o2act::remark("Statements with specific parameters") && $o2exe->e();
+//	$o2exe->s(17) && True && o2act::remark("Call") && $o2exe->e();
+	$o2exe->s(18) && (program_acts_exp_29() || $o2exe->e()) && o2act::exe("parexp_call", True, "") && $o2exe->e();
+//	$o2exe->s(19) && True && o2act::remark("Goto") && $o2exe->e();
+	$o2exe->s(20) && (program_acts_exp_20() || $o2exe->e()) && o2act::exe("parexp_goto", True, "") && $o2exe->e();
+//	$o2exe->s(21) && True && o2act::remark("View - Locate") && $o2exe->e();
+	$o2exe->s(22) && (program_acts_exp_61() || $o2exe->e()) && o2act::exe("parexp_locate", True, "") && $o2exe->e();
+	$o2exe->s(23) && (program_acts_exp_60() || $o2exe->e()) && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
+	$o2exe->s(24) && (program_acts_exp_142() || $o2exe->e()) && o2act::view("operations", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_acts_exp_1() {
@@ -718,9 +886,8 @@ return (!o2view_rec("acts_for_catch"));
 	} //|o2_fine_exp|
 
 function program_acts_exp_20() {
-	$list = o2_view2list("acts", 'name', 'name');
-unset($list[""]);
-return ($list);
+	
+return (o2val('operations','operation') === 'goto');
 	} //|o2_fine_exp|
 
 function program_acts_exp_21() {
@@ -778,6 +945,147 @@ function program_acts_exp_28() {
 return ('page_title');
 	} //|o2_fine_exp|
 
+function program_acts_exp_29() {
+	
+return (o2val('operations','operation') === 'call');
+	} //|o2_fine_exp|
+
+function program_acts_exp_30() {
+	
+return (o2exp(142) && (o2val('operations','rem_text') !== o2pre('operations','rem_text')));
+	} //|o2_fine_exp|
+
+function program_acts_exp_31() {
+	
+return (o2val('operations','call_prgname'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_32() {
+	$f = o2val('operations','upd_fieldname');
+switch (o2val('operations','upd_viewname')) {
+   case '_o2SESSION':
+      $txt = '(Session) '.$f;
+      break;
+   case 'prg§_§var':
+      $txt = '(Local) '.$f;
+      break;
+   default:
+      $txt = o2val('operations','upd_viewname').' :: '.$f;   
+      break;
+   }
+return ($txt);
+	} //|o2_fine_exp|
+
+function program_acts_exp_33() {
+	
+return (o2val('operations','operation') === 'confirm');
+	} //|o2_fine_exp|
+
+function program_acts_exp_34() {
+	
+return (o2val('operations','operation') === 'exe');
+	} //|o2_fine_exp|
+
+function program_acts_exp_35() {
+	$t = o2val('operations','exeact_actname');
+switch (o2val('operations','exeact_endcond')) {
+   case 'False';
+      /* _________________________ End condition FALSE without loop view  ___ */
+      if (o2zero('operations','exeact_view')) {
+         $t.= ' (NO END ???)';
+         }
+      else {
+         $t.= ' >>> '.o2val('operations','exeact_view');
+         }
+      break;
+   case 'By expression';
+      $t.= ' (END '.o2val('operations','exeact_expr').')';
+      if (!o2zero('operations','exeact_view')) {
+         $t.= ' >>> '.o2val('operations','exeact_view');
+         }
+      break;
+   default:
+      /* _____________________________ End condition TRUE with loop view  ___ */
+      if (!o2zero('operations','exeact_view')) {
+         $t.= ' (END TRUE ???) >>> '.o2val('operations','exeact_view');
+         }
+      break;
+   }
+
+return ($t);
+	} //|o2_fine_exp|
+
+function program_acts_exp_36() {
+	
+return (o2val('operations','operation') === 'close');
+	} //|o2_fine_exp|
+
+function program_acts_exp_37() {
+	
+return (o2val('operations','operation') === 'script');
+	} //|o2_fine_exp|
+
+function program_acts_exp_38() {
+	
+return (o2val('operations','operation') === 'io');
+	} //|o2_fine_exp|
+
+function program_acts_exp_39() {
+	
+return (o2val('operations','operation') === 'report');
+	} //|o2_fine_exp|
+
+function program_acts_exp_40() {
+	
+return (o2val('operations','operation') === 'view');
+	} //|o2_fine_exp|
+
+function program_acts_exp_41() {
+	$m = o2val('_o2SESSION','view_actions');
+$t = o2val('operations','rec_viewname').' :: '.$m[o2val('operations','rec_type')];
+return ($t);
+	} //|o2_fine_exp|
+
+function program_acts_exp_42() {
+	
+return (o2val('operations','operation') === 'remark');
+	} //|o2_fine_exp|
+
+function program_acts_exp_43() {
+	
+return (o2val('operations','operation') === 'ret');
+	} //|o2_fine_exp|
+
+function program_acts_exp_44() {
+	
+return ('('.o2val('params','position').') '.o2val('params','parname'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_45() {
+	
+return (o2_view2list('params', 'position', 'parameter'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_46() {
+	
+return (o2val('prg§_§var','parameters', o2val('operations','retpar_parid')));
+	} //|o2_fine_exp|
+
+function program_acts_exp_47() {
+	
+return (o2val('operations','operation') === 'menu');
+	} //|o2_fine_exp|
+
+function program_acts_exp_48() {
+	
+return (o2val('operations','setmenu_name'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_49() {
+	
+return (o2val('operations','operation') === 'set');
+	} //|o2_fine_exp|
+
 function program_acts_exp_50() {
 	
 return (o2val('operations','actname'));
@@ -805,6 +1113,46 @@ return ("remark");
 function program_acts_exp_54() {
 	
 return (o2app_submit("ctrl"));
+	} //|o2_fine_exp|
+
+function program_acts_exp_55() {
+	
+return (o2val('operations','operation') === 'alert');
+	} //|o2_fine_exp|
+
+function program_acts_exp_56() {
+	
+return (o2val('operations','msg_type'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_57() {
+	
+return (o2zero('operations','call_gototype'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_58() {
+	
+return (o2val('operations','call_gototype') === 'Program');
+	} //|o2_fine_exp|
+
+function program_acts_exp_59() {
+	
+return (o2val('operations','call_gototype') === 'Url');
+	} //|o2_fine_exp|
+
+function program_acts_exp_60() {
+	
+return (o2exp(142) && (o2val('operations','serialized_detail') !== o2pre('operations','serialized_detail')));
+	} //|o2_fine_exp|
+
+function program_acts_exp_61() {
+	
+return ((o2val('operations','operation') === 'view') && (o2val('operations','rec_type') === 'L'));
+	} //|o2_fine_exp|
+
+function program_acts_exp_62() {
+	
+return (o2val('operations','rec_viewname'));
 	} //|o2_fine_exp|
 
 function program_acts_exp_106() {
@@ -910,11 +1258,6 @@ return (o2val('obj_status','userid') == o2app_user());
 function program_acts_exp_155() {
 	
 return (o2val('obj_status','userid') != o2app_user());
-	} //|o2_fine_exp|
-
-function program_acts_exp_167() {
-	
-return ((o2val('operations','operation') == "exe") && o2val('prg§_§var','prg_modified'));
 	} //|o2_fine_exp|
 
 function program_acts_exp_173() {

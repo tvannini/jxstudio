@@ -1,6 +1,6 @@
 <?php
 
-function checkin§§start_act(&$o2exe) {
+function checkin§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Copy file from user dir to prgs dir") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::script(checkin_exp_1()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, checkin_exp_2()) && $o2exe->e();

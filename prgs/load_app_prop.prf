@@ -1,6 +1,6 @@
 <?php
 
-function load_app_prop§§prg§_§var_def(&$task_prg§_§var) {
+function load_app_prop§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_appprop", "_o2structure");
 	$task_prg§_§var->definisci("array_css", "_o2structure");
@@ -12,7 +12,7 @@ function load_app_prop§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("runtime_path", "propvalue");
 		}
 
-function load_app_prop§§appprop_def(&$task_appprop, $_o2viewalias = "") {
+function load_app_prop§§appprop_def($task_appprop, $_o2viewalias = "") {
 	$task_appprop->righe_vis = 10;
 
 	$task_appprop->usa_file("appprop","appprop","name",null,null);
@@ -37,7 +37,7 @@ function load_app_prop§§appprop_def(&$task_appprop, $_o2viewalias = "") {
 	$task_appprop->usa("html_head","appprop","html_head",null,null,null,null);
 }
 
-function load_app_prop§§services_def(&$task_services, $_o2viewalias = "") {
+function load_app_prop§§services_def($task_services, $_o2viewalias = "") {
 	$task_services->righe_vis = 10;
 
 	$task_services->usa_file("appservices","appservices","name",null,null);
@@ -45,7 +45,7 @@ function load_app_prop§§services_def(&$task_services, $_o2viewalias = "") {
 	$task_services->usa("servicename","appservices","servicename",null,null,null,null);
 }
 
-function load_app_prop§§css_def(&$task_css, $_o2viewalias = "") {
+function load_app_prop§§css_def($task_css, $_o2viewalias = "") {
 	$task_css->righe_vis = 10;
 
 	$task_css->usa_file("appcss","appcss","pos",null,null);
@@ -54,7 +54,7 @@ function load_app_prop§§css_def(&$task_css, $_o2viewalias = "") {
 	$task_css->usa("css","appcss","css",null,null,null,null);
 }
 
-function load_app_prop§§create_appprop_act(&$o2exe) {
+function load_app_prop§§create_appprop_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("appprop", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("appprop", "appname", load_app_prop_exp_13()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("appprop", "title", load_app_prop_exp_15()) && $o2exe->e();
@@ -79,7 +79,7 @@ function load_app_prop§§create_appprop_act(&$o2exe) {
 	$o2exe->s(22) && True && o2act::set("prg§_§var", "array_services", load_app_prop_exp_26()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§create_css_act(&$o2exe) {
+function load_app_prop§§create_css_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("css", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("css", "pos", load_app_prop_exp_29()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("css", "css", load_app_prop_exp_31()) && $o2exe->e();
@@ -87,26 +87,26 @@ function load_app_prop§§create_css_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_30()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§create_services_act(&$o2exe) {
+function load_app_prop§§create_services_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("services", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("services", "servicename", load_app_prop_exp_32()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("services", "S", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_30()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§delete_appprop_act(&$o2exe) {
+function load_app_prop§§delete_appprop_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("appprop", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§delete_css_act(&$o2exe) {
+function load_app_prop§§delete_css_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("css", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§delete_services_act(&$o2exe) {
+function load_app_prop§§delete_services_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("services", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§set_repositories_act(&$o2exe) {
+function load_app_prop§§set_repositories_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("_o2SESSION", "rep_appvars", load_app_prop_exp_44()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("_o2SESSION", "rep_datatypes", load_app_prop_exp_45()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("_o2SESSION", "rep_menus", load_app_prop_exp_46()) && $o2exe->e();
@@ -115,7 +115,7 @@ function load_app_prop§§set_repositories_act(&$o2exe) {
 	$o2exe->s(6) && True && o2act::set("_o2SESSION", "rep_viewmodels", load_app_prop_exp_49()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_app_prop§§start_act(&$o2exe) {
+function load_app_prop§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Clear tables") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("delete_appprop", False, "appprop") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("delete_services", False, "services") && $o2exe->e();

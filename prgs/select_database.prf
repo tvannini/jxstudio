@@ -1,11 +1,11 @@
 <?php
 
-function select_database§§prg§_§var_def(&$task_prg§_§var) {
+function select_database§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("list", "_o2structure");
 		}
 
-function select_database§§databases_def(&$task_databases, $_o2viewalias = "") {
+function select_database§§databases_def($task_databases, $_o2viewalias = "") {
 	$task_databases->righe_vis = 10000;
 
 	$task_databases->usa_file("databases","datbases","name");
@@ -17,7 +17,7 @@ function select_database§§databases_def(&$task_databases, $_o2viewalias = "") {
 	$task_databases->calcola("db_desc","o2sys_long_str","select_database_exp_4()",null,null,null,null);
 }
 
-function select_database§§tables_check_def(&$task_tables_check, $_o2viewalias = "") {
+function select_database§§tables_check_def($task_tables_check, $_o2viewalias = "") {
 	$task_tables_check->righe_vis = 10;
 
 	$task_tables_check->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -26,14 +26,14 @@ function select_database§§tables_check_def(&$task_tables_check, $_o2viewalias = 
 	$task_tables_check->usa("userid","tstamp_obj","userid",null,null,"select_database_exp_2()",null);
 }
 
-function select_database§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+function select_database§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
 	$task_tmp_edit_vars->righe_vis = 10;
 
 	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id");
 
 	$task_tmp_edit_vars->usa("selected_db","tmp_edit_vars","fieldalias",null,null,null,null);
 }
-function select_database§§select_table_form_def(&$form_select_table) {
+function select_database§§select_table_form_def($form_select_table) {
 	$form_select_table->x(332);
 	$form_select_table->y(13);
 	$form_select_table->larghezza(633);
@@ -41,14 +41,14 @@ function select_database§§select_table_form_def(&$form_select_table) {
 	$form_select_table->titolo("Databases");
 	$form_select_table->align_o("Center");
 	$form_select_table->frm_status(select_database_exp_9999());
-	$ctrl_o2ListBox2 = &$form_select_table->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "selected_db");
+	$ctrl_o2ListBox2 = $form_select_table->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "selected_db");
 		$ctrl_o2ListBox2->x(10);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(590);
 		$ctrl_o2ListBox2->altezza(660);
 		$ctrl_o2ListBox2->valori(select_database_exp_8());
 		$ctrl_o2ListBox2->righe(10000);
-	$ctrl_o2dbnavigator2 = &$form_select_table->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+	$ctrl_o2dbnavigator2 = $form_select_table->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
 		$ctrl_o2dbnavigator2->x(600);
 		$ctrl_o2dbnavigator2->y(10);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -63,13 +63,13 @@ function select_database§§select_table_form_def(&$form_select_table) {
 		$ctrl_o2dbnavigator2->act_select("tmp_edit_vars_select");
 		}
 
-function select_database§§start_act(&$o2exe) {
+function select_database§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "list", select_database_exp_7()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "selected_db", select_database_exp_6()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function select_database§§tmp_edit_vars_select_act(&$o2exe) {
+function select_database§§tmp_edit_vars_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::ret(1, select_database_exp_5()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|

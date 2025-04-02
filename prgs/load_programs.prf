@@ -1,6 +1,6 @@
 <?php
 
-function load_programs§§prg§_§var_def(&$task_prg§_§var) {
+function load_programs§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("prgid", "_o2number");
 	$task_prg§_§var->definisci("prgname", "prgname");
@@ -8,7 +8,7 @@ function load_programs§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("userid", "_o2alpha");
 		}
 
-function load_programs§§programs_def(&$task_programs, $_o2viewalias = "") {
+function load_programs§§programs_def($task_programs, $_o2viewalias = "") {
 	$task_programs->righe_vis = 1;
 
 	$task_programs->usa_file("programs_list","programs","name",null,null);
@@ -19,7 +19,7 @@ function load_programs§§programs_def(&$task_programs, $_o2viewalias = "") {
 	$task_programs->usa("module","programs","module",null,null,null,null);
 	$task_programs->usa("folder","programs","folder",null,null,null,null);
 }
-function load_programs§§load_programs_1_form_def(&$form_load_programs_1) {
+function load_programs§§load_programs_1_form_def($form_load_programs_1) {
 	$form_load_programs_1->x(200);
 	$form_load_programs_1->y(200);
 	$form_load_programs_1->larghezza(460);
@@ -30,19 +30,19 @@ function load_programs§§load_programs_1_form_def(&$form_load_programs_1) {
 	$form_load_programs_1->frm_status(load_programs_exp_16());
 	$form_load_programs_1->refresh_action("execute");
 	$form_load_programs_1->refresh_exp("load_programs_exp_2()");
-	$ctrl_o2label2 = &$form_load_programs_1->ctrldef("o2label2", "label", "", "", "");
+	$ctrl_o2label2 = $form_load_programs_1->ctrldef("o2label2", "label", "", "", "");
 		$ctrl_o2label2->x(80);
 		$ctrl_o2label2->y(30);
 		$ctrl_o2label2->larghezza(360);
 		$ctrl_o2label2->altezza(22);
 		$ctrl_o2label2->label("Loading programs list.");
-	$ctrl_o2label3 = &$form_load_programs_1->ctrldef("o2label3", "label", "", "", "");
+	$ctrl_o2label3 = $form_load_programs_1->ctrldef("o2label3", "label", "", "", "");
 		$ctrl_o2label3->x(80);
 		$ctrl_o2label3->y(55);
 		$ctrl_o2label3->larghezza(300);
 		$ctrl_o2label3->altezza(22);
 		$ctrl_o2label3->label("Please stand while...");
-	$ctrl_o2image2 = &$form_load_programs_1->ctrldef("o2image2", "img", "", "", "");
+	$ctrl_o2image2 = $form_load_programs_1->ctrldef("o2image2", "img", "", "", "");
 		$ctrl_o2image2->x(20);
 		$ctrl_o2image2->y(30);
 		$ctrl_o2image2->larghezza(48);
@@ -50,7 +50,7 @@ function load_programs§§load_programs_1_form_def(&$form_load_programs_1) {
 		$ctrl_o2image2->imgexp(load_programs_exp_1());
 		}
 
-function load_programs§§add_prg_act(&$o2exe) {
+function load_programs§§add_prg_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_11()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "prgname", load_programs_exp_12()) && $o2exe->e();
 	$o2exe->s(3) && (load_programs_exp_13() || $o2exe->e()) && o2act::view("programs", "I", "") && $o2exe->e();
@@ -60,14 +60,14 @@ function load_programs§§add_prg_act(&$o2exe) {
 	$o2exe->s(7) && True && o2act::view("programs", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_programs§§execute_act(&$o2exe) {
+function load_programs§§execute_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "prgslist", load_programs_exp_7()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_9()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("add_prg", "load_programs_exp_10()", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
-function load_programs§§start_act(&$o2exe) {
+function load_programs§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "userid", load_programs_exp_4()) && $o2exe->e();
 	} //|o2_fine_act|
 

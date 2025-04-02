@@ -1,37 +1,37 @@
 <?php
 
-function select_prg_field§§prg§_§var_def(&$task_prg§_§var) {
+function select_prg_field§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("view_list", "_o2structure");
 		}
 
-function select_prg_field§§prgviews_def(&$task_prgviews, $_o2viewalias = "") {
+function select_prg_field§§prgviews_def($task_prgviews, $_o2viewalias = "") {
 	$task_prgviews->righe_vis = 10000;
 
-	$task_prgviews->usa_file("prgviews","prgviews","name");
+	$task_prgviews->usa_file("prgviews","prgviews","name",null,null);
 
 	$task_prgviews->usa("userid","prgviews","userid","select_prg_field_exp_10()","select_prg_field_exp_10()",null,null);
 	$task_prgviews->usa("prgname","prgviews","prgname","select_prg_field_exp_11()","select_prg_field_exp_11()",null,null);
 	$task_prgviews->usa("viewname","prgviews","name",null,null,null,null);
 }
 
-function select_prg_field§§prgvars_def(&$task_prgvars, $_o2viewalias = "") {
+function select_prg_field§§prgvars_def($task_prgvars, $_o2viewalias = "") {
 	$task_prgvars->righe_vis = 10000;
 
-	$task_prgvars->usa_file("prgvars","prgvars","name");
+	$task_prgvars->usa_file("prgvars","prgvars","name",null,null);
 
 	$task_prgvars->usa("userid","prgvars","userid","select_prg_field_exp_10()","select_prg_field_exp_10()",null,null);
 	$task_prgvars->usa("prgname","prgvars","prgname","select_prg_field_exp_11()","select_prg_field_exp_11()",null,null);
 	$task_prgvars->usa("varname","prgvars","name",null,null,null,null);
 	$task_prgvars->usa("datatype","prgvars","datatype",null,null,null,null);
-	$task_prgvars->calcola("prgvar_code","o2sys_long_str","select_prg_field_exp_3()",null,null,null,null);
-	$task_prgvars->calcola("prgvar_desc","o2sys_long_str","select_prg_field_exp_4()",null,null,null,null);
+	$task_prgvars->calcola("prgvar_code","operation_txt","select_prg_field_exp_3()",null,null,null,null);
+	$task_prgvars->calcola("prgvar_desc","operation_txt","select_prg_field_exp_4()",null,null,null,null);
 }
 
-function select_prg_field§§prgfields_def(&$task_prgfields, $_o2viewalias = "") {
+function select_prg_field§§prgfields_def($task_prgfields, $_o2viewalias = "") {
 	$task_prgfields->righe_vis = 10000;
 
-	$task_prgfields->usa_file("fieldsinview","fieldsinview","abs_name");
+	$task_prgfields->usa_file("fieldsinview","fieldsinview","abs_name",null,null);
 
 	$task_prgfields->usa("userid","fieldsinview","userid","select_prg_field_exp_10()","select_prg_field_exp_10()",null,null);
 	$task_prgfields->usa("prgname","fieldsinview","prgname","select_prg_field_exp_11()","select_prg_field_exp_11()",null,null);
@@ -40,42 +40,64 @@ function select_prg_field§§prgfields_def(&$task_prgfields, $_o2viewalias = "") {
 	$task_prgfields->usa("type","fieldsinview","type",null,null,null,null);
 	$task_prgfields->usa("tablename","fieldsinview","tablename",null,null,null,null);
 	$task_prgfields->usa("fieldname","fieldsinview","name",null,null,null,null);
-	$task_prgfields->calcola("field_code","o2sys_long_str","select_prg_field_exp_5()",null,null,null,null);
-	$task_prgfields->calcola("field_desc","o2sys_long_str","select_prg_field_exp_6()",null,null,null,null);
+	$task_prgfields->calcola("field_code","operation_txt","select_prg_field_exp_5()",null,null,null,null);
+	$task_prgfields->calcola("field_desc","operation_txt","select_prg_field_exp_6()",null,null,null,null);
 }
 
-function select_prg_field§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+function select_prg_field§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
 	$task_tmp_edit_vars->righe_vis = 1;
 
-	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id");
+	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
 
 	$task_tmp_edit_vars->usa("viewname","tmp_edit_vars","viewname",null,null,null,null);
 	$task_tmp_edit_vars->usa("description","tmp_edit_vars","long_str",null,null,null,null);
 }
-function select_prg_field§§select_prg_field_form_def(&$form_select_prg_field) {
+
+function select_prg_field§§appvars_def($task_appvars, $_o2viewalias = "") {
+	$task_appvars->righe_vis = 10000;
+
+	$task_appvars->usa_file("appvars","appvars","name",null,null);
+
+	$task_appvars->usa("userid","appvars","userid","select_prg_field_exp_20()","select_prg_field_exp_20()",null,null);
+	$task_appvars->usa("name","appvars","name",null,null,null,null);
+	$task_appvars->usa("datatype","appvars","datatype",null,null,null,null);
+	$task_appvars->calcola("appvar_code","operation_txt","select_prg_field_exp_17()",null,null,null,null);
+	$task_appvars->calcola("appvar_desc","operation_txt","select_prg_field_exp_18()",null,null,null,null);
+}
+
+function select_prg_field§§appvars_status_def($task_appvars_status, $_o2viewalias = "") {
+	$task_appvars_status->righe_vis = 10;
+
+	$task_appvars_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_appvars_status->usa("objname","tstamp_obj","objname","select_prg_field_exp_19()","select_prg_field_exp_19()",null,null);
+	$task_appvars_status->usa("userid","tstamp_obj","userid",null,null,null,null);
+}
+function select_prg_field§§select_prg_field_form_def($form_select_prg_field) {
 	$form_select_prg_field->x(370);
 	$form_select_prg_field->y(30);
-	$form_select_prg_field->larghezza(655);
+	$form_select_prg_field->larghezza(670);
 	$form_select_prg_field->altezza(700);
-	$form_select_prg_field->titolo("Select program field");
 	$form_select_prg_field->align_o("Center");
+	$form_select_prg_field->titolo("Select program field");
 	$form_select_prg_field->frm_status(select_prg_field_exp_9999());
-	$ctrl_o2ListBox2 = &$form_select_prg_field->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "viewname");
+	$ctrl_o2ListBox2 = $form_select_prg_field->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "viewname");
 		$ctrl_o2ListBox2->x(20);
 		$ctrl_o2ListBox2->y(20);
 		$ctrl_o2ListBox2->larghezza(300);
 		$ctrl_o2ListBox2->altezza(630);
+		$ctrl_o2ListBox2->azione("view_change");
 		$ctrl_o2ListBox2->on_change(select_prg_field_exp_9());
 		$ctrl_o2ListBox2->valori(select_prg_field_exp_7());
 		$ctrl_o2ListBox2->righe(10000);
-	$ctrl_o2ListBox3 = &$form_select_prg_field->ctrldef("o2ListBox3", "listcombo", "", "tmp_edit_vars", "description");
+	$ctrl_o2ListBox3 = $form_select_prg_field->ctrldef("o2ListBox3", "listcombo", "", "tmp_edit_vars", "description");
 		$ctrl_o2ListBox3->x(330);
 		$ctrl_o2ListBox3->y(20);
 		$ctrl_o2ListBox3->larghezza(300);
 		$ctrl_o2ListBox3->altezza(630);
 		$ctrl_o2ListBox3->valori(select_prg_field_exp_2());
 		$ctrl_o2ListBox3->righe(10000);
-	$ctrl_o2dbnavigator2 = &$form_select_prg_field->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+	$ctrl_o2dbnavigator2 = $form_select_prg_field->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
 		$ctrl_o2dbnavigator2->x(630);
 		$ctrl_o2dbnavigator2->y(20);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -90,42 +112,43 @@ function select_prg_field§§select_prg_field_form_def(&$form_select_prg_field) {
 		$ctrl_o2dbnavigator2->act_select("save_and_close");
 		}
 
-function select_prg_field§§save_and_close_act(&$o2exe) {
+function select_prg_field§§save_and_close_act($o2exe) {
 	$o2exe->s(1) && True && o2act::ret(3, select_prg_field_exp_13()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::ret(4, select_prg_field_exp_14()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::ret(5, select_prg_field_exp_15()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::close()&& $o2exe->e();
+	$o2exe->s(3) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
-function select_prg_field§§start_act(&$o2exe) {
+function select_prg_field§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "viewname", select_prg_field_exp_8()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "description", select_prg_field_exp_16()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "view_list", select_prg_field_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
+function select_prg_field§§view_change_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("prgvars", "1", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("prgfields", "1", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("appvars", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
 function select_prg_field_exp_1() {
-	$list = array("" => "< ALL >");
-/*
-if (o2view_rec("appvars")) {
-   $list["_o2SESSION"] = "< Session variables >";
+	$list = array('' => '< ALL >');
+if (o2view_rec('appvars')) {
+   $list['_o2SESSION'] = '< SESSION >';
    }
-*/
-if (o2view_rec("prgvars")) {
-   $list["prg§_§var"] = "< Local variables >";
+if (o2view_rec('prgvars')) {
+   $list['prg§_§var'] = '< LOCAL >';
    }
-$list+= o2_view2list("prgviews", "viewname", "viewname");
+$list+= o2_view2list('prgviews', 'viewname', 'viewname');
 return ($list);
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_2() {
 	$view = o2val('tmp_edit_vars','viewname');
 $list = array();
-/*
 if (!$view || $view == "_o2SESSION") {
    $list+= o2_view2list("appvars", "appvar_code", "appvar_desc");
    }
-*/
 if (!$view || $view == "prg§_§var") {
    $list+= o2_view2list("prgvars", "prgvar_code", "prgvar_desc");
    }
@@ -138,77 +161,97 @@ return ($list);
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_3() {
-
-return ("prg§_§var->".o2val('prgvars','varname'));
+	
+return ('prg§_§var|'.o2val('prgvars','varname'));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_4() {
-
-return (o2val('prgvars','varname').(o2zero('tmp_edit_vars','viewname') ? " (<Local>)" : ""));
+	
+return (o2val('prgvars','varname').(o2zero('tmp_edit_vars','viewname') ? ' < LOCAL >' : ''));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_5() {
-
-return (o2val('prgfields','viewname')."->".o2val('prgfields','fieldname'));
+	
+return (o2val('prgfields','viewname').'|'.o2val('prgfields','fieldname'));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_6() {
-
-return (o2val('prgfields','fieldname').(o2zero('tmp_edit_vars','viewname') ? " (".o2val('prgfields','viewname').")" : ""));
+	
+return (o2val('prgfields','fieldname').(o2zero('tmp_edit_vars','viewname') ? ' ('.o2val('prgfields','viewname').')' : ''));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_7() {
-
+	
 return (o2val('prg§_§var','view_list'));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_8() {
-
+	
 return (o2par(3));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_9() {
-
+	
 return (true);
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_10() {
-
+	
 return (o2par(1));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_11() {
-
+	
 return (o2par(2));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_12() {
-
+	
 return ((o2zero('tmp_edit_vars','viewname') ? null : o2val('tmp_edit_vars','viewname')));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_13() {
-	list($view, $dummy) = explode("->", o2val('tmp_edit_vars','description'));
+	list($view, $dummy) = explode('|', o2val('tmp_edit_vars','description'));
 return ($view);
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_14() {
-	list($dummy, $name) = explode("->", o2val('tmp_edit_vars','description'));
+	list($dummy, $name) = explode('|', o2val('tmp_edit_vars','description'));
 return ($name);
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_15() {
-
+	
 return (o2val('tmp_edit_vars','description'));
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_16() {
+	
+return ((o2par_zero(4) ? '' : o2par(3).'|'.o2par(4)));
+	} //|o2_fine_exp|
 
-return (o2par(5));
+function select_prg_field_exp_17() {
+	
+return ('_o2SESSION|'.o2val('appvars','name'));
+	} //|o2_fine_exp|
+
+function select_prg_field_exp_18() {
+	
+return (o2val('appvars','name').(o2zero('tmp_edit_vars','viewname') ? ' < SESSION >' : ''));
+	} //|o2_fine_exp|
+
+function select_prg_field_exp_19() {
+	
+return (o2val('_o2SESSION','rep_appvars'));
+	} //|o2_fine_exp|
+
+function select_prg_field_exp_20() {
+	
+return (o2val('appvars_status','userid') == o2app_user() ? o2val('appvars_status','userid') : '');
 	} //|o2_fine_exp|
 
 function select_prg_field_exp_9999() {
-
+	
 return (false);
 	} //|o2_fine_exp|
 ?>

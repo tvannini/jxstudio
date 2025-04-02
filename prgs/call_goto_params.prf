@@ -1,0 +1,329 @@
+<?php
+
+function call_goto_params§§prg§_§var_def($task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("call_params", "_o2structure");
+	$task_prg§_§var->definisci("par_idx", "_o2number");
+	$task_prg§_§var->definisci("par_tot", "_o2number");
+	$task_prg§_§var->definisci("prg_params", "_o2structure");
+		}
+
+function call_goto_params§§tmp_params_def($task_tmp_params, $_o2viewalias = "") {
+	$task_tmp_params->righe_vis = 1000;
+
+	$task_tmp_params->usa_file("tmp_call","tmp_call","pos",null,null);
+
+	$task_tmp_params->usa("position","tmp_call","position",null,null,null,null);
+	$task_tmp_params->usa("param_name","tmp_call","param_name",null,null,null,null);
+	$task_tmp_params->usa("param_type","tmp_call","param_type",null,null,null,null);
+	$task_tmp_params->usa("var_view","tmp_call","var_view",null,null,null,null);
+	$task_tmp_params->usa("var_name","tmp_call","var_name",null,null,null,null);
+	$task_tmp_params->usa("idexpr","tmp_call","idexpr",null,null,null,null);
+	$task_tmp_params->usa("field_desc","tmp_call","field_desc",null,null,null,null);
+}
+
+function call_goto_params§§caller_prg_status_def($task_caller_prg_status, $_o2viewalias = "") {
+	$task_caller_prg_status->righe_vis = 10;
+
+	$task_caller_prg_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_caller_prg_status->usa("objname","tstamp_obj","objname","call_goto_params_exp_20()","call_goto_params_exp_20()",null,null);
+	$task_caller_prg_status->usa("userid","tstamp_obj","userid",null,null,"call_goto_params_exp_2()",null);
+}
+function call_goto_params§§call_goto_params_form_def($form_call_goto_params) {
+	$form_call_goto_params->x(450);
+	$form_call_goto_params->y(50);
+	$form_call_goto_params->larghezza(900);
+	$form_call_goto_params->altezza(500);
+	$form_call_goto_params->altezza_exp(call_goto_params_exp_26());
+	$form_call_goto_params->align_o("Center");
+	$form_call_goto_params->titolo(call_goto_params_exp_16());
+	$form_call_goto_params->frm_status(call_goto_params_exp_9999());
+	$ctrl_o2table2 = $form_call_goto_params->ctrldef("o2table2", "tab", "", "tmp_params", "");
+		$ctrl_o2table2->x(20);
+		$ctrl_o2table2->y(20);
+		$ctrl_o2table2->larghezza(840);
+		$ctrl_o2table2->altezza(430);
+		$ctrl_o2table2->expand("V");
+		$ctrl_o2table2->hide_indicator(call_goto_params_exp_9998());
+	$ctrl_o2dbnavigator2 = $form_call_goto_params->ctrldef("o2dbnavigator2", "navigator", "", "tmp_params", "");
+		$ctrl_o2dbnavigator2->x(860);
+		$ctrl_o2dbnavigator2->y(20);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(430);
+		$ctrl_o2dbnavigator2->expand("V");
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(call_goto_params_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("save");
+	$ctrl_o2edit2 = $form_call_goto_params->ctrldef("o2edit2", "edit", "o2table2", "tmp_params", "position");
+		$ctrl_o2edit2->x(0);
+		$ctrl_o2edit2->y(10);
+		$ctrl_o2edit2->larghezza(30);
+		$ctrl_o2edit2->altezza(20);
+		$ctrl_o2edit2->modificabile(call_goto_params_exp_9999());
+		$ctrl_o2edit2->info_padre(array("01", "01", "01", "#", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit3 = $form_call_goto_params->ctrldef("o2edit3", "edit", "o2table2", "tmp_params", "param_name");
+		$ctrl_o2edit3->x(30);
+		$ctrl_o2edit3->y(10);
+		$ctrl_o2edit3->larghezza(200);
+		$ctrl_o2edit3->altezza(20);
+		$ctrl_o2edit3->modificabile(call_goto_params_exp_9999());
+		$ctrl_o2edit3->info_padre(array("01", "02", "02", "Parameter", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit4 = $form_call_goto_params->ctrldef("o2edit4", "edit", "o2table2", "tmp_params", "param_type");
+		$ctrl_o2edit4->x(230);
+		$ctrl_o2edit4->y(10);
+		$ctrl_o2edit4->larghezza(160);
+		$ctrl_o2edit4->altezza(20);
+		$ctrl_o2edit4->modificabile(call_goto_params_exp_9999());
+		$ctrl_o2edit4->info_padre(array("01", "03", "03", "Data model", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit5 = $form_call_goto_params->ctrldef("o2edit5", "edit", "o2table2", "tmp_params", "idexpr");
+		$ctrl_o2edit5->x(390);
+		$ctrl_o2edit5->y(10);
+		$ctrl_o2edit5->larghezza(50);
+		$ctrl_o2edit5->altezza(20);
+		$ctrl_o2edit5->info_padre(array("01", "04", "04", "Value", False, "", 0, "", "", "", "", ""));
+		$ctrl_o2edit5->act_zoom("zoom_expression");
+	$ctrl_o2edit6 = $form_call_goto_params->ctrldef("o2edit6", "edit", "o2table2", "tmp_params", "field_desc");
+		$ctrl_o2edit6->x(440);
+		$ctrl_o2edit6->y(10);
+		$ctrl_o2edit6->larghezza(360);
+		$ctrl_o2edit6->altezza(20);
+		$ctrl_o2edit6->visibile(call_goto_params_exp_25());
+		$ctrl_o2edit6->info_padre(array("01", "05", "05", "Field or variable reference", False, "", 0, "", "", "", "", ""));
+		$ctrl_o2edit6->act_zoom("zoom_reference");
+		}
+
+function call_goto_params§§add_param_act($o2exe) {
+	$o2exe->s(1) && (call_goto_params_exp_24() || $o2exe->e()) && o2act::set("prg§_§var", "call_params", call_goto_params_exp_22()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§create_parameter_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_params", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_params", "position", call_goto_params_exp_9()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_params", "param_name", call_goto_params_exp_10()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_params", "param_type", call_goto_params_exp_11()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_params", "var_view", call_goto_params_exp_12()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("tmp_params", "var_name", call_goto_params_exp_13()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("tmp_params", "idexpr", call_goto_params_exp_14()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("tmp_params", "field_desc", call_goto_params_exp_15()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::view("tmp_params", "S", "") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("prg§_§var", "par_idx", call_goto_params_exp_8()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§create_parameters_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_params", "D", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "par_tot", call_goto_params_exp_6()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "par_idx", call_goto_params_exp_7()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::exe("create_parameter", "call_goto_params_exp_5()", "") && $o2exe->e();
+	$o2exe->s(5) && True && o2act::view("tmp_params", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§save_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "call_params", call_goto_params_exp_21()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("add_param", False, "tmp_params") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::ret(3, call_goto_params_exp_23()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::ret(5, call_goto_params_exp_1()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "call_params", call_goto_params_exp_3()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "prg_params", call_goto_params_exp_4()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("create_parameters", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§tmp_params_post_act($o2exe) {
+	$o2exe->s(1) && (call_goto_params_exp_19() || $o2exe->e()) && o2act::set("tmp_params", "var_view", call_goto_params_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && (call_goto_params_exp_19() || $o2exe->e()) && o2act::set("tmp_params", "var_name", call_goto_params_exp_2()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("tmp_params", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§zoom_expression_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("expressions", False, call_goto_params_exp_17(), call_goto_params_exp_20(), "tmp_params§§idexpr", call_goto_params_exp_18()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params§§zoom_reference_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("select_prg_field", False, call_goto_params_exp_17(), call_goto_params_exp_20(), "tmp_params§§var_view", "tmp_params§§var_name") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_params", "field_desc", call_goto_params_exp_15()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function call_goto_params_exp_1() {
+	
+return (count(o2val('prg§_§var','call_params')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_2() {
+	
+return ('');
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_3() {
+	$l = unserialize(o2par(3));
+if (!is_array($l)) {
+   $l = array();
+   }
+   
+return ($l);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_4() {
+	$f = o2par(2).'.prg';
+$d = o2val('_o2SESSION','prgdir');
+/* Program is checked by user */
+if (file_exists($d.o2app_user().DIRECTORY_SEPARATOR.$f)) {
+   $t = file_get_contents($d.o2app_user().DIRECTORY_SEPARATOR.$f);
+   }
+/* Use standard version of program */   
+else {
+   $t = file_get_contents($d.$f);
+   }
+$exp_par  = '/o2def::par\(\s*(.*)\s*,\s*"(.*)"\s*,\s*"(.*)"\s*\);/';
+preg_match_all($exp_par, $t, $l);
+unset($l[0]);
+
+return ($l);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_5() {
+	
+return (o2val('prg§_§var','par_idx') >= o2val('prg§_§var','par_tot'));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_6() {
+	
+return (count(o2val('prg§_§var','prg_params', 1)));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_7() {
+	
+return (0);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_8() {
+	
+return (o2val('prg§_§var','par_idx') + 1);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_9() {
+	
+return (o2val('prg§_§var','prg_params', 1, o2val('prg§_§var','par_idx')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_10() {
+	
+return (o2val('prg§_§var','prg_params', 2, o2val('prg§_§var','par_idx')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_11() {
+	
+return (o2val('prg§_§var','prg_params', 3, o2val('prg§_§var','par_idx')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_12() {
+	
+return (o2val('prg§_§var','call_params', o2val('tmp_params','position'), 1));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_13() {
+	
+return (o2val('prg§_§var','call_params', o2val('tmp_params','position'), 2));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_14() {
+	
+return (o2val('prg§_§var','call_params', o2val('tmp_params','position'), 3));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_15() {
+	$d = '';
+if (!o2zero('tmp_params','var_name')) {
+   switch (o2val('tmp_params','var_view')) {
+      case '_o2SESSION':
+         $d = '(Session) '.o2val('tmp_params','var_name');
+         break;   
+      case 'prg§_§var':
+         $d = '(Local) '.o2val('tmp_params','var_name');
+         break;   
+      default:
+         $d = o2val('tmp_params','var_view').' :: '.o2val('tmp_params','var_name');
+         break;   
+      }
+   }
+return ($d);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_16() {
+	
+return ((o2par(4) ? 'Goto' : 'Call').' '.o2par(2).' parameters');
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_17() {
+	
+return ((o2val('caller_prg_status','userid') === o2app_user() ? o2val('caller_prg_status','userid') : ''));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_18() {
+	
+return (o2val('caller_prg_status','userid') !== o2app_user());
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_19() {
+	
+return (o2zero('tmp_params','field_desc'));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_20() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_21() {
+	
+return (array());
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_22() {
+	$l = o2val('prg§_§var','call_params');
+$l[o2val('tmp_params','position')] = array(1 => o2val('tmp_params','var_view'),
+                                           2 => o2val('tmp_params','var_name'),
+                                           3 => (o2zero('tmp_params','idexpr') ?
+                                                 '' :
+                                                 o2val('tmp_params','idexpr')));                                                                                                    
+return ($l);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_23() {
+	
+return (serialize(o2val('prg§_§var','call_params')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_24() {
+	
+return (!(o2zero('tmp_params','var_name') && o2zero('tmp_params','idexpr')));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_25() {
+	
+return (!o2par(4));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_26() {
+	
+return (intval(o2client_height() * 80 / 100));
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_9998() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function call_goto_params_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>

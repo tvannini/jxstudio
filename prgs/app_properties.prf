@@ -1,6 +1,6 @@
 <?php
 
-function app_properties§§prg§_§var_def(&$task_prg§_§var) {
+function app_properties§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("confirm", "_o2logical");
 	$task_prg§_§var->definisci("menu_selected_item", "_o2alpha");
@@ -8,7 +8,7 @@ function app_properties§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("zomm_ctrl", "_o2alpha");
 		}
 
-function app_properties§§appprop_def(&$task_appprop, $_o2viewalias = "") {
+function app_properties§§appprop_def($task_appprop, $_o2viewalias = "") {
 	$task_appprop->righe_vis = 1;
 
 	$task_appprop->usa_file("appprop","appprop","name",null,null);
@@ -23,7 +23,7 @@ function app_properties§§appprop_def(&$task_appprop, $_o2viewalias = "") {
 	$task_appprop->usa("menupos","appprop","menupos",null,null,null,null);
 	$task_appprop->usa("chr_encoding","appprop","chr_encoding",null,null,null,null);
 }
-function app_properties§§app_prop_form_def(&$form_app_prop) {
+function app_properties§§app_prop_form_def($form_app_prop) {
 	$form_app_prop->x(0);
 	$form_app_prop->y(0);
 	$form_app_prop->larghezza(1000);
@@ -34,60 +34,60 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 	$form_app_prop->css_finestra(" open_body");
 	$form_app_prop->css_body(" open_body");
 	$form_app_prop->close_action("close");
-	$ctrl_o2label4 = &$form_app_prop->ctrldef("o2label4", "label", "", "", "");
+	$ctrl_o2label4 = $form_app_prop->ctrldef("o2label4", "label", "", "", "");
 		$ctrl_o2label4->x(330);
 		$ctrl_o2label4->y(230);
 		$ctrl_o2label4->larghezza(200);
 		$ctrl_o2label4->altezza(24);
 		$ctrl_o2label4->label("Active menu:");
-	$ctrl_o2label2 = &$form_app_prop->ctrldef("o2label2", "label", "", "", "");
+	$ctrl_o2label2 = $form_app_prop->ctrldef("o2label2", "label", "", "", "");
 		$ctrl_o2label2->x(330);
 		$ctrl_o2label2->y(30);
 		$ctrl_o2label2->larghezza(200);
 		$ctrl_o2label2->altezza(24);
 		$ctrl_o2label2->label("Title:");
-	$ctrl_o2label3 = &$form_app_prop->ctrldef("o2label3", "label", "", "", "");
+	$ctrl_o2label3 = $form_app_prop->ctrldef("o2label3", "label", "", "", "");
 		$ctrl_o2label3->x(330);
 		$ctrl_o2label3->y(60);
 		$ctrl_o2label3->larghezza(200);
 		$ctrl_o2label3->altezza(24);
 		$ctrl_o2label3->label("Janox runtime folder:");
-	$ctrl_o2label8 = &$form_app_prop->ctrldef("o2label8", "label", "", "", "");
+	$ctrl_o2label8 = $form_app_prop->ctrldef("o2label8", "label", "", "", "");
 		$ctrl_o2label8->x(330);
 		$ctrl_o2label8->y(160);
 		$ctrl_o2label8->larghezza(200);
 		$ctrl_o2label8->altezza(24);
 		$ctrl_o2label8->label("Start program:");
-	$ctrl_o2label6 = &$form_app_prop->ctrldef("o2label6", "label", "", "", "");
+	$ctrl_o2label6 = $form_app_prop->ctrldef("o2label6", "label", "", "", "");
 		$ctrl_o2label6->x(330);
 		$ctrl_o2label6->y(90);
 		$ctrl_o2label6->larghezza(200);
 		$ctrl_o2label6->altezza(24);
 		$ctrl_o2label6->label("User validation:");
-	$ctrl_o2separator2 = &$form_app_prop->ctrldef("o2separator2", "line", "", "", "");
+	$ctrl_o2separator2 = $form_app_prop->ctrldef("o2separator2", "line", "", "", "");
 		$ctrl_o2separator2->x(330);
 		$ctrl_o2separator2->y(300);
 		$ctrl_o2separator2->larghezza(600);
 		$ctrl_o2separator2->altezza(10);
-	$ctrl_o2label5 = &$form_app_prop->ctrldef("o2label5", "label", "", "", "");
+	$ctrl_o2label5 = $form_app_prop->ctrldef("o2label5", "label", "", "", "");
 		$ctrl_o2label5->x(330);
 		$ctrl_o2label5->y(190);
 		$ctrl_o2label5->larghezza(200);
 		$ctrl_o2label5->altezza(24);
 		$ctrl_o2label5->label("On request program:");
-	$ctrl_o2label7 = &$form_app_prop->ctrldef("o2label7", "label", "", "", "");
+	$ctrl_o2label7 = $form_app_prop->ctrldef("o2label7", "label", "", "", "");
 		$ctrl_o2label7->x(330);
 		$ctrl_o2label7->y(120);
 		$ctrl_o2label7->larghezza(200);
 		$ctrl_o2label7->altezza(24);
 		$ctrl_o2label7->label("Encoding:");
-	$ctrl_o2label9 = &$form_app_prop->ctrldef("o2label9", "label", "", "", "");
+	$ctrl_o2label9 = $form_app_prop->ctrldef("o2label9", "label", "", "", "");
 		$ctrl_o2label9->x(330);
 		$ctrl_o2label9->y(260);
 		$ctrl_o2label9->larghezza(200);
 		$ctrl_o2label9->altezza(24);
 		$ctrl_o2label9->label("Menu style:");
-	$ctrl_tree = &$form_app_prop->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_tree = $form_app_prop->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_tree->x(0);
 		$ctrl_tree->y(0);
 		$ctrl_tree->larghezza(300);
@@ -96,14 +96,14 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_tree->azione("tree_select");
 		$ctrl_tree->activation(1);
 		$ctrl_tree->nodes(app_properties_exp_12());
-	$ctrl_o2edit2 = &$form_app_prop->ctrldef("o2edit2", "edit", "", "appprop", "title");
+	$ctrl_o2edit2 = $form_app_prop->ctrldef("o2edit2", "edit", "", "appprop", "title");
 		$ctrl_o2edit2->x(530);
 		$ctrl_o2edit2->y(30);
 		$ctrl_o2edit2->larghezza(400);
 		$ctrl_o2edit2->altezza(24);
 		$ctrl_o2edit2->azione("set_modified");
 		$ctrl_o2edit2->on_change(app_properties_exp_5());
-	$ctrl_runtime_folder = &$form_app_prop->ctrldef("runtime_folder", "edit", "", "appprop", "o2rntpath");
+	$ctrl_runtime_folder = $form_app_prop->ctrldef("runtime_folder", "edit", "", "appprop", "o2rntpath");
 		$ctrl_runtime_folder->x(530);
 		$ctrl_runtime_folder->y(60);
 		$ctrl_runtime_folder->larghezza(380);
@@ -111,14 +111,14 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_runtime_folder->azione("set_modified");
 		$ctrl_runtime_folder->on_change(app_properties_exp_5());
 		$ctrl_runtime_folder->act_zoom("select_runtime_folder");
-	$ctrl_o2button3 = &$form_app_prop->ctrldef("o2button3", "button", "", "", "");
+	$ctrl_o2button3 = $form_app_prop->ctrldef("o2button3", "button", "", "", "");
 		$ctrl_o2button3->x(910);
 		$ctrl_o2button3->y(60);
 		$ctrl_o2button3->larghezza(24);
 		$ctrl_o2button3->altezza(24);
 		$ctrl_o2button3->azione("select_runtime_folder");
 		$ctrl_o2button3->label("...");
-	$ctrl_o2ListBox3 = &$form_app_prop->ctrldef("o2ListBox3", "listcombo", "", "appprop", "validate");
+	$ctrl_o2ListBox3 = $form_app_prop->ctrldef("o2ListBox3", "listcombo", "", "appprop", "validate");
 		$ctrl_o2ListBox3->x(530);
 		$ctrl_o2ListBox3->y(90);
 		$ctrl_o2ListBox3->larghezza(400);
@@ -127,7 +127,7 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2ListBox3->on_change(app_properties_exp_5());
 		$ctrl_o2ListBox3->valori(array());
 		$ctrl_o2ListBox3->righe(1);
-	$ctrl_o2ListBox2 = &$form_app_prop->ctrldef("o2ListBox2", "listcombo", "", "appprop", "chr_encoding");
+	$ctrl_o2ListBox2 = $form_app_prop->ctrldef("o2ListBox2", "listcombo", "", "appprop", "chr_encoding");
 		$ctrl_o2ListBox2->x(530);
 		$ctrl_o2ListBox2->y(120);
 		$ctrl_o2ListBox2->larghezza(400);
@@ -136,7 +136,7 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2ListBox2->on_change(app_properties_exp_5());
 		$ctrl_o2ListBox2->valori(app_properties_exp_6());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_start_prg = &$form_app_prop->ctrldef("start_prg", "edit", "", "appprop", "startprg");
+	$ctrl_start_prg = $form_app_prop->ctrldef("start_prg", "edit", "", "appprop", "startprg");
 		$ctrl_start_prg->x(530);
 		$ctrl_start_prg->y(160);
 		$ctrl_start_prg->larghezza(380);
@@ -144,14 +144,14 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_start_prg->azione("set_modified");
 		$ctrl_start_prg->on_change(app_properties_exp_5());
 		$ctrl_start_prg->act_zoom("select_prg_start");
-	$ctrl_o2button5 = &$form_app_prop->ctrldef("o2button5", "button", "", "", "");
+	$ctrl_o2button5 = $form_app_prop->ctrldef("o2button5", "button", "", "", "");
 		$ctrl_o2button5->x(910);
 		$ctrl_o2button5->y(160);
 		$ctrl_o2button5->larghezza(24);
 		$ctrl_o2button5->altezza(24);
 		$ctrl_o2button5->azione("select_prg_start");
 		$ctrl_o2button5->label("...");
-	$ctrl_o2edit3 = &$form_app_prop->ctrldef("o2edit3", "edit", "", "appprop", "reqprg");
+	$ctrl_o2edit3 = $form_app_prop->ctrldef("o2edit3", "edit", "", "appprop", "reqprg");
 		$ctrl_o2edit3->x(530);
 		$ctrl_o2edit3->y(190);
 		$ctrl_o2edit3->larghezza(380);
@@ -159,14 +159,14 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2edit3->azione("set_modified");
 		$ctrl_o2edit3->on_change(app_properties_exp_5());
 		$ctrl_o2edit3->act_zoom("select_request_prg");
-	$ctrl_o2button6 = &$form_app_prop->ctrldef("o2button6", "button", "", "", "");
+	$ctrl_o2button6 = $form_app_prop->ctrldef("o2button6", "button", "", "", "");
 		$ctrl_o2button6->x(910);
 		$ctrl_o2button6->y(190);
 		$ctrl_o2button6->larghezza(24);
 		$ctrl_o2button6->altezza(24);
 		$ctrl_o2button6->azione("select_request_prg");
 		$ctrl_o2button6->label("...");
-	$ctrl_active_menu = &$form_app_prop->ctrldef("active_menu", "edit", "", "appprop", "activemenu");
+	$ctrl_active_menu = $form_app_prop->ctrldef("active_menu", "edit", "", "appprop", "activemenu");
 		$ctrl_active_menu->x(530);
 		$ctrl_active_menu->y(230);
 		$ctrl_active_menu->larghezza(380);
@@ -174,14 +174,14 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_active_menu->azione("set_modified");
 		$ctrl_active_menu->on_change(app_properties_exp_5());
 		$ctrl_active_menu->act_zoom("select_menu");
-	$ctrl_o2button4 = &$form_app_prop->ctrldef("o2button4", "button", "", "", "");
+	$ctrl_o2button4 = $form_app_prop->ctrldef("o2button4", "button", "", "", "");
 		$ctrl_o2button4->x(910);
 		$ctrl_o2button4->y(230);
 		$ctrl_o2button4->larghezza(24);
 		$ctrl_o2button4->altezza(24);
 		$ctrl_o2button4->azione("select_menu");
 		$ctrl_o2button4->label("...");
-	$ctrl_o2ListBox4 = &$form_app_prop->ctrldef("o2ListBox4", "listcombo", "", "appprop", "menupos");
+	$ctrl_o2ListBox4 = $form_app_prop->ctrldef("o2ListBox4", "listcombo", "", "appprop", "menupos");
 		$ctrl_o2ListBox4->x(530);
 		$ctrl_o2ListBox4->y(260);
 		$ctrl_o2ListBox4->larghezza(400);
@@ -190,7 +190,7 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2ListBox4->on_change(app_properties_exp_5());
 		$ctrl_o2ListBox4->valori(app_properties_exp_7());
 		$ctrl_o2ListBox4->righe(1);
-	$ctrl_o2button2 = &$form_app_prop->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_app_prop->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(660);
 		$ctrl_o2button2->y(330);
 		$ctrl_o2button2->larghezza(120);
@@ -198,7 +198,7 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2button2->modificabile(app_properties_exp_31());
 		$ctrl_o2button2->azione("save");
 		$ctrl_o2button2->label("&Save");
-	$ctrl_o2button8 = &$form_app_prop->ctrldef("o2button8", "button", "", "", "");
+	$ctrl_o2button8 = $form_app_prop->ctrldef("o2button8", "button", "", "", "");
 		$ctrl_o2button8->x(540);
 		$ctrl_o2button8->y(330);
 		$ctrl_o2button8->larghezza(120);
@@ -206,7 +206,7 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2button8->modificabile(app_properties_exp_31());
 		$ctrl_o2button8->label("Disca&rd");
 		$ctrl_o2button8->confirm_message("All changes will be lost.\nProceed?");
-	$ctrl_o2button7 = &$form_app_prop->ctrldef("o2button7", "button", "", "", "");
+	$ctrl_o2button7 = $form_app_prop->ctrldef("o2button7", "button", "", "", "");
 		$ctrl_o2button7->x(810);
 		$ctrl_o2button7->y(330);
 		$ctrl_o2button7->larghezza(120);
@@ -215,12 +215,12 @@ function app_properties§§app_prop_form_def(&$form_app_prop) {
 		$ctrl_o2button7->label("&Close");
 		}
 
-function app_properties§§close_act(&$o2exe) {
+function app_properties§§close_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::alert(app_properties_exp_17(), 0) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§exit_act(&$o2exe) {
+function app_properties§§exit_act($o2exe) {
 	$o2exe->s(1) && (app_properties_exp_31() || $o2exe->e()) && o2act::call(app_properties_exp_41(), False, app_properties_exp_42(), "prg§_§var§§confirm") && $o2exe->e();
 	$o2exe->s(2) && (app_properties_exp_43() || $o2exe->e()) && o2act::exe("save", True, "") && $o2exe->e();
 	$o2exe->s(3) && (app_properties_exp_44() || $o2exe->e()) && o2act::call("load_app_prop", False) && $o2exe->e();
@@ -228,64 +228,64 @@ function app_properties§§exit_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::set("_o2SESSION", "main_y", app_properties_exp_48()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§goto_appvars_act(&$o2exe) {
+function app_properties§§goto_appvars_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("app_vars", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§goto_datatypes_act(&$o2exe) {
+function app_properties§§goto_datatypes_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("datatypes", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§goto_programs_act(&$o2exe) {
+function app_properties§§goto_programs_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("programs", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§goto_tables_act(&$o2exe) {
+function app_properties§§goto_tables_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::gotoprg("tables", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§save_act(&$o2exe) {
+function app_properties§§save_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("appprop", "S", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("save_app_prop", False) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "modified", app_properties_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§select_menu_act(&$o2exe) {
+function app_properties§§select_menu_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Select active menu") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("select_menu", False, "appprop§§activemenu") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("set_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§select_prg_start_act(&$o2exe) {
+function app_properties§§select_prg_start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_program", False, "appprop§§startprg") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§select_request_prg_act(&$o2exe) {
+function app_properties§§select_request_prg_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_program", False, "appprop§§reqprg") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("set_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§select_runtime_folder_act(&$o2exe) {
+function app_properties§§select_runtime_folder_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Select runtime folder") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call(app_properties_exp_2(), False, "appprop§§o2rntpath", app_properties_exp_3(), app_properties_exp_4(), app_properties_exp_9999(), app_properties_exp_5(), app_properties_exp_9999(), app_properties_exp_9999(), app_properties_exp_9999(), app_properties_exp_14()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("set_modified", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§set_modified_act(&$o2exe) {
+function app_properties§§set_modified_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "modified", app_properties_exp_5()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§start_act(&$o2exe) {
+function app_properties§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", app_properties_exp_17()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::script(app_properties_exp_20()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_properties§§tree_select_act(&$o2exe) {
+function app_properties§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("project", False, app_properties_exp_15()) && $o2exe->e();
 	} //|o2_fine_act|
 

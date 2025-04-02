@@ -1,6 +1,6 @@
 <?php
 
-function checked_objects§§obj_def(&$task_obj, $_o2viewalias = "") {
+function checked_objects§§obj_def($task_obj, $_o2viewalias = "") {
 	$task_obj->righe_vis = 20;
 
 	$task_obj->usa_file("tstamp_obj","tstamp_obj","type");
@@ -11,20 +11,20 @@ function checked_objects§§obj_def(&$task_obj, $_o2viewalias = "") {
 	$task_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
 	$task_obj->usa("type","tstamp_obj","type",null,null,null,null);
 }
-function checked_objects§§checked_objects_1_form_def(&$form_checked_objects_1) {
+function checked_objects§§checked_objects_1_form_def($form_checked_objects_1) {
 	$form_checked_objects_1->x(416);
 	$form_checked_objects_1->y(24);
 	$form_checked_objects_1->larghezza(741);
 	$form_checked_objects_1->altezza(600);
 	$form_checked_objects_1->titolo("Checked objects");
 	$form_checked_objects_1->align_o("Center");
-	$ctrl_o2table2 = &$form_checked_objects_1->ctrldef("o2table2", "tab", "", "obj", "");
+	$ctrl_o2table2 = $form_checked_objects_1->ctrldef("o2table2", "tab", "", "obj", "");
 		$ctrl_o2table2->x(0);
 		$ctrl_o2table2->y(0);
 		$ctrl_o2table2->larghezza(730);
 		$ctrl_o2table2->altezza(560);
 		$ctrl_o2table2->modificabile(checked_objects_exp_9999());
-	$ctrl_o2ListBox2 = &$form_checked_objects_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "obj", "type");
+	$ctrl_o2ListBox2 = $form_checked_objects_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "obj", "type");
 		$ctrl_o2ListBox2->x(0);
 		$ctrl_o2ListBox2->y(30);
 		$ctrl_o2ListBox2->larghezza(120);
@@ -32,31 +32,31 @@ function checked_objects§§checked_objects_1_form_def(&$form_checked_objects_1) {
 		$ctrl_o2ListBox2->info_padre(array("01" ,"01" ,"01" ,"Type" ,False ,"" ,False ,""));
 		$ctrl_o2ListBox2->valori(array());
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2edit2 = &$form_checked_objects_1->ctrldef("o2edit2", "edit", "o2table2", "obj", "objname");
+	$ctrl_o2edit2 = $form_checked_objects_1->ctrldef("o2edit2", "edit", "o2table2", "obj", "objname");
 		$ctrl_o2edit2->x(120);
 		$ctrl_o2edit2->y(30);
 		$ctrl_o2edit2->larghezza(180);
 		$ctrl_o2edit2->altezza(20);
 		$ctrl_o2edit2->info_padre(array("01" ,"02" ,"02" ,"Object name" ,False ,"" ,False ,""));
-	$ctrl_o2edit3 = &$form_checked_objects_1->ctrldef("o2edit3", "edit", "o2table2", "obj", "userid");
+	$ctrl_o2edit3 = $form_checked_objects_1->ctrldef("o2edit3", "edit", "o2table2", "obj", "userid");
 		$ctrl_o2edit3->x(300);
 		$ctrl_o2edit3->y(30);
 		$ctrl_o2edit3->larghezza(100);
 		$ctrl_o2edit3->altezza(20);
 		$ctrl_o2edit3->info_padre(array("01" ,"03" ,"03" ,"User" ,False ,"" ,False ,""));
-	$ctrl_o2edit4 = &$form_checked_objects_1->ctrldef("o2edit4", "edit", "o2table2", "obj", "fdate");
+	$ctrl_o2edit4 = $form_checked_objects_1->ctrldef("o2edit4", "edit", "o2table2", "obj", "fdate");
 		$ctrl_o2edit4->x(400);
 		$ctrl_o2edit4->y(30);
 		$ctrl_o2edit4->larghezza(100);
 		$ctrl_o2edit4->altezza(20);
 		$ctrl_o2edit4->info_padre(array("01" ,"04" ,"04" ,"Last update" ,False ,"" ,False ,""));
-	$ctrl_o2edit5 = &$form_checked_objects_1->ctrldef("o2edit5", "edit", "o2table2", "obj", "ftime");
+	$ctrl_o2edit5 = $form_checked_objects_1->ctrldef("o2edit5", "edit", "o2table2", "obj", "ftime");
 		$ctrl_o2edit5->x(500);
 		$ctrl_o2edit5->y(30);
 		$ctrl_o2edit5->larghezza(100);
 		$ctrl_o2edit5->altezza(20);
 		$ctrl_o2edit5->info_padre(array("01" ,"05" ,"05"));
-	$ctrl_o2dbnavigator2 = &$form_checked_objects_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "obj", "");
+	$ctrl_o2dbnavigator2 = $form_checked_objects_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "obj", "");
 		$ctrl_o2dbnavigator2->x(700);
 		$ctrl_o2dbnavigator2->y(30);
 		$ctrl_o2dbnavigator2->larghezza(20);
@@ -71,7 +71,7 @@ function checked_objects§§checked_objects_1_form_def(&$form_checked_objects_1) {
 		$ctrl_o2dbnavigator2->act_detail("obj_detail");
 		}
 
-function checked_objects§§obj_detail_act(&$o2exe) {
+function checked_objects§§obj_detail_act($o2exe) {
 	} //|o2_fine_act|
 
 function checked_objects_exp_1() {

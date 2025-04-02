@@ -1,29 +1,29 @@
 <?php
 
-function test_load_prg§§prg§_§var_def(&$task_prg§_§var) {
+function test_load_prg§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("nomeprg", "name");
 		}
-function test_load_prg§§test_load_prg_1_form_def(&$form_test_load_prg_1) {
+function test_load_prg§§test_load_prg_1_form_def($form_test_load_prg_1) {
 	$form_test_load_prg_1->x(300);
 	$form_test_load_prg_1->y(100);
 	$form_test_load_prg_1->larghezza(400);
 	$form_test_load_prg_1->altezza(272);
 	$form_test_load_prg_1->align_o("Center");
 	$form_test_load_prg_1->titolo("TEst LOAD PRG");
-	$ctrl_o2edit2 = &$form_test_load_prg_1->ctrldef("o2edit2", "edit", "", "prg§_§var", "nomeprg");
+	$ctrl_o2edit2 = $form_test_load_prg_1->ctrldef("o2edit2", "edit", "", "prg§_§var", "nomeprg");
 		$ctrl_o2edit2->x(30);
 		$ctrl_o2edit2->y(40);
 		$ctrl_o2edit2->larghezza(250);
 		$ctrl_o2edit2->altezza(20);
-	$ctrl_o2button2 = &$form_test_load_prg_1->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_test_load_prg_1->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(150);
 		$ctrl_o2button2->y(120);
 		$ctrl_o2button2->larghezza(90);
 		$ctrl_o2button2->altezza(30);
 		$ctrl_o2button2->azione("load");
 		$ctrl_o2button2->label("Load");
-	$ctrl_o2button3 = &$form_test_load_prg_1->ctrldef("o2button3", "button", "", "", "");
+	$ctrl_o2button3 = $form_test_load_prg_1->ctrldef("o2button3", "button", "", "", "");
 		$ctrl_o2button3->x(150);
 		$ctrl_o2button3->y(170);
 		$ctrl_o2button3->larghezza(90);
@@ -32,15 +32,15 @@ function test_load_prg§§test_load_prg_1_form_def(&$form_test_load_prg_1) {
 		$ctrl_o2button3->label("Show");
 		}
 
-function test_load_prg§§load_act(&$o2exe) {
+function test_load_prg§§load_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("load_program", False, test_load_prg_exp_1(), test_load_prg_exp_2()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function test_load_prg§§show_act(&$o2exe) {
+function test_load_prg§§show_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("program", False, test_load_prg_exp_2()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function test_load_prg§§start_act(&$o2exe) {
+function test_load_prg§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "nomeprg", test_load_prg_exp_3()) && $o2exe->e();
 	} //|o2_fine_act|
 

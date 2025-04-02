@@ -1,6 +1,6 @@
 <?php
 
-function programs§§prg§_§var_def(&$task_prg§_§var) {
+function programs§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("hide_win", "_o2logical");
 	$task_prg§_§var->definisci("menu_selected_item", "prgname");
@@ -8,7 +8,7 @@ function programs§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("prgs_list", "_o2structure");
 		}
 
-function programs§§workset_def(&$task_workset, $_o2viewalias = "") {
+function programs§§workset_def($task_workset, $_o2viewalias = "") {
 	$task_workset->righe_vis = 100;
 
 	$task_workset->usa_file("work_set","work_set","recent",null,null);
@@ -25,7 +25,7 @@ function programs§§workset_def(&$task_workset, $_o2viewalias = "") {
 	$task_workset->calcola("style_class","_o2alpha","programs_exp_31()",null,null,null,null);
 }
 
-function programs§§programs_def(&$task_programs, $_o2viewalias = "") {
+function programs§§programs_def($task_programs, $_o2viewalias = "") {
 	$task_programs->righe_vis = 100;
 
 	$task_programs->usa_file("programs_list","programs","name",null,null);
@@ -34,7 +34,7 @@ function programs§§programs_def(&$task_programs, $_o2viewalias = "") {
 	$task_programs->usa("last_date","programs","last_date",null,null,null,null);
 	$task_programs->usa("last_time","programs","last_time",null,null,null,null);
 }
-function programs§§programs_form_def(&$form_programs) {
+function programs§§programs_form_def($form_programs) {
 	$form_programs->x(0);
 	$form_programs->y(0);
 	$form_programs->larghezza(1000);
@@ -45,14 +45,14 @@ function programs§§programs_form_def(&$form_programs) {
 	$form_programs->css_finestra(" open_body");
 	$form_programs->css_body(" open_body");
 	$form_programs->close_action("close");
-	$ctrl_tab = &$form_programs->ctrldef("tab", "tab", "", "programs", "");
+	$ctrl_tab = $form_programs->ctrldef("tab", "tab", "", "programs", "");
 		$ctrl_tab->x(300);
 		$ctrl_tab->y(39);
 		$ctrl_tab->larghezza(700);
 		$ctrl_tab->altezza(462);
 		$ctrl_tab->expand("B");
 		$ctrl_tab->modificabile(programs_exp_9999());
-	$ctrl_tree = &$form_programs->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_tree = $form_programs->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_tree->x(0);
 		$ctrl_tree->y(0);
 		$ctrl_tree->larghezza(300);
@@ -62,7 +62,7 @@ function programs§§programs_form_def(&$form_programs) {
 		$ctrl_tree->azione("tree_select");
 		$ctrl_tree->activation(1);
 		$ctrl_tree->nodes(programs_exp_40());
-	$ctrl_nav = &$form_programs->ctrldef("nav", "navigator", "", "programs", "");
+	$ctrl_nav = $form_programs->ctrldef("nav", "navigator", "", "programs", "");
 		$ctrl_nav->x(300);
 		$ctrl_nav->y(0);
 		$ctrl_nav->larghezza(700);
@@ -75,7 +75,7 @@ function programs§§programs_form_def(&$form_programs) {
 		$ctrl_nav->act_new("programs_insert");
 		$ctrl_nav->act_del("programs_delete");
 		$ctrl_nav->act_select("programs_detail");
-	$ctrl_o2button2 = &$form_programs->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_programs->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(660);
 		$ctrl_o2button2->y(10);
 		$ctrl_o2button2->larghezza(100);
@@ -84,20 +84,20 @@ function programs§§programs_form_def(&$form_programs) {
 		$ctrl_o2button2->modificabile(programs_exp_9999());
 		$ctrl_o2button2->label("Programs");
 		$ctrl_o2button2->css(programs_exp_7());
-	$ctrl_o2edit6 = &$form_programs->ctrldef("o2edit6", "edit", "tab", "programs", "prgname");
+	$ctrl_o2edit6 = $form_programs->ctrldef("o2edit6", "edit", "tab", "programs", "prgname");
 		$ctrl_o2edit6->x(0);
 		$ctrl_o2edit6->y(10);
 		$ctrl_o2edit6->larghezza(400);
 		$ctrl_o2edit6->altezza(24);
 		$ctrl_o2edit6->expand("H");
 		$ctrl_o2edit6->info_padre(array("01", "01", "01", "Program", False, "", 0, "", "", "", "", ""));
-	$ctrl_o2edit7 = &$form_programs->ctrldef("o2edit7", "edit", "tab", "programs", "last_date");
+	$ctrl_o2edit7 = $form_programs->ctrldef("o2edit7", "edit", "tab", "programs", "last_date");
 		$ctrl_o2edit7->x(400);
 		$ctrl_o2edit7->y(10);
 		$ctrl_o2edit7->larghezza(120);
 		$ctrl_o2edit7->altezza(24);
 		$ctrl_o2edit7->info_padre(array("01", "02", "02", "Last date", False, "", 0, "", "", "", "", ""));
-	$ctrl_o2edit8 = &$form_programs->ctrldef("o2edit8", "edit", "tab", "programs", "last_time");
+	$ctrl_o2edit8 = $form_programs->ctrldef("o2edit8", "edit", "tab", "programs", "last_time");
 		$ctrl_o2edit8->x(520);
 		$ctrl_o2edit8->y(10);
 		$ctrl_o2edit8->larghezza(120);
@@ -105,18 +105,18 @@ function programs§§programs_form_def(&$form_programs) {
 		$ctrl_o2edit8->info_padre(array("01", "03", "03", "Last time", False, "", 0, "", "", "", "", ""));
 		}
 
-function programs§§add_prg_act(&$o2exe) {
+function programs§§add_prg_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", programs_exp_41()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§add_prg_to_workset_act(&$o2exe) {
+function programs§§add_prg_to_workset_act($o2exe) {
 	$o2exe->s(1) && (programs_exp_1() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("workset", "userid", programs_exp_9()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("workset", "prgname", programs_exp_8()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::view("workset", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§add_to_workset_act(&$o2exe) {
+function programs§§add_to_workset_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_8()) && $o2exe->e();
 	$o2exe->s(2) && (programs_exp_10() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("workset", "userid", programs_exp_9()) && $o2exe->e();
@@ -127,29 +127,29 @@ function programs§§add_to_workset_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_3()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§close_act(&$o2exe) {
+function programs§§close_act($o2exe) {
 	$o2exe->s(1) && True && o2act::menu("base") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("_o2SESSION", "main_x", programs_exp_26()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("_o2SESSION", "main_y", programs_exp_27()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§goto_appvars_act(&$o2exe) {
+function programs§§goto_appvars_act($o2exe) {
 	$o2exe->s(1) && True && o2act::gotoprg("app_vars", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§goto_datatypes_act(&$o2exe) {
+function programs§§goto_datatypes_act($o2exe) {
 	$o2exe->s(1) && True && o2act::gotoprg("datatypes", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§goto_tables_act(&$o2exe) {
+function programs§§goto_tables_act($o2exe) {
 	$o2exe->s(1) && True && o2act::gotoprg("tables", false) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§load_workset_act(&$o2exe) {
+function programs§§load_workset_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("add_prg", False, "workset") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§prg_show_act(&$o2exe) {
+function programs§§prg_show_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Check for reload") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("check_ts_obj", False, programs_exp_14()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Show program") && $o2exe->e();
@@ -159,43 +159,43 @@ function programs§§prg_show_act(&$o2exe) {
 	$o2exe->s(7) && True && o2act::view("workset", "0", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§programs_delete_act(&$o2exe) {
+function programs§§programs_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("programs", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§programs_detail_act(&$o2exe) {
+function programs§§programs_detail_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("add_prg_to_workset", True, "") && $o2exe->e();
 //	$o2exe->s(2) && True && o2act::remark("Check for reload") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, programs_exp_8()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::call("project", False, programs_exp_2()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§programs_insert_act(&$o2exe) {
+function programs§§programs_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("programs", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§programs_select_act(&$o2exe) {
+function programs§§programs_select_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Add prg to workset") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("add_to_workset", True, "") && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Set focus to workset") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::script(programs_exp_4()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§start_act(&$o2exe) {
+function programs§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", programs_exp_45()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("load_workset", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::script(programs_exp_42()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§tree_select_act(&$o2exe) {
+function programs§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("project", False, programs_exp_43()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§workset_delete_act(&$o2exe) {
+function programs§§workset_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("workset", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§workset_select_act(&$o2exe) {
+function programs§§workset_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("prg_show", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 

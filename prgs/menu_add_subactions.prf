@@ -1,6 +1,6 @@
 <?php
 
-function menu_add_subactions§§subactions_def(&$task_subactions, $_o2viewalias = "") {
+function menu_add_subactions§§subactions_def($task_subactions, $_o2viewalias = "") {
 	$task_subactions->righe_vis = 10;
 
 	$task_subactions->usa_file("operations","operations","pos",null,null);
@@ -12,7 +12,7 @@ function menu_add_subactions§§subactions_def(&$task_subactions, $_o2viewalias = 
 	$task_subactions->usa("exeact_actname","operations","exeact_actname",null,null,null,null);
 }
 
-function menu_add_subactions§§action_def(&$task_action, $_o2viewalias = "") {
+function menu_add_subactions§§action_def($task_action, $_o2viewalias = "") {
 	$task_action->righe_vis = 10;
 
 	$task_action->usa_file("actions","actions","name",null,null);
@@ -23,16 +23,16 @@ function menu_add_subactions§§action_def(&$task_action, $_o2viewalias = "") {
 	$task_action->usa("catch_action","actions","catch_action",null,null,null,null);
 }
 
-function menu_add_subactions§§add_catch_action_act(&$o2exe) {
+function menu_add_subactions§§add_catch_action_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", menu_add_subactions_exp_11()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function menu_add_subactions§§add_subaction_act(&$o2exe) {
+function menu_add_subactions§§add_subaction_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", menu_add_subactions_exp_6()) && $o2exe->e();
 	$o2exe->s(2) && (menu_add_subactions_exp_9() || $o2exe->e()) && o2act::call("menu_add_subactions", False, menu_add_subactions_exp_1(), menu_add_subactions_exp_2(), menu_add_subactions_exp_10(), menu_add_subactions_exp_8()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function menu_add_subactions§§start_act(&$o2exe) {
+function menu_add_subactions§§start_act($o2exe) {
 	$o2exe->s(1) && (menu_add_subactions_exp_5() || $o2exe->e()) && o2act::exe("add_catch_action", True, "") && $o2exe->e();
 	$o2exe->s(2) && (menu_add_subactions_exp_7() || $o2exe->e()) && o2act::exe("add_subaction", False, "subactions") && $o2exe->e();
 	} //|o2_fine_act|

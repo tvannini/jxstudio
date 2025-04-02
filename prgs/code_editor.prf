@@ -1,16 +1,16 @@
 <?php
 
-function code_editor§§prg§_§var_def(&$task_prg§_§var) {
+function code_editor§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("local_buffer", "_o2text");
 		}
-function code_editor§§code_editor_1_form_def(&$form_code_editor_1) {
+function code_editor§§code_editor_1_form_def($form_code_editor_1) {
 	$form_code_editor_1->x(205);
 	$form_code_editor_1->y(92);
 	$form_code_editor_1->larghezza(597);
 	$form_code_editor_1->altezza(503);
 	$form_code_editor_1->titolo("Code editor");
-	$ctrl_o2gtk_ide = &$form_code_editor_1->ctrldef("o2gtk_ide", "text", "", "prg§_§var", "local_buffer");
+	$ctrl_o2gtk_ide = $form_code_editor_1->ctrldef("o2gtk_ide", "text", "", "prg§_§var", "local_buffer");
 		$ctrl_o2gtk_ide->x(0);
 		$ctrl_o2gtk_ide->y(0);
 		$ctrl_o2gtk_ide->larghezza(590);
@@ -20,15 +20,15 @@ function code_editor§§code_editor_1_form_def(&$form_code_editor_1) {
 		$ctrl_o2gtk_ide->css(code_editor_exp_3());
 		}
 
-function code_editor§§done_act(&$o2exe) {
+function code_editor§§done_act($o2exe) {
 	$o2exe->s(1) && True && o2act::alert(code_editor_exp_6(), 0) && $o2exe->e();
 	} //|o2_fine_act|
 
-function code_editor§§start_act(&$o2exe) {
+function code_editor§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "local_buffer", code_editor_exp_4()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function code_editor§§zoom_act(&$o2exe) {
+function code_editor§§zoom_act($o2exe) {
 	$o2exe->s(1) && True && o2act::alert(code_editor_exp_5(), 0) && $o2exe->e();
 	} //|o2_fine_act|
 

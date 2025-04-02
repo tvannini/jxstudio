@@ -325,6 +325,7 @@ function load_program§§operations_def($task_operations, $_o2viewalias = "") {
 	$task_operations->usa("print_printer","operations","print_printer",null,null,null,null);
 	$task_operations->usa("rem_text","operations","rem_text",null,null,null,null);
 	$task_operations->usa("pars_exp","operations","pars_exp",null,null,null,null);
+	$task_operations->usa("serialized_detail","operations","serialized_detail",null,null,null,null);
 }
 
 function load_program§§controls_parinfo_def($task_controls_parinfo, $_o2viewalias = "") {
@@ -386,31 +387,11 @@ function load_program§§expressions_def($task_expressions, $_o2viewalias = "") {
 	$task_expressions->usa("result","prgexpressions","result",null,null,null,null);
 }
 
-function load_program§§oper_detail_def($task_oper_detail, $_o2viewalias = "") {
-	$task_oper_detail->righe_vis = 10;
-
-	$task_oper_detail->usa_file("operation_detail","operation_detail","pos",null,null);
-
-	$task_oper_detail->usa("userid","operation_detail","userid","load_program_exp_19()","load_program_exp_19()",null,null);
-	$task_oper_detail->usa("prgname","operation_detail","prgname","load_program_exp_24()","load_program_exp_24()",null,null);
-	$task_oper_detail->usa("actname","operation_detail","actname",null,null,null,null);
-	$task_oper_detail->usa("position","operation_detail","position",null,null,null,null);
-	$task_oper_detail->usa("operation","operation_detail","operation",null,null,null,null);
-	$task_oper_detail->usa("operation_detail","operation_detail","operation_detail",null,null,null,null);
-}
-
 function load_program§§act_callprg_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("operations", "call_prgname", load_program_exp_304()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("operations", "call_expid", load_program_exp_306()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("operations", "call_gototype", load_program_exp_354()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::view("oper_detail", "I", "") && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("oper_detail", "userid", load_program_exp_19()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("oper_detail", "prgname", load_program_exp_24()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::set("oper_detail", "actname", load_program_exp_140()) && $o2exe->e();
-	$o2exe->s(8) && True && o2act::set("oper_detail", "position", load_program_exp_309()) && $o2exe->e();
-	$o2exe->s(9) && True && o2act::set("oper_detail", "operation", load_program_exp_310()) && $o2exe->e();
-	$o2exe->s(10) && True && o2act::set("oper_detail", "operation_detail", load_program_exp_308()) && $o2exe->e();
-	$o2exe->s(11) && True && o2act::view("oper_detail", "S", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operations", "serialized_detail", load_program_exp_308()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§act_closeprg_act($o2exe) {
@@ -434,14 +415,7 @@ function load_program§§act_io_act($o2exe) {
 	} //|o2_fine_act|
 
 function load_program§§act_locate_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("oper_detail", "I", "") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("oper_detail", "userid", load_program_exp_19()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::set("oper_detail", "prgname", load_program_exp_24()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::set("oper_detail", "actname", load_program_exp_140()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("oper_detail", "position", load_program_exp_309()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("oper_detail", "operation", load_program_exp_310()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::set("oper_detail", "operation_detail", load_program_exp_307()) && $o2exe->e();
-	$o2exe->s(8) && True && o2act::view("oper_detail", "S", "") && $o2exe->e();
+	$o2exe->s(1) && True && o2act::set("operations", "serialized_detail", load_program_exp_307()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§act_msg_act($o2exe) {
@@ -453,14 +427,7 @@ function load_program§§act_print_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("operations", "print_template", load_program_exp_304()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("operations", "print_pdffile", load_program_exp_306()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("operations", "print_printer", load_program_exp_308()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::view("oper_detail", "I", "") && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("oper_detail", "userid", load_program_exp_19()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("oper_detail", "prgname", load_program_exp_24()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::set("oper_detail", "actname", load_program_exp_140()) && $o2exe->e();
-	$o2exe->s(8) && True && o2act::set("oper_detail", "position", load_program_exp_309()) && $o2exe->e();
-	$o2exe->s(9) && True && o2act::set("oper_detail", "operation", load_program_exp_310()) && $o2exe->e();
-	$o2exe->s(10) && True && o2act::set("oper_detail", "operation_detail", load_program_exp_307()) && $o2exe->e();
-	$o2exe->s(11) && True && o2act::view("oper_detail", "S", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("operations", "serialized_detail", load_program_exp_307()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§act_recset_act($o2exe) {
@@ -868,7 +835,7 @@ function load_program§§default_act($o2exe) {
 	} //|o2_fine_act|
 
 function load_program§§delete_actions_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_362()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("actions", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_all_act($o2exe) {
@@ -881,73 +848,68 @@ function load_program§§delete_all_act($o2exe) {
 	$o2exe->s(7) && True && o2act::exe("delete_parameters", True, "") && $o2exe->e();
 	$o2exe->s(8) && True && o2act::exe("delete_actions", True, "") && $o2exe->e();
 	$o2exe->s(9) && True && o2act::exe("delete_operations", True, "") && $o2exe->e();
-	$o2exe->s(10) && True && o2act::exe("delete_oper_details", True, "") && $o2exe->e();
-	$o2exe->s(11) && True && o2act::exe("delete_form", True, "") && $o2exe->e();
-	$o2exe->s(12) && True && o2act::exe("delete_control", True, "") && $o2exe->e();
-	$o2exe->s(13) && True && o2act::exe("delete_ctrlparinfo", True, "") && $o2exe->e();
-	$o2exe->s(14) && True && o2act::exe("delete_exp", True, "") && $o2exe->e();
-	$o2exe->s(15) && True && o2act::exe("delete_iofile", True, "") && $o2exe->e();
-	$o2exe->s(16) && True && o2act::exe("delete_protocol", True, "") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::exe("delete_form", True, "") && $o2exe->e();
+	$o2exe->s(11) && True && o2act::exe("delete_control", True, "") && $o2exe->e();
+	$o2exe->s(12) && True && o2act::exe("delete_ctrlparinfo", True, "") && $o2exe->e();
+	$o2exe->s(13) && True && o2act::exe("delete_exp", True, "") && $o2exe->e();
+	$o2exe->s(14) && True && o2act::exe("delete_iofile", True, "") && $o2exe->e();
+	$o2exe->s(15) && True && o2act::exe("delete_protocol", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_control_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_366()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("controls", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_ctrlparinfo_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_367()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("controls_parinfo", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_exp_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_368()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("expressions", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_form_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_365()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("forms", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_iofile_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_369()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("iofiles", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_linkfields_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_359()) && $o2exe->e();
-	} //|o2_fine_act|
-
-function load_program§§delete_oper_details_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_364()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("link_fields", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_operations_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_363()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("operations", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_parameters_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_361()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("parameters", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_prg_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_355()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("prgdetail", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_protocol_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_370()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("protocols", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_select_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_360()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("select", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_tablesinview_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_358()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("tablesinview", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_vars_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_356()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("prgvars", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§delete_view_act($o2exe) {
-	$o2exe->s(1) && True && o2act::script(load_program_exp_357()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("prgviews", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_program§§single_action_act($o2exe) {
@@ -2209,7 +2171,13 @@ for ($i = 0; $i < $tot_operations; $i++) {
          if ($parts[2] == 'L') {
             $parts[3] = str_replace(o2par(2).'_exp_',
                                     '',
-                                    str_replace('()', '', $parts[3]));
+                                    str_replace('()', '', $parts[3]));                                                                                    
+            eval('$p='.$parts[3].';');
+            if (!is_array($p)) {
+               $p = array();
+               }                                    
+            $parts[3] = serialize($p);
+            $pars = count($p);
             }
          $args  = $parts;
          $descr = $parts[1].' :: '.$view_acts[$parts[2]];
@@ -3078,16 +3046,6 @@ function load_program_exp_308() {
 return (o2val('prg§_§var','array_def',o2val('prg§_§var','counter2'),5,4));
 	} //|o2_fine_exp|
 
-function load_program_exp_309() {
-	
-return (o2val('operations','position'));
-	} //|o2_fine_exp|
-
-function load_program_exp_310() {
-	
-return (o2val('operations','operation'));
-	} //|o2_fine_exp|
-
 function load_program_exp_311() {
 	
 return (o2val('operations','rec_type') == "L");
@@ -3355,86 +3313,6 @@ return (!o2zero('link_fields','field'));
 function load_program_exp_354() {
 	
 return ((o2val('prg§_§var','array_def',o2val('prg§_§var','counter2'),5,3) ? "Cached" : ""));
-	} //|o2_fine_exp|
-
-function load_program_exp_355() {
-	o2view_delete('prgdetail');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_356() {
-	o2view_delete('prgvars');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_357() {
-	o2view_delete('prgviews');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_358() {
-	o2view_delete('tablesinview');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_359() {
-	o2view_delete('link_fields');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_360() {
-	o2view_delete('select');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_361() {
-	o2view_delete('parameters');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_362() {
-	o2view_delete('actions');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_363() {
-	o2view_delete('operations');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_364() {
-	o2view_delete('oper_detail');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_365() {
-	o2view_delete('forms');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_366() {
-	o2view_delete('controls');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_367() {
-	o2view_delete('controls_parinfo');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_368() {
-	o2view_delete('expressions');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_369() {
-	o2view_delete('iofiles');
-return (true);
-	} //|o2_fine_exp|
-
-function load_program_exp_370() {
-	o2view_delete('protocols');
-return (true);
 	} //|o2_fine_exp|
 
 function load_program_exp_999() {

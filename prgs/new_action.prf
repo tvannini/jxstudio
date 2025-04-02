@@ -1,31 +1,31 @@
 <?php
 
-function new_action§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+function new_action§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
 	$task_tmp_edit_vars->righe_vis = 10;
 
 	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id");
 
 	$task_tmp_edit_vars->usa("actname","tmp_edit_vars","actname",null,null,null,null);
 }
-function new_action§§new_action_form_def(&$form_new_action) {
+function new_action§§new_action_form_def($form_new_action) {
 	$form_new_action->x(171);
 	$form_new_action->y(198);
 	$form_new_action->larghezza(311);
 	$form_new_action->altezza(126);
 	$form_new_action->titolo("Create new action");
 	$form_new_action->align_o("Center");
-	$ctrl_o2label2 = &$form_new_action->ctrldef("o2label2", "label", "", "", "");
+	$ctrl_o2label2 = $form_new_action->ctrldef("o2label2", "label", "", "", "");
 		$ctrl_o2label2->x(20);
 		$ctrl_o2label2->y(30);
 		$ctrl_o2label2->larghezza(250);
 		$ctrl_o2label2->altezza(22);
 		$ctrl_o2label2->label("Insert name for new action:");
-	$ctrl_o2edit2 = &$form_new_action->ctrldef("o2edit2", "edit", "", "tmp_edit_vars", "actname");
+	$ctrl_o2edit2 = $form_new_action->ctrldef("o2edit2", "edit", "", "tmp_edit_vars", "actname");
 		$ctrl_o2edit2->x(20);
 		$ctrl_o2edit2->y(50);
 		$ctrl_o2edit2->larghezza(250);
 		$ctrl_o2edit2->altezza(22);
-	$ctrl_o2dbnavigator2 = &$form_new_action->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+	$ctrl_o2dbnavigator2 = $form_new_action->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
 		$ctrl_o2dbnavigator2->x(270);
 		$ctrl_o2dbnavigator2->y(52);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -40,12 +40,12 @@ function new_action§§new_action_form_def(&$form_new_action) {
 		$ctrl_o2dbnavigator2->act_select("tmp_edit_vars_select");
 		}
 
-function new_action§§start_act(&$o2exe) {
+function new_action§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("tmp_edit_vars", "actname", new_action_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function new_action§§tmp_edit_vars_select_act(&$o2exe) {
+function new_action§§tmp_edit_vars_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("tmp_edit_vars", "actname", new_action_exp_3()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::ret(1, new_action_exp_2()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::close()&& $o2exe->e();

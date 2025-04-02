@@ -1,37 +1,37 @@
 <?php
 
-function provacalcmemu§§prg§_§var_def(&$task_prg§_§var) {
+function provacalcmemu§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("livello", "_o2number");
 	$task_prg§_§var->definisci("menu", "name");
 		}
-function provacalcmemu§§provacalcmemu_1_form_def(&$form_provacalcmemu_1) {
+function provacalcmemu§§provacalcmemu_1_form_def($form_provacalcmemu_1) {
 	$form_provacalcmemu_1->x(300);
 	$form_provacalcmemu_1->y(100);
 	$form_provacalcmemu_1->larghezza(400);
 	$form_provacalcmemu_1->altezza(400);
 	$form_provacalcmemu_1->titolo("Priova");
 	$form_provacalcmemu_1->align_o("Center");
-	$ctrl_o2edit2 = &$form_provacalcmemu_1->ctrldef("o2edit2", "edit", "", "prg§_§var", "menu");
+	$ctrl_o2edit2 = $form_provacalcmemu_1->ctrldef("o2edit2", "edit", "", "prg§_§var", "menu");
 		$ctrl_o2edit2->x(50);
 		$ctrl_o2edit2->y(40);
 		$ctrl_o2edit2->larghezza(210);
 		$ctrl_o2edit2->altezza(20);
-	$ctrl_o2button2 = &$form_provacalcmemu_1->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_provacalcmemu_1->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(100);
 		$ctrl_o2button2->y(220);
 		$ctrl_o2button2->larghezza(90);
 		$ctrl_o2button2->altezza(30);
 		$ctrl_o2button2->azione("test");
 		$ctrl_o2button2->label("test");
-	$ctrl_o2edit3 = &$form_provacalcmemu_1->ctrldef("o2edit3", "edit", "", "prg§_§var", "livello");
+	$ctrl_o2edit3 = $form_provacalcmemu_1->ctrldef("o2edit3", "edit", "", "prg§_§var", "livello");
 		$ctrl_o2edit3->x(100);
 		$ctrl_o2edit3->y(260);
 		$ctrl_o2edit3->larghezza(100);
 		$ctrl_o2edit3->altezza(20);
 		}
 
-function provacalcmemu§§test_act(&$o2exe) {
+function provacalcmemu§§test_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("calc_menu_level", False, provacalcmemu_exp_1(), provacalcmemu_exp_2(), "prg§_§var§§livello") && $o2exe->e();
 	} //|o2_fine_act|
 

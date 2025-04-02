@@ -1,6 +1,6 @@
 <?php
 
-function load_servers§§prg§_§var_def(&$task_prg§_§var) {
+function load_servers§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_db", "_o2structure");
 	$task_prg§_§var->definisci("array_servers_dbs", "_o2structure");
@@ -12,7 +12,7 @@ function load_servers§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("tot_servers", "_o2number");
 		}
 
-function load_servers§§servers_def(&$task_servers, $_o2viewalias = "") {
+function load_servers§§servers_def($task_servers, $_o2viewalias = "") {
 	$task_servers->righe_vis = 10;
 
 	$task_servers->usa_file("servers","servers","name",null,null);
@@ -26,7 +26,7 @@ function load_servers§§servers_def(&$task_servers, $_o2viewalias = "") {
 	$task_servers->usa("chunksize","servers","chunksize",null,null,null,null);
 }
 
-function load_servers§§databases_def(&$task_databases, $_o2viewalias = "") {
+function load_servers§§databases_def($task_databases, $_o2viewalias = "") {
 	$task_databases->righe_vis = 10;
 
 	$task_databases->usa_file("databases","databases","name",null,null);
@@ -40,7 +40,7 @@ function load_servers§§databases_def(&$task_databases, $_o2viewalias = "") {
 	$task_databases->usa("create_tables","databases","create_tables",null,null,null,null);
 }
 
-function load_servers§§del_server_def(&$task_del_server, $_o2viewalias = "") {
+function load_servers§§del_server_def($task_del_server, $_o2viewalias = "") {
 	$task_del_server->righe_vis = 10;
 
 	$task_del_server->usa_file("servers","servers","name",null,null);
@@ -49,7 +49,7 @@ function load_servers§§del_server_def(&$task_del_server, $_o2viewalias = "") {
 	$task_del_server->usa("servername","servers","servername",null,null,null,null);
 }
 
-function load_servers§§del_database_def(&$task_del_database, $_o2viewalias = "") {
+function load_servers§§del_database_def($task_del_database, $_o2viewalias = "") {
 	$task_del_database->righe_vis = 10;
 
 	$task_del_database->usa_file("databases","databases","name",null,null);
@@ -58,7 +58,7 @@ function load_servers§§del_database_def(&$task_del_database, $_o2viewalias = "")
 	$task_del_database->usa("jxname","databases","jxname",null,null,null,null);
 }
 
-function load_servers§§create_db_act(&$o2exe) {
+function load_servers§§create_db_act($o2exe) {
 	$o2exe->s(1) && (load_servers_exp_29() || $o2exe->e()) && o2act::view("databases", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("databases", "userid", load_servers_exp_30()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("databases", "jxname", load_servers_exp_19()) && $o2exe->e();
@@ -71,7 +71,7 @@ function load_servers§§create_db_act(&$o2exe) {
 	$o2exe->s(10) && True && o2act::set("prg§_§var", "counter", load_servers_exp_9()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§create_server_act(&$o2exe) {
+function load_servers§§create_server_act($o2exe) {
 	$o2exe->s(1) && (load_servers_exp_28() || $o2exe->e()) && o2act::view("servers", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("servers", "userid", load_servers_exp_30()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("servers", "servername", load_servers_exp_11()) && $o2exe->e();
@@ -84,7 +84,7 @@ function load_servers§§create_server_act(&$o2exe) {
 	$o2exe->s(10) && True && o2act::set("prg§_§var", "counter", load_servers_exp_9()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§default_act(&$o2exe) {
+function load_servers§§default_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("servers", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("servers", "servername", load_servers_exp_25()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("servers", "engine", load_servers_exp_26()) && $o2exe->e();
@@ -95,16 +95,16 @@ function load_servers§§default_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::view("databases", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§delete_db_act(&$o2exe) {
+function load_servers§§delete_db_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_servers_exp_31()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("del_database", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§delete_server_act(&$o2exe) {
+function load_servers§§delete_server_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_servers_exp_4()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§load_servers_dbs_act(&$o2exe) {
+function load_servers§§load_servers_dbs_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_servers_dbs", load_servers_exp_5()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "tot_servers", load_servers_exp_35()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "counter", load_servers_exp_10()) && $o2exe->e();
@@ -114,7 +114,7 @@ function load_servers§§load_servers_dbs_act(&$o2exe) {
 	$o2exe->s(7) && (load_servers_exp_40() || $o2exe->e()) && o2act::exe("create_db", "load_servers_exp_17()", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_servers§§start_act(&$o2exe) {
+function load_servers§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Clear table") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("delete_server", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("delete_db", True, "") && $o2exe->e();

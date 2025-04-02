@@ -1,12 +1,12 @@
 <?php
 
-function save_datatypes§§prg§_§var_def(&$task_prg§_§var) {
+function save_datatypes§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("pathfile", "path");
 		}
 
-function save_datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
+function save_datatypes§§datatypes_def($task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->righe_vis = 10;
 
 	$task_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -20,7 +20,7 @@ function save_datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->usa("zoom_prg","datatypes","zoom_prg",null,null,null,null);
 }
 
-function save_datatypes§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+function save_datatypes§§ts_obj_def($task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->righe_vis = 10;
 
 	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -31,13 +31,13 @@ function save_datatypes§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
 }
 
-function save_datatypes§§set_ts_act(&$o2exe) {
+function save_datatypes§§set_ts_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_datatypes_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_datatypes_exp_11()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_datatypes§§start_act(&$o2exe) {
+function save_datatypes§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Set path to repository file") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_datatypes_exp_2()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Create file content") && $o2exe->e();
@@ -49,7 +49,7 @@ function save_datatypes§§start_act(&$o2exe) {
 	$o2exe->s(9) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_datatypes§§write_var_act(&$o2exe) {
+function save_datatypes§§write_var_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_datatypes_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 

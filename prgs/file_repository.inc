@@ -494,6 +494,7 @@ o2def::tab("operations", "app", "operations", "pos");
 	o2def::field("print_printer", "print_printer", "idexpr");
 	o2def::field("rem_text", "rem_text", "operation_txt");
 	o2def::field("pars_exp", "pars_exp", "idexpr");
+	o2def::field("serialized_detail", "serialized_detail", "_o2text");
 
 	o2def::index("pos", "userid","A", "prgname","A", "actname","A", "position","A");
 	o2def::index("back_pos", "userid","A", "prgname","A", "actname","A", "position","D");
@@ -751,18 +752,16 @@ o2def::tab("work_set", "jxsess_db", "work_set", "id");
 
 o2def::tab("tmp_locate", "jxsess_db", "tmp_locate", "pos");
 
-	o2def::field("userid", "userid", "_o2alpha");
 	o2def::field("position", "position", "id");
 	o2def::field("fieldname", "fieldname", "fieldalias");
 	o2def::field("idexpr", "idexpr", "idexpr");
 
-	o2def::index("pos", "userid","A", "position","A");
-	o2def::index("fieldname", "userid","A", "fieldname","A");
+	o2def::index("pos", "position","A");
+	o2def::index("fieldname", "fieldname","A");
 
 
 o2def::tab("tmp_call", "jxsess_db", "tmp_call", "pos");
 
-	o2def::field("userid", "userid", "_o2alpha");
 	o2def::field("position", "position", "id");
 	o2def::field("param_name", "param_name", "name");
 	o2def::field("param_type", "param_type", "datatypename");
@@ -771,7 +770,7 @@ o2def::tab("tmp_call", "jxsess_db", "tmp_call", "pos");
 	o2def::field("idexpr", "idexpr", "idexpr");
 	o2def::field("field_desc", "field_desc", "description");
 
-	o2def::index("pos", "userid","A", "position","A");
+	o2def::index("pos", "position","A");
 
 
 o2def::tab("tmp_concat", "jxsess_db", "tmp_concat", "pos");

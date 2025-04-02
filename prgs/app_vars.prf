@@ -1,6 +1,6 @@
 <?php
 
-function app_vars§§prg§_§var_def(&$task_prg§_§var) {
+function app_vars§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("confirm", "_o2logical");
 	$task_prg§_§var->definisci("menu_selected_item", "_o2alpha");
@@ -8,7 +8,7 @@ function app_vars§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("zoom_ctrl", "_o2alpha");
 		}
 
-function app_vars§§vars_def(&$task_vars, $_o2viewalias = "") {
+function app_vars§§vars_def($task_vars, $_o2viewalias = "") {
 	$task_vars->righe_vis = 100;
 
 	$task_vars->usa_file("appvars","appvars","name",null,null);
@@ -20,7 +20,7 @@ function app_vars§§vars_def(&$task_vars, $_o2viewalias = "") {
 	$task_vars->usa("folder","appvars","folder",null,null,null,null);
 }
 
-function app_vars§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
+function app_vars§§objstatus_def($task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->righe_vis = 1;
 
 	$task_objstatus->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -29,7 +29,7 @@ function app_vars§§objstatus_def(&$task_objstatus, $_o2viewalias = "") {
 	$task_objstatus->usa("userid","tstamp_obj","userid",null,null,"app_vars_exp_8()",null);
 }
 
-function app_vars§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
+function app_vars§§datatypes_def($task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->righe_vis = 10;
 
 	$task_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -41,7 +41,7 @@ function app_vars§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->usa("userid","datatypes","userid","app_vars_exp_33()","app_vars_exp_33()",null,null);
 }
 
-function app_vars§§datatypes_status_def(&$task_datatypes_status, $_o2viewalias = "") {
+function app_vars§§datatypes_status_def($task_datatypes_status, $_o2viewalias = "") {
 	$task_datatypes_status->righe_vis = 1;
 
 	$task_datatypes_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
@@ -49,7 +49,7 @@ function app_vars§§datatypes_status_def(&$task_datatypes_status, $_o2viewalias =
 	$task_datatypes_status->usa("objname","tstamp_obj","objname","app_vars_exp_32()","app_vars_exp_32()",null,null);
 	$task_datatypes_status->usa("userid","tstamp_obj","userid",null,null,"app_vars_exp_8()",null);
 }
-function app_vars§§app_vars_form_def(&$form_app_vars) {
+function app_vars§§app_vars_form_def($form_app_vars) {
 	$form_app_vars->x(1);
 	$form_app_vars->y(0);
 	$form_app_vars->larghezza(1000);
@@ -59,7 +59,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 	$form_app_vars->frm_status(app_vars_exp_9999());
 	$form_app_vars->css_finestra(" open_body");
 	$form_app_vars->css_body(" open_body");
-	$ctrl_o2table2 = &$form_app_vars->ctrldef("o2table2", "tab", "", "vars", "");
+	$ctrl_o2table2 = $form_app_vars->ctrldef("o2table2", "tab", "", "vars", "");
 		$ctrl_o2table2->x(300);
 		$ctrl_o2table2->y(39);
 		$ctrl_o2table2->larghezza(700);
@@ -67,7 +67,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_o2table2->expand("B");
 		$ctrl_o2table2->modificabile(app_vars_exp_2());
 		$ctrl_o2table2->hide_indicator(app_vars_exp_2());
-	$ctrl_tree = &$form_app_vars->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+	$ctrl_tree = $form_app_vars->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
 		$ctrl_tree->x(0);
 		$ctrl_tree->y(0);
 		$ctrl_tree->larghezza(300);
@@ -76,7 +76,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_tree->azione("tree_select");
 		$ctrl_tree->activation(1);
 		$ctrl_tree->nodes(app_vars_exp_40());
-	$ctrl_nav = &$form_app_vars->ctrldef("nav", "navigator", "", "vars", "");
+	$ctrl_nav = $form_app_vars->ctrldef("nav", "navigator", "", "vars", "");
 		$ctrl_nav->x(300);
 		$ctrl_nav->y(0);
 		$ctrl_nav->larghezza(700);
@@ -93,13 +93,13 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_nav->act_save("vars_post");
 		$ctrl_nav->act_del("vars_delete");
 		$ctrl_nav->act_undo("vars_undo");
-	$ctrl_o2image4 = &$form_app_vars->ctrldef("o2image4", "img", "", "", "");
+	$ctrl_o2image4 = $form_app_vars->ctrldef("o2image4", "img", "", "", "");
 		$ctrl_o2image4->x(444);
 		$ctrl_o2image4->y(7);
 		$ctrl_o2image4->larghezza(3);
 		$ctrl_o2image4->altezza(17);
 		$ctrl_o2image4->imgexp(app_vars_exp_26());
-	$ctrl_btn_checkout = &$form_app_vars->ctrldef("btn_checkout", "img", "", "", "");
+	$ctrl_btn_checkout = $form_app_vars->ctrldef("btn_checkout", "img", "", "", "");
 		$ctrl_btn_checkout->x(450);
 		$ctrl_btn_checkout->y(4);
 		$ctrl_btn_checkout->larghezza(32);
@@ -108,7 +108,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_btn_checkout->azione("checkout");
 		$ctrl_btn_checkout->css(app_vars_exp_10());
 		$ctrl_btn_checkout->imgexp(app_vars_exp_1());
-	$ctrl_btn_checkin = &$form_app_vars->ctrldef("btn_checkin", "img", "", "", "");
+	$ctrl_btn_checkin = $form_app_vars->ctrldef("btn_checkin", "img", "", "", "");
 		$ctrl_btn_checkin->x(482);
 		$ctrl_btn_checkin->y(4);
 		$ctrl_btn_checkin->larghezza(32);
@@ -117,7 +117,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_btn_checkin->azione("checkin");
 		$ctrl_btn_checkin->css(app_vars_exp_12());
 		$ctrl_btn_checkin->imgexp(app_vars_exp_1());
-	$ctrl_btn_uncheck = &$form_app_vars->ctrldef("btn_uncheck", "img", "", "", "");
+	$ctrl_btn_uncheck = $form_app_vars->ctrldef("btn_uncheck", "img", "", "", "");
 		$ctrl_btn_uncheck->x(514);
 		$ctrl_btn_uncheck->y(4);
 		$ctrl_btn_uncheck->larghezza(32);
@@ -126,13 +126,13 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_btn_uncheck->azione("uncheck");
 		$ctrl_btn_uncheck->css(app_vars_exp_15());
 		$ctrl_btn_uncheck->imgexp(app_vars_exp_1());
-	$ctrl_o2image3 = &$form_app_vars->ctrldef("o2image3", "img", "", "", "");
+	$ctrl_o2image3 = $form_app_vars->ctrldef("o2image3", "img", "", "", "");
 		$ctrl_o2image3->x(549);
 		$ctrl_o2image3->y(7);
 		$ctrl_o2image3->larghezza(3);
 		$ctrl_o2image3->altezza(17);
 		$ctrl_o2image3->imgexp(app_vars_exp_26());
-	$ctrl_o2image5 = &$form_app_vars->ctrldef("o2image5", "img", "", "", "");
+	$ctrl_o2image5 = $form_app_vars->ctrldef("o2image5", "img", "", "", "");
 		$ctrl_o2image5->x(555);
 		$ctrl_o2image5->y(4);
 		$ctrl_o2image5->larghezza(32);
@@ -141,7 +141,7 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_o2image5->azione("save");
 		$ctrl_o2image5->css(app_vars_exp_17());
 		$ctrl_o2image5->imgexp(app_vars_exp_1());
-	$ctrl_o2image6 = &$form_app_vars->ctrldef("o2image6", "img", "", "", "");
+	$ctrl_o2image6 = $form_app_vars->ctrldef("o2image6", "img", "", "", "");
 		$ctrl_o2image6->x(587);
 		$ctrl_o2image6->y(4);
 		$ctrl_o2image6->larghezza(32);
@@ -150,13 +150,13 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_o2image6->azione("discard");
 		$ctrl_o2image6->css(app_vars_exp_22());
 		$ctrl_o2image6->imgexp(app_vars_exp_1());
-	$ctrl_o2image2 = &$form_app_vars->ctrldef("o2image2", "img", "", "", "");
+	$ctrl_o2image2 = $form_app_vars->ctrldef("o2image2", "img", "", "", "");
 		$ctrl_o2image2->x(690);
 		$ctrl_o2image2->y(4);
 		$ctrl_o2image2->larghezza(32);
 		$ctrl_o2image2->altezza(32);
 		$ctrl_o2image2->imgexp(app_vars_exp_24());
-	$ctrl_o2button2 = &$form_app_vars->ctrldef("o2button2", "button", "", "", "");
+	$ctrl_o2button2 = $form_app_vars->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(720);
 		$ctrl_o2button2->y(10);
 		$ctrl_o2button2->larghezza(100);
@@ -165,14 +165,14 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_o2button2->modificabile(app_vars_exp_9999());
 		$ctrl_o2button2->label(app_vars_exp_27());
 		$ctrl_o2button2->css(app_vars_exp_47());
-	$ctrl_o2edit2 = &$form_app_vars->ctrldef("o2edit2", "edit", "o2table2", "vars", "name");
+	$ctrl_o2edit2 = $form_app_vars->ctrldef("o2edit2", "edit", "o2table2", "vars", "name");
 		$ctrl_o2edit2->x(0);
 		$ctrl_o2edit2->y(10);
 		$ctrl_o2edit2->larghezza(340);
 		$ctrl_o2edit2->altezza(24);
 		$ctrl_o2edit2->expand("H");
 		$ctrl_o2edit2->info_padre(array("01", "01", "01", "Name", False, "", False, ""));
-	$ctrl_o2ListBox2 = &$form_app_vars->ctrldef("o2ListBox2", "listcombo", "o2table2", "vars", "datatype");
+	$ctrl_o2ListBox2 = $form_app_vars->ctrldef("o2ListBox2", "listcombo", "o2table2", "vars", "datatype");
 		$ctrl_o2ListBox2->x(340);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(280);
@@ -184,41 +184,41 @@ function app_vars§§app_vars_form_def(&$form_app_vars) {
 		$ctrl_o2ListBox2->righe(1);
 		}
 
-function app_vars§§check_status_act(&$o2exe) {
+function app_vars§§check_status_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("objstatus", "1", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§checkin_act(&$o2exe) {
+function app_vars§§checkin_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("save", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("checkin", False, app_vars_exp_4()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("vars", "SC", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::exe("check_status", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§checkout_act(&$o2exe) {
+function app_vars§§checkout_act($o2exe) {
 	$o2exe->s(1) && (app_vars_exp_5() || $o2exe->e()) && o2act::call("checkout", False, app_vars_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("check_status", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "modified", app_vars_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§datatype_zoom_act(&$o2exe) {
+function app_vars§§datatype_zoom_act($o2exe) {
 	$o2exe->s(1) && (app_vars_exp_2() || $o2exe->e()) && o2act::call("select_datatype", False, "vars§§datatype") && $o2exe->e();
 	$o2exe->s(2) && (app_vars_exp_43() || $o2exe->e()) && o2act::call("select_datatype", False, app_vars_exp_41()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§discard_act(&$o2exe) {
+function app_vars§§discard_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("vars", "SS", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "modified", app_vars_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§edit_act(&$o2exe) {
+function app_vars§§edit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "SC", "") && $o2exe->e();
 	$o2exe->s(2) && (app_vars_exp_2() || $o2exe->e()) && o2act::view("vars", "SS", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§exit_act(&$o2exe) {
+function app_vars§§exit_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("vars_post", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "confirm", app_vars_exp_9999()) && $o2exe->e();
 	$o2exe->s(3) && (app_vars_exp_31() || $o2exe->e()) && o2act::confirm("prg§_§var", "confirm", app_vars_exp_39()) && $o2exe->e();
@@ -226,49 +226,49 @@ function app_vars§§exit_act(&$o2exe) {
 	$o2exe->s(5) && True && o2act::view("vars", "SC", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§save_act(&$o2exe) {
+function app_vars§§save_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "SM", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("save_app_vars", False) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("vars", "SS", "") && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "modified", app_vars_exp_9999()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§select_datatype_act(&$o2exe) {
+function app_vars§§select_datatype_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("select_datatype", False, "vars§§datatype") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§start_act(&$o2exe) {
+function app_vars§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", app_vars_exp_28()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("edit", True, "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::script(app_vars_exp_29()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§tree_select_act(&$o2exe) {
+function app_vars§§tree_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::call("project", False, app_vars_exp_30()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§uncheck_act(&$o2exe) {
+function app_vars§§uncheck_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("uncheck", False, app_vars_exp_4()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("vars", "SC", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("check_status", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§vars_delete_act(&$o2exe) {
+function app_vars§§vars_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§vars_insert_act(&$o2exe) {
+function app_vars§§vars_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("vars", "userid", app_vars_exp_7()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§vars_post_act(&$o2exe) {
+function app_vars§§vars_post_act($o2exe) {
 	$o2exe->s(1) && (app_vars_exp_37() || $o2exe->e()) && o2act::set("prg§_§var", "modified", app_vars_exp_38()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("vars", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function app_vars§§vars_undo_act(&$o2exe) {
+function app_vars§§vars_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("vars", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 

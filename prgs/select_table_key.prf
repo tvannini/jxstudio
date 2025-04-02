@@ -1,13 +1,13 @@
 <?php
 
-function select_table_key§§prg§_§var_def(&$task_prg§_§var) {
+function select_table_key§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("list", "_o2structure");
 	$task_prg§_§var->definisci("segm_list", "_o2structure");
 	$task_prg§_§var->definisci("selected_segment", "name");
 		}
 
-function select_table_key§§keys_def(&$task_keys, $_o2viewalias = "") {
+function select_table_key§§keys_def($task_keys, $_o2viewalias = "") {
 	$task_keys->righe_vis = 10000;
 
 	$task_keys->usa_file("indexes","indexes","name");
@@ -18,7 +18,7 @@ function select_table_key§§keys_def(&$task_keys, $_o2viewalias = "") {
 	$task_keys->usa("idxname","indexes","idxname",null,null,null,null);
 }
 
-function select_table_key§§tables_check_def(&$task_tables_check, $_o2viewalias = "") {
+function select_table_key§§tables_check_def($task_tables_check, $_o2viewalias = "") {
 	$task_tables_check->righe_vis = 10;
 
 	$task_tables_check->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -27,7 +27,7 @@ function select_table_key§§tables_check_def(&$task_tables_check, $_o2viewalias =
 	$task_tables_check->usa("userid","tstamp_obj","userid",null,null,"select_table_key_exp_2()",null);
 }
 
-function select_table_key§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias = "") {
+function select_table_key§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
 	$task_tmp_edit_vars->righe_vis = 10;
 
 	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id");
@@ -35,7 +35,7 @@ function select_table_key§§tmp_edit_vars_def(&$task_tmp_edit_vars, $_o2viewalias
 	$task_tmp_edit_vars->usa("var_field_name","tmp_edit_vars","fieldalias",null,null,null,null);
 }
 
-function select_table_key§§segments_def(&$task_segments, $_o2viewalias = "") {
+function select_table_key§§segments_def($task_segments, $_o2viewalias = "") {
 	$task_segments->righe_vis = 10000;
 
 	$task_segments->usa_file("idxsegments","idxsegments","pos");
@@ -48,7 +48,7 @@ function select_table_key§§segments_def(&$task_segments, $_o2viewalias = "") {
 	$task_segments->usa("direction","idxsegments","direction",null,null,null,null);
 	$task_segments->calcola("segm_desc","o2sys_long_str","select_table_key_exp_11()",null,null,null,null);
 }
-function select_table_key§§select_table_form_def(&$form_select_table) {
+function select_table_key§§select_table_form_def($form_select_table) {
 	$form_select_table->x(332);
 	$form_select_table->y(13);
 	$form_select_table->larghezza(633);
@@ -56,7 +56,7 @@ function select_table_key§§select_table_form_def(&$form_select_table) {
 	$form_select_table->titolo(select_table_key_exp_10());
 	$form_select_table->align_o("Center");
 	$form_select_table->frm_status(select_table_key_exp_9999());
-	$ctrl_o2ListBox2 = &$form_select_table->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "var_field_name");
+	$ctrl_o2ListBox2 = $form_select_table->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_vars", "var_field_name");
 		$ctrl_o2ListBox2->x(10);
 		$ctrl_o2ListBox2->y(10);
 		$ctrl_o2ListBox2->larghezza(290);
@@ -65,7 +65,7 @@ function select_table_key§§select_table_form_def(&$form_select_table) {
 		$ctrl_o2ListBox2->on_change(select_table_key_exp_12());
 		$ctrl_o2ListBox2->valori(select_table_key_exp_9());
 		$ctrl_o2ListBox2->righe(10000);
-	$ctrl_o2dbnavigator2 = &$form_select_table->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+	$ctrl_o2dbnavigator2 = $form_select_table->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
 		$ctrl_o2dbnavigator2->x(300);
 		$ctrl_o2dbnavigator2->y(10);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -78,7 +78,7 @@ function select_table_key§§select_table_form_def(&$form_select_table) {
 		$ctrl_o2dbnavigator2->visible_undo(select_table_key_exp_9999());
 		$ctrl_o2dbnavigator2->visible_detail(select_table_key_exp_9999());
 		$ctrl_o2dbnavigator2->act_select("tmp_edit_vars_select");
-	$ctrl_o2ListBox3 = &$form_select_table->ctrldef("o2ListBox3", "listcombo", "", "prg§_§var", "selected_segment");
+	$ctrl_o2ListBox3 = $form_select_table->ctrldef("o2ListBox3", "listcombo", "", "prg§_§var", "selected_segment");
 		$ctrl_o2ListBox3->x(325);
 		$ctrl_o2ListBox3->y(10);
 		$ctrl_o2ListBox3->larghezza(290);
@@ -87,18 +87,18 @@ function select_table_key§§select_table_form_def(&$form_select_table) {
 		$ctrl_o2ListBox3->righe(10000);
 		}
 
-function select_table_key§§on_change_index_act(&$o2exe) {
+function select_table_key§§on_change_index_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "segm_list", select_table_key_exp_13()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function select_table_key§§start_act(&$o2exe) {
+function select_table_key§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "list", select_table_key_exp_8()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "var_field_name", select_table_key_exp_6()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::exe("on_change_index", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function select_table_key§§tmp_edit_vars_select_act(&$o2exe) {
+function select_table_key§§tmp_edit_vars_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::ret(2, select_table_key_exp_5()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|

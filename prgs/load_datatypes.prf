@@ -1,6 +1,6 @@
 <?php
 
-function load_datatypes§§prg§_§var_def(&$task_prg§_§var) {
+function load_datatypes§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_datatypes", "_o2structure");
 	$task_prg§_§var->definisci("counter", "id");
@@ -9,7 +9,7 @@ function load_datatypes§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("tot_datatypes", "_o2number");
 		}
 
-function load_datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
+function load_datatypes§§datatypes_def($task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->righe_vis = 10;
 
 	$task_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -21,7 +21,7 @@ function load_datatypes§§datatypes_def(&$task_datatypes, $_o2viewalias = "") {
 	$task_datatypes->usa("zoom_prg","datatypes","zoom_prg",null,null,null,null);
 }
 
-function load_datatypes§§del_datatypes_def(&$task_del_datatypes, $_o2viewalias = "") {
+function load_datatypes§§del_datatypes_def($task_del_datatypes, $_o2viewalias = "") {
 	$task_del_datatypes->righe_vis = 10;
 
 	$task_del_datatypes->usa_file("datatypes","datatypes","name",null,null);
@@ -30,7 +30,7 @@ function load_datatypes§§del_datatypes_def(&$task_del_datatypes, $_o2viewalias =
 	$task_del_datatypes->usa("name","datatypes","name",null,null,null,null);
 }
 
-function load_datatypes§§create_datatype_act(&$o2exe) {
+function load_datatypes§§create_datatype_act($o2exe) {
 	$o2exe->s(1) && (load_datatypes_exp_18() || $o2exe->e()) && o2act::view("datatypes", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("datatypes", "userid", load_datatypes_exp_19()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("datatypes", "name", load_datatypes_exp_11()) && $o2exe->e();
@@ -41,18 +41,18 @@ function load_datatypes§§create_datatype_act(&$o2exe) {
 	$o2exe->s(8) && True && o2act::set("prg§_§var", "counter", load_datatypes_exp_9()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_datatypes§§delete_datatype_act(&$o2exe) {
+function load_datatypes§§delete_datatype_act($o2exe) {
 	$o2exe->s(1) && True && o2act::script(load_datatypes_exp_15()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_datatypes§§load_datatypes_act(&$o2exe) {
+function load_datatypes§§load_datatypes_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "array_datatypes", load_datatypes_exp_5()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "tot_datatypes", load_datatypes_exp_24()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "counter", load_datatypes_exp_10()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::exe("create_datatype", "load_datatypes_exp_8()", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_datatypes§§start_act(&$o2exe) {
+function load_datatypes§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("--svuoto tabella--") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::exe("delete_datatype", True, "") && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("--Determino il path ---") && $o2exe->e();

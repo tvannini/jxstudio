@@ -1,12 +1,12 @@
 <?php
 
-function save_app_vars§§prg§_§var_def(&$task_prg§_§var) {
+function save_app_vars§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("pathfile", "path");
 		}
 
-function save_app_vars§§appvars_def(&$task_appvars, $_o2viewalias = "") {
+function save_app_vars§§appvars_def($task_appvars, $_o2viewalias = "") {
 	$task_appvars->righe_vis = 10;
 
 	$task_appvars->usa_file("appvars","appvars","name");
@@ -16,7 +16,7 @@ function save_app_vars§§appvars_def(&$task_appvars, $_o2viewalias = "") {
 	$task_appvars->usa("userid","appvars","userid","save_app_vars_exp_4()","save_app_vars_exp_4()",null,null);
 }
 
-function save_app_vars§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
+function save_app_vars§§ts_obj_def($task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->righe_vis = 10;
 
 	$task_ts_obj->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -27,13 +27,13 @@ function save_app_vars§§ts_obj_def(&$task_ts_obj, $_o2viewalias = "") {
 	$task_ts_obj->usa("ftime","tstamp_obj","ftime",null,null,null,null);
 }
 
-function save_app_vars§§set_ts_act(&$o2exe) {
+function save_app_vars§§set_ts_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("ts_obj", "fdate", save_app_vars_exp_11()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("ts_obj", "ftime", save_app_vars_exp_12()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("ts_obj", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_app_vars§§start_act(&$o2exe) {
+function save_app_vars§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Set repository file path") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "pathfile", save_app_vars_exp_2()) && $o2exe->e();
 //	$o2exe->s(3) && True && o2act::remark("Compose file content") && $o2exe->e();
@@ -45,7 +45,7 @@ function save_app_vars§§start_act(&$o2exe) {
 	$o2exe->s(9) && True && o2act::exe("set_ts", True, "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_app_vars§§write_var_act(&$o2exe) {
+function save_app_vars§§write_var_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "contents", save_app_vars_exp_1()) && $o2exe->e();
 	} //|o2_fine_act|
 

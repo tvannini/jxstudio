@@ -1,6 +1,6 @@
 <?php
 
-function save_program§§prg§_§var_def(&$task_prg§_§var) {
+function save_program§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("actions", "_o2structure");
 	$task_prg§_§var->definisci("page_number", "_o2number");
@@ -8,7 +8,7 @@ function save_program§§prg§_§var_def(&$task_prg§_§var) {
 	$task_prg§_§var->definisci("show_all_acts", "_o2logical");
 		}
 
-function save_program§§prg_def(&$task_prg, $_o2viewalias = "") {
+function save_program§§prg_def($task_prg, $_o2viewalias = "") {
 	$task_prg->righe_vis = 10;
 
 	$task_prg->usa_file("programs","programs","name");
@@ -22,7 +22,7 @@ function save_program§§prg_def(&$task_prg, $_o2viewalias = "") {
 	$task_prg->usa("folder","programs","folder",null,null,null,null);
 }
 
-function save_program§§obj_status_def(&$task_obj_status, $_o2viewalias = "") {
+function save_program§§obj_status_def($task_obj_status, $_o2viewalias = "") {
 	$task_obj_status->righe_vis = 10;
 
 	$task_obj_status->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -31,7 +31,7 @@ function save_program§§obj_status_def(&$task_obj_status, $_o2viewalias = "") {
 	$task_obj_status->usa("userid","tstamp_obj","userid",null,null,"save_program_exp_1()",null);
 }
 
-function save_program§§prgvars_def(&$task_prgvars, $_o2viewalias = "") {
+function save_program§§prgvars_def($task_prgvars, $_o2viewalias = "") {
 	$task_prgvars->righe_vis = 20;
 
 	$task_prgvars->usa_file("prgvars","prgvars","name");
@@ -42,7 +42,7 @@ function save_program§§prgvars_def(&$task_prgvars, $_o2viewalias = "") {
 	$task_prgvars->usa("datatype","prgvars","datatype",null,null,null,null);
 }
 
-function save_program§§views_def(&$task_views, $_o2viewalias = "") {
+function save_program§§views_def($task_views, $_o2viewalias = "") {
 	$task_views->righe_vis = 30;
 
 	$task_views->usa_file("prgviews","prgviews","name");
@@ -56,7 +56,7 @@ function save_program§§views_def(&$task_views, $_o2viewalias = "") {
 	$task_views->usa("modrowact","prgviews","modrowact",null,null,null,null);
 }
 
-function save_program§§acts_def(&$task_acts, $_o2viewalias = "") {
+function save_program§§acts_def($task_acts, $_o2viewalias = "") {
 	$task_acts->righe_vis = 10000;
 
 	$task_acts->usa_file("actions","actions","name");
@@ -67,7 +67,7 @@ function save_program§§acts_def(&$task_acts, $_o2viewalias = "") {
 	$task_acts->usa("service","actions","service",null,null,null,null);
 }
 
-function save_program§§forms_def(&$task_forms, $_o2viewalias = "") {
+function save_program§§forms_def($task_forms, $_o2viewalias = "") {
 	$task_forms->righe_vis = 10;
 
 	$task_forms->usa_file("forms","forms","pos");
@@ -81,7 +81,7 @@ function save_program§§forms_def(&$task_forms, $_o2viewalias = "") {
 	$task_forms->usa("url","forms","url",null,null,null,null);
 }
 
-function save_program§§iofiles_def(&$task_iofiles, $_o2viewalias = "") {
+function save_program§§iofiles_def($task_iofiles, $_o2viewalias = "") {
 	$task_iofiles->righe_vis = 10;
 
 	$task_iofiles->usa_file("prg_iofiles","prg_iofiles","ioname");
@@ -94,7 +94,7 @@ function save_program§§iofiles_def(&$task_iofiles, $_o2viewalias = "") {
 	$task_iofiles->usa("iodirection","prg_iofiles","iodirection",null,null,null,null);
 }
 
-function save_program§§protocols_def(&$task_protocols, $_o2viewalias = "") {
+function save_program§§protocols_def($task_protocols, $_o2viewalias = "") {
 	$task_protocols->righe_vis = 10;
 
 	$task_protocols->usa_file("prg_protocols","prg_protocols","protname");
@@ -105,7 +105,7 @@ function save_program§§protocols_def(&$task_protocols, $_o2viewalias = "") {
 	$task_protocols->usa("protocol_type","prg_protocols","protocol_type",null,null,null,null);
 }
 
-function save_program§§params_def(&$task_params, $_o2viewalias = "") {
+function save_program§§params_def($task_params, $_o2viewalias = "") {
 	$task_params->righe_vis = 10;
 
 	$task_params->usa_file("parameters","parameters","pos");
@@ -117,7 +117,7 @@ function save_program§§params_def(&$task_params, $_o2viewalias = "") {
 	$task_params->usa("datatype","parameters","datatype",null,null,null,null);
 }
 
-function save_program§§combo_datatypes_def(&$task_combo_datatypes, $_o2viewalias = "") {
+function save_program§§combo_datatypes_def($task_combo_datatypes, $_o2viewalias = "") {
 	$task_combo_datatypes->righe_vis = 10;
 
 	$task_combo_datatypes->usa_file("datatypes","datatypes","name");
@@ -128,7 +128,7 @@ function save_program§§combo_datatypes_def(&$task_combo_datatypes, $_o2viewalias
 	$task_combo_datatypes->usa("mask","datatypes","mask",null,null,null,null);
 }
 
-function save_program§§datatypes_status_def(&$task_datatypes_status, $_o2viewalias = "") {
+function save_program§§datatypes_status_def($task_datatypes_status, $_o2viewalias = "") {
 	$task_datatypes_status->righe_vis = 100;
 
 	$task_datatypes_status->usa_file("tstamp_obj","tstamp_obj","obj");
@@ -137,7 +137,7 @@ function save_program§§datatypes_status_def(&$task_datatypes_status, $_o2viewali
 	$task_datatypes_status->usa("userid","tstamp_obj","userid",null,null,"save_program_exp_1()",null);
 }
 
-function save_program§§operations_def(&$task_operations, $_o2viewalias = "") {
+function save_program§§operations_def($task_operations, $_o2viewalias = "") {
 	$task_operations->righe_vis = 25;
 
 	$task_operations->usa_file("operations","operations","pos");
@@ -152,7 +152,7 @@ function save_program§§operations_def(&$task_operations, $_o2viewalias = "") {
 	$task_operations->usa("exeact_actname","operations","exeact_actname",null,null,null,null);
 }
 
-function save_program§§expressions_def(&$task_expressions, $_o2viewalias = "") {
+function save_program§§expressions_def($task_expressions, $_o2viewalias = "") {
 	$task_expressions->righe_vis = 25;
 
 	$task_expressions->usa_file("prgexpressions","prgexpressions","id");
@@ -164,7 +164,7 @@ function save_program§§expressions_def(&$task_expressions, $_o2viewalias = "") {
 	$task_expressions->usa("result","prgexpressions","result",null,null,null,null);
 }
 
-function save_program§§oper_detail_def(&$task_oper_detail, $_o2viewalias = "") {
+function save_program§§oper_detail_def($task_oper_detail, $_o2viewalias = "") {
 	$task_oper_detail->righe_vis = 10;
 
 	$task_oper_detail->usa_file("operation_detail","operation_detail","pos");
@@ -176,146 +176,146 @@ function save_program§§oper_detail_def(&$task_oper_detail, $_o2viewalias = "") {
 	$task_oper_detail->usa("operation","operation_detail","operation","save_program_exp_23()","save_program_exp_23()",null,null);
 	$task_oper_detail->usa("operation_detail","operation_detail","operation_detail",null,null,null,null);
 }
-function save_program§§save_program_1_form_def(&$form_save_program_1) {
+function save_program§§save_program_1_form_def($form_save_program_1) {
 	$form_save_program_1->x(507);
 	$form_save_program_1->y(6);
 	$form_save_program_1->larghezza(1007);
 	$form_save_program_1->altezza(730);
 	$form_save_program_1->titolo("Program");
 	$form_save_program_1->align_o("Center");
-	$ctrl_o2multipage2 = &$form_save_program_1->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "page_number");
+	$ctrl_o2multipage2 = $form_save_program_1->ctrldef("o2multipage2", "multipage", "", "prg§_§var", "page_number");
 		$ctrl_o2multipage2->x(10);
 		$ctrl_o2multipage2->y(50);
 		$ctrl_o2multipage2->larghezza(980);
 		$ctrl_o2multipage2->altezza(640);
 		$ctrl_o2multipage2->label(array("Main","Views","Actions","expressions","I/O files","Protocols"));
 		$ctrl_o2multipage2->buttons("T");
-	$ctrl_o2button3 = &$form_save_program_1->ctrldef("o2button3", "button", "", "", "");
+	$ctrl_o2button3 = $form_save_program_1->ctrldef("o2button3", "button", "", "", "");
 		$ctrl_o2button3->x(10);
 		$ctrl_o2button3->y(10);
 		$ctrl_o2button3->larghezza(90);
 		$ctrl_o2button3->altezza(30);
 		$ctrl_o2button3->azione("show_main");
 		$ctrl_o2button3->label("Main");
-	$ctrl_o2button4 = &$form_save_program_1->ctrldef("o2button4", "button", "", "", "");
+	$ctrl_o2button4 = $form_save_program_1->ctrldef("o2button4", "button", "", "", "");
 		$ctrl_o2button4->x(100);
 		$ctrl_o2button4->y(10);
 		$ctrl_o2button4->larghezza(90);
 		$ctrl_o2button4->altezza(30);
 		$ctrl_o2button4->azione("show_views");
 		$ctrl_o2button4->label("Views");
-	$ctrl_o2button5 = &$form_save_program_1->ctrldef("o2button5", "button", "", "", "");
+	$ctrl_o2button5 = $form_save_program_1->ctrldef("o2button5", "button", "", "", "");
 		$ctrl_o2button5->x(190);
 		$ctrl_o2button5->y(10);
 		$ctrl_o2button5->larghezza(90);
 		$ctrl_o2button5->altezza(30);
 		$ctrl_o2button5->azione("show_actions");
 		$ctrl_o2button5->label("Actions");
-	$ctrl_o2label3 = &$form_save_program_1->ctrldef("o2label3", "label", "o2multipage2", "", "");
+	$ctrl_o2label3 = $form_save_program_1->ctrldef("o2label3", "label", "o2multipage2", "", "");
 		$ctrl_o2label3->x(20);
 		$ctrl_o2label3->y(55);
 		$ctrl_o2label3->larghezza(90);
 		$ctrl_o2label3->altezza(22);
 		$ctrl_o2label3->info_padre(array(0));
 		$ctrl_o2label3->label("Module:");
-	$ctrl_o2edit2 = &$form_save_program_1->ctrldef("o2edit2", "edit", "o2multipage2", "prg", "prgname");
+	$ctrl_o2edit2 = $form_save_program_1->ctrldef("o2edit2", "edit", "o2multipage2", "prg", "prgname");
 		$ctrl_o2edit2->x(120);
 		$ctrl_o2edit2->y(30);
 		$ctrl_o2edit2->larghezza(200);
 		$ctrl_o2edit2->altezza(22);
 		$ctrl_o2edit2->info_padre(array(0));
-	$ctrl_o2label4 = &$form_save_program_1->ctrldef("o2label4", "label", "o2multipage2", "", "");
+	$ctrl_o2label4 = $form_save_program_1->ctrldef("o2label4", "label", "o2multipage2", "", "");
 		$ctrl_o2label4->x(20);
 		$ctrl_o2label4->y(80);
 		$ctrl_o2label4->larghezza(90);
 		$ctrl_o2label4->altezza(22);
 		$ctrl_o2label4->info_padre(array(0));
 		$ctrl_o2label4->label("Folder:");
-	$ctrl_o2label2 = &$form_save_program_1->ctrldef("o2label2", "label", "o2multipage2", "", "");
+	$ctrl_o2label2 = $form_save_program_1->ctrldef("o2label2", "label", "o2multipage2", "", "");
 		$ctrl_o2label2->x(20);
 		$ctrl_o2label2->y(30);
 		$ctrl_o2label2->larghezza(90);
 		$ctrl_o2label2->altezza(22);
 		$ctrl_o2label2->info_padre(array(0));
 		$ctrl_o2label2->label("Name:");
-	$ctrl_o2label8 = &$form_save_program_1->ctrldef("o2label8", "label", "o2multipage2", "", "");
+	$ctrl_o2label8 = $form_save_program_1->ctrldef("o2label8", "label", "o2multipage2", "", "");
 		$ctrl_o2label8->x(20);
 		$ctrl_o2label8->y(140);
 		$ctrl_o2label8->larghezza(160);
 		$ctrl_o2label8->altezza(22);
 		$ctrl_o2label8->info_padre(array(0));
 		$ctrl_o2label8->label("Variables:");
-	$ctrl_o2label6 = &$form_save_program_1->ctrldef("o2label6", "label", "o2multipage2", "", "");
+	$ctrl_o2label6 = $form_save_program_1->ctrldef("o2label6", "label", "o2multipage2", "", "");
 		$ctrl_o2label6->x(440);
 		$ctrl_o2label6->y(270);
 		$ctrl_o2label6->larghezza(80);
 		$ctrl_o2label6->altezza(22);
 		$ctrl_o2label6->info_padre(array(0));
 		$ctrl_o2label6->label("Notes:");
-	$ctrl_o2label7 = &$form_save_program_1->ctrldef("o2label7", "label", "o2multipage2", "", "");
+	$ctrl_o2label7 = $form_save_program_1->ctrldef("o2label7", "label", "o2multipage2", "", "");
 		$ctrl_o2label7->x(440);
 		$ctrl_o2label7->y(30);
 		$ctrl_o2label7->larghezza(90);
 		$ctrl_o2label7->altezza(22);
 		$ctrl_o2label7->info_padre(array(0));
 		$ctrl_o2label7->label("Parameters:");
-	$ctrl_o2label5 = &$form_save_program_1->ctrldef("o2label5", "label", "o2multipage2", "", "");
+	$ctrl_o2label5 = $form_save_program_1->ctrldef("o2label5", "label", "o2multipage2", "", "");
 		$ctrl_o2label5->x(20);
 		$ctrl_o2label5->y(105);
 		$ctrl_o2label5->larghezza(90);
 		$ctrl_o2label5->altezza(22);
 		$ctrl_o2label5->info_padre(array(0));
 		$ctrl_o2label5->label("Start action:");
-	$ctrl_o2edit3 = &$form_save_program_1->ctrldef("o2edit3", "edit", "o2multipage2", "prg", "module");
+	$ctrl_o2edit3 = $form_save_program_1->ctrldef("o2edit3", "edit", "o2multipage2", "prg", "module");
 		$ctrl_o2edit3->x(120);
 		$ctrl_o2edit3->y(55);
 		$ctrl_o2edit3->larghezza(200);
 		$ctrl_o2edit3->altezza(22);
 		$ctrl_o2edit3->info_padre(array(0));
-	$ctrl_o2edit4 = &$form_save_program_1->ctrldef("o2edit4", "edit", "o2multipage2", "prg", "folder");
+	$ctrl_o2edit4 = $form_save_program_1->ctrldef("o2edit4", "edit", "o2multipage2", "prg", "folder");
 		$ctrl_o2edit4->x(120);
 		$ctrl_o2edit4->y(80);
 		$ctrl_o2edit4->larghezza(200);
 		$ctrl_o2edit4->altezza(22);
 		$ctrl_o2edit4->info_padre(array(0));
-	$ctrl_o2edit5 = &$form_save_program_1->ctrldef("o2edit5", "edit", "o2multipage2", "prg", "startaction");
+	$ctrl_o2edit5 = $form_save_program_1->ctrldef("o2edit5", "edit", "o2multipage2", "prg", "startaction");
 		$ctrl_o2edit5->x(120);
 		$ctrl_o2edit5->y(105);
 		$ctrl_o2edit5->larghezza(200);
 		$ctrl_o2edit5->altezza(22);
 		$ctrl_o2edit5->info_padre(array(0));
-	$ctrl_o2textarea2 = &$form_save_program_1->ctrldef("o2textarea2", "text", "o2multipage2", "prg", "notes");
+	$ctrl_o2textarea2 = $form_save_program_1->ctrldef("o2textarea2", "text", "o2multipage2", "prg", "notes");
 		$ctrl_o2textarea2->x(440);
 		$ctrl_o2textarea2->y(290);
 		$ctrl_o2textarea2->larghezza(530);
 		$ctrl_o2textarea2->altezza(340);
 		$ctrl_o2textarea2->info_padre(array(0));
-	$ctrl_o2table2 = &$form_save_program_1->ctrldef("o2table2", "tab", "o2multipage2", "params", "");
+	$ctrl_o2table2 = $form_save_program_1->ctrldef("o2table2", "tab", "o2multipage2", "params", "");
 		$ctrl_o2table2->x(530);
 		$ctrl_o2table2->y(30);
 		$ctrl_o2table2->larghezza(440);
 		$ctrl_o2table2->altezza(250);
 		$ctrl_o2table2->info_padre(array(0));
-	$ctrl_o2table4 = &$form_save_program_1->ctrldef("o2table4", "tab", "o2multipage2", "prgvars", "");
+	$ctrl_o2table4 = $form_save_program_1->ctrldef("o2table4", "tab", "o2multipage2", "prgvars", "");
 		$ctrl_o2table4->x(20);
 		$ctrl_o2table4->y(160);
 		$ctrl_o2table4->larghezza(410);
 		$ctrl_o2table4->altezza(470);
 		$ctrl_o2table4->info_padre(array(0));
-	$ctrl_o2table3 = &$form_save_program_1->ctrldef("o2table3", "tab", "o2multipage2", "views", "");
+	$ctrl_o2table3 = $form_save_program_1->ctrldef("o2table3", "tab", "o2multipage2", "views", "");
 		$ctrl_o2table3->x(20);
 		$ctrl_o2table3->y(40);
 		$ctrl_o2table3->larghezza(732);
 		$ctrl_o2table3->altezza(337);
 		$ctrl_o2table3->info_padre(array(1));
-	$ctrl_o2label9 = &$form_save_program_1->ctrldef("o2label9", "label", "o2multipage2", "", "");
+	$ctrl_o2label9 = $form_save_program_1->ctrldef("o2label9", "label", "o2multipage2", "", "");
 		$ctrl_o2label9->x(10);
 		$ctrl_o2label9->y(30);
 		$ctrl_o2label9->larghezza(80);
 		$ctrl_o2label9->altezza(22);
 		$ctrl_o2label9->info_padre(array(2));
 		$ctrl_o2label9->label("Show all:");
-	$ctrl_o2ListBox4 = &$form_save_program_1->ctrldef("o2ListBox4", "listcombo", "o2multipage2", "prg§_§var", "selected_act");
+	$ctrl_o2ListBox4 = $form_save_program_1->ctrldef("o2ListBox4", "listcombo", "o2multipage2", "prg§_§var", "selected_act");
 		$ctrl_o2ListBox4->x(10);
 		$ctrl_o2ListBox4->y(55);
 		$ctrl_o2ListBox4->larghezza(300);
@@ -324,13 +324,13 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2ListBox4->info_padre(array(2));
 		$ctrl_o2ListBox4->valori(save_program_exp_21());
 		$ctrl_o2ListBox4->righe(10000);
-	$ctrl_o2checkbox2 = &$form_save_program_1->ctrldef("o2checkbox2", "check", "o2multipage2", "prg§_§var", "show_all_acts");
+	$ctrl_o2checkbox2 = $form_save_program_1->ctrldef("o2checkbox2", "check", "o2multipage2", "prg§_§var", "show_all_acts");
 		$ctrl_o2checkbox2->x(100);
 		$ctrl_o2checkbox2->y(30);
 		$ctrl_o2checkbox2->larghezza(20);
 		$ctrl_o2checkbox2->altezza(22);
 		$ctrl_o2checkbox2->info_padre(array(2));
-	$ctrl_o2table6 = &$form_save_program_1->ctrldef("o2table6", "tab", "o2multipage2", "operations", "");
+	$ctrl_o2table6 = $form_save_program_1->ctrldef("o2table6", "tab", "o2multipage2", "operations", "");
 		$ctrl_o2table6->x(320);
 		$ctrl_o2table6->y(30);
 		$ctrl_o2table6->larghezza(650);
@@ -339,31 +339,31 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2table6->css_riga(save_program_exp_15());
 		$ctrl_o2table6->css_alt(save_program_exp_16());
 		$ctrl_o2table6->css_sele(save_program_exp_17());
-	$ctrl_o2table5 = &$form_save_program_1->ctrldef("o2table5", "tab", "o2multipage2", "expressions", "");
+	$ctrl_o2table5 = $form_save_program_1->ctrldef("o2table5", "tab", "o2multipage2", "expressions", "");
 		$ctrl_o2table5->x(10);
 		$ctrl_o2table5->y(30);
 		$ctrl_o2table5->larghezza(455);
 		$ctrl_o2table5->altezza(600);
 		$ctrl_o2table5->info_padre(array(3));
-	$ctrl_o2textarea3 = &$form_save_program_1->ctrldef("o2textarea3", "text", "o2multipage2", "expressions", "script");
+	$ctrl_o2textarea3 = $form_save_program_1->ctrldef("o2textarea3", "text", "o2multipage2", "expressions", "script");
 		$ctrl_o2textarea3->x(470);
 		$ctrl_o2textarea3->y(30);
 		$ctrl_o2textarea3->larghezza(500);
 		$ctrl_o2textarea3->altezza(600);
 		$ctrl_o2textarea3->info_padre(array(3));
-	$ctrl_o2edit6 = &$form_save_program_1->ctrldef("o2edit6", "edit", "o2table2", "params", "position");
+	$ctrl_o2edit6 = $form_save_program_1->ctrldef("o2edit6", "edit", "o2table2", "params", "position");
 		$ctrl_o2edit6->x(10);
 		$ctrl_o2edit6->y(40);
 		$ctrl_o2edit6->larghezza(50);
 		$ctrl_o2edit6->altezza(22);
 		$ctrl_o2edit6->info_padre(array("01" ,"01" ,"01" ,"#" ,False ,"" ,False ,""));
-	$ctrl_o2edit7 = &$form_save_program_1->ctrldef("o2edit7", "edit", "o2table2", "params", "parname");
+	$ctrl_o2edit7 = $form_save_program_1->ctrldef("o2edit7", "edit", "o2table2", "params", "parname");
 		$ctrl_o2edit7->x(70);
 		$ctrl_o2edit7->y(40);
 		$ctrl_o2edit7->larghezza(150);
 		$ctrl_o2edit7->altezza(22);
 		$ctrl_o2edit7->info_padre(array("01" ,"02" ,"02" ,"Parameter name" ,False ,"" ,False ,""));
-	$ctrl_o2ListBox2 = &$form_save_program_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "params", "datatype");
+	$ctrl_o2ListBox2 = $form_save_program_1->ctrldef("o2ListBox2", "listcombo", "o2table2", "params", "datatype");
 		$ctrl_o2ListBox2->x(230);
 		$ctrl_o2ListBox2->y(40);
 		$ctrl_o2ListBox2->larghezza(150);
@@ -371,7 +371,7 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2ListBox2->info_padre(array("01" ,"03" ,"03" ,"Data-type" ,False ,"tab_corpo_sx" ,False ,"tab_testa_sx"));
 		$ctrl_o2ListBox2->valori(o2_view2list("combo_datatypes", "name", "name"));
 		$ctrl_o2ListBox2->righe(1);
-	$ctrl_o2button2 = &$form_save_program_1->ctrldef("o2button2", "button", "o2table2", "", "");
+	$ctrl_o2button2 = $form_save_program_1->ctrldef("o2button2", "button", "o2table2", "", "");
 		$ctrl_o2button2->x(380);
 		$ctrl_o2button2->y(40);
 		$ctrl_o2button2->larghezza(22);
@@ -379,7 +379,7 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2button2->azione("select_param_datatype");
 		$ctrl_o2button2->info_padre(array("01" ,"04" ,"04" ,"" ,False ,"tab_corpo_dx" ,False ,"tab_testa_dx"));
 		$ctrl_o2button2->label("...");
-	$ctrl_o2dbnavigator2 = &$form_save_program_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "params", "");
+	$ctrl_o2dbnavigator2 = $form_save_program_1->ctrldef("o2dbnavigator2", "navigator", "o2table2", "params", "");
 		$ctrl_o2dbnavigator2->x(410);
 		$ctrl_o2dbnavigator2->y(40);
 		$ctrl_o2dbnavigator2->larghezza(18);
@@ -392,37 +392,37 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2dbnavigator2->act_save("params_post");
 		$ctrl_o2dbnavigator2->act_del("params_delete");
 		$ctrl_o2dbnavigator2->act_undo("params_undo");
-	$ctrl_o2edit8 = &$form_save_program_1->ctrldef("o2edit8", "edit", "o2table3", "views", "name");
+	$ctrl_o2edit8 = $form_save_program_1->ctrldef("o2edit8", "edit", "o2table3", "views", "name");
 		$ctrl_o2edit8->x(10);
 		$ctrl_o2edit8->y(30);
 		$ctrl_o2edit8->larghezza(150);
 		$ctrl_o2edit8->altezza(22);
 		$ctrl_o2edit8->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2edit9 = &$form_save_program_1->ctrldef("o2edit9", "edit", "o2table3", "views", "rowlimit");
+	$ctrl_o2edit9 = $form_save_program_1->ctrldef("o2edit9", "edit", "o2table3", "views", "rowlimit");
 		$ctrl_o2edit9->x(170);
 		$ctrl_o2edit9->y(30);
 		$ctrl_o2edit9->larghezza(40);
 		$ctrl_o2edit9->altezza(22);
 		$ctrl_o2edit9->info_padre(array("01" ,"02" ,"02"));
-	$ctrl_o2edit10 = &$form_save_program_1->ctrldef("o2edit10", "edit", "o2table3", "views", "rowlimitexp");
+	$ctrl_o2edit10 = $form_save_program_1->ctrldef("o2edit10", "edit", "o2table3", "views", "rowlimitexp");
 		$ctrl_o2edit10->x(230);
 		$ctrl_o2edit10->y(30);
 		$ctrl_o2edit10->larghezza(100);
 		$ctrl_o2edit10->altezza(22);
 		$ctrl_o2edit10->info_padre(array("01" ,"03" ,"03"));
-	$ctrl_o2edit11 = &$form_save_program_1->ctrldef("o2edit11", "edit", "o2table3", "views", "readrowact");
+	$ctrl_o2edit11 = $form_save_program_1->ctrldef("o2edit11", "edit", "o2table3", "views", "readrowact");
 		$ctrl_o2edit11->x(350);
 		$ctrl_o2edit11->y(30);
 		$ctrl_o2edit11->larghezza(150);
 		$ctrl_o2edit11->altezza(22);
 		$ctrl_o2edit11->info_padre(array("01" ,"04" ,"04"));
-	$ctrl_o2edit12 = &$form_save_program_1->ctrldef("o2edit12", "edit", "o2table3", "views", "modrowact");
+	$ctrl_o2edit12 = $form_save_program_1->ctrldef("o2edit12", "edit", "o2table3", "views", "modrowact");
 		$ctrl_o2edit12->x(520);
 		$ctrl_o2edit12->y(30);
 		$ctrl_o2edit12->larghezza(150);
 		$ctrl_o2edit12->altezza(22);
 		$ctrl_o2edit12->info_padre(array("01" ,"05" ,"05"));
-	$ctrl_o2dbnavigator3 = &$form_save_program_1->ctrldef("o2dbnavigator3", "navigator", "o2table3", "views", "");
+	$ctrl_o2dbnavigator3 = $form_save_program_1->ctrldef("o2dbnavigator3", "navigator", "o2table3", "views", "");
 		$ctrl_o2dbnavigator3->x(690);
 		$ctrl_o2dbnavigator3->y(30);
 		$ctrl_o2dbnavigator3->larghezza(18);
@@ -435,13 +435,13 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2dbnavigator3->act_save("views_post");
 		$ctrl_o2dbnavigator3->act_del("views_delete");
 		$ctrl_o2dbnavigator3->act_undo("views_undo");
-	$ctrl_o2edit13 = &$form_save_program_1->ctrldef("o2edit13", "edit", "o2table4", "prgvars", "name");
+	$ctrl_o2edit13 = $form_save_program_1->ctrldef("o2edit13", "edit", "o2table4", "prgvars", "name");
 		$ctrl_o2edit13->x(20);
 		$ctrl_o2edit13->y(40);
 		$ctrl_o2edit13->larghezza(150);
 		$ctrl_o2edit13->altezza(22);
 		$ctrl_o2edit13->info_padre(array("01" ,"01" ,"01"));
-	$ctrl_o2ListBox3 = &$form_save_program_1->ctrldef("o2ListBox3", "listcombo", "o2table4", "prgvars", "datatype");
+	$ctrl_o2ListBox3 = $form_save_program_1->ctrldef("o2ListBox3", "listcombo", "o2table4", "prgvars", "datatype");
 		$ctrl_o2ListBox3->x(180);
 		$ctrl_o2ListBox3->y(40);
 		$ctrl_o2ListBox3->larghezza(150);
@@ -449,7 +449,7 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2ListBox3->info_padre(array("01" ,"02" ,"02" ,"Data-type" ,False ,"tab_corpo_sx" ,False ,"tab_testa_sx"));
 		$ctrl_o2ListBox3->valori(o2_view2list("combo_datatypes", "name", "name"));
 		$ctrl_o2ListBox3->righe(1);
-	$ctrl_o2button6 = &$form_save_program_1->ctrldef("o2button6", "button", "o2table4", "", "");
+	$ctrl_o2button6 = $form_save_program_1->ctrldef("o2button6", "button", "o2table4", "", "");
 		$ctrl_o2button6->x(350);
 		$ctrl_o2button6->y(40);
 		$ctrl_o2button6->larghezza(22);
@@ -457,7 +457,7 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2button6->azione("select_var_datatype");
 		$ctrl_o2button6->info_padre(array("01" ,"03" ,"03" ,"" ,False ,"tab_corpo_dx" ,False ,"tab_testa_dx"));
 		$ctrl_o2button6->label("...");
-	$ctrl_o2dbnavigator4 = &$form_save_program_1->ctrldef("o2dbnavigator4", "navigator", "o2table4", "prgvars", "");
+	$ctrl_o2dbnavigator4 = $form_save_program_1->ctrldef("o2dbnavigator4", "navigator", "o2table4", "prgvars", "");
 		$ctrl_o2dbnavigator4->x(380);
 		$ctrl_o2dbnavigator4->y(50);
 		$ctrl_o2dbnavigator4->larghezza(18);
@@ -470,19 +470,19 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2dbnavigator4->act_save("prgvars_post");
 		$ctrl_o2dbnavigator4->act_del("prgvars_delete");
 		$ctrl_o2dbnavigator4->act_undo("prgvars_undo");
-	$ctrl_o2edit14 = &$form_save_program_1->ctrldef("o2edit14", "edit", "o2table5", "expressions", "idexp");
+	$ctrl_o2edit14 = $form_save_program_1->ctrldef("o2edit14", "edit", "o2table5", "expressions", "idexp");
 		$ctrl_o2edit14->x(10);
 		$ctrl_o2edit14->y(30);
 		$ctrl_o2edit14->larghezza(40);
 		$ctrl_o2edit14->altezza(22);
 		$ctrl_o2edit14->info_padre(array("01" ,"01" ,"01" ,"#" ,False ,"" ,False ,""));
-	$ctrl_o2edit15 = &$form_save_program_1->ctrldef("o2edit15", "edit", "o2table5", "expressions", "result");
+	$ctrl_o2edit15 = $form_save_program_1->ctrldef("o2edit15", "edit", "o2table5", "expressions", "result");
 		$ctrl_o2edit15->x(50);
 		$ctrl_o2edit15->y(30);
 		$ctrl_o2edit15->larghezza(360);
 		$ctrl_o2edit15->altezza(22);
 		$ctrl_o2edit15->info_padre(array("01" ,"02" ,"02" ,"Return expression" ,False ,"" ,False ,""));
-	$ctrl_o2dbnavigator5 = &$form_save_program_1->ctrldef("o2dbnavigator5", "navigator", "o2table5", "expressions", "");
+	$ctrl_o2dbnavigator5 = $form_save_program_1->ctrldef("o2dbnavigator5", "navigator", "o2table5", "expressions", "");
 		$ctrl_o2dbnavigator5->x(420);
 		$ctrl_o2dbnavigator5->y(30);
 		$ctrl_o2dbnavigator5->larghezza(18);
@@ -495,13 +495,13 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2dbnavigator5->act_save("expressions_post");
 		$ctrl_o2dbnavigator5->act_del("expressions_delete");
 		$ctrl_o2dbnavigator5->act_undo("expressions_undo");
-	$ctrl_o2edit16 = &$form_save_program_1->ctrldef("o2edit16", "edit", "o2table6", "operations", "position");
+	$ctrl_o2edit16 = $form_save_program_1->ctrldef("o2edit16", "edit", "o2table6", "operations", "position");
 		$ctrl_o2edit16->x(10);
 		$ctrl_o2edit16->y(30);
 		$ctrl_o2edit16->larghezza(35);
 		$ctrl_o2edit16->altezza(22);
 		$ctrl_o2edit16->info_padre(array("01" ,"01" ,"01" ,"#" ,True ,"" ,False ,""));
-	$ctrl_o2ListBox5 = &$form_save_program_1->ctrldef("o2ListBox5", "listcombo", "o2table6", "operations", "operation");
+	$ctrl_o2ListBox5 = $form_save_program_1->ctrldef("o2ListBox5", "listcombo", "o2table6", "operations", "operation");
 		$ctrl_o2ListBox5->x(50);
 		$ctrl_o2ListBox5->y(30);
 		$ctrl_o2ListBox5->larghezza(95);
@@ -509,19 +509,19 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2ListBox5->info_padre(array("01" ,"02" ,"02" ,"Command" ,True ,"" ,False ,""));
 		$ctrl_o2ListBox5->valori(save_program_exp_12());
 		$ctrl_o2ListBox5->righe(1);
-	$ctrl_o2edit17 = &$form_save_program_1->ctrldef("o2edit17", "edit", "o2table6", "operations", "rem_text");
+	$ctrl_o2edit17 = $form_save_program_1->ctrldef("o2edit17", "edit", "o2table6", "operations", "rem_text");
 		$ctrl_o2edit17->x(150);
 		$ctrl_o2edit17->y(30);
 		$ctrl_o2edit17->larghezza(420);
 		$ctrl_o2edit17->altezza(22);
 		$ctrl_o2edit17->info_padre(array("01" ,"03" ,"03" ,"Arguments" ,True ,"" ,False ,""));
-	$ctrl_o2edit18 = &$form_save_program_1->ctrldef("o2edit18", "edit", "o2table6", "operations", "condition_exp");
+	$ctrl_o2edit18 = $form_save_program_1->ctrldef("o2edit18", "edit", "o2table6", "operations", "condition_exp");
 		$ctrl_o2edit18->x(570);
 		$ctrl_o2edit18->y(30);
 		$ctrl_o2edit18->larghezza(40);
 		$ctrl_o2edit18->altezza(22);
 		$ctrl_o2edit18->info_padre(array("01" ,"04" ,"04" ,"Cond." ,True ,"" ,False ,""));
-	$ctrl_o2dbnavigator6 = &$form_save_program_1->ctrldef("o2dbnavigator6", "navigator", "o2table6", "operations", "");
+	$ctrl_o2dbnavigator6 = $form_save_program_1->ctrldef("o2dbnavigator6", "navigator", "o2table6", "operations", "");
 		$ctrl_o2dbnavigator6->x(620);
 		$ctrl_o2dbnavigator6->y(30);
 		$ctrl_o2dbnavigator6->larghezza(18);
@@ -537,134 +537,134 @@ function save_program§§save_program_1_form_def(&$form_save_program_1) {
 		$ctrl_o2dbnavigator6->act_select("operations_select");
 		}
 
-function save_program§§acts_delete_act(&$o2exe) {
+function save_program§§acts_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("acts", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§acts_insert_act(&$o2exe) {
+function save_program§§acts_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("acts", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§acts_post_act(&$o2exe) {
+function save_program§§acts_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("acts", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§acts_undo_act(&$o2exe) {
+function save_program§§acts_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("acts", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§expressions_delete_act(&$o2exe) {
+function save_program§§expressions_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("expressions", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§expressions_insert_act(&$o2exe) {
+function save_program§§expressions_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("expressions", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§expressions_post_act(&$o2exe) {
+function save_program§§expressions_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("expressions", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§expressions_undo_act(&$o2exe) {
+function save_program§§expressions_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("expressions", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§operations_delete_act(&$o2exe) {
+function save_program§§operations_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("operations", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§operations_detail_act(&$o2exe) {
+function save_program§§operations_detail_act($o2exe) {
 	} //|o2_fine_act|
 
-function save_program§§operations_insert_act(&$o2exe) {
+function save_program§§operations_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("operations", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§operations_post_act(&$o2exe) {
+function save_program§§operations_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("operations", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§operations_select_act(&$o2exe) {
+function save_program§§operations_select_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "selected_act", save_program_exp_19()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§operations_undo_act(&$o2exe) {
+function save_program§§operations_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("operations", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§params_delete_act(&$o2exe) {
+function save_program§§params_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("params", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§params_insert_act(&$o2exe) {
+function save_program§§params_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("params", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§params_post_act(&$o2exe) {
+function save_program§§params_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("params", "userid", save_program_exp_9()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("params", "prgname", save_program_exp_2()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("params", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§params_undo_act(&$o2exe) {
+function save_program§§params_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("params", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§prgvars_delete_act(&$o2exe) {
+function save_program§§prgvars_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("prgvars", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§prgvars_insert_act(&$o2exe) {
+function save_program§§prgvars_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("prgvars", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§prgvars_post_act(&$o2exe) {
+function save_program§§prgvars_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prgvars", "userid", save_program_exp_9()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prgvars", "prgname", save_program_exp_2()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("prgvars", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§prgvars_undo_act(&$o2exe) {
+function save_program§§prgvars_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("prgvars", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§select_param_datatype_act(&$o2exe) {
+function save_program§§select_param_datatype_act($o2exe) {
 	} //|o2_fine_act|
 
-function save_program§§select_var_datatype_act(&$o2exe) {
+function save_program§§select_var_datatype_act($o2exe) {
 	} //|o2_fine_act|
 
-function save_program§§show_actions_act(&$o2exe) {
+function save_program§§show_actions_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "page_number", save_program_exp_8()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§show_main_act(&$o2exe) {
+function save_program§§show_main_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "page_number", save_program_exp_6()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§show_views_act(&$o2exe) {
+function save_program§§show_views_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "page_number", save_program_exp_7()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§start_act(&$o2exe) {
+function save_program§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "actions", save_program_exp_20()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§views_delete_act(&$o2exe) {
+function save_program§§views_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("views", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§views_insert_act(&$o2exe) {
+function save_program§§views_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("views", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§views_post_act(&$o2exe) {
+function save_program§§views_post_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("views", "userid", save_program_exp_9()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("views", "prgname", save_program_exp_2()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::view("views", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function save_program§§views_undo_act(&$o2exe) {
+function save_program§§views_undo_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("views", "A", "") && $o2exe->e();
 	} //|o2_fine_act|
 

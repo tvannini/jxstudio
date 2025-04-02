@@ -1,12 +1,12 @@
 <?php
 
-function refresh_programs_list§§prg§_§var_def(&$task_prg§_§var) {
+function refresh_programs_list§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_prf", "_o2structure");
 	$task_prg§_§var->definisci("counter", "id");
 		}
 
-function refresh_programs_list§§obj_def(&$task_obj, $_o2viewalias = "") {
+function refresh_programs_list§§obj_def($task_obj, $_o2viewalias = "") {
 	$task_obj->righe_vis = 10;
 
 	$task_obj->usa_file("tstamp_obj","tstamp_obj","type");
@@ -14,16 +14,16 @@ function refresh_programs_list§§obj_def(&$task_obj, $_o2viewalias = "") {
 	$task_obj->usa("type","tstamp_obj","type","refresh_programs_list_exp_6()","refresh_programs_list_exp_6()",null,null);
 }
 
-function refresh_programs_list§§check_program_act(&$o2exe) {
+function refresh_programs_list§§check_program_act($o2exe) {
 	$o2exe->s(1) && (refresh_programs_list_exp_4() || $o2exe->e()) && o2act::call("check_ts_obj", False, refresh_programs_list_exp_3()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "counter", refresh_programs_list_exp_5()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function refresh_programs_list§§deletelist_act(&$o2exe) {
+function refresh_programs_list§§deletelist_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("obj", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function refresh_programs_list§§start_act(&$o2exe) {
+function refresh_programs_list§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::exe("deletelist", False, "obj") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "array_prf", refresh_programs_list_exp_1()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::exe("check_program", "refresh_programs_list_exp_2()", "") && $o2exe->e();
