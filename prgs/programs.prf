@@ -12,17 +12,10 @@ function programs§§workset_def($task_workset, $_o2viewalias = "") {
 	$task_workset->righe_vis = 100;
 
 	$task_workset->usa_file("work_set","work_set","recent",null,null);
-	$task_workset->usa_file_link("tstamp_obj","tstamp_obj","obj",null,null);
 
-	$task_workset->unisci("tstamp_obj_objname_join_","tstamp_obj","objname","programs_exp_14()","programs_exp_14()",null,null);
-	$task_workset->unisci("tstamp_obj_userid_join_","tstamp_obj","userid",null,null,"programs_exp_3()",null);
-
-	$task_workset->usa("userid","work_set","userid","programs_exp_9()","programs_exp_9()",null,null);
-	$task_workset->usa("prgname","work_set","prgname","programs_exp_8()","programs_exp_8()",null,null);
+	$task_workset->usa("prgname","work_set","prgname","programs_exp_13()","programs_exp_13()",null,null);
 	$task_workset->usa("last_date","work_set","last_date",null,null,null,null);
 	$task_workset->usa("last_time","work_set","last_time",null,null,null,null);
-	$task_workset->usa("check_user","tstamp_obj","userid",null,null,null,null);
-	$task_workset->calcola("style_class","_o2alpha","programs_exp_31()",null,null,null,null);
 }
 
 function programs§§programs_def($task_programs, $_o2viewalias = "") {
@@ -74,7 +67,7 @@ function programs§§programs_form_def($form_programs) {
 		$ctrl_nav->visible_detail(programs_exp_9999());
 		$ctrl_nav->act_new("programs_insert");
 		$ctrl_nav->act_del("programs_delete");
-		$ctrl_nav->act_select("programs_detail");
+		$ctrl_nav->act_select("programs_select");
 	$ctrl_o2button2 = $form_programs->ctrldef("o2button2", "button", "", "", "");
 		$ctrl_o2button2->x(660);
 		$ctrl_o2button2->y(10);
@@ -110,21 +103,10 @@ function programs§§add_prg_act($o2exe) {
 	} //|o2_fine_act|
 
 function programs§§add_prg_to_workset_act($o2exe) {
-	$o2exe->s(1) && (programs_exp_1() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("workset", "userid", programs_exp_9()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_8()) && $o2exe->e();
+	$o2exe->s(2) && (programs_exp_1() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("workset", "prgname", programs_exp_8()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::view("workset", "S", "") && $o2exe->e();
-	} //|o2_fine_act|
-
-function programs§§add_to_workset_act($o2exe) {
-	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_8()) && $o2exe->e();
-	$o2exe->s(2) && (programs_exp_10() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
-	$o2exe->s(3) && True && o2act::set("workset", "userid", programs_exp_9()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::set("workset", "prgname", programs_exp_8()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("workset", "last_date", programs_exp_11()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("workset", "last_time", programs_exp_12()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::view("workset", "S", "") && $o2exe->e();
-	$o2exe->s(8) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_3()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function programs§§close_act($o2exe) {
@@ -133,20 +115,9 @@ function programs§§close_act($o2exe) {
 	$o2exe->s(3) && True && o2act::set("_o2SESSION", "main_y", programs_exp_27()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§goto_appvars_act($o2exe) {
-	$o2exe->s(1) && True && o2act::gotoprg("app_vars", false) && $o2exe->e();
-	} //|o2_fine_act|
-
-function programs§§goto_datatypes_act($o2exe) {
-	$o2exe->s(1) && True && o2act::gotoprg("datatypes", false) && $o2exe->e();
-	} //|o2_fine_act|
-
-function programs§§goto_tables_act($o2exe) {
-	$o2exe->s(1) && True && o2act::gotoprg("tables", false) && $o2exe->e();
-	} //|o2_fine_act|
-
 function programs§§load_workset_act($o2exe) {
-	$o2exe->s(1) && True && o2act::exe("add_prg", False, "workset") && $o2exe->e();
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_filter", programs_exp_3()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("add_prg", False, "workset") && $o2exe->e();
 	} //|o2_fine_act|
 
 function programs§§prg_show_act($o2exe) {
@@ -163,22 +134,15 @@ function programs§§programs_delete_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("programs", "C", "") && $o2exe->e();
 	} //|o2_fine_act|
 
-function programs§§programs_detail_act($o2exe) {
-	$o2exe->s(1) && True && o2act::exe("add_prg_to_workset", True, "") && $o2exe->e();
-//	$o2exe->s(2) && True && o2act::remark("Check for reload") && $o2exe->e();
-	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, programs_exp_8()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::call("project", False, programs_exp_2()) && $o2exe->e();
-	} //|o2_fine_act|
-
 function programs§§programs_insert_act($o2exe) {
 	$o2exe->s(1) && True && o2act::view("programs", "I", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function programs§§programs_select_act($o2exe) {
-//	$o2exe->s(1) && True && o2act::remark("Add prg to workset") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::exe("add_to_workset", True, "") && $o2exe->e();
-//	$o2exe->s(3) && True && o2act::remark("Set focus to workset") && $o2exe->e();
-	$o2exe->s(4) && True && o2act::script(programs_exp_4()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::exe("add_prg_to_workset", True, "") && $o2exe->e();
+//	$o2exe->s(2) && True && o2act::remark("Check for reload") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call("check_ts_obj", False, programs_exp_8()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::call("project", False, programs_exp_2()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function programs§§start_act($o2exe) {
@@ -214,11 +178,6 @@ function programs_exp_3() {
 return ("");
 	} //|o2_fine_exp|
 
-function programs_exp_4() {
-	o2ctrl_focus("programs", "o2table2");
-return (true);
-	} //|o2_fine_exp|
-
 function programs_exp_5() {
 	o2tree_node_expand('tree', 'jxa|prgs');
 return (true);
@@ -239,24 +198,9 @@ function programs_exp_8() {
 return (o2val('programs','prgname'));
 	} //|o2_fine_exp|
 
-function programs_exp_9() {
+function programs_exp_13() {
 	
-return (o2app_user());
-	} //|o2_fine_exp|
-
-function programs_exp_10() {
-	
-return (!o2view_rec("workset"));
-	} //|o2_fine_exp|
-
-function programs_exp_11() {
-	
-return (date("Ymd"));
-	} //|o2_fine_exp|
-
-function programs_exp_12() {
-	
-return (date(His));
+return (o2val('prg§_§var','prg_filter'));
 	} //|o2_fine_exp|
 
 function programs_exp_14() {
@@ -272,19 +216,6 @@ return (o2form_x("programs"));
 function programs_exp_27() {
 	
 return (o2form_y("programs"));
-	} //|o2_fine_exp|
-
-function programs_exp_31() {
-	if (o2val('workset','check_user') == o2app_user()) {
-   $class = "checked_by_me";
-   }
-elseif (!o2zero('workset','check_user')) {
-   $class = "checked_by_other";
-   }
-else {
-   $class = "";
-   }
-return ($class);
 	} //|o2_fine_exp|
 
 function programs_exp_39() {
