@@ -19,6 +19,16 @@ function load_programs§§programs_def($task_programs, $_o2viewalias = "") {
 	$task_programs->usa("module","programs","module",null,null,null,null);
 	$task_programs->usa("folder","programs","folder",null,null,null,null);
 }
+
+function load_programs§§workset_def($task_workset, $_o2viewalias = "") {
+	$task_workset->righe_vis = 10;
+
+	$task_workset->usa_file("work_set","work_set","name",null,null);
+
+	$task_workset->usa("prgname","work_set","prgname","load_programs_exp_6()","load_programs_exp_6()",null,null);
+	$task_workset->usa("last_date","work_set","last_date",null,null,null,null);
+	$task_workset->usa("last_time","work_set","last_time",null,null,null,null);
+}
 function load_programs§§load_programs_1_form_def($form_load_programs_1) {
 	$form_load_programs_1->x(200);
 	$form_load_programs_1->y(200);
@@ -60,11 +70,26 @@ function load_programs§§add_prg_act($o2exe) {
 	$o2exe->s(7) && True && o2act::view("programs", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
+function load_programs§§add_to_workset_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_11()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "prgname", load_programs_exp_12()) && $o2exe->e();
+	$o2exe->s(3) && (load_programs_exp_5() || $o2exe->e()) && o2act::view("workset", "I", "") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("workset", "prgname", load_programs_exp_6()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("workset", "last_date", load_programs_exp_14()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("workset", "last_time", load_programs_exp_15()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::view("workset", "S", "") && $o2exe->e();
+	} //|o2_fine_act|
+
 function load_programs§§execute_act($o2exe) {
-	$o2exe->s(1) && True && o2act::set("prg§_§var", "prgslist", load_programs_exp_7()) && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_9()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::exe("add_prg", "load_programs_exp_10()", "") && $o2exe->e();
-	$o2exe->s(4) && True && o2act::close()&& $o2exe->e();
+//	$o2exe->s(1) && True && o2act::remark("Load all programs") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "prgslist", load_programs_exp_7()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_9()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::exe("add_prg", "load_programs_exp_10()", "") && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Load checked programs in work-set") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "prgslist", load_programs_exp_3()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("prg§_§var", "prgid", load_programs_exp_9()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::exe("add_to_workset", "load_programs_exp_10()", "") && $o2exe->e();
+	$o2exe->s(9) && True && o2act::close()&& $o2exe->e();
 	} //|o2_fine_act|
 
 function load_programs§§start_act($o2exe) {
@@ -81,9 +106,24 @@ function load_programs_exp_2() {
 return (0.5);
 	} //|o2_fine_exp|
 
+function load_programs_exp_3() {
+	if (file_exists(o2val('_o2SESSION','prgdir').o2app_user())) {
+   $list = o2dir_list(o2val('_o2SESSION','prgdir').o2app_user().DIRECTORY_SEPARATOR, "*.prf");
+   }
+else {
+   $list = array();
+   }
+return ($list);
+	} //|o2_fine_exp|
+
 function load_programs_exp_4() {
 	
 return (o2app_user());
+	} //|o2_fine_exp|
+
+function load_programs_exp_5() {
+	
+return (!o2view_rec("workset"));
 	} //|o2_fine_exp|
 
 function load_programs_exp_6() {
@@ -92,8 +132,8 @@ return (o2val('prg§_§var','prgname'));
 	} //|o2_fine_exp|
 
 function load_programs_exp_7() {
-	$list = o2dir_list(o2val('_o2SESSION','prgdir'), "*.prf");
-return ($list);
+	
+return (o2dir_list(o2val('_o2SESSION','prgdir'), "*.prf"));
 	} //|o2_fine_exp|
 
 function load_programs_exp_9() {
@@ -103,7 +143,7 @@ return (count(o2val('prg§_§var','prgslist')));
 
 function load_programs_exp_10() {
 	
-return (o2val('prg§_§var','prgid') < 0);
+return (o2val('prg§_§var','prgid') <= 0);
 	} //|o2_fine_exp|
 
 function load_programs_exp_11() {
@@ -115,6 +155,7 @@ function load_programs_exp_12() {
 	$list = o2val('prg§_§var','prgslist');
 $id   = o2val('prg§_§var','prgid');
 $name = o2file_basename($list[$id]);
+
 return ($name);
 	} //|o2_fine_exp|
 
