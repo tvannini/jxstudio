@@ -130,7 +130,7 @@ return (!o2view_rec("workset"));
 
 function load_programs_exp_6() {
 	
-return (o2val('prg§_§var','prgname'));
+return ((o2zero('prg§_§var','prgname') ? null : o2val('prg§_§var','prgname')));
 	} //|o2_fine_exp|
 
 function load_programs_exp_7() {
