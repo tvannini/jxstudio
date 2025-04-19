@@ -348,28 +348,29 @@ function applications§§recents_select_act($o2exe) {
 	$o2exe->s(5) && True && o2act::set("_o2SESSION", "appdir", applications_exp_6()) && $o2exe->e();
 	$o2exe->s(6) && True && o2act::set("_o2SESSION", "prgdir", applications_exp_7()) && $o2exe->e();
 	$o2exe->s(7) && True && o2act::set("_o2SESSION", "usrdir", applications_exp_8()) && $o2exe->e();
-//	$o2exe->s(8) && True && o2act::remark("-- Set application database") && $o2exe->e();
-	$o2exe->s(9) && True && o2act::set("_o2SESSION", "archive_gateway", applications_exp_34()) && $o2exe->e();
-	$o2exe->s(10) && True && o2act::call("on_request", False) && $o2exe->e();
-//	$o2exe->s(11) && True && o2act::remark("Set DB") && $o2exe->e();
-	$o2exe->s(12) && True && o2act::script(applications_exp_16()) && $o2exe->e();
-//	$o2exe->s(13) && True && o2act::remark("Set status-bar") && $o2exe->e();
-	$o2exe->s(14) && True && o2act::exe("set_statusbar", True, "") && $o2exe->e();
-	$o2exe->s(15) && True && o2act::call("load_app_prop", False) && $o2exe->e();
-//	$o2exe->s(16) && True && o2act::remark("--DATATYPES--") && $o2exe->e();
-	$o2exe->s(17) && True && o2act::call("check_ts_obj", False, applications_exp_11()) && $o2exe->e();
-//	$o2exe->s(18) && True && o2act::remark("--APPVARS--") && $o2exe->e();
-	$o2exe->s(19) && True && o2act::call("check_ts_obj", False, applications_exp_10()) && $o2exe->e();
-//	$o2exe->s(20) && True && o2act::remark("--SERVERS&DATABASES--") && $o2exe->e();
-	$o2exe->s(21) && True && o2act::call("check_ts_obj", False, applications_exp_13()) && $o2exe->e();
-//	$o2exe->s(22) && True && o2act::remark("--TABLES--") && $o2exe->e();
-	$o2exe->s(23) && True && o2act::call("check_ts_obj", False, applications_exp_12()) && $o2exe->e();
-//	$o2exe->s(24) && True && o2act::remark("--MENU--") && $o2exe->e();
-	$o2exe->s(25) && True && o2act::call("check_ts_obj", False, applications_exp_14()) && $o2exe->e();
-//	$o2exe->s(26) && True && o2act::remark("--PROGRAMS LIST--") && $o2exe->e();
-	$o2exe->s(27) && True && o2act::menu("base") && $o2exe->e();
-	$o2exe->s(28) && True && o2act::call("load_programs", False) && $o2exe->e();
-	$o2exe->s(29) && True && o2act::gotoprg("project", false) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("_o2SESSION", "menu_items", applications_exp_41()) && $o2exe->e();
+//	$o2exe->s(9) && True && o2act::remark("-- Set application database") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("_o2SESSION", "archive_gateway", applications_exp_34()) && $o2exe->e();
+	$o2exe->s(11) && True && o2act::call("on_request", False) && $o2exe->e();
+//	$o2exe->s(12) && True && o2act::remark("Set DB") && $o2exe->e();
+	$o2exe->s(13) && True && o2act::script(applications_exp_16()) && $o2exe->e();
+//	$o2exe->s(14) && True && o2act::remark("Set status-bar") && $o2exe->e();
+	$o2exe->s(15) && True && o2act::exe("set_statusbar", True, "") && $o2exe->e();
+	$o2exe->s(16) && True && o2act::call("load_app_prop", False) && $o2exe->e();
+//	$o2exe->s(17) && True && o2act::remark("--DATATYPES--") && $o2exe->e();
+	$o2exe->s(18) && True && o2act::call("check_ts_obj", False, applications_exp_11()) && $o2exe->e();
+//	$o2exe->s(19) && True && o2act::remark("--APPVARS--") && $o2exe->e();
+	$o2exe->s(20) && True && o2act::call("check_ts_obj", False, applications_exp_10()) && $o2exe->e();
+//	$o2exe->s(21) && True && o2act::remark("--SERVERS&DATABASES--") && $o2exe->e();
+	$o2exe->s(22) && True && o2act::call("check_ts_obj", False, applications_exp_13()) && $o2exe->e();
+//	$o2exe->s(23) && True && o2act::remark("--TABLES--") && $o2exe->e();
+	$o2exe->s(24) && True && o2act::call("check_ts_obj", False, applications_exp_12()) && $o2exe->e();
+//	$o2exe->s(25) && True && o2act::remark("--MENU--") && $o2exe->e();
+	$o2exe->s(26) && True && o2act::call("check_ts_obj", False, applications_exp_14()) && $o2exe->e();
+//	$o2exe->s(27) && True && o2act::remark("--PROGRAMS LIST--") && $o2exe->e();
+	$o2exe->s(28) && True && o2act::menu("base") && $o2exe->e();
+	$o2exe->s(29) && True && o2act::call("load_programs", False) && $o2exe->e();
+	$o2exe->s(30) && True && o2act::gotoprg("project", false) && $o2exe->e();
 	} //|o2_fine_act|
 
 function applications§§recents_undo_act($o2exe) {
@@ -633,6 +634,11 @@ return (o2zero('recents','path'));
 function applications_exp_40() {
 	
 return ((o2par(1) ? 0 : 0.3));
+	} //|o2_fine_exp|
+
+function applications_exp_41() {
+	
+return (array());
 	} //|o2_fine_exp|
 
 function applications_exp_47() {
