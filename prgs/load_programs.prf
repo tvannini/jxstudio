@@ -94,6 +94,8 @@ function load_programs§§execute_act($o2exe) {
 
 function load_programs§§start_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "userid", load_programs_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("programs", "D", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("workset", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_programs_exp_1() {
@@ -155,7 +157,6 @@ function load_programs_exp_12() {
 	$list = o2val('prg§_§var','prgslist');
 $id   = o2val('prg§_§var','prgid');
 $name = o2file_basename($list[$id]);
-
 return ($name);
 	} //|o2_fine_exp|
 
