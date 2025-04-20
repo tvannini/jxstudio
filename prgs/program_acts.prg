@@ -9,7 +9,6 @@ o2def::prgnotes("");
 o2def::prg("program_acts", "start", "", __FILE__);
 
 o2def::view('prg§_§var');
-o2def::view("prg", false, "", "", 1, 0);
 o2def::view("obj_status", false, "", "", 1, 0);
 o2def::view("acts", false, "set_flag_catch", "", 1, 0);
 o2def::view("forms", false, "", "", 1, 0);

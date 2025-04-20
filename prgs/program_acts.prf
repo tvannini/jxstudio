@@ -16,20 +16,6 @@ function program_acts§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->definisci("zoommed_ctrl", "_o2alpha");
 		}
 
-function program_acts§§prg_def($task_prg, $_o2viewalias = "") {
-	$task_prg->righe_vis = 10;
-
-	$task_prg->usa_file("programs","programs","name",null,null);
-
-	$task_prg->usa("userid","programs","userid","program_acts_exp_3()","program_acts_exp_3()",null,null);
-	$task_prg->usa("prgname","programs","prgname","program_acts_exp_2()","program_acts_exp_2()",null,null);
-	$task_prg->usa("type","programs","type",null,null,null,null);
-	$task_prg->usa("startaction","programs","startaction",null,null,null,null);
-	$task_prg->usa("notes","programs","notes",null,null,null,null);
-	$task_prg->usa("module","programs","module",null,null,null,null);
-	$task_prg->usa("folder","programs","folder",null,null,null,null);
-}
-
 function program_acts§§obj_status_def($task_obj_status, $_o2viewalias = "") {
 	$task_obj_status->righe_vis = 10;
 
@@ -765,7 +751,7 @@ function program_acts§§zoom_object_act($o2exe) {
 function program_acts§§zoom_param_exp_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Save row if modified or in insert mode") && $o2exe->e();
 	$o2exe->s(2) && (program_acts_exp_142() || $o2exe->e()) && o2act::exe("operations_post", True, "") && $o2exe->e();
-//	$o2exe->s(3) && True && o2act::remark("No params for close, exe, remark, menu, io and print") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("No params for clos") && $o2exe->e();
 //	$o2exe->s(4) && True && o2act::remark("---") && $o2exe->e();
 //	$o2exe->s(5) && True && o2act::remark("Expression as single parameter:") && $o2exe->e();
 //	$o2exe->s(6) && True && o2act::remark("Alert") && $o2exe->e();
@@ -1011,7 +997,6 @@ switch (o2val('operations','exeact_endcond')) {
          }
       break;
    }
-
 return ($t);
 	} //|o2_fine_exp|
 
