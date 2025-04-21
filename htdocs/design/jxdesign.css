@@ -232,6 +232,7 @@ body {
   display: inline;
   width: calc(100% - 4px);
   text-align: center;
+  overflow: hidden;
 }
 .ctrl_type_check {
   background-image: url(img/checkbox.svg);
@@ -316,6 +317,8 @@ body {
 .ctrl_type_label {
   background-color: transparent;
   border: 1px dotted var(--jx-color-face);
+  overflow: hidden;
+  white-space: nowrap;
  }
  .ctrl_type_label > span {
   display: inline;
@@ -366,7 +369,7 @@ body {
 .ctrl_type_navigator > span {
   display: none;
 }
-.ctrl_type_navigator[data-nav_style=""]::before {
+.ctrl_type_navigator[data-nav-style=""]::before {
   content: url(img/nav_left.png);
   border-right: 1px solid var(--jx-color-border);
   position: absolute;
@@ -380,12 +383,12 @@ body {
 }
 /* Firefox ONLY */
 @supports (-moz-appearance: none) {
-  .ctrl_type_navigator[data-nav_style=""]::before {
+  .ctrl_type_navigator[data-nav-style=""]::before {
     height: 100%;
     padding-top: 0;
   }
 }
-.ctrl_type_navigator[data-nav_style=""]::after {
+.ctrl_type_navigator[data-nav-style=""]::after {
   content: url(img/nav_right.png);
   border-left: 1px solid var(--jx-color-border);
   position: absolute;
@@ -399,12 +402,12 @@ body {
 }
 /* Firefox ONLY */
 @supports (-moz-appearance: none) {
-  .ctrl_type_navigator[data-nav_style=""]::after {
+  .ctrl_type_navigator[data-nav-style=""]::after {
     height: 100%;
     padding-top: 0;
   }
 }
-.ctrl_type_navigator[data-nav_style="V"]::before {
+.ctrl_type_navigator[data-nav-style="V"]::before {
   content: url(img/nav_up.png);
   border-bottom: 1px solid var(--jx-color-border);
   position: absolute;
@@ -420,12 +423,12 @@ body {
 }
 /* Firefox ONLY */
 @supports (-moz-appearance: none) {
-  .ctrl_type_navigator[data-nav_style="V"]::before {
+  .ctrl_type_navigator[data-nav-style="V"]::before {
     height: 18px;
     padding-top: 0;
   }
 }
-.ctrl_type_navigator[data-nav_style="V"]::after {
+.ctrl_type_navigator[data-nav-style="V"]::after {
   content: url(img/nav_down.png);
   border-top: 1px solid var(--jx-color-border);
   position: absolute;
@@ -441,7 +444,7 @@ body {
 }
 /* Firefox ONLY */
 @supports (-moz-appearance: none) {
-  .ctrl_type_navigator[data-nav_style="V"]::after {
+  .ctrl_type_navigator[data-nav-style="V"]::after {
     height: 18px;
     padding-top: 0;
   }
@@ -449,6 +452,8 @@ body {
 .ctrl_type_tab {
   border: 1px inset var(--jx-color-border);
   background-color: #eeebd0;
+  overflow-x: auto;
+  overflow-y: hidden;
  }
  .ctrl_type_tab > span {
   display: inline;

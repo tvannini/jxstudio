@@ -126,7 +126,7 @@ function packCtrl(ctrl) {
     if (ctrl.dataset.tooltip !== '') controlData.tooltip = ctrl.dataset.tooltip;
     if (ctrl.dataset.btnStyle !== 'Standard') controlData.btnStyle = ctrl.dataset.btnStyle;
     if (ctrl.dataset.css !== '') controlData.css = ctrl.dataset.css;
-    if (ctrl.dataset.nav_style !== '') controlData.nav_style = ctrl.dataset.nav_style;
+    if (ctrl.dataset.navStyle !== '') controlData.navStyle = ctrl.dataset.navStyle;
     if (ctrl.dataset.pages !== '') controlData.pages = ctrl.dataset.pages;
     if (ctrl.dataset.activePage !== '') controlData.activePage = ctrl.dataset.activePage;
     if (ctrl.dataset.rtf !== '') controlData.rtf = ctrl.dataset.rtf;
@@ -238,7 +238,7 @@ function unpackCtrl(data) {
     if (data.tooltip) ctrl.dataset.tooltip = data.tooltip;
     if (data.btnStyle) ctrl.dataset.btnStyle = data.btnStyle;
     if (data.css) ctrl.dataset.css = data.css;
-    if (data.nav_style) ctrl.dataset.nav_style = data.nav_style;
+    if (data.navStyle) ctrl.dataset.navStyle = data.navStyle;
     if (data.pages) ctrl.dataset.pages = data.pages;
     if (data.activePage) ctrl.dataset.activePage = data.activePage;
     if (data.rtf) ctrl.dataset.rtf = data.rtf;
@@ -400,7 +400,7 @@ function createControl(x, y, width, height, ctrlParent = '', ctrlType = '', pare
     ctrl.dataset.tooltip = '';
     ctrl.dataset.btnStyle = 'Standard';
     ctrl.dataset.css = '';
-    ctrl.dataset.nav_style = '';
+    ctrl.dataset.navStyle = '';
     if (ctrlType === 'multipage') {
         ctrl.dataset.pages = 'Page1';
         ctrl.innerHTML = '<div class="mp-tabs"></div><div class="mp-pages"></div>';
@@ -626,12 +626,12 @@ function updateControlProperty(ctrl, propertyId, value) {
             ctrl.dataset.css = value;
             break;
         case 'nav_style':
-            if (ctrl.dataset.nav_style !== value) {
-                let withSave = ctrl.style.width;
+            if (ctrl.dataset.navStyle !== value) {
+                let widthSave = ctrl.style.width;
                 ctrl.style.width = ctrl.style.height;
-                ctrl.style.height = withSave;
+                ctrl.style.height = widthSave;
             }
-            ctrl.dataset.nav_style = value;
+            ctrl.dataset.navStyle = value;
             break;
         case 'pages':
             ctrl.dataset.pages = value;

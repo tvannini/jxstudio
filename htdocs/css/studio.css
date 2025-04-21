@@ -635,6 +635,11 @@
     text-align: center;
     }
 
+.section_title {
+    font-weight: bold;
+    font-size: 90%;
+    }
+
 .jxtree {
     border-top: none;
     border-bottom: none;

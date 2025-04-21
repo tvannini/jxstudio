@@ -18,18 +18,16 @@ function getResponse() {
 }
 
 function start() {
-    let started = false;
     // Set select-icon
     selectIcon = document.querySelectorAll('.palette-icon[data-ctrl-type=select]')[0];
     // Check if there are existing controls
     if (drawingArea.children.length === 0) {
-        // Try to load controls from localStorage
         const savedControlsData = sessionStorage.getItem('controlEditorData');
+        // Try to load controls from localStorage
         if (savedControlsData && (savedControlsData.length > 4)) {
             loadControlsFromStorage();
-            started = true;
         }
-        if (!started) {
+        else {
             // Create a default "Window" control
             const defaultWindow = createControl(100, 100, 600, 400, '', 'window');
             defaultWindow.dataset.ctrlName = 'win0';
@@ -270,10 +268,10 @@ function updatePropertiesForm() {
         document.querySelectorAll('[for="nav_style"], #nav_style').forEach(element => {
             element.style.display = 'grid';
         });
-        propertiesForm.nav_style.value = firstControl.dataset.nav_style || '';
+        propertiesForm.nav_style.value = firstControl.dataset.navStyle || '';
         for (let i = 1; i < selectedControls.length; i++) {
             const ctrl = selectedControls[i];
-            if (ctrl.dataset.nav_style !== propertiesForm.nav_style.value) propertiesForm.nav_style.value = '';
+            if (ctrl.dataset.navStyle !== propertiesForm.nav_style.value) propertiesForm.nav_style.value = '';
         }
     }
 
@@ -1207,8 +1205,6 @@ function redo() {
 
 // Funzione per mostrare il menu contestuale
 function showContextMenu(x, y) {
-    let undoContext;
-    let redoContext;
     if (contextMenu) {
         contextMenu.remove();
     }
@@ -1217,17 +1213,20 @@ function showContextMenu(x, y) {
     const rect = drawingArea.getBoundingClientRect();
     contextMenu.style.left = `${x - rect.left}px`;
     contextMenu.style.top = `${y - rect.top}px`;
+    let something = false;
     // Disable delete if control is a frame
     if (selectedControls.length === 1 && selectedControls[0].dataset.ctrlType === 'frame') {
         contextMenu.innerHTML += `
             <div class="context-menu-item" data-action="paste">Paste</div>
         `;
-    } else {
+        something = true;
+    } else if (selectedControls.length > 0) {
         contextMenu.innerHTML = `
             <div class="context-menu-item" data-action="copy">Copy</div>
             <div class="context-menu-item" data-action="paste">Paste</div>
             <div class="context-menu-item" data-action="delete">Delete</div>
         `;
+        something = true;
     }
 
     // Aggiungi le nuove voci solo se ci sono più controlli selezionati
@@ -1244,6 +1243,7 @@ function showContextMenu(x, y) {
             <div class="context-menu-item" data-action="max-height">Max height</div>
             <div class="context-menu-item" data-action="min-height">Min height</div>
         `;
+        something = true;
     }
 
     // Aggiungi la voce "Select children" se il controllo è un container
@@ -1252,21 +1252,24 @@ function showContextMenu(x, y) {
             <hr style="border:none;border-top: 1px solid var(--jx-color-border);">
             <div class="context-menu-item" data-action="select-children">Select children</div>
         `;
+        something = true;
+    }
     // Aggiungi Undo/Redo se disponibili
     const undoStack = JSON.parse(sessionStorage.getItem('undoStack')) || [];
     const redoStack = JSON.parse(sessionStorage.getItem('redoStack')) || [];
     if ((undoStack.length + redoStack.length) > 0) {
-        contextMenu.innerHTML += '<hr style="border:none;border-top: 1px solid var(--jx-color-border);">';
+        if (something) {
+            contextMenu.innerHTML += '<hr style="border:none;border-top: 1px solid var(--jx-color-border);">';
+        }
         if (undoStack.length > 0) {
             undoStep = undoStack[undoStack.length - 1];
             const label = Object.keys(undoStep)[0];
             contextMenu.innerHTML += `<div class="context-menu-item" data-action="undo">Undo ${label}</div>`;
-            }
+        }
         if (redoStack.length > 0) {
             redoStep = redoStack[redoStack.length - 1];
             const label = Object.keys(redoStep)[0];
             contextMenu.innerHTML += `<div class="context-menu-item" data-action="redo">Redo ${label}</div>`;
-            }
         }
     }
 
@@ -1359,7 +1362,10 @@ drawingArea.addEventListener('click', (e) => {
 
 drawingArea.addEventListener('contextmenu', (e) => {
     e.preventDefault();
-    if (e.target.classList.contains('control') && currentMode === 'select') {
+    if (e.target === drawingArea) {
+        deselectAllControls();
+        showContextMenu(e.clientX, e.clientY);
+    } else if (e.target.classList.contains('control') && currentMode === 'select') {
         if (!selectedControls.includes(e.target)) {
             selectControl(e.target);
         }

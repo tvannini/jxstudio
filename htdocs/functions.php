@@ -37,8 +37,27 @@ function FormProperty($formname, $formcontent, $propname) {
 
 function jxStdName($name) {
 
-	return preg_replace('/\W/', '_', $name)
-	
+	return preg_replace('/\W/', '_', $name);
+
 	}
+
+
+
+function DecodeProp($value) {
+
+	// ___________________________ Quoted string: return unquoted ___
+	if (substr($value, 0, 1) === '"') {
+		return trim($value, '"');
+		}
+	// ____________ Expression function: return expression number ___
+	elseif (substr($value, -2) === '()') {
+		return substr($value, strrpos($value, '_exp_') + 1, -2);
+		}
+	// _____________________________________ Number: return as is ___
+	else {
+		return intval($value);
+		}
+
+    }
 
 ?>
