@@ -232,6 +232,7 @@ body {
   display: inline;
   width: calc(100% - 4px);
   text-align: center;
+  white-space: nowrap;
   overflow: hidden;
 }
 .ctrl_type_check {
