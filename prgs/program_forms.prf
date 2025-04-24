@@ -1,0 +1,1454 @@
+<?php
+
+function program_forms§§prg§_§var_def($task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("confirm", "_o2logical");
+	$task_prg§_§var->definisci("ctrls_code", "_o2structure");
+	$task_prg§_§var->definisci("menu_selected_item", "path");
+	$task_prg§_§var->definisci("prg_modified", "_o2logical");
+	$task_prg§_§var->definisci("response", "_o2structure");
+	$task_prg§_§var->definisci("show_editor", "_o2logical");
+		}
+
+function program_forms§§obj_status_def($task_obj_status, $_o2viewalias = "") {
+	$task_obj_status->righe_vis = 10;
+
+	$task_obj_status->usa_file("tstamp_obj","tstamp_obj","obj",null,null);
+
+	$task_obj_status->usa("objname","tstamp_obj","objname","program_forms_exp_2()","program_forms_exp_2()",null,null);
+	$task_obj_status->usa("userid","tstamp_obj","userid",null,null,"program_forms_exp_1()",null);
+}
+
+function program_forms§§prgexps_def($task_prgexps, $_o2viewalias = "") {
+	$task_prgexps->righe_vis = 100;
+
+	$task_prgexps->usa_file("prgexpressions","prgexpressions","id",null,null);
+
+	$task_prgexps->usa("userid","prgexpressions","userid","program_forms_exp_3()","program_forms_exp_3()",null,null);
+	$task_prgexps->usa("prgname","prgexpressions","prgname","program_forms_exp_2()","program_forms_exp_2()",null,null);
+	$task_prgexps->usa("idexp","prgexpressions","idexp",null,null,null,null);
+	$task_prgexps->usa("script","prgexpressions","script",null,null,null,null);
+	$task_prgexps->usa("result","prgexpressions","result",null,null,null,null);
+}
+
+function program_forms§§prgforms_def($task_prgforms, $_o2viewalias = "") {
+	$task_prgforms->righe_vis = 100;
+
+	$task_prgforms->usa_file("forms","forms","pos",null,null);
+
+	$task_prgforms->usa("userid","forms","userid","program_forms_exp_3()","program_forms_exp_3()",null,null);
+	$task_prgforms->usa("prgname","forms","prgname","program_forms_exp_2()","program_forms_exp_2()",null,null);
+	$task_prgforms->usa("formname","forms","formname",null,null,null,null);
+	$task_prgforms->usa("position","forms","position",null,null,null,null);
+	$task_prgforms->usa("parent","forms","parent",null,null,null,null);
+	$task_prgforms->usa("caption","forms","caption",null,null,null,null);
+	$task_prgforms->usa("caption_exp","forms","caption_exp",null,null,null,null);
+	$task_prgforms->usa("menu","forms","menu",null,null,null,null);
+	$task_prgforms->usa("visible","forms","visible",null,null,null,null);
+	$task_prgforms->usa("top_y","forms","top_y",null,null,null,null);
+	$task_prgforms->usa("left_x","forms","left_x",null,null,null,null);
+	$task_prgforms->usa("heightpx","forms","heightpx",null,null,null,null);
+	$task_prgforms->usa("widthpx","forms","widthpx",null,null,null,null);
+	$task_prgforms->usa("vert_align","forms","vert_align",null,null,null,null);
+	$task_prgforms->usa("horiz_align","forms","horiz_align",null,null,null,null);
+	$task_prgforms->usa("title_visible","forms","title_visible",null,null,null,null);
+	$task_prgforms->usa("allow_resize","forms","allow_resize",null,null,null,null);
+	$task_prgforms->usa("top_exp","forms","top_exp",null,null,null,null);
+	$task_prgforms->usa("left_exp","forms","left_exp",null,null,null,null);
+	$task_prgforms->usa("height_exp","forms","height_exp",null,null,null,null);
+	$task_prgforms->usa("width_exp","forms","width_exp",null,null,null,null);
+	$task_prgforms->usa("url","forms","url",null,null,null,null);
+	$task_prgforms->usa("close_act","forms","close_act",null,null,null,null);
+	$task_prgforms->usa("refresh_act","forms","refresh_act",null,null,null,null);
+	$task_prgforms->usa("seconds_refresh","forms","seconds_refresh",null,null,null,null);
+	$task_prgforms->usa("css_window","forms","css_window",null,null,null,null);
+	$task_prgforms->usa("css_title","forms","css_title",null,null,null,null);
+	$task_prgforms->usa("css_titledis","forms","css_titledis",null,null,null,null);
+	$task_prgforms->usa("css_body","forms","css_body",null,null,null,null);
+	$task_prgforms->usa("css_statusbar","forms","css_statusbar",null,null,null,null);
+	$task_prgforms->usa("css_doc","forms","css_doc",null,null,null,null);
+	$task_prgforms->usa("css_unfold","forms","css_unfold",null,null,null,null);
+	$task_prgforms->usa("css_fold","forms","css_fold",null,null,null,null);
+	$task_prgforms->usa("css_close","forms","css_close",null,null,null,null);
+	$task_prgforms->usa("css_resize","forms","css_resize",null,null,null,null);
+	$task_prgforms->usa("css_window_exp","forms","css_window_exp",null,null,null,null);
+	$task_prgforms->usa("css_title_exp","forms","css_title_exp",null,null,null,null);
+	$task_prgforms->usa("css_titledis_exp","forms","css_titledis_exp",null,null,null,null);
+	$task_prgforms->usa("css_body_exp","forms","css_body_exp",null,null,null,null);
+	$task_prgforms->usa("css_statusbar_exp","forms","css_statusbar_exp",null,null,null,null);
+	$task_prgforms->usa("css_doc_exp","forms","css_doc_exp",null,null,null,null);
+	$task_prgforms->usa("css_unfold_exp","forms","css_unfold_exp",null,null,null,null);
+	$task_prgforms->usa("css_fold_exp","forms","css_fold_exp",null,null,null,null);
+	$task_prgforms->usa("css_close_exp","forms","css_close_exp",null,null,null,null);
+	$task_prgforms->usa("css_resize_exp","forms","css_resize_exp",null,null,null,null);
+}
+
+function program_forms§§prgacts_def($task_prgacts, $_o2viewalias = "") {
+	$task_prgacts->righe_vis = 100;
+
+	$task_prgacts->usa_file("actions","actions","name",null,null);
+
+	$task_prgacts->usa("userid","actions","userid","program_forms_exp_3()","program_forms_exp_3()",null,null);
+	$task_prgacts->usa("prgname","actions","prgname","program_forms_exp_2()","program_forms_exp_2()",null,null);
+	$task_prgacts->usa("name","actions","name",null,null,null,null);
+}
+
+function program_forms§§prgctrls_def($task_prgctrls, $_o2viewalias = "") {
+	$task_prgctrls->righe_vis = 10;
+
+	$task_prgctrls->usa_file("controls","controls","order",null,null);
+
+	$task_prgctrls->usa("userid","controls","userid","program_forms_exp_3()","program_forms_exp_3()",null,null);
+	$task_prgctrls->usa("prgname","controls","prgname","program_forms_exp_2()","program_forms_exp_2()",null,null);
+	$task_prgctrls->usa("formname","controls","formname","program_forms_exp_12()","program_forms_exp_12()",null,null);
+	$task_prgctrls->usa("ctrlname","controls","ctrlname",null,null,null,null);
+	$task_prgctrls->usa("parent","controls","parent",null,null,null,null);
+	$task_prgctrls->usa("type","controls","type",null,null,null,null);
+	$task_prgctrls->usa("action","controls","action",null,null,null,null);
+	$task_prgctrls->usa("btn_style","controls","btn_style",null,null,null,null);
+	$task_prgctrls->usa("caption","controls","caption",null,null,null,null);
+	$task_prgctrls->usa("caption_exp","controls","caption_exp",null,null,null,null);
+	$task_prgctrls->usa("combo_items","controls","combo_items",null,null,null,null);
+	$task_prgctrls->usa("combo_rows","controls","combo_rows",null,null,null,null);
+	$task_prgctrls->usa("confirm_msg","controls","confirm_msg",null,null,null,null);
+	$task_prgctrls->usa("confirm_msg_exp","controls","confirm_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("css","controls","css",null,null,null,null);
+	$task_prgctrls->usa("css_exp","controls","css_exp",null,null,null,null);
+	$task_prgctrls->usa("doc_url","controls","doc_url",null,null,null,null);
+	$task_prgctrls->usa("enable","controls","enable",null,null,null,null);
+	$task_prgctrls->usa("expand","controls","expand",null,null,null,null);
+	$task_prgctrls->usa("field","controls","field",null,null,null,null);
+	$task_prgctrls->usa("height","controls","height",null,null,null,null);
+	$task_prgctrls->usa("html_code","controls","html_code",null,null,null,null);
+	$task_prgctrls->usa("img_file","controls","img_file",null,null,null,null);
+	$task_prgctrls->usa("img_file_exp","controls","img_file_exp",null,null,null,null);
+	$task_prgctrls->usa("img_hover_exp","controls","img_hover_exp",null,null,null,null);
+	$task_prgctrls->usa("imglist_del_act","controls","imglist_del_act",null,null,null,null);
+	$task_prgctrls->usa("imglist_item_h","controls","imglist_item_h",null,null,null,null);
+	$task_prgctrls->usa("imglist_item_w","controls","imglist_item_w",null,null,null,null);
+	$task_prgctrls->usa("imglist_items","controls","imglist_items",null,null,null,null);
+	$task_prgctrls->usa("model","controls","model",null,null,null,null);
+	$task_prgctrls->usa("model_exp","controls","model_exp",null,null,null,null);
+	$task_prgctrls->usa("mp_css_body","controls","mp_css_body",null,null,null,null);
+	$task_prgctrls->usa("mp_css_body_exp","controls","mp_css_body_exp",null,null,null,null);
+	$task_prgctrls->usa("mp_css_border","controls","mp_css_border",null,null,null,null);
+	$task_prgctrls->usa("mp_css_border_exp","controls","mp_css_border_exp",null,null,null,null);
+	$task_prgctrls->usa("mp_css_label_off","controls","mp_css_label_off",null,null,null,null);
+	$task_prgctrls->usa("mp_css_label_off_exp","controls","mp_css_label_off_exp",null,null,null,null);
+	$task_prgctrls->usa("mp_css_label_on","controls","mp_css_label_on",null,null,null,null);
+	$task_prgctrls->usa("mp_css_label_on_exp","controls","mp_css_label_on_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_orient","controls","nav_orient",null,null,null,null);
+	$task_prgctrls->usa("nav_css_del","controls","nav_css_del",null,null,null,null);
+	$task_prgctrls->usa("nav_css_del_exp","controls","nav_css_del_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_det","controls","nav_css_det",null,null,null,null);
+	$task_prgctrls->usa("nav_css_det_exp","controls","nav_css_det_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_first","controls","nav_css_first",null,null,null,null);
+	$task_prgctrls->usa("nav_css_first_exp","controls","nav_css_first_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_last","controls","nav_css_last",null,null,null,null);
+	$task_prgctrls->usa("nav_css_last_exp","controls","nav_css_last_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_navbar","controls","nav_css_navbar",null,null,null,null);
+	$task_prgctrls->usa("nav_css_navbar_exp","controls","nav_css_navbar_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_new","controls","nav_css_new",null,null,null,null);
+	$task_prgctrls->usa("nav_css_new_exp","controls","nav_css_new_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_next","controls","nav_css_next",null,null,null,null);
+	$task_prgctrls->usa("nav_css_next_exp","controls","nav_css_next_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_npage","controls","nav_css_npage",null,null,null,null);
+	$task_prgctrls->usa("nav_css_npage_exp","controls","nav_css_npage_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_ppage","controls","nav_css_ppage",null,null,null,null);
+	$task_prgctrls->usa("nav_css_ppage_exp","controls","nav_css_ppage_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_prev","controls","nav_css_prev",null,null,null,null);
+	$task_prgctrls->usa("nav_css_prev_exp","controls","nav_css_prev_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_save","controls","nav_css_save",null,null,null,null);
+	$task_prgctrls->usa("nav_css_save_exp","controls","nav_css_save_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_sel","controls","nav_css_sel",null,null,null,null);
+	$task_prgctrls->usa("nav_css_sel_exp","controls","nav_css_sel_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_slide","controls","nav_css_slide",null,null,null,null);
+	$task_prgctrls->usa("nav_css_slide_exp","controls","nav_css_slide_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_space","controls","nav_css_space",null,null,null,null);
+	$task_prgctrls->usa("nav_css_space_exp","controls","nav_css_space_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_css_undo","controls","nav_css_undo",null,null,null,null);
+	$task_prgctrls->usa("nav_css_undo_exp","controls","nav_css_undo_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_del_act","controls","nav_del_act",null,null,null,null);
+	$task_prgctrls->usa("nav_del_en","controls","nav_del_en",null,null,null,null);
+	$task_prgctrls->usa("nav_del_msg","controls","nav_del_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_del_msg_exp","controls","nav_del_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_del_vis","controls","nav_del_vis",null,null,null,null);
+	$task_prgctrls->usa("nav_det_act","controls","nav_det_act",null,null,null,null);
+	$task_prgctrls->usa("nav_det_en","controls","nav_det_en",null,null,null,null);
+	$task_prgctrls->usa("nav_det_msg","controls","nav_det_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_det_msg_exp","controls","nav_det_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_det_vis","controls","nav_det_vis",null,null,null,null);
+	$task_prgctrls->usa("nav_new_act","controls","nav_new_act",null,null,null,null);
+	$task_prgctrls->usa("nav_new_en","controls","nav_new_en",null,null,null,null);
+	$task_prgctrls->usa("nav_new_msg","controls","nav_new_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_new_msg_exp","controls","nav_new_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_new_vis","controls","nav_new_vis",null,null,null,null);
+	$task_prgctrls->usa("nav_save_act","controls","nav_save_act",null,null,null,null);
+	$task_prgctrls->usa("nav_save_en","controls","nav_save_en",null,null,null,null);
+	$task_prgctrls->usa("nav_save_msg","controls","nav_save_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_save_msg_exp","controls","nav_save_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_save_vis","controls","nav_save_vis",null,null,null,null);
+	$task_prgctrls->usa("nav_sel_act","controls","nav_sel_act",null,null,null,null);
+	$task_prgctrls->usa("nav_sel_en","controls","nav_sel_en",null,null,null,null);
+	$task_prgctrls->usa("nav_sel_msg","controls","nav_sel_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_sel_msg_exp","controls","nav_sel_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_sel_vis","controls","nav_sel_vis",null,null,null,null);
+	$task_prgctrls->usa("nav_show_nav","controls","nav_show_nav",null,null,null,null);
+	$task_prgctrls->usa("nav_undo_act","controls","nav_undo_act",null,null,null,null);
+	$task_prgctrls->usa("nav_undo_en","controls","nav_undo_en",null,null,null,null);
+	$task_prgctrls->usa("nav_undo_msg","controls","nav_undo_msg",null,null,null,null);
+	$task_prgctrls->usa("nav_undo_msg_exp","controls","nav_undo_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("nav_undo_vis","controls","nav_undo_vis",null,null,null,null);
+	$task_prgctrls->usa("order","controls","order",null,null,null,null);
+	$task_prgctrls->usa("pages","controls","pages",null,null,null,null);
+	$task_prgctrls->usa("parent_options","controls","parent_options",null,null,null,null);
+	$task_prgctrls->usa("password","controls","password",null,null,null,null);
+	$task_prgctrls->usa("progress_end","controls","progress_end",null,null,null,null);
+	$task_prgctrls->usa("progress_start","controls","progress_start",null,null,null,null);
+	$task_prgctrls->usa("progress_val","controls","progress_val",null,null,null,null);
+	$task_prgctrls->usa("rtf","controls","rtf",null,null,null,null);
+	$task_prgctrls->usa("submit","controls","submit",null,null,null,null);
+	$task_prgctrls->usa("tab_css_alt","controls","tab_css_alt",null,null,null,null);
+	$task_prgctrls->usa("tab_css_alt_exp","controls","tab_css_alt_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_body","controls","tab_css_body",null,null,null,null);
+	$task_prgctrls->usa("tab_css_body_exp","controls","tab_css_body_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_foot","controls","tab_css_foot",null,null,null,null);
+	$task_prgctrls->usa("tab_css_foot_exp","controls","tab_css_foot_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_grid","controls","tab_css_grid",null,null,null,null);
+	$task_prgctrls->usa("tab_css_grid_exp","controls","tab_css_grid_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_head","controls","tab_css_head",null,null,null,null);
+	$task_prgctrls->usa("tab_css_head_exp","controls","tab_css_head_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_out","controls","tab_css_out",null,null,null,null);
+	$task_prgctrls->usa("tab_css_out_exp","controls","tab_css_out_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_over","controls","tab_css_over",null,null,null,null);
+	$task_prgctrls->usa("tab_css_over_exp","controls","tab_css_over_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_row","controls","tab_css_row",null,null,null,null);
+	$task_prgctrls->usa("tab_css_row_exp","controls","tab_css_row_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_css_sel","controls","tab_css_sel",null,null,null,null);
+	$task_prgctrls->usa("tab_css_sel_exp","controls","tab_css_sel_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_hide_mark","controls","tab_hide_mark",null,null,null,null);
+	$task_prgctrls->usa("tab_norec_msg","controls","tab_norec_msg",null,null,null,null);
+	$task_prgctrls->usa("tab_norec_msg_exp","controls","tab_norec_msg_exp",null,null,null,null);
+	$task_prgctrls->usa("tab_options","controls","tab_options",null,null,null,null);
+	$task_prgctrls->usa("tab_pin_cols","controls","tab_pin_cols",null,null,null,null);
+	$task_prgctrls->usa("tooltip","controls","tooltip",null,null,null,null);
+	$task_prgctrls->usa("tree_items","controls","tree_items",null,null,null,null);
+	$task_prgctrls->usa("tree_sel","controls","tree_sel",null,null,null,null);
+	$task_prgctrls->usa("upload_multi","controls","upload_multi",null,null,null,null);
+	$task_prgctrls->usa("upload_save_as","controls","upload_save_as",null,null,null,null);
+	$task_prgctrls->usa("view","controls","view",null,null,null,null);
+	$task_prgctrls->usa("visible","controls","visible",null,null,null,null);
+	$task_prgctrls->usa("width","controls","width",null,null,null,null);
+	$task_prgctrls->usa("x","controls","x",null,null,null,null);
+	$task_prgctrls->usa("y","controls","y",null,null,null,null);
+	$task_prgctrls->usa("zoom","controls","zoom",null,null,null,null);
+}
+function program_forms§§prg_forms_form_def($form_prg_forms) {
+	$form_prg_forms->x(0);
+	$form_prg_forms->y(0);
+	$form_prg_forms->larghezza(1000);
+	$form_prg_forms->altezza(500);
+	$form_prg_forms->titolo(program_forms_exp_174());
+	$form_prg_forms->frm_title(program_forms_exp_9999());
+	$form_prg_forms->frm_status(program_forms_exp_9999());
+	$form_prg_forms->css_finestra(" open_body");
+	$form_prg_forms->css_body(" open_body");
+	$form_prg_forms->close_action("close");
+	$form_prg_forms->refresh_action("set_size");
+	$ctrl_tree = $form_prg_forms->ctrldef("tree", "tree", "", "prg§_§var", "menu_selected_item");
+		$ctrl_tree->x(0);
+		$ctrl_tree->y(0);
+		$ctrl_tree->larghezza(300);
+		$ctrl_tree->altezza(500);
+		$ctrl_tree->expand("V");
+		$ctrl_tree->visibile(program_forms_exp_15());
+		$ctrl_tree->azione("tree_select");
+		$ctrl_tree->activation(1);
+		$ctrl_tree->nodes(program_forms_exp_181());
+	$ctrl_tab = $form_prg_forms->ctrldef("tab", "tab", "", "prgforms", "");
+		$ctrl_tab->x(300);
+		$ctrl_tab->y(39);
+		$ctrl_tab->larghezza(100);
+		$ctrl_tab->altezza(462);
+		$ctrl_tab->expand("V");
+	$ctrl_nav = $form_prg_forms->ctrldef("nav", "navigator", "", "prgforms", "");
+		$ctrl_nav->x(300);
+		$ctrl_nav->y(0);
+		$ctrl_nav->larghezza(700);
+		$ctrl_nav->altezza(40);
+		$ctrl_nav->expand("H");
+		$ctrl_nav->css_space(program_forms_exp_177());
+		$ctrl_nav->visible_select(program_forms_exp_9999());
+		$ctrl_nav->enable_new(program_forms_exp_142());
+		$ctrl_nav->enable_del(program_forms_exp_142());
+		$ctrl_nav->act_new("prgforms_insert");
+		$ctrl_nav->act_del("prgforms_delete");
+		$ctrl_nav->act_detail("edit_form");
+	$ctrl_o2image12 = $form_prg_forms->ctrldef("o2image12", "img", "", "", "");
+		$ctrl_o2image12->x(444);
+		$ctrl_o2image12->y(7);
+		$ctrl_o2image12->larghezza(3);
+		$ctrl_o2image12->altezza(17);
+		$ctrl_o2image12->imgexp(program_forms_exp_182());
+	$ctrl_btn_checkout = $form_prg_forms->ctrldef("btn_checkout", "img", "", "", "");
+		$ctrl_btn_checkout->x(450);
+		$ctrl_btn_checkout->y(4);
+		$ctrl_btn_checkout->larghezza(32);
+		$ctrl_btn_checkout->altezza(32);
+		$ctrl_btn_checkout->modificabile(program_forms_exp_152());
+		$ctrl_btn_checkout->azione("checkout");
+		$ctrl_btn_checkout->css(program_forms_exp_184());
+		$ctrl_btn_checkout->imgexp(program_forms_exp_183());
+	$ctrl_btn_checkin = $form_prg_forms->ctrldef("btn_checkin", "img", "", "", "");
+		$ctrl_btn_checkin->x(482);
+		$ctrl_btn_checkin->y(4);
+		$ctrl_btn_checkin->larghezza(32);
+		$ctrl_btn_checkin->altezza(32);
+		$ctrl_btn_checkin->modificabile(program_forms_exp_142());
+		$ctrl_btn_checkin->azione("checkin");
+		$ctrl_btn_checkin->css(program_forms_exp_185());
+		$ctrl_btn_checkin->imgexp(program_forms_exp_183());
+	$ctrl_btn_uncheck = $form_prg_forms->ctrldef("btn_uncheck", "img", "", "", "");
+		$ctrl_btn_uncheck->x(514);
+		$ctrl_btn_uncheck->y(4);
+		$ctrl_btn_uncheck->larghezza(32);
+		$ctrl_btn_uncheck->altezza(32);
+		$ctrl_btn_uncheck->modificabile(program_forms_exp_142());
+		$ctrl_btn_uncheck->azione("uncheck");
+		$ctrl_btn_uncheck->css(program_forms_exp_186());
+		$ctrl_btn_uncheck->imgexp(program_forms_exp_183());
+	$ctrl_o2image13 = $form_prg_forms->ctrldef("o2image13", "img", "", "", "");
+		$ctrl_o2image13->x(549);
+		$ctrl_o2image13->y(7);
+		$ctrl_o2image13->larghezza(3);
+		$ctrl_o2image13->altezza(17);
+		$ctrl_o2image13->imgexp(program_forms_exp_182());
+	$ctrl_o2image14 = $form_prg_forms->ctrldef("o2image14", "img", "", "", "");
+		$ctrl_o2image14->x(555);
+		$ctrl_o2image14->y(4);
+		$ctrl_o2image14->larghezza(32);
+		$ctrl_o2image14->altezza(32);
+		$ctrl_o2image14->modificabile(program_forms_exp_110());
+		$ctrl_o2image14->azione("save");
+		$ctrl_o2image14->css(program_forms_exp_187());
+		$ctrl_o2image14->imgexp(program_forms_exp_183());
+	$ctrl_o2image15 = $form_prg_forms->ctrldef("o2image15", "img", "", "", "");
+		$ctrl_o2image15->x(587);
+		$ctrl_o2image15->y(4);
+		$ctrl_o2image15->larghezza(32);
+		$ctrl_o2image15->altezza(32);
+		$ctrl_o2image15->modificabile(program_forms_exp_110());
+		$ctrl_o2image15->azione("discard");
+		$ctrl_o2image15->css(program_forms_exp_188());
+		$ctrl_o2image15->imgexp(program_forms_exp_183());
+	$ctrl_o2image2 = $form_prg_forms->ctrldef("o2image2", "img", "", "", "");
+		$ctrl_o2image2->x(690);
+		$ctrl_o2image2->y(4);
+		$ctrl_o2image2->larghezza(32);
+		$ctrl_o2image2->altezza(32);
+		$ctrl_o2image2->imgexp(program_forms_exp_189());
+	$ctrl_o2button2 = $form_prg_forms->ctrldef("o2button2", "button", "", "", "");
+		$ctrl_o2button2->x(720);
+		$ctrl_o2button2->y(10);
+		$ctrl_o2button2->larghezza(100);
+		$ctrl_o2button2->altezza(24);
+		$ctrl_o2button2->expand("H");
+		$ctrl_o2button2->modificabile(program_forms_exp_9999());
+		$ctrl_o2button2->label(program_forms_exp_174());
+		$ctrl_o2button2->css(program_forms_exp_16());
+	$ctrl_prop = $form_prg_forms->ctrldef("prop", "multipage", "", "", "");
+		$ctrl_prop->x(400);
+		$ctrl_prop->y(40);
+		$ctrl_prop->larghezza(600);
+		$ctrl_prop->altezza(462);
+		$ctrl_prop->expand("V");
+		$ctrl_prop->label(array("Properties"));
+		$ctrl_prop->buttons("T");
+	$ctrl_o2label2 = $form_prg_forms->ctrldef("o2label2", "label", "prop", "", "");
+		$ctrl_o2label2->x(10);
+		$ctrl_o2label2->y(40);
+		$ctrl_o2label2->larghezza(70);
+		$ctrl_o2label2->altezza(24);
+		$ctrl_o2label2->info_padre(array(0));
+		$ctrl_o2label2->label("Visible:");
+	$ctrl_o2label3 = $form_prg_forms->ctrldef("o2label3", "label", "prop", "", "");
+		$ctrl_o2label3->x(160);
+		$ctrl_o2label3->y(40);
+		$ctrl_o2label3->larghezza(70);
+		$ctrl_o2label3->altezza(24);
+		$ctrl_o2label3->info_padre(array(0));
+		$ctrl_o2label3->label("URL:");
+	$ctrl_o2label4 = $form_prg_forms->ctrldef("o2label4", "label", "prop", "", "");
+		$ctrl_o2label4->x(310);
+		$ctrl_o2label4->y(40);
+		$ctrl_o2label4->larghezza(120);
+		$ctrl_o2label4->altezza(24);
+		$ctrl_o2label4->info_padre(array(0));
+		$ctrl_o2label4->label("Parent form:");
+	$ctrl_o2label5 = $form_prg_forms->ctrldef("o2label5", "label", "prop", "", "");
+		$ctrl_o2label5->x(10);
+		$ctrl_o2label5->y(80);
+		$ctrl_o2label5->larghezza(70);
+		$ctrl_o2label5->altezza(24);
+		$ctrl_o2label5->info_padre(array(0));
+		$ctrl_o2label5->label("Left:");
+	$ctrl_o2label6 = $form_prg_forms->ctrldef("o2label6", "label", "prop", "", "");
+		$ctrl_o2label6->x(160);
+		$ctrl_o2label6->y(80);
+		$ctrl_o2label6->larghezza(70);
+		$ctrl_o2label6->altezza(24);
+		$ctrl_o2label6->info_padre(array(0));
+		$ctrl_o2label6->label("Expr.:");
+	$ctrl_o2label7 = $form_prg_forms->ctrldef("o2label7", "label", "prop", "", "");
+		$ctrl_o2label7->x(10);
+		$ctrl_o2label7->y(110);
+		$ctrl_o2label7->larghezza(70);
+		$ctrl_o2label7->altezza(24);
+		$ctrl_o2label7->info_padre(array(0));
+		$ctrl_o2label7->label("Top:");
+	$ctrl_o2label8 = $form_prg_forms->ctrldef("o2label8", "label", "prop", "", "");
+		$ctrl_o2label8->x(160);
+		$ctrl_o2label8->y(110);
+		$ctrl_o2label8->larghezza(70);
+		$ctrl_o2label8->altezza(24);
+		$ctrl_o2label8->info_padre(array(0));
+		$ctrl_o2label8->label("Expr.:");
+	$ctrl_o2label9 = $form_prg_forms->ctrldef("o2label9", "label", "prop", "", "");
+		$ctrl_o2label9->x(10);
+		$ctrl_o2label9->y(140);
+		$ctrl_o2label9->larghezza(70);
+		$ctrl_o2label9->altezza(24);
+		$ctrl_o2label9->info_padre(array(0));
+		$ctrl_o2label9->label("Width:");
+	$ctrl_o2label10 = $form_prg_forms->ctrldef("o2label10", "label", "prop", "", "");
+		$ctrl_o2label10->x(160);
+		$ctrl_o2label10->y(140);
+		$ctrl_o2label10->larghezza(70);
+		$ctrl_o2label10->altezza(24);
+		$ctrl_o2label10->info_padre(array(0));
+		$ctrl_o2label10->label("Expr.:");
+	$ctrl_o2label11 = $form_prg_forms->ctrldef("o2label11", "label", "prop", "", "");
+		$ctrl_o2label11->x(10);
+		$ctrl_o2label11->y(170);
+		$ctrl_o2label11->larghezza(70);
+		$ctrl_o2label11->altezza(24);
+		$ctrl_o2label11->info_padre(array(0));
+		$ctrl_o2label11->label("Height:");
+	$ctrl_o2label12 = $form_prg_forms->ctrldef("o2label12", "label", "prop", "", "");
+		$ctrl_o2label12->x(160);
+		$ctrl_o2label12->y(170);
+		$ctrl_o2label12->larghezza(70);
+		$ctrl_o2label12->altezza(24);
+		$ctrl_o2label12->info_padre(array(0));
+		$ctrl_o2label12->label("Expr.:");
+	$ctrl_o2label13 = $form_prg_forms->ctrldef("o2label13", "label", "prop", "", "");
+		$ctrl_o2label13->x(310);
+		$ctrl_o2label13->y(80);
+		$ctrl_o2label13->larghezza(120);
+		$ctrl_o2label13->altezza(24);
+		$ctrl_o2label13->expand("H");
+		$ctrl_o2label13->info_padre(array(0));
+		$ctrl_o2label13->label("Vertical align:");
+	$ctrl_o2label14 = $form_prg_forms->ctrldef("o2label14", "label", "prop", "", "");
+		$ctrl_o2label14->x(310);
+		$ctrl_o2label14->y(110);
+		$ctrl_o2label14->larghezza(120);
+		$ctrl_o2label14->altezza(24);
+		$ctrl_o2label14->expand("H");
+		$ctrl_o2label14->info_padre(array(0));
+		$ctrl_o2label14->label("Horizontal align:");
+	$ctrl_o2label15 = $form_prg_forms->ctrldef("o2label15", "label", "prop", "", "");
+		$ctrl_o2label15->x(310);
+		$ctrl_o2label15->y(140);
+		$ctrl_o2label15->larghezza(120);
+		$ctrl_o2label15->altezza(24);
+		$ctrl_o2label15->info_padre(array(0));
+		$ctrl_o2label15->label("Allow resize:");
+	$ctrl_o2label16 = $form_prg_forms->ctrldef("o2label16", "label", "prop", "", "");
+		$ctrl_o2label16->x(10);
+		$ctrl_o2label16->y(210);
+		$ctrl_o2label16->larghezza(70);
+		$ctrl_o2label16->altezza(24);
+		$ctrl_o2label16->info_padre(array(0));
+		$ctrl_o2label16->label("Title bar:");
+	$ctrl_o2label17 = $form_prg_forms->ctrldef("o2label17", "label", "prop", "", "");
+		$ctrl_o2label17->x(160);
+		$ctrl_o2label17->y(210);
+		$ctrl_o2label17->larghezza(90);
+		$ctrl_o2label17->altezza(24);
+		$ctrl_o2label17->info_padre(array(0));
+		$ctrl_o2label17->label("Menu form:");
+	$ctrl_o2label18 = $form_prg_forms->ctrldef("o2label18", "label", "prop", "", "");
+		$ctrl_o2label18->x(310);
+		$ctrl_o2label18->y(210);
+		$ctrl_o2label18->larghezza(120);
+		$ctrl_o2label18->altezza(24);
+		$ctrl_o2label18->info_padre(array(0));
+		$ctrl_o2label18->label("Close action:");
+	$ctrl_o2label19 = $form_prg_forms->ctrldef("o2label19", "label", "prop", "", "");
+		$ctrl_o2label19->x(310);
+		$ctrl_o2label19->y(240);
+		$ctrl_o2label19->larghezza(120);
+		$ctrl_o2label19->altezza(24);
+		$ctrl_o2label19->info_padre(array(0));
+		$ctrl_o2label19->label("Refresh action:");
+	$ctrl_o2label20 = $form_prg_forms->ctrldef("o2label20", "label", "prop", "", "");
+		$ctrl_o2label20->x(160);
+		$ctrl_o2label20->y(240);
+		$ctrl_o2label20->larghezza(70);
+		$ctrl_o2label20->altezza(24);
+		$ctrl_o2label20->info_padre(array(0));
+		$ctrl_o2label20->label("Timer:");
+	$ctrl_o2label21 = $form_prg_forms->ctrldef("o2label21", "label", "prop", "", "");
+		$ctrl_o2label21->x(10);
+		$ctrl_o2label21->y(370);
+		$ctrl_o2label21->larghezza(120);
+		$ctrl_o2label21->altezza(24);
+		$ctrl_o2label21->info_padre(array(0));
+		$ctrl_o2label21->label("Inactive title bar:");
+	$ctrl_o2label22 = $form_prg_forms->ctrldef("o2label22", "label", "prop", "", "");
+		$ctrl_o2label22->x(10);
+		$ctrl_o2label22->y(310);
+		$ctrl_o2label22->larghezza(120);
+		$ctrl_o2label22->altezza(24);
+		$ctrl_o2label22->info_padre(array(0));
+		$ctrl_o2label22->label("Window:");
+	$ctrl_o2label23 = $form_prg_forms->ctrldef("o2label23", "label", "prop", "", "");
+		$ctrl_o2label23->x(10);
+		$ctrl_o2label23->y(340);
+		$ctrl_o2label23->larghezza(120);
+		$ctrl_o2label23->altezza(24);
+		$ctrl_o2label23->info_padre(array(0));
+		$ctrl_o2label23->label("Title bar:");
+	$ctrl_o2label24 = $form_prg_forms->ctrldef("o2label24", "label", "prop", "", "");
+		$ctrl_o2label24->x(10);
+		$ctrl_o2label24->y(400);
+		$ctrl_o2label24->larghezza(120);
+		$ctrl_o2label24->altezza(24);
+		$ctrl_o2label24->info_padre(array(0));
+		$ctrl_o2label24->label("Body:");
+	$ctrl_o2label25 = $form_prg_forms->ctrldef("o2label25", "label", "prop", "", "");
+		$ctrl_o2label25->x(10);
+		$ctrl_o2label25->y(430);
+		$ctrl_o2label25->larghezza(120);
+		$ctrl_o2label25->altezza(24);
+		$ctrl_o2label25->info_padre(array(0));
+		$ctrl_o2label25->label("Bottom border:");
+	$ctrl_o2label26 = $form_prg_forms->ctrldef("o2label26", "label", "prop", "", "");
+		$ctrl_o2label26->x(310);
+		$ctrl_o2label26->y(310);
+		$ctrl_o2label26->larghezza(120);
+		$ctrl_o2label26->altezza(24);
+		$ctrl_o2label26->info_padre(array(0));
+		$ctrl_o2label26->label("Top-left button:");
+	$ctrl_o2label27 = $form_prg_forms->ctrldef("o2label27", "label", "prop", "", "");
+		$ctrl_o2label27->x(310);
+		$ctrl_o2label27->y(340);
+		$ctrl_o2label27->larghezza(120);
+		$ctrl_o2label27->altezza(24);
+		$ctrl_o2label27->info_padre(array(0));
+		$ctrl_o2label27->label("Fold button:");
+	$ctrl_o2label28 = $form_prg_forms->ctrldef("o2label28", "label", "prop", "", "");
+		$ctrl_o2label28->x(310);
+		$ctrl_o2label28->y(370);
+		$ctrl_o2label28->larghezza(120);
+		$ctrl_o2label28->altezza(24);
+		$ctrl_o2label28->info_padre(array(0));
+		$ctrl_o2label28->label("Unfold button:");
+	$ctrl_o2label29 = $form_prg_forms->ctrldef("o2label29", "label", "prop", "", "");
+		$ctrl_o2label29->x(310);
+		$ctrl_o2label29->y(400);
+		$ctrl_o2label29->larghezza(120);
+		$ctrl_o2label29->altezza(24);
+		$ctrl_o2label29->info_padre(array(0));
+		$ctrl_o2label29->label("Close button:");
+	$ctrl_o2label30 = $form_prg_forms->ctrldef("o2label30", "label", "prop", "", "");
+		$ctrl_o2label30->x(310);
+		$ctrl_o2label30->y(430);
+		$ctrl_o2label30->larghezza(120);
+		$ctrl_o2label30->altezza(24);
+		$ctrl_o2label30->info_padre(array(0));
+		$ctrl_o2label30->label("Resize handler:");
+	$ctrl_o2separator2 = $form_prg_forms->ctrldef("o2separator2", "line", "prop", "", "");
+		$ctrl_o2separator2->x(10);
+		$ctrl_o2separator2->y(295);
+		$ctrl_o2separator2->larghezza(580);
+		$ctrl_o2separator2->altezza(10);
+		$ctrl_o2separator2->expand("V");
+		$ctrl_o2separator2->info_padre(array(0));
+	$ctrl_o2label31 = $form_prg_forms->ctrldef("o2label31", "label", "prop", "", "");
+		$ctrl_o2label31->x(10);
+		$ctrl_o2label31->y(280);
+		$ctrl_o2label31->larghezza(580);
+		$ctrl_o2label31->altezza(18);
+		$ctrl_o2label31->info_padre(array(0));
+		$ctrl_o2label31->label("CSS");
+		$ctrl_o2label31->css(program_forms_exp_4());
+	$ctrl_o2separator4 = $form_prg_forms->ctrldef("o2separator4", "line", "prop", "", "");
+		$ctrl_o2separator4->x(10);
+		$ctrl_o2separator4->y(70);
+		$ctrl_o2separator4->larghezza(580);
+		$ctrl_o2separator4->altezza(5);
+		$ctrl_o2separator4->expand("V");
+		$ctrl_o2separator4->info_padre(array(0));
+	$ctrl_o2separator3 = $form_prg_forms->ctrldef("o2separator3", "line", "prop", "", "");
+		$ctrl_o2separator3->x(10);
+		$ctrl_o2separator3->y(200);
+		$ctrl_o2separator3->larghezza(580);
+		$ctrl_o2separator3->altezza(5);
+		$ctrl_o2separator3->expand("V");
+		$ctrl_o2separator3->info_padre(array(0));
+	$ctrl_o2htmlarea4 = $form_prg_forms->ctrldef("o2htmlarea4", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea4->x(10);
+		$ctrl_o2htmlarea4->y(195);
+		$ctrl_o2htmlarea4->larghezza(580);
+		$ctrl_o2htmlarea4->altezza(5);
+		$ctrl_o2htmlarea4->expand("V");
+		$ctrl_o2htmlarea4->info_padre(array(0));
+	$ctrl_o2htmlarea7 = $form_prg_forms->ctrldef("o2htmlarea7", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea7->x(10);
+		$ctrl_o2htmlarea7->y(270);
+		$ctrl_o2htmlarea7->larghezza(580);
+		$ctrl_o2htmlarea7->altezza(5);
+		$ctrl_o2htmlarea7->expand("V");
+		$ctrl_o2htmlarea7->info_padre(array(0));
+	$ctrl_o2htmlarea5 = $form_prg_forms->ctrldef("o2htmlarea5", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea5->x(10);
+		$ctrl_o2htmlarea5->y(455);
+		$ctrl_o2htmlarea5->larghezza(580);
+		$ctrl_o2htmlarea5->altezza(5);
+		$ctrl_o2htmlarea5->expand("V");
+		$ctrl_o2htmlarea5->info_padre(array(0));
+	$ctrl_o2htmlarea6 = $form_prg_forms->ctrldef("o2htmlarea6", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea6->x(10);
+		$ctrl_o2htmlarea6->y(30);
+		$ctrl_o2htmlarea6->larghezza(580);
+		$ctrl_o2htmlarea6->altezza(5);
+		$ctrl_o2htmlarea6->expand("V");
+		$ctrl_o2htmlarea6->info_padre(array(0));
+	$ctrl_o2edit5 = $form_prg_forms->ctrldef("o2edit5", "edit", "prop", "prgforms", "visible");
+		$ctrl_o2edit5->x(80);
+		$ctrl_o2edit5->y(40);
+		$ctrl_o2edit5->larghezza(50);
+		$ctrl_o2edit5->altezza(24);
+		$ctrl_o2edit5->info_padre(array(0));
+	$ctrl_o2htmlarea2 = $form_prg_forms->ctrldef("o2htmlarea2", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea2->x(10);
+		$ctrl_o2htmlarea2->y(265);
+		$ctrl_o2htmlarea2->larghezza(580);
+		$ctrl_o2htmlarea2->altezza(5);
+		$ctrl_o2htmlarea2->expand("V");
+		$ctrl_o2htmlarea2->info_padre(array(0));
+	$ctrl_o2htmlarea3 = $form_prg_forms->ctrldef("o2htmlarea3", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea3->x(10);
+		$ctrl_o2htmlarea3->y(65);
+		$ctrl_o2htmlarea3->larghezza(580);
+		$ctrl_o2htmlarea3->altezza(5);
+		$ctrl_o2htmlarea3->expand("V");
+		$ctrl_o2htmlarea3->info_padre(array(0));
+	$ctrl_o2edit6 = $form_prg_forms->ctrldef("o2edit6", "edit", "prop", "prgforms", "url");
+		$ctrl_o2edit6->x(230);
+		$ctrl_o2edit6->y(40);
+		$ctrl_o2edit6->larghezza(50);
+		$ctrl_o2edit6->altezza(24);
+		$ctrl_o2edit6->info_padre(array(0));
+	$ctrl_o2edit7 = $form_prg_forms->ctrldef("o2edit7", "edit", "prop", "prgforms", "parent");
+		$ctrl_o2edit7->x(430);
+		$ctrl_o2edit7->y(40);
+		$ctrl_o2edit7->larghezza(160);
+		$ctrl_o2edit7->altezza(24);
+		$ctrl_o2edit7->expand("H");
+		$ctrl_o2edit7->info_padre(array(0));
+	$ctrl_o2edit8 = $form_prg_forms->ctrldef("o2edit8", "edit", "prop", "prgforms", "left_x");
+		$ctrl_o2edit8->x(80);
+		$ctrl_o2edit8->y(80);
+		$ctrl_o2edit8->larghezza(50);
+		$ctrl_o2edit8->altezza(24);
+		$ctrl_o2edit8->info_padre(array(0));
+	$ctrl_o2edit10 = $form_prg_forms->ctrldef("o2edit10", "edit", "prop", "prgforms", "top_y");
+		$ctrl_o2edit10->x(80);
+		$ctrl_o2edit10->y(110);
+		$ctrl_o2edit10->larghezza(50);
+		$ctrl_o2edit10->altezza(24);
+		$ctrl_o2edit10->info_padre(array(0));
+	$ctrl_o2edit12 = $form_prg_forms->ctrldef("o2edit12", "edit", "prop", "prgforms", "widthpx");
+		$ctrl_o2edit12->x(80);
+		$ctrl_o2edit12->y(140);
+		$ctrl_o2edit12->larghezza(50);
+		$ctrl_o2edit12->altezza(24);
+		$ctrl_o2edit12->info_padre(array(0));
+	$ctrl_o2edit14 = $form_prg_forms->ctrldef("o2edit14", "edit", "prop", "prgforms", "heightpx");
+		$ctrl_o2edit14->x(80);
+		$ctrl_o2edit14->y(170);
+		$ctrl_o2edit14->larghezza(50);
+		$ctrl_o2edit14->altezza(24);
+		$ctrl_o2edit14->info_padre(array(0));
+	$ctrl_o2edit9 = $form_prg_forms->ctrldef("o2edit9", "edit", "prop", "prgforms", "left_exp");
+		$ctrl_o2edit9->x(230);
+		$ctrl_o2edit9->y(80);
+		$ctrl_o2edit9->larghezza(50);
+		$ctrl_o2edit9->altezza(24);
+		$ctrl_o2edit9->info_padre(array(0));
+	$ctrl_o2edit11 = $form_prg_forms->ctrldef("o2edit11", "edit", "prop", "prgforms", "top_exp");
+		$ctrl_o2edit11->x(230);
+		$ctrl_o2edit11->y(110);
+		$ctrl_o2edit11->larghezza(50);
+		$ctrl_o2edit11->altezza(24);
+		$ctrl_o2edit11->info_padre(array(0));
+	$ctrl_o2edit13 = $form_prg_forms->ctrldef("o2edit13", "edit", "prop", "prgforms", "width_exp");
+		$ctrl_o2edit13->x(230);
+		$ctrl_o2edit13->y(140);
+		$ctrl_o2edit13->larghezza(50);
+		$ctrl_o2edit13->altezza(24);
+		$ctrl_o2edit13->info_padre(array(0));
+	$ctrl_o2edit15 = $form_prg_forms->ctrldef("o2edit15", "edit", "prop", "prgforms", "height_exp");
+		$ctrl_o2edit15->x(230);
+		$ctrl_o2edit15->y(170);
+		$ctrl_o2edit15->larghezza(50);
+		$ctrl_o2edit15->altezza(24);
+		$ctrl_o2edit15->info_padre(array(0));
+	$ctrl_o2ListBox2 = $form_prg_forms->ctrldef("o2ListBox2", "listcombo", "prop", "prgforms", "vert_align");
+		$ctrl_o2ListBox2->x(430);
+		$ctrl_o2ListBox2->y(80);
+		$ctrl_o2ListBox2->larghezza(100);
+		$ctrl_o2ListBox2->altezza(24);
+		$ctrl_o2ListBox2->info_padre(array(0));
+		$ctrl_o2ListBox2->valori(array());
+		$ctrl_o2ListBox2->righe(1);
+	$ctrl_o2ListBox3 = $form_prg_forms->ctrldef("o2ListBox3", "listcombo", "prop", "prgforms", "horiz_align");
+		$ctrl_o2ListBox3->x(430);
+		$ctrl_o2ListBox3->y(110);
+		$ctrl_o2ListBox3->larghezza(100);
+		$ctrl_o2ListBox3->altezza(24);
+		$ctrl_o2ListBox3->info_padre(array(0));
+		$ctrl_o2ListBox3->valori(array());
+		$ctrl_o2ListBox3->righe(1);
+	$ctrl_o2edit16 = $form_prg_forms->ctrldef("o2edit16", "edit", "prop", "prgforms", "allow_resize");
+		$ctrl_o2edit16->x(430);
+		$ctrl_o2edit16->y(140);
+		$ctrl_o2edit16->larghezza(50);
+		$ctrl_o2edit16->altezza(24);
+		$ctrl_o2edit16->info_padre(array(0));
+	$ctrl_o2edit17 = $form_prg_forms->ctrldef("o2edit17", "edit", "prop", "prgforms", "title_visible");
+		$ctrl_o2edit17->x(80);
+		$ctrl_o2edit17->y(210);
+		$ctrl_o2edit17->larghezza(50);
+		$ctrl_o2edit17->altezza(24);
+		$ctrl_o2edit17->info_padre(array(0));
+	$ctrl_o2checkbox2 = $form_prg_forms->ctrldef("o2checkbox2", "check", "prop", "prgforms", "menu");
+		$ctrl_o2checkbox2->x(256);
+		$ctrl_o2checkbox2->y(210);
+		$ctrl_o2checkbox2->larghezza(24);
+		$ctrl_o2checkbox2->altezza(24);
+		$ctrl_o2checkbox2->info_padre(array(0));
+	$ctrl_o2ListBox4 = $form_prg_forms->ctrldef("o2ListBox4", "listcombo", "prop", "prgforms", "close_act");
+		$ctrl_o2ListBox4->x(430);
+		$ctrl_o2ListBox4->y(210);
+		$ctrl_o2ListBox4->larghezza(160);
+		$ctrl_o2ListBox4->altezza(24);
+		$ctrl_o2ListBox4->info_padre(array(0));
+		$ctrl_o2ListBox4->valori(o2_view2list("prgacts", "name", "name"));
+		$ctrl_o2ListBox4->righe(1);
+	$ctrl_o2edit18 = $form_prg_forms->ctrldef("o2edit18", "edit", "prop", "prgforms", "seconds_refresh");
+		$ctrl_o2edit18->x(230);
+		$ctrl_o2edit18->y(240);
+		$ctrl_o2edit18->larghezza(50);
+		$ctrl_o2edit18->altezza(24);
+		$ctrl_o2edit18->info_padre(array(0));
+	$ctrl_o2ListBox5 = $form_prg_forms->ctrldef("o2ListBox5", "listcombo", "prop", "prgforms", "refresh_act");
+		$ctrl_o2ListBox5->x(430);
+		$ctrl_o2ListBox5->y(240);
+		$ctrl_o2ListBox5->larghezza(160);
+		$ctrl_o2ListBox5->altezza(24);
+		$ctrl_o2ListBox5->info_padre(array(0));
+		$ctrl_o2ListBox5->valori(o2_view2list("prgacts", "name", "name"));
+		$ctrl_o2ListBox5->righe(1);
+	$ctrl_o2edit19 = $form_prg_forms->ctrldef("o2edit19", "edit", "prop", "prgforms", "css_window");
+		$ctrl_o2edit19->x(130);
+		$ctrl_o2edit19->y(310);
+		$ctrl_o2edit19->larghezza(150);
+		$ctrl_o2edit19->altezza(24);
+		$ctrl_o2edit19->info_padre(array(0));
+	$ctrl_o2edit20 = $form_prg_forms->ctrldef("o2edit20", "edit", "prop", "prgforms", "css_title");
+		$ctrl_o2edit20->x(130);
+		$ctrl_o2edit20->y(340);
+		$ctrl_o2edit20->larghezza(150);
+		$ctrl_o2edit20->altezza(24);
+		$ctrl_o2edit20->info_padre(array(0));
+	$ctrl_o2edit21 = $form_prg_forms->ctrldef("o2edit21", "edit", "prop", "prgforms", "css_titledis");
+		$ctrl_o2edit21->x(130);
+		$ctrl_o2edit21->y(370);
+		$ctrl_o2edit21->larghezza(150);
+		$ctrl_o2edit21->altezza(24);
+		$ctrl_o2edit21->info_padre(array(0));
+	$ctrl_o2edit22 = $form_prg_forms->ctrldef("o2edit22", "edit", "prop", "prgforms", "css_body");
+		$ctrl_o2edit22->x(130);
+		$ctrl_o2edit22->y(400);
+		$ctrl_o2edit22->larghezza(150);
+		$ctrl_o2edit22->altezza(24);
+		$ctrl_o2edit22->info_padre(array(0));
+	$ctrl_o2edit23 = $form_prg_forms->ctrldef("o2edit23", "edit", "prop", "prgforms", "css_statusbar");
+		$ctrl_o2edit23->x(130);
+		$ctrl_o2edit23->y(430);
+		$ctrl_o2edit23->larghezza(150);
+		$ctrl_o2edit23->altezza(24);
+		$ctrl_o2edit23->info_padre(array(0));
+	$ctrl_o2edit24 = $form_prg_forms->ctrldef("o2edit24", "edit", "prop", "prgforms", "css_doc");
+		$ctrl_o2edit24->x(430);
+		$ctrl_o2edit24->y(310);
+		$ctrl_o2edit24->larghezza(160);
+		$ctrl_o2edit24->altezza(24);
+		$ctrl_o2edit24->info_padre(array(0));
+	$ctrl_o2edit25 = $form_prg_forms->ctrldef("o2edit25", "edit", "prop", "prgforms", "css_fold");
+		$ctrl_o2edit25->x(430);
+		$ctrl_o2edit25->y(340);
+		$ctrl_o2edit25->larghezza(160);
+		$ctrl_o2edit25->altezza(24);
+		$ctrl_o2edit25->info_padre(array(0));
+	$ctrl_o2edit26 = $form_prg_forms->ctrldef("o2edit26", "edit", "prop", "prgforms", "css_unfold");
+		$ctrl_o2edit26->x(430);
+		$ctrl_o2edit26->y(370);
+		$ctrl_o2edit26->larghezza(160);
+		$ctrl_o2edit26->altezza(24);
+		$ctrl_o2edit26->info_padre(array(0));
+	$ctrl_o2edit27 = $form_prg_forms->ctrldef("o2edit27", "edit", "prop", "prgforms", "css_close");
+		$ctrl_o2edit27->x(430);
+		$ctrl_o2edit27->y(400);
+		$ctrl_o2edit27->larghezza(160);
+		$ctrl_o2edit27->altezza(24);
+		$ctrl_o2edit27->info_padre(array(0));
+	$ctrl_o2edit28 = $form_prg_forms->ctrldef("o2edit28", "edit", "prop", "prgforms", "css_resize");
+		$ctrl_o2edit28->x(430);
+		$ctrl_o2edit28->y(430);
+		$ctrl_o2edit28->larghezza(160);
+		$ctrl_o2edit28->altezza(24);
+		$ctrl_o2edit28->info_padre(array(0));
+	$ctrl_o2edit2 = $form_prg_forms->ctrldef("o2edit2", "edit", "tab", "prgforms", "position");
+		$ctrl_o2edit2->x(0);
+		$ctrl_o2edit2->y(10);
+		$ctrl_o2edit2->larghezza(30);
+		$ctrl_o2edit2->altezza(24);
+		$ctrl_o2edit2->modificabile(program_forms_exp_142());
+		$ctrl_o2edit2->info_padre(array("01", "01", "01", "#", False, "", 0, "", "", "", "", ""));
+	$ctrl_name = $form_prg_forms->ctrldef("name", "edit", "tab", "prgforms", "formname");
+		$ctrl_name->x(30);
+		$ctrl_name->y(10);
+		$ctrl_name->larghezza(10);
+		$ctrl_name->altezza(24);
+		$ctrl_name->expand("H");
+		$ctrl_name->modificabile(program_forms_exp_142());
+		$ctrl_name->info_padre(array("01", "02", "02", "Name", False, "", 0, "", "", "", "", ""));
+	$ctrl_title = $form_prg_forms->ctrldef("title", "edit", "tab", "prgforms", "caption");
+		$ctrl_title->x(40);
+		$ctrl_title->y(10);
+		$ctrl_title->larghezza(10);
+		$ctrl_title->altezza(24);
+		$ctrl_title->expand("H");
+		$ctrl_title->modificabile(program_forms_exp_142());
+		$ctrl_title->info_padre(array("01", "03", "03", "Title", False, "", 0, "", "", "", "", ""));
+	$ctrl_o2edit29 = $form_prg_forms->ctrldef("o2edit29", "edit", "tab", "prgforms", "caption_exp");
+		$ctrl_o2edit29->x(50);
+		$ctrl_o2edit29->y(10);
+		$ctrl_o2edit29->larghezza(50);
+		$ctrl_o2edit29->altezza(24);
+		$ctrl_o2edit29->modificabile(program_forms_exp_142());
+		$ctrl_o2edit29->info_padre(array("01", "04", "04", "Exp", False, "", 0, "", "", "", "", ""));
+		}
+function program_forms§§gui_editor_form_def($form_gui_editor) {
+	$form_gui_editor->x(400);
+	$form_gui_editor->y(50);
+	$form_gui_editor->larghezza(800);
+	$form_gui_editor->altezza(600);
+	$form_gui_editor->align_o("Center");
+	$form_gui_editor->titolo("GUI editor");
+	$form_gui_editor->close_action("close_editor");
+		}
+
+function program_forms§§checkin_act($o2exe) {
+	$o2exe->s(1) && (program_forms_exp_110() || $o2exe->e()) && o2act::exe("save", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("checkin", False, program_forms_exp_2()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§checkout_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("checkout", False, program_forms_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§close_act($o2exe) {
+	$o2exe->s(1) && True && o2act::exe("exit", True, "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§close_editor_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "show_editor", program_forms_exp_9999()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§discard_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("obj_status", "C", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§edit_form_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "show_editor", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("load_form_in_editor", True, "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::script(program_forms_exp_6()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§exit_act($o2exe) {
+	$o2exe->s(1) && (program_forms_exp_110() || $o2exe->e()) && o2act::call(program_forms_exp_116(), False, program_forms_exp_117(), "prg§_§var§§confirm") && $o2exe->e();
+	$o2exe->s(2) && (program_forms_exp_118() || $o2exe->e()) && o2act::exe("save", True, "") && $o2exe->e();
+	$o2exe->s(3) && (program_forms_exp_119() || $o2exe->e()) && o2act::exe("discard", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§load_ctrl_in_editor_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "ctrls_code", program_forms_exp_11()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§load_form_in_editor_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Add form to controls") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "ctrls_code", program_forms_exp_10()) && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Add all form controls") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::exe("load_ctrl_in_editor", False, "prgctrls") && $o2exe->e();
+//	$o2exe->s(5) && True && o2act::remark("Preload controls in browser SessionStorage") && $o2exe->e();
+	$o2exe->s(6) && True && o2act::script(program_forms_exp_14()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§prgforms_delete_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("prgforms", "C", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§prgforms_insert_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("program_view", False, program_forms_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("prgforms", "0", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::exe("set_prg_modified", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§save_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_modified", program_forms_exp_9999()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§set_prg_modified_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "prg_modified", program_forms_exp_13()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§set_size_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Set table width") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::script(program_forms_exp_5()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§show_prg_part_act($o2exe) {
+	$o2exe->s(1) && True && o2act::ret(2, program_forms_exp_179()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "menu_selected_item", program_forms_exp_197()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("set_size", True, "") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Maximize") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::script(program_forms_exp_178()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§tree_select_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("project", False, program_forms_exp_179(), program_forms_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && (program_forms_exp_191() || $o2exe->e()) && o2act::exe("show_prg_part", True, "") && $o2exe->e();
+	$o2exe->s(3) && (program_forms_exp_190() || $o2exe->e()) && o2act::call("project", False, program_forms_exp_179()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§uncheck_act($o2exe) {
+	$o2exe->s(1) && True && o2act::call("uncheck", False, program_forms_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("obj_status", "1", "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms_exp_1() {
+	
+return ("");
+	} //|o2_fine_exp|
+
+function program_forms_exp_2() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function program_forms_exp_3() {
+	
+return ((o2val('obj_status','userid') == o2app_user() ? o2val('obj_status','userid') : ''));
+	} //|o2_fine_exp|
+
+function program_forms_exp_4() {
+	
+return ('section_title');
+	} //|o2_fine_exp|
+
+function program_forms_exp_5() {
+	$w = o2client_width() - 1100;
+if ($w > 0) {
+   o2ctrl_set_width('prg_forms', 'tab', 100 + $w);
+   o2ctrl_set_width('prg_forms', 'name', intval(($w - 100)/3));
+   o2ctrl_set_width('prg_forms', 'title', intval(($w - 100) * 2 / 3));
+   o2ctrl_set_x('prg_forms', 'prop', 400 + $w);
+   }
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_6() {
+	o2form_maximize('gui_editor');
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_7() {
+	$url = o2app_alias().'design/jxdesign.html'.
+      (o2zero('prg§_§var','response') ? '' : 
+       '?'.urlencode(json_encode(o2val('prg§_§var','response'))));
+return ($url);
+	} //|o2_fine_exp|
+
+function program_forms_exp_8() {
+	
+return (!o2val('prg§_§var','show_editor'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_9() {
+	
+return (o2val('prg§_§var','show_editor'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_10() {
+	/* Convert X-Y by alignment */
+$aw = o2client_width() - 320;
+switch (o2val('prgforms','horiz_align')) {
+   case 'C':
+      $x = $aw / 2 - o2val('prgforms','left_x');    
+      break;
+   case 'R':
+      $x = $aw - o2val('prgforms','left_x');
+      break;
+   default:
+      $x = o2val('prgforms','left_x'); 
+      break;
+   }
+$ah = o2client_height() - 60;
+switch (o2val('prgforms','vert_align')) {
+   case 'M':
+      $y = $ah / 2 - o2val('prgforms','top_y');    
+      break;
+   case 'B':
+      $x = $ah - o2val('prgforms','top_y');
+      break;
+   default:
+      $y = o2val('prgforms','top_y'); 
+      break;
+   }
+$code = array(  
+         array(
+            'ctrlName'   => o2val('prgforms','formname'),
+            'ctrlParent' => o2val('prgforms','parent'),
+            'ctrlType'   => 'window',
+            'x'          => $x.'px',
+            'y'          => $y.'px',
+            'width'      => o2val('prgforms','widthpx').'px',
+            'height'     => o2val('prgforms','heightpx').'px',
+            'order'      => '1',
+            'caption'    => '['.o2val('prgforms','formname').'] '.
+                            (o2zero('prgforms','caption_exp') ?
+                             jx_encode(o2val('prgforms','caption'), 'utf-8') :
+                             '[Expr. '.o2val('prgforms','caption_exp').']')            
+            )
+         );
+return ($code);
+	} //|o2_fine_exp|
+
+function program_forms_exp_11() {
+	$code = o2val('prg§_§var','ctrls_code');
+$code[] = ['ctrlName' => o2val('prgctrls','ctrlname'),
+           'ctrlParent' => (o2zero('prgctrls','parent') ? o2val('prgctrls','formname') : o2val('prgctrls','parent')),
+           'ctrlType' => o2val('prgctrls','type'),
+           'x' => o2val('prgctrls','x').'px',
+           'y' => o2val('prgctrls','y').'px',
+           'width' => o2val('prgctrls','width').'px',
+           'height' => o2val('prgctrls','height').'px',
+           'order' => o2val('prgctrls','order'),
+           ...(o2zero('prgctrls','action') ? [] : ['action' => o2val('prgctrls','action')]),
+           ...(o2zero('prgctrls','btn_style') ? [] : ['btnStyle' => o2val('prgctrls','btn_style')]),
+           ...((o2zero('prgctrls','caption') && o2zero('prgctrls','caption_exp')) ? [] : 
+               ['caption' => (o2zero('prgctrls','caption_exp') ?
+                             jx_encode(o2val('prgctrls','caption'), 'utf-8') :
+                             '[Expr. '.o2val('prgctrls','caption_exp').']')]),
+           ...(o2zero('prgctrls','combo_items') ? [] : ['comboItems' => o2val('prgctrls','combo_items')]),
+           ...(o2zero('prgctrls','combo_rows') ? [] : ['comboRows' => o2val('prgctrls','combo_rows')]),
+           ...((o2zero('prgctrls','confirm_msg') && o2zero('prgctrls','confirm_msg_exp')) ? [] :
+               ['confirmMsg' => (o2zero('prgctrls','confirm_msg_exp') ?
+                                 jx_encode(o2val('prgctrls','confirm_msg'), 'utf-8') :
+                                 '[Expr. '.o2val('prgctrls','confirm_msg_exp').']')]),
+           ...((o2zero('prgctrls','css') && o2zero('prgctrls','css_exp')) ? [] :
+               ['css' => (o2zero('prgctrls','css_exp') ?
+                          o2val('prgctrls','css') :
+                          '[Expr. '.o2val('prgctrls','css_exp').']')]),
+           ...(o2zero('prgctrls','doc_url') ? [] : ['docUrl' => o2val('prgctrls','doc_url')]),
+           ...(o2zero('prgctrls','enable') ? [] : ['enable' => o2val('prgctrls','enable')]),
+           ...(o2zero('prgctrls','expand')  ? [] : ['expand' => o2val('prgctrls','expand')]),
+           ...(o2zero('prgctrls','field') ? [] : ['field' => o2val('prgctrls','field')]),
+           ...(o2zero('prgctrls','html_code') ? [] : ['htmlCode' => o2val('prgctrls','html_code')]),
+           ...(o2zero('prgctrls','img_file') ? [] : ['imgFile' => o2val('prgctrls','img_file')]),
+           ...(o2zero('prgctrls','img_file_exp') ? [] : ['imgFileExp' => o2val('prgctrls','img_file_exp')]),
+           ...(o2zero('prgctrls','img_hover_exp') ? [] : ['imgHoverExp' => o2val('prgctrls','img_hover_exp')]),
+           ...(o2zero('prgctrls','imglist_del_act') ? [] : ['imglistDelAct' => o2val('prgctrls','imglist_del_act')]),
+           ...(o2zero('prgctrls','imglist_item_h') ? [] : ['imglistItemH' => o2val('prgctrls','imglist_item_h')]),
+           ...(o2zero('prgctrls','imglist_item_w') ? [] : ['imglistItemW' => o2val('prgctrls','imglist_item_w')]),
+           ...(o2zero('prgctrls','imglist_items') ? [] : ['imglistItems' => o2val('prgctrls','imglist_items')]),
+           ...((o2zero('prgctrls','model') && o2zero('prgctrls','model_exp')) ? [] :
+               ['model' => (o2zero('prgctrls','model_exp') ?
+                            o2val('prgctrls','model') :
+                            '[Expr. '.o2val('prgctrls','model_exp').']')]),
+           ...((o2zero('prgctrls','mp_css_body') && o2zero('prgctrls','mp_css_body_exp')) ? [] :
+               ['mpCssBody' => (o2zero('prgctrls','mp_css_body_exp') ?
+                                o2val('prgctrls','mp_css_body') :
+                                '[Expr. '.o2val('prgctrls','mp_css_body_exp').']')]),
+           ...((o2zero('prgctrls','mp_css_border') && o2zero('prgctrls','mp_css_border_exp')) ? [] :
+               ['mpCssBorder' => (o2zero('prgctrls','mp_css_border_exp') ?
+                                  o2val('prgctrls','mp_css_border') :
+                                  '[Expr. '.o2val('prgctrls','mp_css_border_exp').']')]),
+           ...((o2zero('prgctrls','mp_css_label_off') && o2zero('prgctrls','mp_css_label_off_exp')) ? [] :
+               ['mpCssLabelOff' => (o2zero('prgctrls','mp_css_label_off_exp') ?
+                                    o2val('prgctrls','mp_css_label_off') :
+                                    '[Expr. '.o2val('prgctrls','mp_css_label_off_exp').']')]),
+           ...((o2zero('prgctrls','mp_css_label_on') && o2zero('prgctrls','mp_css_label_on_exp')) ? [] :
+               ['mpCssLabelOn' => (o2zero('prgctrls','mp_css_label_on_exp') ?
+                                   o2val('prgctrls','mp_css_label_on') :
+                                   '[Expr. '.o2val('prgctrls','mp_css_label_on_exp').']')]),
+           ...(o2val('prgctrls','nav_orient') !== 'V' ? [] : ['navStyle' => 'V']),
+           ...((o2zero('prgctrls','nav_css_del') && o2zero('prgctrls','nav_css_del_exp')) ? [] :
+               ['navCssDel' => (o2zero('prgctrls','nav_css_del_exp') ?
+                                o2val('prgctrls','nav_css_del') :
+                                '[Expr. '.o2val('prgctrls','nav_css_del_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_det') && o2zero('prgctrls','nav_css_det_exp')) ? [] :
+               ['navCssDet' => (o2zero('prgctrls','nav_css_det_exp') ?
+                                o2val('prgctrls','nav_css_det') :
+                                '[Expr. '.o2val('prgctrls','nav_css_det_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_first') && o2zero('prgctrls','nav_css_first_exp')) ? [] :
+               ['navCssFirst' => (o2zero('prgctrls','nav_css_first_exp') ?
+                                  o2val('prgctrls','nav_css_first') :
+                                  '[Expr. '.o2zero('prgctrls','nav_css_first_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_last') && o2zero('prgctrls','nav_css_last_exp')) ? [] :
+               ['navCssLast' => (o2zero('prgctrls','nav_css_last_exp') ?
+                                 o2val('prgctrls','nav_css_last') :
+                                 '[Expr. '.o2val('prgctrls','nav_css_last_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_navbar') && o2zero('prgctrls','nav_css_navbar_exp')) ? [] :
+               ['navCssNavbar' => (o2zero('prgctrls','nav_css_navbar_exp') ?
+                                   o2val('prgctrls','nav_css_navbar') :
+                                   '[Expr. '.o2zero('prgctrls','nav_css_navbar_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_new') && o2zero('prgctrls','nav_css_new_exp')) ? [] :
+               ['navCssNew' => (o2zero('prgctrls','nav_css_new_exp') ?
+                                o2val('prgctrls','nav_css_new') :
+                                '[Expr. '.o2val('prgctrls','nav_css_new_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_next') && o2zero('prgctrls','nav_css_next_exp')) ? [] :
+               ['navCssNext' => (o2zero('prgctrls','nav_css_next_exp') ?
+                                 o2val('prgctrls','nav_css_next') :
+                                 '[Expr. '.o2val('prgctrls','nav_css_next_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_npage') && o2zero('prgctrls','nav_css_npage_exp')) ? [] :
+               ['navCssNpage' => (o2zero('prgctrls','nav_css_npage_exp') ?
+                                  o2val('prgctrls','nav_css_npage') :
+                                  '[Expr. '.o2val('prgctrls','nav_css_npage_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_ppage') && o2zero('prgctrls','nav_css_ppage_exp')) ? [] :
+               ['navCssPpage' => (o2zero('prgctrls','nav_css_ppage_exp') ?
+                                  o2val('prgctrls','nav_css_ppage') :
+                                  '[Expr. '.o2val('prgctrls','nav_css_ppage_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_prev') && o2zero('prgctrls','nav_css_prev_exp')) ? [] :
+               ['navCssPrev' => (o2zero('prgctrls','nav_css_prev_exp') ?
+                                 o2val('prgctrls','nav_css_prev') :
+                                 '[Expr. '.o2val('prgctrls','nav_css_prev_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_save') && o2zero('prgctrls','nav_css_save_exp')) ? [] :
+               ['navCssSave' => (o2zero('prgctrls','nav_css_save_exp') ?
+                                 o2val('prgctrls','nav_css_save') :
+                                 '[Expr. '.o2val('prgctrls','nav_css_save_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_sel') && o2zero('prgctrls','nav_css_sel_exp')) ? [] :
+               ['navCssSel' => (o2zero('prgctrls','nav_css_sel_exp') ?
+                                o2val('prgctrls','nav_css_sel') :
+                                '[Expr. '.o2val('prgctrls','nav_css_sel_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_slide') && o2zero('prgctrls','nav_css_slide_exp')) ? [] :
+               ['navCssSlide' => (o2zero('prgctrls','nav_css_slide_exp') ?
+                                  o2val('prgctrls','nav_css_slide') :
+                                  '[Expr. '.o2val('prgctrls','nav_css_slide_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_space') && o2zero('prgctrls','nav_css_space_exp')) ? [] :
+               ['navCssSpace' => (o2zero('prgctrls','nav_css_space_exp') ?
+                                  o2val('prgctrls','nav_css_space') :
+                                  '[Expr. '.o2val('prgctrls','nav_css_space_exp').']')]),
+           ...((o2zero('prgctrls','nav_css_undo') && o2zero('prgctrls','nav_css_undo_exp')) ? [] :
+               ['navCssSpace' => (o2zero('prgctrls','nav_css_undo_exp') ?
+                                  o2val('prgctrls','nav_css_undo') :
+                                  '[Expr. '.o2val('prgctrls','nav_css_undo_exp').']')]),
+           ...(o2zero('prgctrls','nav_del_act') ? [] : ['navDelAct' => o2val('prgctrls','nav_del_act')]),
+           ...(o2zero('prgctrls','nav_del_en') ? [] : ['navDelEn' => o2val('prgctrls','nav_del_en')]),
+           ...((o2zero('prgctrls','nav_del_msg') && o2zero('prgctrls','nav_del_msg_exp')) ? [] :
+               ['navDelMsg' => (o2zero('prgctrls','nav_del_msg_exp') ?
+                                jx_encode(o2val('prgctrls','nav_del_msg'), 'utf-8') :
+                                '[Expr. '.o2val('prgctrls','nav_del_msg_exp').']')]),
+           ...(o2zero('prgctrls','nav_del_vis') ? [] : ['navDelVis' => o2val('prgctrls','nav_del_vis')]),
+           ...(o2zero('prgctrls','nav_det_act') ? [] : ['navDetAct' => o2val('prgctrls','nav_det_act')]),
+           ...(o2zero('prgctrls','nav_det_en') ? [] : ['navDetEn' => o2val('prgctrls','nav_det_en')]),
+           ...((o2zero('prgctrls','nav_det_msg') && o2zero('prgctrls','nav_det_msg_exp')) ? [] :
+               ['navDetMsg' => (o2zero('prgctrls','nav_det_msg_exp') ?
+                                jx_encode(o2val('prgctrls','nav_det_msg'), 'utf-8') :
+                                '[Expr. '.o2val('prgctrls','nav_det_msg_exp').']')]),
+           ...(o2zero('prgctrls','nav_det_vis') ? [] : ['navDetVis' => o2val('prgctrls','nav_det_vis')]),
+           ...(o2zero('prgctrls','nav_new_act') ? [] : ['navNewAct' => o2val('prgctrls','nav_new_act')]),
+           ...(o2zero('prgctrls','nav_new_en') ? [] : ['navNewEn' => o2val('prgctrls','nav_new_en')]),
+           ...((o2zero('prgctrls','nav_new_msg') && o2zero('prgctrls','nav_new_msg_exp')) ? [] :
+               ['navNewMsg' => (o2zero('prgctrls','nav_new_msg_exp') ?
+                                jx_encode(o2val('prgctrls','nav_new_msg'), 'utf-8') :
+                                '[Expr. '.o2val('prgctrls','nav_new_msg_exp').']')]),
+           ...(o2zero('prgctrls','nav_new_vis') ? [] : ['navNewVis' => o2val('prgctrls','nav_new_vis')]),
+           ...(o2zero('prgctrls','nav_save_act') ? [] : ['navSaveAct' => o2val('prgctrls','nav_save_act')]),
+           ...(o2zero('prgctrls','nav_save_en') ? [] : ['navSaveEn' => o2val('prgctrls','nav_save_en')]),
+           ...((o2zero('prgctrls','nav_save_msg') && o2zero('prgctrls','nav_save_msg_exp')) ? [] :
+               ['navSaveMsg' => (o2zero('prgctrls','nav_save_msg_exp') ?
+                                 jx_encode(o2val('prgctrls','nav_save_msg'), 'utf-8') :
+                                 '[Expr. '.o2val('prgctrls','nav_save_msg_exp').']')]),
+           ...(o2zero('prgctrls','nav_save_vis') ? [] : ['navSaveVis' => o2val('prgctrls','nav_save_vis')]),
+           ...(o2zero('prgctrls','nav_sel_act') ? [] : ['navSelAct' => o2val('prgctrls','nav_sel_act')]),
+           ...(o2zero('prgctrls','nav_sel_en') ? [] : ['navSelEn' => o2val('prgctrls','nav_sel_en')]),
+           ...((o2zero('prgctrls','nav_sel_msg') && o2zero('prgctrls','nav_sel_msg_exp')) ? [] :
+               ['navSelMsg' => (o2zero('prgctrls','nav_sel_msg_exp') ?
+                                jx_encode(o2val('prgctrls','nav_sel_msg'), 'utf-8') :
+                                '[Expr. '.o2val('prgctrls','nav_sel_msg_exp').']')]),                                
+           ...(o2zero('prgctrls','nav_sel_vis') ? [] : ['navSelVis' => o2val('prgctrls','nav_sel_vis')]),
+           ...(o2zero('prgctrls','nav_show_nav') ? [] : ['navShowNav' => o2val('prgctrls','nav_show_nav')]),
+           ...(o2zero('prgctrls','nav_undo_act') ? [] : ['navUndoAct' => o2val('prgctrls','nav_undo_act')]),
+           ...(o2zero('prgctrls','nav_undo_en') ? [] : ['navUndoEn' => o2val('prgctrls','nav_undo_en')]),
+           ...((o2zero('prgctrls','nav_undo_msg') && o2zero('prgctrls','nav_undo_msg_exp')) ? [] :
+               ['navUndoMsg' => (o2zero('prgctrls','nav_undo_msg_exp') ?
+                                 jx_encode(o2val('prgctrls','nav_undo_msg'), 'utf-8') :
+                                 '[Expr. '.o2val('prgctrls','nav_undo_msg_exp').']')]),
+           ...(o2zero('prgctrls','nav_undo_vis') ? [] : ['navUndoVis' => o2val('prgctrls','nav_undo_vis')]),
+           ...(o2zero('prgctrls','pages') ? [] : ['pages' => jx_encode(o2val('prgctrls','pages'), 'utf-8')]),
+           ...(o2zero('prgctrls','parent_options') ? [] : 
+               ['parentOptions' => jx_encode(o2val('prgctrls','parent_options'), 'utf-8')]),
+           ...(o2zero('prgctrls','password') ? [] : ['password' => o2val('prgctrls','password')]),
+           ...(o2zero('prgctrls','progress_end') ? [] : ['progressEnd' => o2val('prgctrls','progress_end')]),
+           ...(o2zero('prgctrls','progress_start') ? [] : ['progressStart' => o2val('prgctrls','progress_start')]),
+           ...(o2zero('prgctrls','progress_val') ? [] : ['progressVal' => o2val('prgctrls','progress_val')]),
+           ...(o2zero('prgctrls','rtf') ? [] : ['rtf' => o2val('prgctrls','rtf')]),
+           ...(o2zero('prgctrls','submit') ? [] : ['submit' => o2val('prgctrls','submit')]),
+           ...((o2zero('prgctrls','tab_css_alt') && o2zero('prgctrls','tab_css_alt_exp')) ? [] :
+               ['tabCssAlt' => (o2zero('prgctrls','tab_css_alt_exp') ?
+                                o2val('prgctrls','tab_css_alt') :
+                                '[Expr. '.o2val('prgctrls','tab_css_alt_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_body') && o2zero('prgctrls','tab_css_body_exp')) ? [] :
+               ['tabCssBody' => (o2zero('prgctrls','tab_css_body_exp') ?
+                                 o2val('prgctrls','tab_css_body') :
+                                 '[Expr. '.o2val('prgctrls','tab_css_body_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_foot') && o2zero('prgctrls','tab_css_foot_exp')) ? [] :
+               ['tabCssFoot' => (o2zero('prgctrls','tab_css_foot_exp') ?
+                                 o2val('prgctrls','tab_css_foot') :
+                                 '[Expr. '.o2val('prgctrls','tab_css_foot_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_grid') && o2zero('prgctrls','tab_css_grid_exp')) ? [] :
+               ['tabCssGrid' => (o2zero('prgctrls','tab_css_grid_exp') ?
+                                 o2val('prgctrls','tab_css_grid') :
+                                 '[Expr. '.o2val('prgctrls','tab_css_grid_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_head') && o2zero('prgctrls','tab_css_head_exp')) ? [] :
+               ['tabCssHead' => (o2zero('prgctrls','tab_css_head_exp') ?
+                                 o2val('prgctrls','tab_css_head') :
+                                 '[Expr. '.o2val('prgctrls','tab_css_head_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_out') && o2zero('prgctrls','tab_css_out_exp')) ? [] :
+               ['tabCssOut' => (o2zero('prgctrls','tab_css_out_exp') ?
+                                o2val('prgctrls','tab_css_out') :
+                                '[Expr. '.o2val('prgctrls','tab_css_out_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_over') && o2zero('prgctrls','tab_css_over_exp')) ? [] :
+               ['tabCssOver' => (o2zero('prgctrls','tab_css_over_exp') ?
+                                 o2val('prgctrls','tab_css_over') :
+                                 '[Expr. '.o2val('prgctrls','tab_css_over_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_row') && o2zero('prgctrls','tab_css_row_exp')) ? [] :
+               ['tabCssRow' => (o2zero('prgctrls','tab_css_row_exp') ?
+                                o2val('prgctrls','tab_css_row') :
+                                '[Expr. '.o2val('prgctrls','tab_css_row_exp').']')]),
+           ...((o2zero('prgctrls','tab_css_sel') && o2zero('prgctrls','tab_css_sel_exp')) ? [] :
+               ['tabCssSel' => (o2zero('prgctrls','tab_css_sel_exp') ?
+                                o2val('prgctrls','tab_css_sel') :
+                                '[Expr. '.o2val('prgctrls','tab_css_sel_exp').']')]),
+           ...(o2zero('prgctrls','tab_hide_mark') ? [] : ['tabHideMark' => o2val('prgctrls','tab_hide_mark')]),
+           ...((o2zero('prgctrls','tab_norec_msg') && o2zero('prgctrls','tab_norec_msg_exp')) ? [] :
+               ['tabNorecMsg' => (o2zero('prgctrls','tab_norec_msg_exp') ?
+                                  jx_encode(o2val('prgctrls','tab_norec_msg'), 'utf-8') :
+                                  '[Expr. '.o2zero('prgctrls','tab_norec_msg_exp').']')]),
+           ...(o2zero('prgctrls','tab_options') ? [] : ['tabOptions' => o2val('prgctrls','tab_options')]),
+           ...(o2zero('prgctrls','tab_pin_cols')  ? [] : ['tabPinCols' => o2val('prgctrls','tab_pin_cols')]),
+           ...(o2zero('prgctrls','tooltip')  ? [] : ['tooltip' => o2val('prgctrls','tooltip')]),
+           ...(o2zero('prgctrls','tree_items') ? [] : ['treeItems' => o2val('prgctrls','tree_items')]),
+           ...(o2zero('prgctrls','tree_sel') ? [] : ['treeSel' => o2val('prgctrls','tree_sel')]),
+           ...(o2zero('prgctrls','upload_multi') ? [] : ['uploadMulti' => o2val('prgctrls','upload_multi')]),
+           ...(o2zero('prgctrls','upload_save_as') ? [] : ['uploadSaveAs' => o2val('prgctrls','upload_save_as')]),
+           ...(o2zero('prgctrls','view') ? [] : ['view' => jx_encode(o2val('prgctrls','view'), 'utf-8')]),
+           ...(o2zero('prgctrls','visible') ? [] : ['visible' => o2val('prgctrls','visible')]),
+           ...(o2zero('prgctrls','zoom') ? [] : ['zoom' => o2val('prgctrls','zoom')])                                                                
+           ];
+             
+return ($code);
+	} //|o2_fine_exp|
+
+function program_forms_exp_12() {
+	
+return (o2val('prgforms','formname'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_13() {
+	
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_14() {
+	o2js_exe("sessionStorage.setItem('controlEditorData', JSON.stringify(".
+         json_encode(o2val('prg§_§var','ctrls_code'))."));");
+o2log(o2val('prg§_§var','ctrls_code'));         
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_15() {
+	o2tree_node_expand('tree', 'jxp|forms');
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_16() {
+	
+return ('page_title');
+	} //|o2_fine_exp|
+
+function program_forms_exp_17() {
+	
+return (o2val('prgforms','caption').(o2zero('prgforms','caption_exp') ? '' : ' [Expr. '.o2val('prgforms','caption_exp').']'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_18() {
+	
+return (array());
+	} //|o2_fine_exp|
+
+function program_forms_exp_110() {
+	
+return (o2val('prg§_§var','prg_modified'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_116() {
+	
+return ("tools/o2sys_confirm");
+	} //|o2_fine_exp|
+
+function program_forms_exp_117() {
+	
+return ("Save program changes?");
+	} //|o2_fine_exp|
+
+function program_forms_exp_118() {
+	
+return (o2val('prg§_§var','prg_modified') && o2val('prg§_§var','confirm'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_119() {
+	
+return (o2val('prg§_§var','prg_modified') && !o2val('prg§_§var','confirm'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_142() {
+	
+return (o2val('obj_status','userid') == o2app_user());
+	} //|o2_fine_exp|
+
+function program_forms_exp_152() {
+	
+return (o2zero('obj_status','userid'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_174() {
+	$title = 'Program '.o2par(1).
+         (o2zero('obj_status','userid') ? '' : 
+          (' - checked by '.(o2exp(142) ? "me" : o2val('obj_status','userid'))));
+return ($title);
+	} //|o2_fine_exp|
+
+function program_forms_exp_177() {
+	
+return ('jxnav');
+	} //|o2_fine_exp|
+
+function program_forms_exp_178() {
+	o2form_maximize('prg_forms');
+return (true);
+	} //|o2_fine_exp|
+
+function program_forms_exp_179() {
+	
+return (o2val('prg§_§var','menu_selected_item'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_181() {
+	
+return (o2val('_o2SESSION','menu_items'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_182() {
+	
+return ('<jx>/img/tabadmin/separator.png');
+	} //|o2_fine_exp|
+
+function program_forms_exp_183() {
+	
+return ('<jx>/img/tools/blank.png');
+	} //|o2_fine_exp|
+
+function program_forms_exp_184() {
+	
+return ('tool_btn_checkout'.(o2exp(152) ? '' : '_dis'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_185() {
+	
+return ('tool_btn_checkin'.(o2exp(142) ? '' : '_dis'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_186() {
+	
+return ('tool_btn_uncheck'.(o2exp(142) ? '' : '_dis'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_187() {
+	
+return ('tool_btn_save'.(o2exp(110) ? '' : '_dis'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_188() {
+	
+return ('tool_btn_discard'.(o2exp(110) ? '' : '_dis'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_189() {
+	if (o2val('obj_status','userid') && (o2val('obj_status','userid') != o2app_user())) {
+   $img = 'cvsbar/checked.png';
+   } 
+elseif (o2val('obj_status','userid') == o2app_user()) {
+   $img = 'cvsbar/mycheck.png';
+   }
+else {
+   $img = '<jx>/img/tools/blank.png'; 
+   }
+return ($img);
+	} //|o2_fine_exp|
+
+function program_forms_exp_190() {
+	
+return (substr(o2val('prg§_§var','menu_selected_item'), 0, 3) == 'jxi');
+	} //|o2_fine_exp|
+
+function program_forms_exp_191() {
+	
+return (substr(o2val('prg§_§var','menu_selected_item'), 0, 3) == 'jxp');
+	} //|o2_fine_exp|
+
+function program_forms_exp_197() {
+	
+return ('jxp|forms');
+	} //|o2_fine_exp|
+
+function program_forms_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>
