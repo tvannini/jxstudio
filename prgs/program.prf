@@ -110,15 +110,15 @@ function program§§controls_def($task_controls, $_o2viewalias = "") {
 	$task_controls->usa("userid","controls","userid","program_exp_3()","program_exp_3()",null,null);
 	$task_controls->usa("prgname","controls","prgname","program_exp_2()","program_exp_2()",null,null);
 	$task_controls->usa("formname","controls","formname",null,null,null,null);
-	$task_controls->usa("controlname","controls","controlname",null,null,null,null);
+	$task_controls->usa("ctrlname","controls","ctrlname",null,null,null,null);
 	$task_controls->usa("type","controls","type",null,null,null,null);
 	$task_controls->usa("action","controls","action",null,null,null,null);
-	$task_controls->usa("dbn_iact","controls","dbn_iact",null,null,null,null);
-	$task_controls->usa("dbn_pact","controls","dbn_pact",null,null,null,null);
-	$task_controls->usa("dbn_dact","controls","dbn_dact",null,null,null,null);
-	$task_controls->usa("dbn_uact","controls","dbn_uact",null,null,null,null);
-	$task_controls->usa("dbn_dtact","controls","dbn_dtact",null,null,null,null);
-	$task_controls->usa("dbn_sact","controls","dbn_sact",null,null,null,null);
+	$task_controls->usa("nav_new_act","controls","nav_new_act",null,null,null,null);
+	$task_controls->usa("nav_save_act","controls","nav_save_act",null,null,null,null);
+	$task_controls->usa("nav_del_act","controls","nav_del_act",null,null,null,null);
+	$task_controls->usa("nav_undo_act","controls","nav_undo_act",null,null,null,null);
+	$task_controls->usa("nav_det_act","controls","nav_det_act",null,null,null,null);
+	$task_controls->usa("nav_sel_act","controls","nav_sel_act",null,null,null,null);
 }
 function program§§main_form_def($form_main) {
 	$form_main->x(0);
@@ -445,8 +445,7 @@ function program§§load_forms_act($o2exe) {
 	} //|o2_fine_act|
 
 function program§§load_views_act($o2exe) {
-	$o2exe->s(1) && True && o2act::set("_o2SESSION", "menu_items", program_exp_37()) && $o2exe->e();
-	$o2exe->s(2) && True && o2act::exe("add_view", False, "views") && $o2exe->e();
+	$o2exe->s(1) && True && o2act::exe("add_view", False, "views") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program§§on_prgname_change_act($o2exe) {
@@ -761,7 +760,7 @@ return ($list);
 	} //|o2_fine_exp|
 
 function program_exp_192() {
-	$list = o2val('_o2SESSION','prg_items');
+	$list = o2val('_o2SESSION','menu_items');
 $list['f|'.o2val('forms','formname')] = array('jxp|forms', o2val('forms','formname'), 'prgbar/form.png');
 return ($list);
 	} //|o2_fine_exp|
@@ -809,23 +808,23 @@ function program_exp_199() {
 if (!o2val('controls','action')) {
    $list[] = o2val('controls','action');
    }
-if (!o2zero('controls','dbn_iact')) {
-   $list[] = o2val('controls','dbn_iact');
+if (!o2zero('controls', 'nav_new_act')) {
+   $list[] = o2val('controls', 'nav_new_act');
    }
-if (!o2zero('controls','dbn_pact')) {
-   $list[] = o2val('controls','dbn_pact');
+if (!o2zero('controls', 'nav_save_act')) {
+   $list[] = o2val('controls', 'nav_save_act');
    }
-if (!o2zero('controls','dbn_dact')) {
-   $list[] = o2val('controls','dbn_dact');
+if (!o2zero('controls', 'nav_del_act')) {
+   $list[] = o2val('controls', 'nav_del_act');
    }
-if (!o2zero('controls','dbn_uact')) {
-   $list[] = o2val('controls','dbn_uact');
+if (!o2zero('controls', 'nav_undo_act')) {
+   $list[] = o2val('controls', 'nav_undo_act');
    }
-if (!o2zero('controls','dbn_dtact')) {
-   $list[] = o2val('controls','dbn_dtact');
+if (!o2zero('controls', 'nav_det_act')) {
+   $list[] = o2val('controls', 'nav_det_act');
    }
-if (!o2zero('controls','dbn_sact')) {
-   $list[] = o2val('controls','dbn_sact');
+if (!o2zero('controls', 'nav_sel_act')) {
+   $list[] = o2val('controls', 'nav_sel_act');
    }
 return ($list);
 	} //|o2_fine_exp|
