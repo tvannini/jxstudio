@@ -607,6 +607,9 @@ function updateControlProperty(ctrl, propertyId, value) {
         case 'model':
             ctrl.dataset.model = value;
             break;
+        case 'submit':
+            ctrl.dataset.submit = value;
+            break;
         case 'zoom':
             ctrl.dataset.zoom = value;
             break;
