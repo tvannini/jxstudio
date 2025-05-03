@@ -4,8 +4,20 @@ function getResponse() {
     let res = decodeURIComponent(window.location.search.substring(1));
     if (res !== '') {
         res = JSON.parse(res);
+        // Return focus to the main window while waiting for a response
+        if (res['wait']) {
+            setTimeout(function() {
+                window.onerror = function(message, url, lineNumber) {
+                    return false;
+                };
+            }, 50); // sets a slight delay and then restores normal error reporting
+            window.onerror = function(message, url, lineNumber) {
+                return true;
+            };
+            throw new Error('Fake error to stop the script');
+        }
         // Response to F5 - Editing / Selection
-        if (res['res'] && (selectedControls.length > 0)) {
+        else if (res['res'] && (selectedControls.length > 0)) {
             selectedControls.forEach(ctrl => {
                 updateControlProperty(ctrl, res['res']['prop'], res['res']['value']);
             });
@@ -97,14 +109,7 @@ function updatePropertiesForm() {
     }
 
     const controlProperties = document.querySelectorAll('.control-property');
-
-    function hideAllSpecificProperties() {
-        controlProperties.forEach(element => {
-            element.style.display = 'none';
-        });
-    }
-
-    hideAllSpecificProperties();
+    controlProperties.forEach(element => { element.style.display = 'none'; });
 
     // Caption
     if (['label', 'button', 'img'].includes(commonValues.ctrl_type)) {
@@ -1322,7 +1327,7 @@ propertiesForm.addEventListener('keydown', (e) => {
         e.preventDefault();
         if (e.target.tagName === 'INPUT' && e.target.type === 'text') {
             saveControlsToStorage();
-            window.parent.o2jse.cmd.exe(e, 1, 'zoom', e.target.name, e.target.value);
+            window.parent.o2jse.cmd.exe(e, 1, 'zoom_gui', e.target.name, e.target.value);
         }
     }
     if (e.key === 'ArrowDown') {
