@@ -6,6 +6,8 @@ function getResponse() {
         res = JSON.parse(res);
         // Return focus to the main window while waiting for a response
         if (res['wait']) {
+            // This is a trick to stop the script execution
+            // and prevent the error message from being displayed
             setTimeout(function() {
                 window.onerror = function(message, url, lineNumber) {
                     return false;
@@ -20,6 +22,10 @@ function getResponse() {
         else if (res['res'] && (selectedControls.length > 0)) {
             selectedControls.forEach(ctrl => {
                 updateControlProperty(ctrl, res['res']['prop'], res['res']['value']);
+                // For "field" property, set "view" property too
+                if ((res['res']['prop'] === 'field') && (res['res']['extra'] !== '')) {
+                    updateControlProperty(ctrl, 'view', res['res']['extra']);
+                }
             });
             const field = document.getElementById(res['res']['prop']);
             if (field && field.focus) {
@@ -1327,7 +1333,23 @@ propertiesForm.addEventListener('keydown', (e) => {
         e.preventDefault();
         if (e.target.tagName === 'INPUT' && e.target.type === 'text') {
             saveControlsToStorage();
-            window.parent.o2jse.cmd.exe(e, 1, 'zoom_gui', e.target.name, e.target.value);
+            switch (e.target.id) {
+                case 'field':
+                    window.parent.o2jse.cmd.exe(e,
+                                                1,
+                                                'zoom_gui',
+                                                e.target.name,
+                                                e.target.value,
+                                                propertiesForm.view.value);
+                    break;
+                default:
+                    window.parent.o2jse.cmd.exe(e,
+                                                1,
+                                                'zoom_gui',
+                                                e.target.name,
+                                                e.target.value);
+                    break;
+            }
         }
     }
     if (e.key === 'ArrowDown') {
