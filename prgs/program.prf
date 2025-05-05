@@ -119,6 +119,10 @@ function program§§controls_def($task_controls, $_o2viewalias = "") {
 	$task_controls->usa("nav_undo_act","controls","nav_undo_act",null,null,null,null);
 	$task_controls->usa("nav_det_act","controls","nav_det_act",null,null,null,null);
 	$task_controls->usa("nav_sel_act","controls","nav_sel_act",null,null,null,null);
+	$task_controls->usa("imglist_del_act","controls","imglist_del_act",null,null,null,null);
+	$task_controls->usa("progress_end","controls","progress_end",null,null,null,null);
+	$task_controls->usa("progress_start","controls","progress_start",null,null,null,null);
+	$task_controls->usa("zoom","controls","zoom",null,null,null,null);
 }
 function program§§main_form_def($form_main) {
 	$form_main->x(0);
@@ -550,8 +554,9 @@ return (o2val('prg§_§var','counter') >= o2val('prg§_§var','tot_top_actions'));
 	} //|o2_fine_exp|
 
 function program_exp_8() {
-	
-return (array_unique(o2val('prg§_§var','top_actions')));
+	$list = array_unique(o2val('prg§_§var','top_actions'));
+sort($list);
+return ($list);
 	} //|o2_fine_exp|
 
 function program_exp_9() {
@@ -805,7 +810,7 @@ return ($list);
 
 function program_exp_199() {
 	$list = o2val('prg§_§var','top_actions');
-if (!o2val('controls','action')) {
+if (!o2zero('controls','action')) {
    $list[] = o2val('controls','action');
    }
 if (!o2zero('controls', 'nav_new_act')) {
@@ -825,6 +830,18 @@ if (!o2zero('controls', 'nav_det_act')) {
    }
 if (!o2zero('controls', 'nav_sel_act')) {
    $list[] = o2val('controls', 'nav_sel_act');
+   }
+if (!o2zero('controls', 'imglist_del_act')) {
+   $list[] = o2val('controls', 'imglist_del_act');
+   }
+if (!o2zero('controls', 'progress_start')) {
+   $list[] = o2val('controls', 'progress_start');
+   }
+if (!o2zero('controls', 'progress_end')) {
+   $list[] = o2val('controls', 'progress_end');
+   }
+if (!o2zero('controls', 'zoom')) {
+   $list[] = o2val('controls', 'zoom');
    }
 return ($list);
 	} //|o2_fine_exp|
