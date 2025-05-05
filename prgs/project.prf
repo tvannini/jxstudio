@@ -40,10 +40,11 @@ function project§§goto_items_act($o2exe) {
 	$o2exe->s(13) && (project_exp_19() || $o2exe->e()) && o2act::gotoprg("program_acts", false, project_exp_8()) && $o2exe->e();
 	$o2exe->s(14) && (project_exp_16() || $o2exe->e()) && o2act::gotoprg("program_acts", false, project_exp_8(), project_exp_23()) && $o2exe->e();
 	$o2exe->s(15) && (project_exp_24() || $o2exe->e()) && o2act::gotoprg("program_forms", false, project_exp_8()) && $o2exe->e();
-	$o2exe->s(16) && (project_exp_20() || $o2exe->e()) && o2act::call("check_ts_obj", False, project_exp_21()) && $o2exe->e();
-	$o2exe->s(17) && (project_exp_20() || $o2exe->e()) && o2act::gotoprg("program", false, project_exp_21()) && $o2exe->e();
-//	$o2exe->s(18) && True && o2act::remark("Default to Appication properties") && $o2exe->e();
-	$o2exe->s(19) && True && o2act::gotoprg("splash", false) && $o2exe->e();
+	$o2exe->s(16) && (project_exp_25() || $o2exe->e()) && o2act::gotoprg("program_forms", false, project_exp_8(), project_exp_7()) && $o2exe->e();
+	$o2exe->s(17) && (project_exp_20() || $o2exe->e()) && o2act::call("check_ts_obj", False, project_exp_21()) && $o2exe->e();
+	$o2exe->s(18) && (project_exp_20() || $o2exe->e()) && o2act::gotoprg("program", false, project_exp_21()) && $o2exe->e();
+//	$o2exe->s(19) && True && o2act::remark("Default to Appication properties") && $o2exe->e();
+	$o2exe->s(20) && True && o2act::gotoprg("splash", false) && $o2exe->e();
 	} //|o2_fine_act|
 
 function project§§load_workset_act($o2exe) {
@@ -187,5 +188,10 @@ return (o2val('prg§_§var','item'));
 function project_exp_24() {
 	
 return (o2val('prg§_§var','item') == 'jxp|forms');
+	} //|o2_fine_exp|
+
+function project_exp_25() {
+	
+return (substr(o2val('prg§_§var','item'), 0, 2) == 'f|');
 	} //|o2_fine_exp|
 ?>
