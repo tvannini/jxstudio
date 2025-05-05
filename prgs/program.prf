@@ -708,7 +708,10 @@ $prgid = 'prg|'.o2par(1);
 foreach ($list as $idx => $item) {
    if (substr($item[0], 0, 4) == 'jxp|') {
       unset($list[$idx]);
-      } 
+      }
+   if (in_array(substr($item[0], 0, 2), ['v|', 'f|', 'a|'])) {
+      unset($list[$idx]);
+      }    
    }
 $list['jxp|vars']  = array($prgid, 'Variables', 'prgbar/vars.png');
 $list['jxp|views'] = array($prgid, 'Views', 'prgbar/views.png');
