@@ -1851,7 +1851,7 @@ $form = array_combine($subparts[1], $subparts[2]);
 
 /* __________________________________________________ Controls definition ___ */
 $subparts = array();
-preg_match_all('/\$ctrl_\w*\s*=\s*&\$form_'.$form_name.
+preg_match_all('/\$ctrl_\w*\s*=\s*\$form_'.$form_name.
                '->ctrldef\("(\w*)"\s*,\s*"(\w*)"\s*,\s*"(\w*)"\s*,\s*"(.*)"\s*,\s*"(\w*)"\);/m', 
                $array_def[2], $subparts);
 /**
@@ -1900,7 +1900,6 @@ if (!function_exists('DecodeProp')) {
          }
       }
    }
-             
 return ($res);
 	} //|o2_fine_exp|
 
@@ -1935,7 +1934,6 @@ if (isset($d['css_close'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -1948,7 +1946,6 @@ if (isset($d['css_close'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -1996,7 +1993,6 @@ if (isset($d['titolo'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2011,7 +2007,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['y'])) {
    $v = DecodeProp($d['y']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2021,7 +2016,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['x'])) {
    $v = DecodeProp($d['x']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2031,7 +2025,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['altezza'])) {
    $v = DecodeProp($d['altezza']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2041,7 +2034,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['larghezza'])) {
    $v = DecodeProp($d['larghezza']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2051,7 +2043,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['align_v'])) {
    $v = DecodeProp($d['align_v']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2061,7 +2052,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['align_o'])) {
    $v = DecodeProp($d['align_o']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2071,7 +2061,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['frm_title'])) {
    $v = DecodeProp($d['frm_title']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2081,7 +2070,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['frm_status'])) {
    $v = DecodeProp($d['frm_status']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2091,7 +2079,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['y_exp'])) {
    $v = DecodeProp($d['y_exp']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2101,7 +2088,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['x_exp'])) {
    $v = DecodeProp($d['x_exp']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2111,7 +2097,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['altezza_exp'])) {
    $v = DecodeProp($d['altezza_exp']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2121,7 +2106,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['larghezza_exp'])) {
    $v = DecodeProp($d['larghezza_exp']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2131,7 +2115,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['close_action'])) {
    $v = DecodeProp($d['close_action']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2141,7 +2124,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['refresh_action'])) {
    $v = DecodeProp($d['refresh_action']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2151,7 +2133,6 @@ $d = o2val('prg§_§var','array_def','form');
 if (isset($d['refresh_exp'])) {
    $v = DecodeProp($d['refresh_exp']);
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2169,7 +2150,6 @@ if (isset($d['titolo'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2202,7 +2182,6 @@ if (isset($d['css_finestra'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2215,7 +2194,6 @@ if (isset($d['css_title'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2228,7 +2206,6 @@ if (isset($d['css_title_no'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2241,7 +2218,6 @@ if (isset($d['css_body'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2254,7 +2230,6 @@ if (isset($d['css_status'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2267,7 +2242,6 @@ if (isset($d['css_doc'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2280,7 +2254,6 @@ if (isset($d['css_open'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2293,7 +2266,6 @@ if (isset($d['css_exit'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2306,7 +2278,6 @@ if (isset($d['css_resize'])) {
       $v = '';   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2319,7 +2290,6 @@ if (isset($d['css_finestra'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2332,7 +2302,6 @@ if (isset($d['css_title'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2345,7 +2314,6 @@ if (isset($d['css_title_no'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2358,7 +2326,6 @@ if (isset($d['css_body'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2371,7 +2338,6 @@ if (isset($d['css_status'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2384,7 +2350,6 @@ if (isset($d['css_doc'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2397,7 +2362,6 @@ if (isset($d['css_open'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2410,7 +2374,6 @@ if (isset($d['css_exit'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2423,7 +2386,6 @@ if (isset($d['css_resize'])) {
       $v = 0;   
       }
    }
- 
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2518,7 +2480,6 @@ if (isset($d['label'])) {
       $v = '';   
       }
    }
-
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2530,7 +2491,7 @@ if (isset($d['label'])) {
    if (intval($v) != $v) {
       $v = 0;   
       }
-   } 
+   }
 return ($v);
 	} //|o2_fine_exp|
 
@@ -2887,7 +2848,7 @@ if (isset($d['confirm_message'])) {
    if (intval($v) != $v) {
       $v = 0;   
       }
-   } 
+   }
 return ($v);
 	} //|o2_fine_exp|
 
@@ -3694,7 +3655,7 @@ foreach ($res_func as $single_func) {
       }
    // ________________________________________________________________ Views ___
    elseif (strpos($single_func, "\$_o2viewalias")) {
-      $exp_views = '/§§(.*)_def\s*\(\s*&\$(\w*)\s*,\s*\$_o2viewalias\s*'.
+      $exp_views = '/§§(.*)_def\s*\(\s*\$(\w*)\s*,\s*\$_o2viewalias\s*'.
                    '=\s*"(\w*)"\s*\)\s*{\s*(.*)\s*}[^}]*/s';
       preg_match($exp_views, $single_func, $res_view);
 
@@ -3705,13 +3666,13 @@ foreach ($res_func as $single_func) {
    // __________________________________________________ Actions, forms, ... ___
    elseif (substr($single_func, 0, 2) == "§§") {
       // ___________________________________________________________ Actions ___
-      $exp_acts = '/§§(.*)_act\s*\(\s*&\$o2exe\s*\)\s*{\s*(.*)\s*}[^}]*/s';
+      $exp_acts = '/§§(.*)_act\s*\(\s*\$o2exe\s*\)\s*{\s*(.*)\s*}[^}]*/s';
       preg_match_all($exp_acts, $single_func, $res_act);
       if ($res_act[0]) {
          $res_acts[$res_act[1][0]] = $res_act[2][0];
          }   
       // _____________________________________________________________ Forms ___
-      $exp_forms = '/§§(.*)_form_def\s*\(\s*&\$(.*)\s*\)\s*{\s*(.*)\s*}[^}]*/s';
+      $exp_forms = '/§§(.*)_form_def\s*\(\s*\$(.*)\s*\)\s*{\s*(.*)\s*}[^}]*/s';
       preg_match_all($exp_forms, $single_func, $res_form);
       if ($res_form[0]) {
          $res_forms[$res_form[1][0]] = array(1 => $res_form[2][0],
@@ -4186,7 +4147,6 @@ return ($info);
 function load_program_exp_361() {
 	$pages = o2val('prg§_§var','array_def','ctrls',o2val('controls','ctrlname'),'label');
 eval('$pages=implode("|", '.$pages.');');
-
 return ($pages);
 	} //|o2_fine_exp|
 
@@ -4344,7 +4304,6 @@ if (isset($p['vertical'])) {
 else {
    $v = 'H';
    }
-
 return ($v);
 	} //|o2_fine_exp|
 
