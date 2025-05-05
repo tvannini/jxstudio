@@ -219,7 +219,7 @@ function select_css_exp_15() {
 foreach (o2val('prg§_§var','css_files') as $css_file) {
    $parts = array();
    preg_match_all('/\.([\w-]+)(?=[^{}@*]*\{)/', file_get_contents($css_file), $parts);
-   $list += $parts[1];
+   $list = array_merge($list, $parts[1]);
    }
 $list = array_unique($list);
 sort($list);
@@ -262,15 +262,30 @@ return ($code);
 	} //|o2_fine_exp|
 
 function select_css_exp_18() {
-	$list = array(); 
-foreach (preg_split('/[\s;,]+/', o2val('app_props','css')) as $css_file) {
-   $css_file = o2val('_o2SESSION','appdir').'htdocs'.DIRECTORY_SEPARATOR.
-                                            'css'.DIRECTORY_SEPARATOR.$css_file;   
-   if (file_exists($css_file)) {
-      $list[] = $css_file;
+	$list    = array();
+$css_str = o2val('app_props','css');
+/* ________________________________________ Not include default Janox CSS ___ */
+if (substr($css_str, 0, 1) === '!') {
+   $css_str = substr($css_str, 1);
+   }
+/* ____________________________________________ Include default Janox CSS ___ */
+else {
+   $list[] = o2rnt_dircss().'janox.css'; 
+   }
+foreach (preg_split('/[\s;,]+/', $css_str) as $css_file) {
+   $file = o2val('_o2SESSION','appdir').'htdocs'.DIRECTORY_SEPARATOR.
+                                        'css'.DIRECTORY_SEPARATOR.$css_file;
+   if (file_exists($file)) {
+      $list[] = $file;
+      }
+   else {
+      $file = o2rnt_dircss().$css_file;
+      if (file_exists($file)) {
+         $list[] = $file;
+         }
       }
    }
-        
+                                              
    
 return ($list);
 	} //|o2_fine_exp|
