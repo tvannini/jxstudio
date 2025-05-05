@@ -1886,13 +1886,14 @@ $res = array('form' => $form, 'ctrls' => $ctrls);
 /* _______________ Define function to decode value assegned to properties ___ */            
 if (!function_exists('DecodeProp')) {             
    function DecodeProp($value) {
-      /* _________________________________ Quoted string: return unquoted ___ */
-      if (substr($value, 0, 1) === '"') {
-         return trim($value, '"');
-         }
       /* __________________ Expression function: return expression number ___ */
-      elseif (substr($value, -2) === '()') {
+      if (strpos($value, '_exp_') && (substr(trim($value, '"'), -2) === '()')) {
+         $value = trim($value, '"');
          return substr($value, strrpos($value, '_exp_') + 5, -2);
+         }
+      /* _________________________________ Quoted string: return unquoted ___ */
+      elseif (substr($value, 0, 1) === '"') {
+         return trim($value, '"');
          }
       /* ___________________________________________ Number: return as is ___ */
       else {
