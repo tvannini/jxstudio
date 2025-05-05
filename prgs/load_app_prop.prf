@@ -3,9 +3,7 @@
 function load_app_prop§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
 	$task_prg§_§var->definisci("array_appprop", "_o2structure");
-	$task_prg§_§var->definisci("array_css", "_o2structure");
 	$task_prg§_§var->definisci("array_includes", "_o2structure");
-	$task_prg§_§var->definisci("array_services", "_o2structure");
 	$task_prg§_§var->definisci("contents", "_o2text");
 	$task_prg§_§var->definisci("counter", "id");
 	$task_prg§_§var->definisci("pathfile", "path");
@@ -35,23 +33,7 @@ function load_app_prop§§appprop_def($task_appprop, $_o2viewalias = "") {
 	$task_appprop->usa("chr_encoding","appprop","chr_encoding",null,null,null,null);
 	$task_appprop->usa("extra_inc","appprop","extra_inc",null,null,null,null);
 	$task_appprop->usa("html_head","appprop","html_head",null,null,null,null);
-}
-
-function load_app_prop§§services_def($task_services, $_o2viewalias = "") {
-	$task_services->righe_vis = 10;
-
-	$task_services->usa_file("appservices","appservices","name",null,null);
-
-	$task_services->usa("servicename","appservices","servicename",null,null,null,null);
-}
-
-function load_app_prop§§css_def($task_css, $_o2viewalias = "") {
-	$task_css->righe_vis = 10;
-
-	$task_css->usa_file("appcss","appcss","pos",null,null);
-
-	$task_css->usa("pos","appcss","pos",null,null,null,null);
-	$task_css->usa("css","appcss","css",null,null,null,null);
+	$task_appprop->usa("css","appprop","css",null,null,null,null);
 }
 
 function load_app_prop§§create_appprop_act($o2exe) {
@@ -74,36 +56,12 @@ function load_app_prop§§create_appprop_act($o2exe) {
 	$o2exe->s(17) && True && o2act::set("appprop", "chr_encoding", load_app_prop_exp_41()) && $o2exe->e();
 	$o2exe->s(18) && True && o2act::set("appprop", "extra_inc", load_app_prop_exp_42()) && $o2exe->e();
 	$o2exe->s(19) && True && o2act::set("appprop", "html_head", load_app_prop_exp_43()) && $o2exe->e();
-	$o2exe->s(20) && True && o2act::view("appprop", "S", "") && $o2exe->e();
-	$o2exe->s(21) && True && o2act::set("prg§_§var", "array_css", load_app_prop_exp_25()) && $o2exe->e();
-	$o2exe->s(22) && True && o2act::set("prg§_§var", "array_services", load_app_prop_exp_26()) && $o2exe->e();
-	} //|o2_fine_act|
-
-function load_app_prop§§create_css_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("css", "I", "") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("css", "pos", load_app_prop_exp_29()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::set("css", "css", load_app_prop_exp_31()) && $o2exe->e();
-	$o2exe->s(4) && (load_app_prop_exp_33() || $o2exe->e()) && o2act::view("css", "S", "") && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_30()) && $o2exe->e();
-	} //|o2_fine_act|
-
-function load_app_prop§§create_services_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("services", "I", "") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("services", "servicename", load_app_prop_exp_32()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::view("services", "S", "") && $o2exe->e();
-	$o2exe->s(4) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_30()) && $o2exe->e();
+	$o2exe->s(20) && True && o2act::set("appprop", "css", load_app_prop_exp_1()) && $o2exe->e();
+	$o2exe->s(21) && True && o2act::view("appprop", "S", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_app_prop§§delete_appprop_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("appprop", "C", "") && $o2exe->e();
-	} //|o2_fine_act|
-
-function load_app_prop§§delete_css_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("css", "C", "") && $o2exe->e();
-	} //|o2_fine_act|
-
-function load_app_prop§§delete_services_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("services", "C", "") && $o2exe->e();
+	$o2exe->s(1) && True && o2act::view("appprop", "D", "") && $o2exe->e();
 	} //|o2_fine_act|
 
 function load_app_prop§§set_repositories_act($o2exe) {
@@ -117,26 +75,24 @@ function load_app_prop§§set_repositories_act($o2exe) {
 
 function load_app_prop§§start_act($o2exe) {
 //	$o2exe->s(1) && True && o2act::remark("Clear tables") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::exe("delete_appprop", False, "appprop") && $o2exe->e();
-	$o2exe->s(3) && True && o2act::exe("delete_services", False, "services") && $o2exe->e();
-	$o2exe->s(4) && True && o2act::exe("delete_css", False, "css") && $o2exe->e();
-//	$o2exe->s(5) && True && o2act::remark("Read application main PHP file") && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("prg§_§var", "pathfile", load_app_prop_exp_34()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::set("prg§_§var", "runtime_path", load_app_prop_exp_39()) && $o2exe->e();
-//	$o2exe->s(8) && True && o2act::remark("Read configuration INI file") && $o2exe->e();
-	$o2exe->s(9) && True && o2act::set("prg§_§var", "pathfile", load_app_prop_exp_4()) && $o2exe->e();
-	$o2exe->s(10) && True && o2act::set("prg§_§var", "array_appprop", load_app_prop_exp_5()) && $o2exe->e();
-//	$o2exe->s(11) && True && o2act::remark("Set repositories fron INI file") && $o2exe->e();
-	$o2exe->s(12) && True && o2act::exe("set_repositories", True, "") && $o2exe->e();
-//	$o2exe->s(13) && True && o2act::remark("Create properties") && $o2exe->e();
-	$o2exe->s(14) && True && o2act::exe("create_appprop", True, "") && $o2exe->e();
-	$o2exe->s(15) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_10()) && $o2exe->e();
-//	$o2exe->s(16) && True && o2act::remark("CSS") && $o2exe->e();
-	$o2exe->s(17) && True && o2act::exe("create_css", "load_app_prop_exp_27()", "") && $o2exe->e();
-//	$o2exe->s(18) && True && o2act::remark("SERVICES") && $o2exe->e();
-	$o2exe->s(19) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_10()) && $o2exe->e();
-	$o2exe->s(20) && True && o2act::exe("create_services", "load_app_prop_exp_28()", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::exe("delete_appprop", True, "") && $o2exe->e();
+//	$o2exe->s(3) && True && o2act::remark("Read application main PHP file") && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("prg§_§var", "pathfile", load_app_prop_exp_34()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "runtime_path", load_app_prop_exp_39()) && $o2exe->e();
+//	$o2exe->s(6) && True && o2act::remark("Read configuration INI file") && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("prg§_§var", "pathfile", load_app_prop_exp_4()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("prg§_§var", "array_appprop", load_app_prop_exp_5()) && $o2exe->e();
+//	$o2exe->s(9) && True && o2act::remark("Set repositories fron INI file") && $o2exe->e();
+	$o2exe->s(10) && True && o2act::exe("set_repositories", True, "") && $o2exe->e();
+//	$o2exe->s(11) && True && o2act::remark("Create properties") && $o2exe->e();
+	$o2exe->s(12) && True && o2act::exe("create_appprop", True, "") && $o2exe->e();
+	$o2exe->s(13) && True && o2act::set("prg§_§var", "counter", load_app_prop_exp_10()) && $o2exe->e();
 	} //|o2_fine_act|
+
+function load_app_prop_exp_1() {
+	
+return (o2val('prg§_§var','array_appprop','css'));
+	} //|o2_fine_exp|
 
 function load_app_prop_exp_4() {
 	
@@ -221,51 +177,6 @@ return (o2val('prg§_§var','array_appprop','reporter'));
 function load_app_prop_exp_24() {
 	
 return (o2val('prg§_§var','array_appprop','doc'));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_25() {
-	
-return (explode(',',o2val('prg§_§var','array_appprop','css')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_26() {
-	
-return (explode('§',o2val('prg§_§var','array_appprop','services')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_27() {
-	
-return (o2val('prg§_§var','counter') >= count(o2val('prg§_§var','array_css')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_28() {
-	
-return (o2val('prg§_§var','counter') >= count(o2val('prg§_§var','array_services')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_29() {
-	
-return (o2val('prg§_§var','counter') + 1);
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_30() {
-	
-return (o2val('prg§_§var','counter') + 1);
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_31() {
-	
-return (o2val('prg§_§var','array_css',o2val('prg§_§var','counter')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_32() {
-	
-return (o2val('prg§_§var','array_services',o2val('prg§_§var','counter')));
-	} //|o2_fine_exp|
-
-function load_app_prop_exp_33() {
-	
-return (!o2zero('css','css'));
 	} //|o2_fine_exp|
 
 function load_app_prop_exp_34() {
