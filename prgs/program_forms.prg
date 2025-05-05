@@ -28,14 +28,19 @@ o2def::act("prgforms_insert");
 o2def::act("save");
 o2def::act("set_prg_modified");
 o2def::act("set_size");
-o2def::act("show_prg_part");
 o2def::act("start");
 o2def::act("tree_select");
 o2def::act("uncheck");
+o2def::act("zoom_action");
+o2def::act("zoom_css");
+o2def::act("zoom_expression");
+o2def::act("zoom_field");
+o2def::act("zoom_gui");
+o2def::act("zoom_view");
 o2def::form("prg_forms", "", False, "program_forms_exp_8()", false);
 o2def::form("gui_editor", "", False, "program_forms_exp_9()", "program_forms_exp_7()");
 o2def::par(1, "prgname", "prgname");
-o2def::par(2, "menu_item", "_o2alpha");
+o2def::par(2, "view_name", "viewname");
 
 
 ?>
