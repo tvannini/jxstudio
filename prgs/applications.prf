@@ -2,7 +2,9 @@
 
 function applications§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("app_path", "path");
 	$task_prg§_§var->definisci("default_db", "_o2logical");
+	$task_prg§_§var->definisci("path_check", "path");
 	$task_prg§_§var->definisci("window_add", "_o2logical");
 		}
 
@@ -41,7 +43,7 @@ function applications§§prjlist_form_def($form_prjlist) {
 	$form_prjlist->css_close("hidden");
 	$form_prjlist->css_open("hidden");
 	$form_prjlist->css_exit("hidden");
-	$form_prjlist->refresh_action("start");
+	$form_prjlist->refresh_action("init");
 	$form_prjlist->refresh_exp("applications_exp_40()");
 	$ctrl_o2separator2 = $form_prjlist->ctrldef("o2separator2", "line", "", "", "");
 		$ctrl_o2separator2->x(10);
@@ -308,6 +310,10 @@ function applications§§default_archive_act($o2exe) {
 	$o2exe->s(6) && True && o2act::set("recents", "conn_schema", applications_exp_30()) && $o2exe->e();
 	} //|o2_fine_act|
 
+function applications§§init_act($o2exe) {
+	$o2exe->s(1) && (applications_exp_43() || $o2exe->e()) && o2act::gotoprg("applications", false, applications_exp_9998()) && $o2exe->e();
+	} //|o2_fine_act|
+
 function applications§§newproject_act($o2exe) {
 	$o2exe->s(1) && True && o2act::call("new_project", False, "recents§§path") && $o2exe->e();
 	$o2exe->s(2) && (applications_exp_37() || $o2exe->e()) && o2act::set("prg§_§var", "default_db", applications_exp_9998()) && $o2exe->e();
@@ -329,7 +335,9 @@ function applications§§recents_add_act($o2exe) {
 	$o2exe->s(2) && True && o2act::view("recents", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("recents", "username", applications_exp_1()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("recents", "conn_type", applications_exp_33()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("prg§_§var", "default_db", applications_exp_18()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "app_path", applications_exp_42()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "path_check", applications_exp_44()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("prg§_§var", "default_db", applications_exp_18()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function applications§§recents_delete_act($o2exe) {
@@ -382,7 +390,10 @@ function applications§§select_archive_act($o2exe) {
 	} //|o2_fine_act|
 
 function applications§§select_project_act($o2exe) {
-	$o2exe->s(1) && True && o2act::call(applications_exp_23(), False, "recents§§path", applications_exp_25(), applications_exp_26(), applications_exp_27(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_28()) && $o2exe->e();
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "app_path", applications_exp_42()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "path_check", applications_exp_44()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call(applications_exp_23(), False, "prg§_§var§§app_path", applications_exp_25(), applications_exp_26(), applications_exp_27(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_28()) && $o2exe->e();
+	$o2exe->s(4) && (applications_exp_45() || $o2exe->e()) && o2act::set("recents", "path", applications_exp_44()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function applications§§set_statusbar_act($o2exe) {
@@ -392,10 +403,6 @@ function applications§§set_statusbar_act($o2exe) {
 	$o2exe->s(4) && True && o2act::set("_o2SESSION", "status_bar2", applications_exp_53()) && $o2exe->e();
 //	$o2exe->s(5) && True && o2act::remark("PANEL Archive") && $o2exe->e();
 	$o2exe->s(6) && True && o2act::set("_o2SESSION", "status_bar3", applications_exp_54()) && $o2exe->e();
-	} //|o2_fine_act|
-
-function applications§§start_act($o2exe) {
-	$o2exe->s(1) && True && o2act::gotoprg("applications", false, applications_exp_9998()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function applications_exp_1() {
@@ -639,6 +646,44 @@ return ((o2par(1) ? 0 : 0.3));
 function applications_exp_41() {
 	
 return (array());
+	} //|o2_fine_exp|
+
+function applications_exp_42() {
+	$sep = DIRECTORY_SEPARATOR;  
+if ($GLOBALS['o2_runtime']->mswin) {
+   $home = str_replace('\\', '/', o2app_dir_home());
+   /* _________________________________ Network path (es. \\server\share) ___ */
+   if (strpos($home, '//') === 0) {
+      $parts = array_values(array_filter(explode('/', $home)));
+      $path  = $sep.$sep.$parts[0].$sep.$parts[1].$sep;
+      }    
+   /* _____________________________________________ Local drive (es. C:\) ___ */
+   elseif (preg_match('/^[A-Za-z]:/', $home)) {
+      $path = strtoupper($home[0]).':'.$sep.$sep;
+      }
+   else {
+      $path = dir($home);   
+      }
+   }
+else {
+   $path = $sep;
+   }
+return ($path);
+	} //|o2_fine_exp|
+
+function applications_exp_43() {
+	
+return (!o2par(1));
+	} //|o2_fine_exp|
+
+function applications_exp_44() {
+	
+return (o2val('prg§_§var','app_path'));
+	} //|o2_fine_exp|
+
+function applications_exp_45() {
+	
+return (o2val('prg§_§var','path_check') != o2val('prg§_§var','app_path'));
 	} //|o2_fine_exp|
 
 function applications_exp_47() {
