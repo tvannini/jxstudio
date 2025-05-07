@@ -335,9 +335,7 @@ function applications§§recents_add_act($o2exe) {
 	$o2exe->s(2) && True && o2act::view("recents", "I", "") && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("recents", "username", applications_exp_1()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("recents", "conn_type", applications_exp_33()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("prg§_§var", "app_path", applications_exp_42()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("prg§_§var", "path_check", applications_exp_44()) && $o2exe->e();
-	$o2exe->s(7) && True && o2act::set("prg§_§var", "default_db", applications_exp_18()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "default_db", applications_exp_18()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function applications§§recents_delete_act($o2exe) {
@@ -392,7 +390,7 @@ function applications§§select_archive_act($o2exe) {
 function applications§§select_project_act($o2exe) {
 	$o2exe->s(1) && True && o2act::set("prg§_§var", "app_path", applications_exp_42()) && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "path_check", applications_exp_44()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::call(applications_exp_23(), False, "prg§_§var§§app_path", applications_exp_25(), applications_exp_26(), applications_exp_27(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_28()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::call(applications_exp_23(), False, "prg§_§var§§app_path", applications_exp_25(), null, applications_exp_27(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_9999(), applications_exp_28()) && $o2exe->e();
 	$o2exe->s(4) && (applications_exp_45() || $o2exe->e()) && o2act::set("recents", "path", applications_exp_44()) && $o2exe->e();
 	} //|o2_fine_act|
 
@@ -659,7 +657,7 @@ if ($GLOBALS['o2_runtime']->mswin) {
       }    
    /* _____________________________________________ Local drive (es. C:\) ___ */
    elseif (preg_match('/^[A-Za-z]:/', $home)) {
-      $path = strtoupper($home[0]).':'.$sep.$sep;
+      $path = strtoupper($home[0]).':'.$sep;
       }
    else {
       $path = dir($home);   
