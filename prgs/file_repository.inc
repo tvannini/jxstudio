@@ -117,7 +117,7 @@ o2def::tab("fields", "app", "fields", "pos");
 	o2def::field("datatype", "datatype", "name");
 
 	o2def::index("pos", "userid","A", "tablename","A", "position","A");
-	o2def::index("name", "userid","A", "tablename","A", "fieldname","A");
+	o2def::index("name", "userid","A", "tablename","A", "fieldname","A", "position","A");
 
 
 o2def::tab("indexes", "app", "indexes", "pos");
