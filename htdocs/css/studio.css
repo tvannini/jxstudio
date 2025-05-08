@@ -25,7 +25,7 @@
     src: local('Roboto'), url(fonts/RobotoFlex.ttf);
     }
 
-* { font-size: 15px; font-family: Roboto, Arial, sans-serif;}
+* { font-size: 15px; font-family: Roboto, Arial, sans-serif; line-height: 20px; }
 
 .disp_area code {
     font: normal 13px mono;
