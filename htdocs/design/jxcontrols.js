@@ -58,6 +58,7 @@ let offsets = [];
 
 function saveControlsToStorage() {
     const controlsData = [];
+    let selectedCtrls = [];
 
     // Iterate through all controls in the drawing area
     const controls = drawingArea.querySelectorAll('.control');
@@ -67,13 +68,13 @@ function saveControlsToStorage() {
 
         // If control is selected add to list of selected controls
         if (ctrl.classList.contains('selected')) {
-            selectedControls.push(ctrl.dataset.ctrlName);
+            selectedCtrls.push(ctrl.dataset.ctrlName);
         }
     });
 
     // Save the data to localStorage
     sessionStorage.setItem('controlEditorData', JSON.stringify(controlsData));
-    sessionStorage.setItem('selectedControls', JSON.stringify(selectedControls));
+    sessionStorage.setItem('selectedControls', JSON.stringify(selectedCtrls));
 }
 
 function loadControlsFromStorage() {
