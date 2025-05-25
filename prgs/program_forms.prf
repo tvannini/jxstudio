@@ -9,7 +9,8 @@ function program_forms§§prg§_§var_def($task_prg§_§var) {
 	$task_prg§_§var->definisci("response", "_o2structure");
 	$task_prg§_§var->definisci("show_editor", "_o2logical");
 	$task_prg§_§var->definisci("zoom_done", "_o2logical");
-	$task_prg§_§var->definisci("zoom_extra", "propvalue");
+	$task_prg§_§var->definisci("zoom_extra1", "propvalue");
+	$task_prg§_§var->definisci("zoom_extra2", "propvalue");
 	$task_prg§_§var->definisci("zoom_id_expr", "idexpr");
 	$task_prg§_§var->definisci("zoom_prop", "name");
 	$task_prg§_§var->definisci("zoom_value", "propvalue");
@@ -603,6 +604,26 @@ function program_forms§§prg_forms_form_def($form_prg_forms) {
 		$ctrl_o2separator3->altezza(5);
 		$ctrl_o2separator3->expand("V");
 		$ctrl_o2separator3->info_padre(array(0));
+	$ctrl_o2htmlarea2 = $form_prg_forms->ctrldef("o2htmlarea2", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea2->x(10);
+		$ctrl_o2htmlarea2->y(265);
+		$ctrl_o2htmlarea2->larghezza(580);
+		$ctrl_o2htmlarea2->altezza(5);
+		$ctrl_o2htmlarea2->expand("V");
+		$ctrl_o2htmlarea2->info_padre(array(0));
+	$ctrl_o2edit5 = $form_prg_forms->ctrldef("o2edit5", "edit", "prop", "prgforms", "visible");
+		$ctrl_o2edit5->x(80);
+		$ctrl_o2edit5->y(40);
+		$ctrl_o2edit5->larghezza(50);
+		$ctrl_o2edit5->altezza(24);
+		$ctrl_o2edit5->info_padre(array(0));
+	$ctrl_o2htmlarea3 = $form_prg_forms->ctrldef("o2htmlarea3", "htmlarea", "prop", "", "");
+		$ctrl_o2htmlarea3->x(10);
+		$ctrl_o2htmlarea3->y(65);
+		$ctrl_o2htmlarea3->larghezza(580);
+		$ctrl_o2htmlarea3->altezza(5);
+		$ctrl_o2htmlarea3->expand("V");
+		$ctrl_o2htmlarea3->info_padre(array(0));
 	$ctrl_o2htmlarea4 = $form_prg_forms->ctrldef("o2htmlarea4", "htmlarea", "prop", "", "");
 		$ctrl_o2htmlarea4->x(10);
 		$ctrl_o2htmlarea4->y(195);
@@ -631,26 +652,6 @@ function program_forms§§prg_forms_form_def($form_prg_forms) {
 		$ctrl_o2htmlarea6->altezza(5);
 		$ctrl_o2htmlarea6->expand("V");
 		$ctrl_o2htmlarea6->info_padre(array(0));
-	$ctrl_o2edit5 = $form_prg_forms->ctrldef("o2edit5", "edit", "prop", "prgforms", "visible");
-		$ctrl_o2edit5->x(80);
-		$ctrl_o2edit5->y(40);
-		$ctrl_o2edit5->larghezza(50);
-		$ctrl_o2edit5->altezza(24);
-		$ctrl_o2edit5->info_padre(array(0));
-	$ctrl_o2htmlarea2 = $form_prg_forms->ctrldef("o2htmlarea2", "htmlarea", "prop", "", "");
-		$ctrl_o2htmlarea2->x(10);
-		$ctrl_o2htmlarea2->y(265);
-		$ctrl_o2htmlarea2->larghezza(580);
-		$ctrl_o2htmlarea2->altezza(5);
-		$ctrl_o2htmlarea2->expand("V");
-		$ctrl_o2htmlarea2->info_padre(array(0));
-	$ctrl_o2htmlarea3 = $form_prg_forms->ctrldef("o2htmlarea3", "htmlarea", "prop", "", "");
-		$ctrl_o2htmlarea3->x(10);
-		$ctrl_o2htmlarea3->y(65);
-		$ctrl_o2htmlarea3->larghezza(580);
-		$ctrl_o2htmlarea3->altezza(5);
-		$ctrl_o2htmlarea3->expand("V");
-		$ctrl_o2htmlarea3->info_padre(array(0));
 	$ctrl_o2edit6 = $form_prg_forms->ctrldef("o2edit6", "edit", "prop", "prgforms", "url");
 		$ctrl_o2edit6->x(230);
 		$ctrl_o2edit6->y(40);
@@ -977,9 +978,15 @@ function program_forms§§zoom_expression_act($o2exe) {
 	} //|o2_fine_act|
 
 function program_forms§§zoom_field_act($o2exe) {
-	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_extra", program_forms_exp_34()) && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::call("select_prg_field", False, program_forms_exp_3(), program_forms_exp_2(), "prg§_§var§§zoom_extra", "prg§_§var§§zoom_value") && $o2exe->e();
+//	$o2exe->s(1) && True && o2act::remark("View") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "zoom_extra1", program_forms_exp_34()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::call("select_prg_field", False, program_forms_exp_3(), program_forms_exp_2(), "prg§_§var§§zoom_extra1", "prg§_§var§§zoom_value") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§zoom_grid_options_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("grid_options", False, "prg§_§var§§zoom_value") && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_forms§§zoom_gui_act($o2exe) {
@@ -987,16 +994,44 @@ function program_forms§§zoom_gui_act($o2exe) {
 	$o2exe->s(2) && True && o2act::set("prg§_§var", "response", program_forms_exp_31()) && $o2exe->e();
 	$o2exe->s(3) && True && o2act::set("prg§_§var", "zoom_prop", program_forms_exp_21()) && $o2exe->e();
 	$o2exe->s(4) && True && o2act::set("prg§_§var", "zoom_value", program_forms_exp_23()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("prg§_§var", "zoom_extra", program_forms_exp_1()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_9999()) && $o2exe->e();
-//	$o2exe->s(7) && True && o2act::remark("Expression") && $o2exe->e();
-	$o2exe->s(8) && (program_forms_exp_20() || $o2exe->e()) && o2act::exe("zoom_expression", True, "") && $o2exe->e();
-	$o2exe->s(9) && (program_forms_exp_26() || $o2exe->e()) && o2act::exe("zoom_action", True, "") && $o2exe->e();
-	$o2exe->s(10) && (program_forms_exp_32() || $o2exe->e()) && o2act::exe("zoom_view", True, "") && $o2exe->e();
-	$o2exe->s(11) && (program_forms_exp_33() || $o2exe->e()) && o2act::exe("zoom_field", True, "") && $o2exe->e();
-	$o2exe->s(12) && (program_forms_exp_27() || $o2exe->e()) && o2act::exe("zoom_css", True, "") && $o2exe->e();
-	$o2exe->s(13) && (program_forms_exp_24() || $o2exe->e()) && o2act::alert(program_forms_exp_19(), 0) && $o2exe->e();
-	$o2exe->s(14) && True && o2act::set("prg§_§var", "response", program_forms_exp_22()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("prg§_§var", "zoom_extra1", program_forms_exp_1()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("prg§_§var", "zoom_extra2", program_forms_exp_1()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_9999()) && $o2exe->e();
+//	$o2exe->s(8) && True && o2act::remark("Expression") && $o2exe->e();
+	$o2exe->s(9) && (program_forms_exp_20() || $o2exe->e()) && o2act::exe("zoom_expression", True, "") && $o2exe->e();
+	$o2exe->s(10) && (program_forms_exp_26() || $o2exe->e()) && o2act::exe("zoom_action", True, "") && $o2exe->e();
+	$o2exe->s(11) && (program_forms_exp_32() || $o2exe->e()) && o2act::exe("zoom_view", True, "") && $o2exe->e();
+	$o2exe->s(12) && (program_forms_exp_33() || $o2exe->e()) && o2act::exe("zoom_field", True, "") && $o2exe->e();
+	$o2exe->s(13) && (program_forms_exp_27() || $o2exe->e()) && o2act::exe("zoom_css", True, "") && $o2exe->e();
+	$o2exe->s(14) && (program_forms_exp_37() || $o2exe->e()) && o2act::exe("zoom_parent_options", True, "") && $o2exe->e();
+	$o2exe->s(15) && (program_forms_exp_41() || $o2exe->e()) && o2act::exe("zoom_pages", True, "") && $o2exe->e();
+	$o2exe->s(16) && (program_forms_exp_43() || $o2exe->e()) && o2act::exe("zoom_grid_options", True, "") && $o2exe->e();
+	$o2exe->s(17) && (program_forms_exp_24() || $o2exe->e()) && o2act::alert(program_forms_exp_19(), 0) && $o2exe->e();
+	$o2exe->s(18) && True && o2act::set("prg§_§var", "response", program_forms_exp_22()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§zoom_pages_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("pages", False, "prg§_§var§§zoom_value") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§zoom_parent_options_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Parent control type") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "zoom_extra1", program_forms_exp_34()) && $o2exe->e();
+	$o2exe->s(3) && (program_forms_exp_38() || $o2exe->e()) && o2act::exe("zoom_po_page", True, "") && $o2exe->e();
+	$o2exe->s(4) && (program_forms_exp_42() || $o2exe->e()) && o2act::exe("zoom_po_in_tab", True, "") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§zoom_po_in_tab_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::call("parent_options_grid", False, program_forms_exp_3(), program_forms_exp_2(), "prg§_§var§§zoom_value", program_forms_exp_25(), "prg§_§var§§prg_modified") && $o2exe->e();
+	} //|o2_fine_act|
+
+function program_forms§§zoom_po_page_act($o2exe) {
+//	$o2exe->s(1) && True && o2act::remark("Pages list") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "zoom_extra2", program_forms_exp_39()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("prg§_§var", "zoom_done", program_forms_exp_13()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::call("select_page", False, "prg§_§var§§zoom_value", program_forms_exp_40()) && $o2exe->e();
 	} //|o2_fine_act|
 
 function program_forms§§zoom_view_act($o2exe) {
@@ -1324,8 +1359,7 @@ $code[] = ['ctrlName' => o2val('prgctrls','ctrlname'),
            ...(o2zero('prgctrls','view') ? [] : ['view' => jx_encode(o2val('prgctrls','view'), 'utf-8')]),
            ...(o2zero('prgctrls','visible') ? [] : ['visible' => o2val('prgctrls','visible')]),
            ...(o2zero('prgctrls','zoom') ? [] : ['zoom' => o2val('prgctrls','zoom')])                                                                
-           ];
-             
+           ];             
 return ($code);
 	} //|o2_fine_exp|
 
@@ -1412,7 +1446,7 @@ function program_forms_exp_22() {
 	$res =['res' => 
        ['prop' => o2val('prg§_§var','zoom_prop'), 
         'value' => o2val('prg§_§var','zoom_value'),
-        ...(o2zero('prg§_§var','zoom_extra') ? [] : ['extra' => o2val('prg§_§var','zoom_extra')])]];
+        ...(o2zero('prg§_§var','zoom_extra1') ? [] : ['extra' => o2val('prg§_§var','zoom_extra1')])]];
         
 return ($res);
 	} //|o2_fine_exp|
@@ -1490,12 +1524,47 @@ return (o2_reqpar(3));
 
 function program_forms_exp_35() {
 	
-return (o2val('prg§_§var','zoom_extra'));
+return (o2val('prg§_§var','zoom_extra1'));
 	} //|o2_fine_exp|
 
 function program_forms_exp_36() {
 	
 return ((o2par_zero(2) ? null : o2par(2)));
+	} //|o2_fine_exp|
+
+function program_forms_exp_37() {
+	
+return (o2val('prg§_§var','zoom_prop') === 'parent_options');
+	} //|o2_fine_exp|
+
+function program_forms_exp_38() {
+	
+return ((o2val('prg§_§var','zoom_extra1') === 'multipage') || (o2val('prg§_§var','zoom_extra1') === 'flowbox'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_39() {
+	
+return (o2_reqpar(4));
+	} //|o2_fine_exp|
+
+function program_forms_exp_40() {
+	
+return (o2val('prg§_§var','zoom_extra2'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_41() {
+	
+return (o2val('prg§_§var','zoom_prop') === 'pages');
+	} //|o2_fine_exp|
+
+function program_forms_exp_42() {
+	
+return ((o2val('prg§_§var','zoom_extra1') === 'tab'));
+	} //|o2_fine_exp|
+
+function program_forms_exp_43() {
+	
+return (o2val('prg§_§var','zoom_prop') === 'tab_options');
 	} //|o2_fine_exp|
 
 function program_forms_exp_110() {
