@@ -1,0 +1,215 @@
+<?php
+
+function grid_options§§prg§_§var_def($task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("options", "_o2structure");
+		}
+
+function grid_options§§tmp_edit_vars_def($task_tmp_edit_vars, $_o2viewalias = "") {
+	$task_tmp_edit_vars->righe_vis = 10;
+
+	$task_tmp_edit_vars->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
+
+	$task_tmp_edit_vars->usa("columns_vis","tmp_edit_vars","flag",null,null,null,null);
+	$task_tmp_edit_vars->usa("columns_order","tmp_edit_vars","flag2",null,null,null,null);
+	$task_tmp_edit_vars->usa("columns_size","tmp_edit_vars","flag3",null,null,null,null);
+	$task_tmp_edit_vars->usa("filter_data","tmp_edit_vars","flag4",null,null,null,null);
+	$task_tmp_edit_vars->usa("sort_data","tmp_edit_vars","flag5",null,null,null,null);
+	$task_tmp_edit_vars->usa("rows_number","tmp_edit_vars","flag6",null,null,null,null);
+	$task_tmp_edit_vars->usa("export_data","tmp_edit_vars","flag7",null,null,null,null);
+	$task_tmp_edit_vars->usa("delete_data","tmp_edit_vars","flag8",null,null,null,null);
+}
+function grid_options§§grid_options_form_def($form_grid_options) {
+	$form_grid_options->x(300);
+	$form_grid_options->y(100);
+	$form_grid_options->larghezza(400);
+	$form_grid_options->altezza(312);
+	$form_grid_options->align_o("Center");
+	$form_grid_options->titolo("Grid options");
+	$ctrl_o2label2 = $form_grid_options->ctrldef("o2label2", "label", "", "", "");
+		$ctrl_o2label2->x(20);
+		$ctrl_o2label2->y(20);
+		$ctrl_o2label2->larghezza(300);
+		$ctrl_o2label2->altezza(24);
+		$ctrl_o2label2->label("User can change columns visibility:");
+	$ctrl_o2label3 = $form_grid_options->ctrldef("o2label3", "label", "", "", "");
+		$ctrl_o2label3->x(20);
+		$ctrl_o2label3->y(50);
+		$ctrl_o2label3->larghezza(300);
+		$ctrl_o2label3->altezza(24);
+		$ctrl_o2label3->label("User can change columns order:");
+	$ctrl_o2label4 = $form_grid_options->ctrldef("o2label4", "label", "", "", "");
+		$ctrl_o2label4->x(20);
+		$ctrl_o2label4->y(80);
+		$ctrl_o2label4->larghezza(300);
+		$ctrl_o2label4->altezza(24);
+		$ctrl_o2label4->label("User can change columns size:");
+	$ctrl_o2label5 = $form_grid_options->ctrldef("o2label5", "label", "", "", "");
+		$ctrl_o2label5->x(20);
+		$ctrl_o2label5->y(110);
+		$ctrl_o2label5->larghezza(300);
+		$ctrl_o2label5->altezza(24);
+		$ctrl_o2label5->label("User can filter data:");
+	$ctrl_o2label6 = $form_grid_options->ctrldef("o2label6", "label", "", "", "");
+		$ctrl_o2label6->x(20);
+		$ctrl_o2label6->y(200);
+		$ctrl_o2label6->larghezza(300);
+		$ctrl_o2label6->altezza(24);
+		$ctrl_o2label6->label("User can export data:");
+	$ctrl_o2label7 = $form_grid_options->ctrldef("o2label7", "label", "", "", "");
+		$ctrl_o2label7->x(20);
+		$ctrl_o2label7->y(230);
+		$ctrl_o2label7->larghezza(300);
+		$ctrl_o2label7->altezza(24);
+		$ctrl_o2label7->label("User can delete data:");
+	$ctrl_o2label8 = $form_grid_options->ctrldef("o2label8", "label", "", "", "");
+		$ctrl_o2label8->x(20);
+		$ctrl_o2label8->y(140);
+		$ctrl_o2label8->larghezza(300);
+		$ctrl_o2label8->altezza(24);
+		$ctrl_o2label8->label("User can sort data:");
+	$ctrl_o2label9 = $form_grid_options->ctrldef("o2label9", "label", "", "", "");
+		$ctrl_o2label9->x(20);
+		$ctrl_o2label9->y(170);
+		$ctrl_o2label9->larghezza(300);
+		$ctrl_o2label9->altezza(24);
+		$ctrl_o2label9->label("User can change rows number:");
+	$ctrl_o2checkbox2 = $form_grid_options->ctrldef("o2checkbox2", "check", "", "tmp_edit_vars", "columns_vis");
+		$ctrl_o2checkbox2->x(320);
+		$ctrl_o2checkbox2->y(20);
+		$ctrl_o2checkbox2->larghezza(24);
+		$ctrl_o2checkbox2->altezza(24);
+	$ctrl_o2checkbox3 = $form_grid_options->ctrldef("o2checkbox3", "check", "", "tmp_edit_vars", "columns_order");
+		$ctrl_o2checkbox3->x(320);
+		$ctrl_o2checkbox3->y(50);
+		$ctrl_o2checkbox3->larghezza(24);
+		$ctrl_o2checkbox3->altezza(24);
+	$ctrl_o2checkbox4 = $form_grid_options->ctrldef("o2checkbox4", "check", "", "tmp_edit_vars", "columns_size");
+		$ctrl_o2checkbox4->x(320);
+		$ctrl_o2checkbox4->y(80);
+		$ctrl_o2checkbox4->larghezza(24);
+		$ctrl_o2checkbox4->altezza(24);
+	$ctrl_o2checkbox5 = $form_grid_options->ctrldef("o2checkbox5", "check", "", "tmp_edit_vars", "filter_data");
+		$ctrl_o2checkbox5->x(320);
+		$ctrl_o2checkbox5->y(110);
+		$ctrl_o2checkbox5->larghezza(24);
+		$ctrl_o2checkbox5->altezza(24);
+	$ctrl_o2checkbox8 = $form_grid_options->ctrldef("o2checkbox8", "check", "", "tmp_edit_vars", "sort_data");
+		$ctrl_o2checkbox8->x(320);
+		$ctrl_o2checkbox8->y(140);
+		$ctrl_o2checkbox8->larghezza(24);
+		$ctrl_o2checkbox8->altezza(24);
+	$ctrl_o2checkbox9 = $form_grid_options->ctrldef("o2checkbox9", "check", "", "tmp_edit_vars", "rows_number");
+		$ctrl_o2checkbox9->x(320);
+		$ctrl_o2checkbox9->y(170);
+		$ctrl_o2checkbox9->larghezza(24);
+		$ctrl_o2checkbox9->altezza(24);
+	$ctrl_o2checkbox6 = $form_grid_options->ctrldef("o2checkbox6", "check", "", "tmp_edit_vars", "export_data");
+		$ctrl_o2checkbox6->x(320);
+		$ctrl_o2checkbox6->y(200);
+		$ctrl_o2checkbox6->larghezza(24);
+		$ctrl_o2checkbox6->altezza(24);
+	$ctrl_o2checkbox7 = $form_grid_options->ctrldef("o2checkbox7", "check", "", "tmp_edit_vars", "delete_data");
+		$ctrl_o2checkbox7->x(320);
+		$ctrl_o2checkbox7->y(230);
+		$ctrl_o2checkbox7->larghezza(24);
+		$ctrl_o2checkbox7->altezza(24);
+	$ctrl_o2dbnavigator2 = $form_grid_options->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_vars", "");
+		$ctrl_o2dbnavigator2->x(360);
+		$ctrl_o2dbnavigator2->y(20);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(234);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(grid_options_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("select");
+		}
+
+function grid_options§§select_act($o2exe) {
+	$o2exe->s(1) && True && o2act::ret(1, grid_options_exp_10()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function grid_options§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_edit_vars", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("prg§_§var", "options", grid_options_exp_1()) && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_vars", "columns_vis", grid_options_exp_2()) && $o2exe->e();
+	$o2exe->s(4) && True && o2act::set("tmp_edit_vars", "columns_order", grid_options_exp_3()) && $o2exe->e();
+	$o2exe->s(5) && True && o2act::set("tmp_edit_vars", "columns_size", grid_options_exp_4()) && $o2exe->e();
+	$o2exe->s(6) && True && o2act::set("tmp_edit_vars", "filter_data", grid_options_exp_5()) && $o2exe->e();
+	$o2exe->s(7) && True && o2act::set("tmp_edit_vars", "sort_data", grid_options_exp_6()) && $o2exe->e();
+	$o2exe->s(8) && True && o2act::set("tmp_edit_vars", "rows_number", grid_options_exp_7()) && $o2exe->e();
+	$o2exe->s(9) && True && o2act::set("tmp_edit_vars", "export_data", grid_options_exp_8()) && $o2exe->e();
+	$o2exe->s(10) && True && o2act::set("tmp_edit_vars", "delete_data", grid_options_exp_9()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function grid_options_exp_1() {
+	
+return (eval('ret'.'urn '.o2par(1).';'));
+	} //|o2_fine_exp|
+
+function grid_options_exp_2() {
+	
+return (o2val('prg§_§var','options', 0));
+	} //|o2_fine_exp|
+
+function grid_options_exp_3() {
+	
+return (o2val('prg§_§var','options', 1));
+	} //|o2_fine_exp|
+
+function grid_options_exp_4() {
+	
+return (o2val('prg§_§var','options', 2));
+	} //|o2_fine_exp|
+
+function grid_options_exp_5() {
+	
+return (o2val('prg§_§var','options', 3));
+	} //|o2_fine_exp|
+
+function grid_options_exp_6() {
+	
+return (o2val('prg§_§var','options', 4));
+	} //|o2_fine_exp|
+
+function grid_options_exp_7() {
+	
+return (o2val('prg§_§var','options', 5));
+	} //|o2_fine_exp|
+
+function grid_options_exp_8() {
+	
+return (o2val('prg§_§var','options', 6));
+	} //|o2_fine_exp|
+
+function grid_options_exp_9() {
+	
+return (o2val('prg§_§var','options', 7));
+	} //|o2_fine_exp|
+
+function grid_options_exp_10() {
+	$o = '['.
+     (o2val('tmp_edit_vars','columns_vis') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','columns_order') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','columns_size') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','filter_data') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','sort_data') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','rows_number') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','export_data') ? '1' : '0').','.
+     (o2val('tmp_edit_vars','delete_data') ? '1' : '0').
+     ']';
+     
+     
+return ($o);
+	} //|o2_fine_exp|
+
+function grid_options_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>
