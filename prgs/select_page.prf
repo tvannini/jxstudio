@@ -1,0 +1,85 @@
+<?php
+
+function select_page§§prg§_§var_def($task_prg§_§var) {
+	$task_prg§_§var->righe_vis = 1;
+	$task_prg§_§var->definisci("pages", "_o2structure");
+		}
+
+function select_page§§tmp_edit_var_def($task_tmp_edit_var, $_o2viewalias = "") {
+	$task_tmp_edit_var->righe_vis = 10;
+
+	$task_tmp_edit_var->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
+
+	$task_tmp_edit_var->usa("page","tmp_edit_vars","int_number",null,null,null,null);
+}
+function select_page§§select_page_form_def($form_select_page) {
+	$form_select_page->x(160);
+	$form_select_page->y(100);
+	$form_select_page->larghezza(320);
+	$form_select_page->altezza(330);
+	$form_select_page->align_o("Center");
+	$form_select_page->titolo("Select page");
+	$form_select_page->frm_status(select_page_exp_9999());
+	$ctrl_o2ListBox2 = $form_select_page->ctrldef("o2ListBox2", "listcombo", "", "tmp_edit_var", "page");
+		$ctrl_o2ListBox2->x(0);
+		$ctrl_o2ListBox2->y(0);
+		$ctrl_o2ListBox2->larghezza(300);
+		$ctrl_o2ListBox2->altezza(300);
+		$ctrl_o2ListBox2->valori(select_page_exp_3());
+		$ctrl_o2ListBox2->righe(10);
+	$ctrl_o2dbnavigator2 = $form_select_page->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_var", "");
+		$ctrl_o2dbnavigator2->x(300);
+		$ctrl_o2dbnavigator2->y(0);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(300);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(select_page_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("select");
+		}
+
+function select_page§§select_act($o2exe) {
+	$o2exe->s(1) && True && o2act::ret(1, select_page_exp_4()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function select_page§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::set("prg§_§var", "pages", select_page_exp_1()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::view("tmp_edit_var", "I", "") && $o2exe->e();
+	$o2exe->s(3) && True && o2act::set("tmp_edit_var", "page", select_page_exp_2()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function select_page_exp_1() {
+	$p = array();
+$i = 1;
+foreach (explode('|', o2par(2)) as $page) {
+   $p[$i] = $page;
+   $i++;
+   }
+return ($p);
+	} //|o2_fine_exp|
+
+function select_page_exp_2() {
+	
+return (o2par(1));
+	} //|o2_fine_exp|
+
+function select_page_exp_3() {
+	
+return (o2val('prg§_§var','pages'));
+	} //|o2_fine_exp|
+
+function select_page_exp_4() {
+	
+return (o2val('tmp_edit_var','page'));
+	} //|o2_fine_exp|
+
+function select_page_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>
