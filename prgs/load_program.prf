@@ -702,96 +702,6 @@ function load_program§§create_control_act($o2exe) {
 	$o2exe->s(147) && True && o2act::set("prg§_§var", "counter2", load_program_exp_300()) && $o2exe->e();
 	} //|o2_fine_act|
 
-function load_program§§create_control_old_act($o2exe) {
-	$o2exe->s(1) && True && o2act::view("controls", "I", "") && $o2exe->e();
-	$o2exe->s(2) && True && o2act::set("controls", "userid", load_program_exp_19()) && $o2exe->e();
-	$o2exe->s(3) && True && o2act::set("controls", "prgname", load_program_exp_24()) && $o2exe->e();
-	$o2exe->s(4) && True && o2act::set("controls", "formname", load_program_exp_118()) && $o2exe->e();
-	$o2exe->s(5) && True && o2act::set("controls", "controlname", load_program_exp_11()) && $o2exe->e();
-	$o2exe->s(6) && True && o2act::set("controls", "type", load_program_exp_12()) && $o2exe->e();
-	$o2exe->s(7) && (load_program_exp_122() || $o2exe->e()) && o2act::set("controls", "type", load_program_exp_121()) && $o2exe->e();
-	$o2exe->s(8) && (load_program_exp_124() || $o2exe->e()) && o2act::set("controls", "type", load_program_exp_123()) && $o2exe->e();
-	$o2exe->s(9) && (load_program_exp_126() || $o2exe->e()) && o2act::set("controls", "type", load_program_exp_125()) && $o2exe->e();
-	$o2exe->s(10) && (load_program_exp_204() || $o2exe->e()) && o2act::set("controls", "type", load_program_exp_203()) && $o2exe->e();
-	$o2exe->s(11) && True && o2act::set("controls", "parent", load_program_exp_179()) && $o2exe->e();
-	$o2exe->s(12) && True && o2act::set("controls", "taborder", load_program_exp_119()) && $o2exe->e();
-	$o2exe->s(13) && True && o2act::set("prg§_§var", "array_tmp2", load_program_exp_127()) && $o2exe->e();
-	$o2exe->s(14) && True && o2act::set("controls", "top_y", load_program_exp_135()) && $o2exe->e();
-	$o2exe->s(15) && True && o2act::set("controls", "left_x", load_program_exp_169()) && $o2exe->e();
-	$o2exe->s(16) && True && o2act::set("controls", "heightpx", load_program_exp_170()) && $o2exe->e();
-	$o2exe->s(17) && True && o2act::set("controls", "widthpx", load_program_exp_171()) && $o2exe->e();
-	$o2exe->s(18) && True && o2act::set("controls", "visible", load_program_exp_172()) && $o2exe->e();
-	$o2exe->s(19) && True && o2act::set("controls", "enable", load_program_exp_173()) && $o2exe->e();
-	$o2exe->s(20) && True && o2act::set("controls", "label", load_program_exp_174()) && $o2exe->e();
-	$o2exe->s(21) && True && o2act::set("controls", "labelexp", load_program_exp_175()) && $o2exe->e();
-	$o2exe->s(22) && True && o2act::set("controls", "view", load_program_exp_177()) && $o2exe->e();
-	$o2exe->s(23) && True && o2act::set("controls", "field", load_program_exp_178()) && $o2exe->e();
-	$o2exe->s(24) && True && o2act::set("controls", "mask", load_program_exp_180()) && $o2exe->e();
-	$o2exe->s(25) && True && o2act::set("controls", "maskexp", load_program_exp_181()) && $o2exe->e();
-	$o2exe->s(26) && True && o2act::set("controls", "action", load_program_exp_182()) && $o2exe->e();
-	$o2exe->s(27) && True && o2act::set("controls", "submit", load_program_exp_183()) && $o2exe->e();
-	$o2exe->s(28) && True && o2act::set("controls", "style", load_program_exp_184()) && $o2exe->e();
-	$o2exe->s(29) && True && o2act::set("controls", "style_exp", load_program_exp_185()) && $o2exe->e();
-//	$o2exe->s(30) && True && o2act::remark("--- SPECIFIC PROPERTIES---") && $o2exe->e();
-	$o2exe->s(31) && (load_program_exp_192() || $o2exe->e()) && o2act::set("controls", "tab_hideind", load_program_exp_186()) && $o2exe->e();
-	$o2exe->s(32) && (load_program_exp_192() || $o2exe->e()) && o2act::set("controls", "tab_norecsmsg", load_program_exp_188()) && $o2exe->e();
-	$o2exe->s(33) && (load_program_exp_192() || $o2exe->e()) && o2act::set("controls", "tab_norecmsgexp", load_program_exp_187()) && $o2exe->e();
-	$o2exe->s(34) && (load_program_exp_193() || $o2exe->e()) && o2act::set("controls", "ed_pswd", load_program_exp_189()) && $o2exe->e();
-	$o2exe->s(35) && (load_program_exp_194() || $o2exe->e()) && o2act::set("controls", "combo_row", load_program_exp_190()) && $o2exe->e();
-	$o2exe->s(36) && (load_program_exp_194() || $o2exe->e()) && o2act::set("controls", "combo_view", load_program_exp_202()) && $o2exe->e();
-	$o2exe->s(37) && (load_program_exp_194() || $o2exe->e()) && o2act::set("controls", "combo_key", load_program_exp_205()) && $o2exe->e();
-	$o2exe->s(38) && (load_program_exp_194() || $o2exe->e()) && o2act::set("controls", "combo_descr", load_program_exp_206()) && $o2exe->e();
-	$o2exe->s(39) && (load_program_exp_194() || $o2exe->e()) && o2act::set("controls", "combo_exp", load_program_exp_191()) && $o2exe->e();
-	$o2exe->s(40) && (load_program_exp_195() || $o2exe->e()) && o2act::set("controls", "btn_type", load_program_exp_207()) && $o2exe->e();
-	$o2exe->s(41) && (load_program_exp_195() || $o2exe->e()) && o2act::set("controls", "btn_msg", load_program_exp_208()) && $o2exe->e();
-	$o2exe->s(42) && (load_program_exp_195() || $o2exe->e()) && o2act::set("controls", "btn_msg_exp", load_program_exp_209()) && $o2exe->e();
-	$o2exe->s(43) && (load_program_exp_196() || $o2exe->e()) && o2act::set("controls", "code_wide", load_program_exp_999()) && $o2exe->e();
-	$o2exe->s(44) && (load_program_exp_196() || $o2exe->e()) && o2act::set("controls", "code_exp", load_program_exp_210()) && $o2exe->e();
-	$o2exe->s(45) && (load_program_exp_197() || $o2exe->e()) && o2act::set("controls", "upl_saveas", load_program_exp_211()) && $o2exe->e();
-	$o2exe->s(46) && (load_program_exp_198() || $o2exe->e()) && o2act::set("controls", "doc_path", load_program_exp_212()) && $o2exe->e();
-	$o2exe->s(47) && (load_program_exp_199() || $o2exe->e()) && o2act::set("controls", "img_file", load_program_exp_215()) && $o2exe->e();
-	$o2exe->s(48) && (load_program_exp_199() || $o2exe->e()) && o2act::set("controls", "img_fileexp", load_program_exp_213()) && $o2exe->e();
-	$o2exe->s(49) && (load_program_exp_199() || $o2exe->e()) && o2act::set("controls", "img_fileexprh", load_program_exp_214()) && $o2exe->e();
-	$o2exe->s(50) && (load_program_exp_200() || $o2exe->e()) && o2act::set("controls", "mp_pages", load_program_exp_217()) && $o2exe->e();
-	$o2exe->s(51) && (load_program_exp_200() || $o2exe->e()) && o2act::set("controls", "mp_activep", load_program_exp_999()) && $o2exe->e();
-	$o2exe->s(52) && (load_program_exp_200() || $o2exe->e()) && o2act::set("controls", "mp_tabpos", load_program_exp_216()) && $o2exe->e();
-	$o2exe->s(53) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_orient", load_program_exp_249()) && $o2exe->e();
-	$o2exe->s(54) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_nbv", load_program_exp_218()) && $o2exe->e();
-	$o2exe->s(55) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_iv", load_program_exp_219()) && $o2exe->e();
-	$o2exe->s(56) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_ie", load_program_exp_220()) && $o2exe->e();
-	$o2exe->s(57) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_iact", load_program_exp_221()) && $o2exe->e();
-	$o2exe->s(58) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_imsg", load_program_exp_237()) && $o2exe->e();
-	$o2exe->s(59) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_imsgexp", load_program_exp_243()) && $o2exe->e();
-	$o2exe->s(60) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_pv", load_program_exp_227()) && $o2exe->e();
-	$o2exe->s(61) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_pe", load_program_exp_232()) && $o2exe->e();
-	$o2exe->s(62) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_pact", load_program_exp_222()) && $o2exe->e();
-	$o2exe->s(63) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_pmsg", load_program_exp_238()) && $o2exe->e();
-	$o2exe->s(64) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_pmsgexp", load_program_exp_244()) && $o2exe->e();
-	$o2exe->s(65) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dv", load_program_exp_228()) && $o2exe->e();
-	$o2exe->s(66) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_de", load_program_exp_233()) && $o2exe->e();
-	$o2exe->s(67) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dact", load_program_exp_223()) && $o2exe->e();
-	$o2exe->s(68) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dmsg", load_program_exp_239()) && $o2exe->e();
-	$o2exe->s(69) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dmsgexp", load_program_exp_245()) && $o2exe->e();
-	$o2exe->s(70) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_uv", load_program_exp_229()) && $o2exe->e();
-	$o2exe->s(71) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_ue", load_program_exp_234()) && $o2exe->e();
-	$o2exe->s(72) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_uact", load_program_exp_224()) && $o2exe->e();
-	$o2exe->s(73) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_umsg", load_program_exp_240()) && $o2exe->e();
-	$o2exe->s(74) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_umsgexp", load_program_exp_246()) && $o2exe->e();
-	$o2exe->s(75) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dtv", load_program_exp_230()) && $o2exe->e();
-	$o2exe->s(76) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dte", load_program_exp_235()) && $o2exe->e();
-	$o2exe->s(77) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dtact", load_program_exp_225()) && $o2exe->e();
-	$o2exe->s(78) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dtmsg", load_program_exp_241()) && $o2exe->e();
-	$o2exe->s(79) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_dtmsgexp", load_program_exp_247()) && $o2exe->e();
-	$o2exe->s(80) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_sv", load_program_exp_231()) && $o2exe->e();
-	$o2exe->s(81) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_se", load_program_exp_236()) && $o2exe->e();
-	$o2exe->s(82) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_sact", load_program_exp_226()) && $o2exe->e();
-	$o2exe->s(83) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_smsg", load_program_exp_242()) && $o2exe->e();
-	$o2exe->s(84) && (load_program_exp_201() || $o2exe->e()) && o2act::set("controls", "dbn_smsgexp", load_program_exp_248()) && $o2exe->e();
-	$o2exe->s(85) && (load_program_exp_120() || $o2exe->e()) && o2act::view("controls", "S", "") && $o2exe->e();
-	$o2exe->s(86) && True && o2act::set("prg§_§var", "counter", load_program_exp_42()) && $o2exe->e();
-	$o2exe->s(87) && (load_program_exp_250() || $o2exe->e()) && o2act::exe("ctrl_parinfo", True, "") && $o2exe->e();
-	} //|o2_fine_act|
-
 function load_program§§create_datatype_act($o2exe) {
 	$o2exe->s(1) && (load_program_exp_18() || $o2exe->e()) && o2act::view("datatypes", "I", "") && $o2exe->e();
 	$o2exe->s(2) && True && o2act::set("datatypes", "userid", load_program_exp_19()) && $o2exe->e();
@@ -1359,11 +1269,6 @@ function load_program_exp_6() {
 return ('SQL');
 	} //|o2_fine_exp|
 
-function load_program_exp_7() {
-	
-return (false);
-	} //|o2_fine_exp|
-
 function load_program_exp_8() {
 	
 return ((is_array(o2val('prg§_§var','array_prg','view',1)) ? count(o2val('prg§_§var','array_prg','view',1)) : 0));
@@ -1921,11 +1826,6 @@ else {
 return ($u);
 	} //|o2_fine_exp|
 
-function load_program_exp_66() {
-	
-return (ExpstrToExp(FormProperty(o2val('forms','formname'), o2val('prg§_§var','contents'), 'allow_resize'), o2par(2)));
-	} //|o2_fine_exp|
-
 function load_program_exp_67() {
 	$v = '';
 $d = o2val('prg§_§var','array_def','form');
@@ -2135,11 +2035,6 @@ if (isset($d['refresh_exp'])) {
    $v = DecodeProp($d['refresh_exp']);
    }
 return ($v);
-	} //|o2_fine_exp|
-
-function load_program_exp_93() {
-	
-return (ExpstrToExp(FormProperty(o2val('forms','formname'), o2val('prg§_§var','contents'), 'url'), o2par(2)));
 	} //|o2_fine_exp|
 
 function load_program_exp_94() {
@@ -2390,71 +2285,9 @@ if (isset($d['css_resize'])) {
 return ($v);
 	} //|o2_fine_exp|
 
-function load_program_exp_117() {
-	
-return ("TODO");
-	} //|o2_fine_exp|
-
 function load_program_exp_118() {
 	
 return (o2val('forms','formname'));
-	} //|o2_fine_exp|
-
-function load_program_exp_119() {
-	
-return (0);
-	} //|o2_fine_exp|
-
-function load_program_exp_120() {
-	
-return (!o2zero('controls','controlname'));
-	} //|o2_fine_exp|
-
-function load_program_exp_121() {
-	
-return ('codearea');
-	} //|o2_fine_exp|
-
-function load_program_exp_122() {
-	
-return (o2val('controls','type')=='htmlarea');
-	} //|o2_fine_exp|
-
-function load_program_exp_123() {
-	
-return ('image');
-	} //|o2_fine_exp|
-
-function load_program_exp_124() {
-	
-return (o2val('controls','type')=='img');
-	} //|o2_fine_exp|
-
-function load_program_exp_125() {
-	
-return ('table');
-	} //|o2_fine_exp|
-
-function load_program_exp_126() {
-	
-return (o2val('controls','type')=='tab');
-	} //|o2_fine_exp|
-
-function load_program_exp_127() {
-	$search_local = '/ctrl_'.o2val('controls','controlname').'\-\>(.*?);/';
-	preg_match_all($search_local, o2val('prg§_§var','contents'), $res_local);
-	for ($i = 0; $i <= count($res_local[1]); $i++) {
-        $propname = trim(substr($res_local[1][$i],0,strpos($res_local[1][$i],'(')));
-        $propvalue = trim(substr($res_local[1][$i],strpos($res_local[1][$i],'(')+1, -1));
-
-        $propvalue = str_replace('"', '', $propvalue);
-        $propvalue = str_replace('(', '', $propvalue);
-        $propvalue = str_replace(')', '', $propvalue);
-        $propvalue = str_replace('array', '', $propvalue);
-
-        $res[$propname] = $propvalue;
-        }
-return ($res);
 	} //|o2_fine_exp|
 
 function load_program_exp_128() {
@@ -2525,11 +2358,6 @@ return ($v);
 function load_program_exp_134() {
 	
 return (o2val('prg§_§var','array_def','ctrls',o2val('controls','ctrlname'),'righe'));
-	} //|o2_fine_exp|
-
-function load_program_exp_135() {
-	
-return (o2val('prg§_§var','array_tmp2','y'));
 	} //|o2_fine_exp|
 
 function load_program_exp_136() {
@@ -3026,420 +2854,9 @@ function load_program_exp_168() {
 return (strtolower(o2val('prg§_§var','array_operation',2)) == 'true' ? 'Definition' : 'Line');
 	} //|o2_fine_exp|
 
-function load_program_exp_169() {
-	
-return (o2val('prg§_§var','array_tmp2','x'));
-	} //|o2_fine_exp|
-
-function load_program_exp_170() {
-	
-return (o2val('prg§_§var','array_tmp2','altezza'));
-	} //|o2_fine_exp|
-
-function load_program_exp_171() {
-	
-return (o2val('prg§_§var','array_tmp2','larghezza'));
-	} //|o2_fine_exp|
-
-function load_program_exp_172() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visibile'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_173() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','modificabile'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_174() {
-	
-return (o2val('prg§_§var','array_tmp2','label'));
-	} //|o2_fine_exp|
-
-function load_program_exp_175() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','label'), o2par(2)));
-	} //|o2_fine_exp|
-
 function load_program_exp_176() {
 	
 return (trim(o2val('prg§_§var','array_def','ctrls',o2val('controls','ctrlname'),'delete'), '"'));
-	} //|o2_fine_exp|
-
-function load_program_exp_177() {
-	
-return (trim(str_replace('"','',o2val('prg§_§var','array_tmp',o2val('prg§_§var','counter'),3))));
-	} //|o2_fine_exp|
-
-function load_program_exp_178() {
-	
-return (trim(str_replace('"','',o2val('prg§_§var','array_tmp',o2val('prg§_§var','counter'),4))));
-	} //|o2_fine_exp|
-
-function load_program_exp_179() {
-	
-return (trim(str_replace('"','',o2val('prg§_§var','array_tmp',o2val('prg§_§var','counter'),2))));
-	} //|o2_fine_exp|
-
-function load_program_exp_180() {
-	
-return (o2val('prg§_§var','array_tmp2','maschera'));
-	} //|o2_fine_exp|
-
-function load_program_exp_181() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','maschera'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_182() {
-	
-return (o2val('prg§_§var','array_tmp2','azione'));
-	} //|o2_fine_exp|
-
-function load_program_exp_183() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','on_change'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_184() {
-	
-return (o2val('prg§_§var','array_tmp2','css'));
-	} //|o2_fine_exp|
-
-function load_program_exp_185() {
-	
-return (ExpstrToExp(o2exp(184), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_186() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','hide_indicator'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_187() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','norec_msg'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_188() {
-	
-return (o2val('prg§_§var','array_tmp2','norec_msg'));
-	} //|o2_fine_exp|
-
-function load_program_exp_189() {
-	
-return (o2val('prg§_§var','array_tmp2','pswd'));
-	} //|o2_fine_exp|
-
-function load_program_exp_190() {
-	
-return (o2val('prg§_§var','array_tmp2','righe'));
-	} //|o2_fine_exp|
-
-function load_program_exp_191() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','valori'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_192() {
-	
-return (o2val('controls','type')=='table');
-	} //|o2_fine_exp|
-
-function load_program_exp_193() {
-	
-return (o2val('controls','type')=='edit');
-	} //|o2_fine_exp|
-
-function load_program_exp_194() {
-	
-return (o2val('controls','type')=='list');
-	} //|o2_fine_exp|
-
-function load_program_exp_195() {
-	
-return (o2val('controls','type')=='button');
-	} //|o2_fine_exp|
-
-function load_program_exp_196() {
-	
-return (o2val('controls','type')=='codearea');
-	} //|o2_fine_exp|
-
-function load_program_exp_197() {
-	
-return (o2val('controls','type')=='file');
-	} //|o2_fine_exp|
-
-function load_program_exp_198() {
-	
-return (o2val('controls','type')=='doc');
-	} //|o2_fine_exp|
-
-function load_program_exp_199() {
-	
-return (o2val('controls','type')=='image');
-	} //|o2_fine_exp|
-
-function load_program_exp_200() {
-	
-return (o2val('controls','type')=='multipage');
-	} //|o2_fine_exp|
-
-function load_program_exp_201() {
-	
-return (o2val('controls','type')=='navigator');
-	} //|o2_fine_exp|
-
-function load_program_exp_202() {
-	$lista = substr(o2val('prg§_§var','array_tmp2','valori'),strpos(o2val('prg§_§var','array_tmp2','valori'),'(')+1, -1);
-$array_local = explode(',', $lista);
-$ret = trim($array_local[0]);
-return ($ret);
-	} //|o2_fine_exp|
-
-function load_program_exp_203() {
-	
-return ('list');
-	} //|o2_fine_exp|
-
-function load_program_exp_204() {
-	
-return (o2val('controls','type')=='listcombo');
-	} //|o2_fine_exp|
-
-function load_program_exp_205() {
-	$lista = substr(o2val('prg§_§var','array_tmp2','valori'),strpos(o2val('prg§_§var','array_tmp2','valori'),'('+1), -1);
-$array_local = explode(',', $lista);
-$ret = trim($array_local[1]);
-return ($ret);
-	} //|o2_fine_exp|
-
-function load_program_exp_206() {
-	$lista = substr(o2val('prg§_§var','array_tmp2','valori'),strpos(o2val('prg§_§var','array_tmp2','valori'),'('+1), -1);
-$array_local = explode(',', $lista);
-$ret = trim($array_local[2]);
-return ($ret);
-	} //|o2_fine_exp|
-
-function load_program_exp_207() {
-	
-return (o2val('prg§_§var','array_tmp2','style'));
-	} //|o2_fine_exp|
-
-function load_program_exp_208() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_message'));
-	} //|o2_fine_exp|
-
-function load_program_exp_209() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','confirm_message'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_210() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','html'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_211() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','save_as'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_212() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','path'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_213() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','imgexp'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_214() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','imgoverexp'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_215() {
-	
-return (o2val('prg§_§var','array_tmp2','immagine'));
-	} //|o2_fine_exp|
-
-function load_program_exp_216() {
-	
-return (o2val('prg§_§var','array_tmp2','buttons'));
-	} //|o2_fine_exp|
-
-function load_program_exp_217() {
-	
-return (o2val('prg§_§var','array_tmp2','label'));
-	} //|o2_fine_exp|
-
-function load_program_exp_218() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_nav'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_219() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_new'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_220() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_new'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_221() {
-	
-return (o2val('prg§_§var','array_tmp2','act_new'));
-	} //|o2_fine_exp|
-
-function load_program_exp_222() {
-	
-return (o2val('prg§_§var','array_tmp2','act_save'));
-	} //|o2_fine_exp|
-
-function load_program_exp_223() {
-	
-return (o2val('prg§_§var','array_tmp2','act_del'));
-	} //|o2_fine_exp|
-
-function load_program_exp_224() {
-	
-return (o2val('prg§_§var','array_tmp2','act_undo'));
-	} //|o2_fine_exp|
-
-function load_program_exp_225() {
-	
-return (o2val('prg§_§var','array_tmp2','act_detail'));
-	} //|o2_fine_exp|
-
-function load_program_exp_226() {
-	
-return (o2val('prg§_§var','array_tmp2','act_select'));
-	} //|o2_fine_exp|
-
-function load_program_exp_227() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_save'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_228() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_del'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_229() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_undo'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_230() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_detail'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_231() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','visible_select'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_232() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_save'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_233() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_del'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_234() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_undo'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_235() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_detail'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_236() {
-	
-return (ExpstrToExp(o2val('prg§_§var','array_tmp2','enable_select'), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_237() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_new'));
-	} //|o2_fine_exp|
-
-function load_program_exp_238() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_save'));
-	} //|o2_fine_exp|
-
-function load_program_exp_239() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_del'));
-	} //|o2_fine_exp|
-
-function load_program_exp_240() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_undo'));
-	} //|o2_fine_exp|
-
-function load_program_exp_241() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_detail'));
-	} //|o2_fine_exp|
-
-function load_program_exp_242() {
-	
-return (o2val('prg§_§var','array_tmp2','confirm_select'));
-	} //|o2_fine_exp|
-
-function load_program_exp_243() {
-	
-return (ExpstrToExp(o2exp(237), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_244() {
-	
-return (ExpstrToExp(o2exp(238), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_245() {
-	
-return (ExpstrToExp(o2exp(239), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_246() {
-	
-return (ExpstrToExp(o2exp(240), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_247() {
-	
-return (ExpstrToExp(o2exp(241), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_248() {
-	
-return (ExpstrToExp(o2exp(242), o2par(2)));
-	} //|o2_fine_exp|
-
-function load_program_exp_249() {
-	
-return (array_key_exists("vertical", o2val('prg§_§var','array_tmp2'))  ? 'V' : 'H');
-	} //|o2_fine_exp|
-
-function load_program_exp_250() {
-	
-return (!o2zero('controls','parent') && o2val('prg§_§var','array_tmp2','info_padre')!= '');
 	} //|o2_fine_exp|
 
 function load_program_exp_251() {
@@ -4133,6 +3550,9 @@ if (isset($info['info_padre'])) {
       case 'flowbox':
          eval('$info='.$info['info_padre'].';');
          $info = intval($info[0]) + 1;       
+         break;
+      case 'tab':
+         $info = '['.substr($info['info_padre'], 6, -1).']';
          break;
       default:
          $info = ''; 
@@ -5218,8 +4638,14 @@ return ($v);
 	} //|o2_fine_exp|
 
 function load_program_exp_476() {
-	
-return (o2val('prg§_§var','array_def','ctrls',o2val('controls','ctrlname'),'grid_plus'));
+	$info = o2val('prg§_§var','array_def','ctrls',o2val('controls','ctrlname'));
+if (isset($info['grid_plus'])) {
+   $o = '['.substr($info['grid_plus'], 6, -1).']';
+   }
+else {
+   $o = '';
+   }
+return ($o);
 	} //|o2_fine_exp|
 
 function load_program_exp_477() {

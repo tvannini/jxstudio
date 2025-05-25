@@ -42,7 +42,6 @@ o2def::act("act_setmenu");
 o2def::act("act_upd");
 o2def::act("create_action");
 o2def::act("create_control");
-o2def::act("create_control_old");
 o2def::act("create_datatype");
 o2def::act("create_exp");
 o2def::act("create_form");
