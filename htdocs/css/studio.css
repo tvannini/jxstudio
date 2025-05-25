@@ -27,6 +27,12 @@
 
 * { font-size: 15px; font-family: Roboto, Arial, sans-serif; line-height: 20px; }
 
+/* Reset line-height for windows status bar (table) */
+.o2_form_status, .o2_form_status_dis,
+.o2_form_status *, .o2_form_status_dis * {
+    line-height: 5px;
+    }
+
 .disp_area code {
     font: normal 13px mono;
     }
