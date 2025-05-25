@@ -1,0 +1,62 @@
+<?php
+
+function pages§§tmp_edit_var_def($task_tmp_edit_var, $_o2viewalias = "") {
+	$task_tmp_edit_var->righe_vis = 10;
+
+	$task_tmp_edit_var->usa_file("tmp_edit_vars","tmp_edit_vars","id",null,null);
+
+	$task_tmp_edit_var->usa("pages","tmp_edit_vars","long_str",null,null,null,null);
+}
+function pages§§select_page_form_def($form_select_page) {
+	$form_select_page->x(160);
+	$form_select_page->y(100);
+	$form_select_page->larghezza(320);
+	$form_select_page->altezza(330);
+	$form_select_page->align_o("Center");
+	$form_select_page->titolo("Select page");
+	$form_select_page->frm_status(pages_exp_9999());
+	$ctrl_o2dbnavigator2 = $form_select_page->ctrldef("o2dbnavigator2", "navigator", "", "tmp_edit_var", "");
+		$ctrl_o2dbnavigator2->x(300);
+		$ctrl_o2dbnavigator2->y(0);
+		$ctrl_o2dbnavigator2->larghezza(20);
+		$ctrl_o2dbnavigator2->altezza(300);
+		$ctrl_o2dbnavigator2->vertical();
+		$ctrl_o2dbnavigator2->visible_nav(pages_exp_9999());
+		$ctrl_o2dbnavigator2->visible_new(pages_exp_9999());
+		$ctrl_o2dbnavigator2->visible_save(pages_exp_9999());
+		$ctrl_o2dbnavigator2->visible_del(pages_exp_9999());
+		$ctrl_o2dbnavigator2->visible_undo(pages_exp_9999());
+		$ctrl_o2dbnavigator2->visible_detail(pages_exp_9999());
+		$ctrl_o2dbnavigator2->act_select("select");
+	$ctrl_o2textarea2 = $form_select_page->ctrldef("o2textarea2", "text", "", "tmp_edit_var", "pages");
+		$ctrl_o2textarea2->x(0);
+		$ctrl_o2textarea2->y(0);
+		$ctrl_o2textarea2->larghezza(300);
+		$ctrl_o2textarea2->altezza(300);
+		}
+
+function pages§§select_act($o2exe) {
+	$o2exe->s(1) && True && o2act::ret(1, pages_exp_2()) && $o2exe->e();
+	$o2exe->s(2) && True && o2act::close()&& $o2exe->e();
+	} //|o2_fine_act|
+
+function pages§§start_act($o2exe) {
+	$o2exe->s(1) && True && o2act::view("tmp_edit_var", "I", "") && $o2exe->e();
+	$o2exe->s(2) && True && o2act::set("tmp_edit_var", "pages", pages_exp_1()) && $o2exe->e();
+	} //|o2_fine_act|
+
+function pages_exp_1() {
+	
+return (implode("\n", explode('|', o2par(1))));
+	} //|o2_fine_exp|
+
+function pages_exp_2() {
+	
+return (implode('|', explode("\n", o2val('tmp_edit_var', 'pages'))));
+	} //|o2_fine_exp|
+
+function pages_exp_9999() {
+	
+return (false);
+	} //|o2_fine_exp|
+?>
