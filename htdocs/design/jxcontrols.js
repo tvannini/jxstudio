@@ -323,7 +323,7 @@ function unpackCtrl(data) {
 }
 
 // Funzione per creare un nuovo controllo
-function createControl(x, y, width, height, ctrlParent = '', ctrlType = '', parentPage = '') {
+function createControl(x, y, width, height, ctrlParent = '', ctrlType = '', parentOptions = '') {
     if (ctrlType === '') {
         if (propertiesForm.ctrl_type) {
             ctrlType = propertiesForm.ctrl_type.value;
@@ -427,14 +427,29 @@ function createControl(x, y, width, height, ctrlParent = '', ctrlType = '', pare
             if (parentCtrl.dataset.ctrlType === 'multipage' ||
                 parentCtrl.dataset.ctrlType === 'flowbox') {
                 let aP = null;
-                if (parentPage) {
-                    ctrl.dataset.parentOptions = parentPage;
-                    aP = document.getElementById(parentCtrl.dataset.ctrlName + '_p' + parentPage);
+                if (parentOptions) {
+                    ctrl.dataset.parentOptions = parentOptions;
+                    aP = document.getElementById(parentCtrl.dataset.ctrlName + '_p' + parentOptions);
                 } else {
                     ctrl.dataset.parentOptions = parentCtrl.dataset.activePage;
                     aP = document.getElementById(parentCtrl.dataset.ctrlName + '_p' + parentCtrl.dataset.activePage);
                 }
                 aP.appendChild(ctrl);
+            }
+            // Add child control to tab and set column
+            else if ((parentCtrl.dataset.ctrlType === 'tab') && (ctrlType !== 'navigator')) {
+                if (parentOptions) {
+                    ctrl.dataset.parentOptions = parentOptions;
+                    parentCtrl.appendChild(ctrl);
+                } else {
+                    parentCtrl.appendChild(ctrl);
+                    reorderInGrid(parentCtrl);
+                    let c = parseInt(ctrl.style.zIndex);
+                    if (c <= 9) {
+                        c = '0' + c;
+                    }
+                    ctrl.dataset.parentOptions = '["01", "' + c +'", "' + c + '"]';
+                }
             } else {
                 parentCtrl.appendChild(ctrl);
             }
@@ -1063,6 +1078,38 @@ function reorderSiblings(ctrlParent, refCtrl = '') {
     });
 }
 
+//
+function reorderInGrid(grid) {
+    const siblings = Array.from(grid.children).filter(child => child.classList.contains('control'));
+    siblings.sort((a, b) => {
+        if (a.dataset.ctrlType === 'navigator') {
+            return -1;
+        }
+        else if (b.dataset.ctrlType === 'navigator') {
+            return 1;
+        }
+        else {
+            const startA = parseInt(a.style.left) || 0;
+            const startB = parseInt(b.style.left) || 0;
+            return startA - startB;
+        }
+    });
+
+    // Assegna valori z-index univoci e progressivi
+    siblings.forEach((sibling, index) => {
+        // Set zIndex
+        sibling.style.zIndex = index;
+        // Set parent options
+        if (index <= 9) {
+            index = '0' + index;
+            }
+        sibling.dataset.parentOptions =
+         sibling.dataset.parentOptions.replace(/"\d+",\s*"\d+",\s*"\d+"/g,
+                                               '"01", "' + index +'", "' + index + '"');
+
+    });
+}
+
 // Funzione per visualizzare gli handle di dimensionamento del controllo
 function attachResizeHandles(ctrl) {
     const handles = [
@@ -1483,9 +1530,14 @@ document.addEventListener('mousemove', (e) => {
 
 });
 
-document.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', (e) => {
     if (isDragging || isResizing) {
         document.body.classList.remove('no-selection');
+        // Reset columns when moving/resizing controls inside a grid
+        const parent = document.getElementById(e.target.dataset.ctrlParent);
+        if (parent.dataset.ctrlType === 'tab') {
+            reorderInGrid(parent);
+        }
         updatePropertiesForm();
     }
     offsets = [];

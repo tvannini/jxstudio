@@ -1342,6 +1342,21 @@ propertiesForm.addEventListener('keydown', (e) => {
                                                 e.target.value,
                                                 propertiesForm.view.value);
                     break;
+                case 'parent_options':
+                    const parentCtrl = document.
+                                         getElementById(propertiesForm.ctrl_parent.value);
+                    if (parentCtrl &&
+                        (parentCtrl.dataset.ctrlType !== 'window') &&
+                        (propertiesForm.ctrl_type.value !== 'navigator')) {
+                        window.parent.o2jse.cmd.exe(e,
+                                                    1,
+                                                    'zoom_gui',
+                                                    e.target.name,
+                                                    e.target.value,
+                                                    parentCtrl.dataset.ctrlType,
+                                                    parentCtrl.dataset.pages);
+                        }
+                    break;
                 default:
                     window.parent.o2jse.cmd.exe(e,
                                                 1,
