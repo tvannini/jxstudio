@@ -469,6 +469,15 @@ function createControl(x, y, width, height, ctrlParent = '', ctrlType = '', pare
             mpSetPages(this);
         } else if (this.dataset.ctrlType === 'flowbox') {
             fbSetPages(this, pagesChanged);
+        } else if (this.dataset.ctrlType === 'button') {
+            let label = this.dataset.caption;
+            if (label.indexOf('&') > -1) {
+                // If caption contains & character, use it as a shortcut
+                label = label.replace(/&(.)/, '<u>$1</u>');
+            }
+            let labelCtrl = this.getElementsByTagName('span')[0];
+            labelCtrl.innerHTML = label;
+            labelCtrl.style.lineHeight = this.style.height;
         } else {
             let label = this.dataset.ctrlName;
             if (this.dataset.field && (this.dataset.field !== '')) {
