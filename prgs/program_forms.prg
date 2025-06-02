@@ -32,6 +32,7 @@ o2def::act("start");
 o2def::act("tree_select");
 o2def::act("uncheck");
 o2def::act("zoom_action");
+o2def::act("zoom_caption");
 o2def::act("zoom_css");
 o2def::act("zoom_expression");
 o2def::act("zoom_field");
