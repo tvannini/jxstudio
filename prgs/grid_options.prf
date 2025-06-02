@@ -26,6 +26,7 @@ function grid_options§§grid_options_form_def($form_grid_options) {
 	$form_grid_options->altezza(312);
 	$form_grid_options->align_o("Center");
 	$form_grid_options->titolo("Grid options");
+	$form_grid_options->frm_status(grid_options_exp_9999());
 	$ctrl_o2label2 = $form_grid_options->ctrldef("o2label2", "label", "", "", "");
 		$ctrl_o2label2->x(20);
 		$ctrl_o2label2->y(20);
