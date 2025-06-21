@@ -84,6 +84,7 @@ body {
   background-color: var(--jx-color-space);
   border: 1px solid var(--jx-color-border);
   border-radius: 3px;
+  height: 20px;
 }
 
 #control-properties input:focus,
