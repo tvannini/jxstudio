@@ -75,6 +75,7 @@ body {
   grid-template-columns: max-content minmax(100px, 1fr);
   gap: 1px;
   overflow-y: auto;
+  padding-bottom: 10px;
 }
 
 #control-properties input,
