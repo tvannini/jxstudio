@@ -81,11 +81,20 @@ body {
 #control-properties input,
 #control-properties select {
   padding: 0;
-  padding-left: 4px;
   background-color: var(--jx-color-space);
   border: 1px solid var(--jx-color-border);
   border-radius: 3px;
   height: 20px;
+}
+
+#control-properties input {
+  padding-left: 4px;
+}
+
+@supports (-moz-appearance: none) {
+  #control-properties select {
+    padding-left: 4px;
+  }
 }
 
 #control-properties input:focus,
